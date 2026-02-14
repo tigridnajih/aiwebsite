@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -148,20 +149,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <style jsx>{`
-        @keyframes slideDown {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(200%); }
-        }
-        @keyframes widthGrow {
-          0% { width: 0%; }
-          100% { width: 75%; }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-      `}</style>
+
         </section>
     );
 }

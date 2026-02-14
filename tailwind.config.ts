@@ -39,6 +39,18 @@ const config: Config = {
                     "0%": { transform: "translateX(0)" },
                     "100%": { transform: "translateX(-50%)" },
                 },
+                slideDown: {
+                    "0%": { transform: "translateY(-100%)" },
+                    "100%": { transform: "translateY(200%)" },
+                },
+                widthGrow: {
+                    "0%": { width: "0%" },
+                    "100%": { width: "75%" },
+                },
+                float: {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-20px)" },
+                },
             },
         },
     },
