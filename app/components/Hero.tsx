@@ -141,7 +141,7 @@ export default function Hero() {
 
             {/* Deep U-Shaped Vignette / Spotlight Effect */}
             <div
-                className="absolute inset-0 z-20 pointer-events-none"
+                className="absolute inset-0 z-[5] pointer-events-none"
                 style={{
                     background: `
                         radial-gradient(ellipse 90% 100% at 50% 0%, transparent 40%, rgba(0,0,0,0.6) 70%, #000000 100%),
