@@ -79,7 +79,7 @@ export default function Hero() {
                         linear-gradient(rgba(255, 255, 255, 0.03) 4px, transparent 4px),
                         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 4px, transparent 4px)
                     `,
-                    backgroundSize: '100px 100px',
+                    backgroundSize: '150px 150px',
                     maskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)',
                     WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)'
                 }}
