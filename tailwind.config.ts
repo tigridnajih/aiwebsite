@@ -13,13 +13,18 @@ const config: Config = {
                 foreground: "var(--foreground)",
                 accent: "#2563EB",
                 hero: {
-                    base: "#070B14", // Deep black-navy base
-                    glow: "#0F1C3F", // Primary deep indigo
-                    flow: "#1E4FFF", // Secondary electric blue
+                    base: "#020408", // Darker, almost void-like black
+                    glow: "#0F1C3F",
+                    flow: "#1E4FFF",
+                    neon: "#00F0FF", // Cyan for holographic elements
+                    grid: "rgba(30, 79, 255, 0.3)", // Grid line color
                 }
             },
             fontFamily: {
                 sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            backgroundImage: {
+                'grid-pattern': "linear-gradient(to right, rgba(30, 79, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(30, 79, 255, 0.1) 1px, transparent 1px)",
             },
             fontSize: {
                 h1: ["64px", "1.1"],
@@ -37,6 +42,11 @@ const config: Config = {
                 "drift-slow": "drift 35s linear infinite",
                 "flow-slow": "flow 30s ease-in-out infinite",
                 "breathe-slow": "breathe 30s ease-in-out infinite",
+                "grid-flow": "gridFlow 2s linear infinite",
+                "spin-slow": "spin 15s linear infinite",
+                "spin-reverse-slow": "spin-reverse 20s linear infinite",
+                "scan": "scan 4s ease-in-out infinite",
+                "float-tech": "floatTech 6s ease-in-out infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -55,26 +65,43 @@ const config: Config = {
                     "0%": { width: "0%" },
                     "100%": { width: "75%" },
                 },
-                float: {
-                    "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-20px)" },
+                gridFlow: {
+                    "0%": { transform: "translateY(0)" },
+                    "100%": { transform: "translateY(60px)" }, // Match background-size height
                 },
+                "spin-reverse": {
+                    "0%": { transform: "rotate(360deg)" },
+                    "100%": { transform: "rotate(0deg)" },
+                },
+                scan: {
+                    "0%, 100%": { top: "0%", opacity: "0" },
+                    "10%": { opacity: "1" },
+                    "90%": { opacity: "1" },
+                    "100%": { top: "100%", opacity: "0" },
+                },
+                floatTech: {
+                    "0%, 100%": { transform: "translateY(0) scale(1)" },
+                    "50%": { transform: "translateY(-15px) scale(1.02)" },
+                },
+                // Legacy animations preserved
                 drift: {
                     "0%": { transform: "translateX(0)" },
-                    "50%": { transform: "translateX(-3%)" }, // Subtle 3-6% shift
+                    "50%": { transform: "translateX(-3%)" },
                     "100%": { transform: "translateX(0)" },
                 },
                 flow: {
                     "0%": { transform: "translate(0, 0)" },
-                    "50%": { transform: "translate(2%, 2%)" }, // Opposite directional drift
+                    "50%": { transform: "translate(2%, 2%)" },
                     "100%": { transform: "translate(0, 0)" },
                 },
                 breathe: {
                     "0%, 100%": { transform: "scale(1)" },
-                    "50%": { transform: "scale(1.03)" }, // Organic breathing effect
+                    "50%": { transform: "scale(1.03)" },
                 },
-                // Keeping original drifts for backwards compatibility if needed elsewhere, 
-                // though they are likely only used in Hero which we are replacing.
+                float: {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-20px)" },
+                },
                 drift1: {
                     "0%, 100%": { transform: "translate(0, 0) scale(1)" },
                     "33%": { transform: "translate(100px, -50px) scale(1.1)" },
