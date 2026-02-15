@@ -16,12 +16,12 @@ export default function Hero() {
             const el = checkHeroRef();
             if (!el) return;
 
-            time += 0.01; // Speed of time progression
+            time += 0.02; // Faster time progression
 
-            // Automatic drift calculation (faster speed as requested)
-            // Using sine/cosine for smooth organic movement
-            const driftX = Math.sin(time * 0.5) * 150;
-            const driftY = Math.cos(time * 0.3) * 150;
+            // Automatic drift calculation (faster and more complex)
+            // Combined sine waves for organic, non-repetitive motion
+            const driftX = Math.sin(time * 0.5) * 200 + Math.cos(time * 0.2) * 100;
+            const driftY = Math.cos(time * 0.3) * 200 + Math.sin(time * 0.1) * 100;
 
             // Current mouse position (stored in ref to avoid re-renders)
             // We need a ref for mouse position
