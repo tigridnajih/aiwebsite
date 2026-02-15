@@ -31,6 +31,20 @@ export default function Hero() {
             {/* Vignette for text readability */}
             <div className="absolute inset-0 z-0 bg-black/20 pointer-events-none" />
 
+            {/* Grid Overlay - Fades from top center */}
+            <div
+                className="absolute inset-0 z-[1] pointer-events-none"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '50px 50px',
+                    maskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)'
+                }}
+            />
+
             <div className="container-custom relative z-10 grid lg:grid-cols-12 gap-16 items-center">
 
                 {/* Left Side Content */}
