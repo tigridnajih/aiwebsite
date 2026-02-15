@@ -139,10 +139,16 @@ export default function Hero() {
 
             </div>
 
-            {/* Bottom Fade - Smooth Transition to Black */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 z-20 pointer-events-none bg-gradient-to-t from-[#000000] via-[#000000]/80 to-transparent" />
-            <div className="absolute -bottom-1 left-0 right-0 h-24 z-20 pointer-events-none bg-[#000000]" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-48 bg-[#000000] blur-3xl rounded-[50%] opacity-80 pointer-events-none" />
+            {/* Deep U-Shaped Vignette / Spotlight Effect */}
+            <div
+                className="absolute inset-0 z-20 pointer-events-none"
+                style={{
+                    background: `
+                        radial-gradient(ellipse 90% 100% at 50% 0%, transparent 40%, rgba(0,0,0,0.6) 70%, #000000 100%),
+                        linear-gradient(to top, #000000 0%, transparent 40%)
+                    `
+                }}
+            />
         </section>
     );
 }
