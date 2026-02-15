@@ -36,10 +36,10 @@ export default function Hero() {
                 className="absolute inset-0 z-[1] pointer-events-none"
                 style={{
                     backgroundImage: `
-                        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+                        linear-gradient(rgba(255, 255, 255, 0.03) 2px, transparent 2px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 2px, transparent 2px)
                     `,
-                    backgroundSize: '50px 50px',
+                    backgroundSize: '100px 100px',
                     maskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)',
                     WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)'
                 }}
