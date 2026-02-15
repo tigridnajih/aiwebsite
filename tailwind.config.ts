@@ -51,6 +51,21 @@ const config: Config = {
                     "0%, 100%": { transform: "translateY(0)" },
                     "50%": { transform: "translateY(-20px)" },
                 },
+                drift1: {
+                    "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                    "33%": { transform: "translate(100px, -50px) scale(1.1)" },
+                    "66%": { transform: "translate(-50px, 100px) scale(0.9)" },
+                },
+                drift2: {
+                    "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                    "33%": { transform: "translate(-80px, 80px) scale(0.9)" },
+                    "66%": { transform: "translate(40px, -120px) scale(1.1)" },
+                },
+                drift3: {
+                    "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                    "33%": { transform: "translate(60px, 60px) scale(1.2)" },
+                    "66%": { transform: "translate(-100px, -40px) scale(0.8)" },
+                },
             },
         },
     },
