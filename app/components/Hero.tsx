@@ -44,7 +44,7 @@ export default function Hero() {
 
                         {/* Headline */}
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4 mt-6 text-white drop-shadow-2xl">
-                            Forging the <br />
+                            Forgings the <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200">
                                 Future Intelligence
                             </span>
