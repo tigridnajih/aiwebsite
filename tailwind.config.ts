@@ -12,6 +12,11 @@ const config: Config = {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
                 accent: "#2563EB",
+                hero: {
+                    base: "#070B14", // Deep black-navy base
+                    glow: "#0F1C3F", // Primary deep indigo
+                    flow: "#1E4FFF", // Secondary electric blue
+                }
             },
             fontFamily: {
                 sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -29,6 +34,9 @@ const config: Config = {
                 "fade-in": "fadeIn 0.8s ease-out forwards",
                 "infinite-scroll": "infinite-scroll 20s linear infinite",
                 pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                "drift-slow": "drift 35s linear infinite",
+                "flow-slow": "flow 30s ease-in-out infinite",
+                "breathe-slow": "breathe 30s ease-in-out infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -51,6 +59,22 @@ const config: Config = {
                     "0%, 100%": { transform: "translateY(0)" },
                     "50%": { transform: "translateY(-20px)" },
                 },
+                drift: {
+                    "0%": { transform: "translateX(0)" },
+                    "50%": { transform: "translateX(-3%)" }, // Subtle 3-6% shift
+                    "100%": { transform: "translateX(0)" },
+                },
+                flow: {
+                    "0%": { transform: "translate(0, 0)" },
+                    "50%": { transform: "translate(2%, 2%)" }, // Opposite directional drift
+                    "100%": { transform: "translate(0, 0)" },
+                },
+                breathe: {
+                    "0%, 100%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.03)" }, // Organic breathing effect
+                },
+                // Keeping original drifts for backwards compatibility if needed elsewhere, 
+                // though they are likely only used in Hero which we are replacing.
                 drift1: {
                     "0%, 100%": { transform: "translate(0, 0) scale(1)" },
                     "33%": { transform: "translate(100px, -50px) scale(1.1)" },

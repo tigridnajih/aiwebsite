@@ -3,34 +3,34 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-[#0E1117] text-white">
+        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-hero-base text-white">
             {/* 2. Background Design - Liquid Mesh Animation */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-                {/* Blob 1 */}
+            {/* 2. Background Design - Deep Intelligence Field */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-hero-base">
+                {/* Layer 2 - Primary Deep Indigo Glow (Slow Drift) */}
                 <div
-                    className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-indigo-600/20 rounded-full blur-[120px] opacity-60"
-                    style={{ animation: 'drift1 25s infinite ease-in-out' }}
-                />
-                {/* Blob 2 */}
-                <div
-                    className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] bg-blue-700/20 rounded-full blur-[140px] opacity-40"
-                    style={{ animation: 'drift2 30s infinite ease-in-out' }}
-                />
-                {/* Blob 3 */}
-                <div
-                    className="absolute top-[20%] right-[10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] opacity-30"
-                    style={{ animation: 'drift3 20s infinite ease-in-out' }}
+                    className="absolute top-[-20%] left-[-10%] w-[150%] h-[150%] rounded-full bg-hero-glow/40 blur-[140px] animate-drift-slow"
+                    style={{ background: 'radial-gradient(circle at center, #0F1C3F 0%, transparent 70%)' }}
                 />
 
-                {/* Faint Grid & Texture */}
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] mix-blend-overlay"></div>
+                {/* Layer 3 - Secondary Electric Blue Flow (Opposite Flow) */}
                 <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
-                        backgroundSize: '60px 60px'
-                    }}
+                    className="absolute bottom-[-20%] right-[-10%] w-[120%] h-[120%] rounded-full bg-hero-flow/10 blur-[120px] animate-flow-slow mix-blend-screen"
+                    style={{ background: 'radial-gradient(circle at center, #1E4FFF 0%, transparent 60%)' }}
                 />
+
+                {/* Layer 4 - Subtle Warping Motion (Breathing) */}
+                <div className="absolute inset-0 animate-breathe-slow opacity-30">
+                    <div
+                        className="absolute top-[20%] right-[20%] w-[800px] h-[800px] bg-hero-glow/20 rounded-full blur-[100px]"
+                    />
+                </div>
+
+                {/* Layer 5 - Grain Overlay */}
+                <div className="absolute inset-0 opacity-[0.03] animate-pulse mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
+                {/* Layer 6 - Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(transparent_0%,#070B14_100%)] opacity-80 pointer-events-none"></div>
             </div>
 
             <div className="container-custom relative z-10 grid lg:grid-cols-12 gap-16 items-center">
