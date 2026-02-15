@@ -4,22 +4,52 @@ import { useEffect, useRef } from 'react';
 
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
+    const mouseRef = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handlePointerMove = (e: PointerEvent) => {
-            const el = heroRef.current;
+        const checkHeroRef = () => heroRef.current;
+
+        let animationFrameId: number;
+        let time = 0;
+
+        const animate = () => {
+            const el = checkHeroRef();
             if (!el) return;
 
+            time += 0.01; // Speed of time progression
+
+            // Automatic drift calculation (faster speed as requested)
+            // Using sine/cosine for smooth organic movement
+            const driftX = Math.sin(time * 0.5) * 150;
+            const driftY = Math.cos(time * 0.3) * 150;
+
+            // Current mouse position (stored in ref to avoid re-renders)
+            // We need a ref for mouse position
+            const currentMouseX = mouseRef.current.x;
+            const currentMouseY = mouseRef.current.y;
+
+            // Combine drift and mouse interaction
+            el.style.setProperty('--posX', `${currentMouseX + driftX}`);
+            el.style.setProperty('--posY', `${currentMouseY + driftY}`);
+
+            animationFrameId = requestAnimationFrame(animate);
+        };
+
+        const handlePointerMove = (e: PointerEvent) => {
+            const el = checkHeroRef();
+            if (!el) return;
             const { clientX: x, clientY: y } = e;
             const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
-            // Calculate relative to center of the element
-            el.style.setProperty('--posX', `${x - l - w / 2}`);
-            el.style.setProperty('--posY', `${y - t - h / 2}`);
+            mouseRef.current = { x: x - l - w / 2, y: y - t - h / 2 };
         };
 
         window.addEventListener('pointermove', handlePointerMove);
+        // Start animation loop
+        animate();
+
         return () => {
             window.removeEventListener('pointermove', handlePointerMove);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
