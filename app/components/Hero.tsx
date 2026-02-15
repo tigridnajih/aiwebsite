@@ -61,16 +61,15 @@ export default function Hero() {
             {/* Vignette for text readability */}
             <div className="absolute inset-0 z-0 bg-black/20 pointer-events-none" />
 
-            {/* Top-Left Light Beam / God Ray */}
+            {/* Deep Navy Blue Semi-Circle Gradient */}
             <div
-                className="absolute top-0 left-0 w-[1200px] h-[500px] z-[2] pointer-events-none origin-top-left"
+                className="absolute top-0 left-0 right-0 h-[600px] z-[0] pointer-events-none"
                 style={{
-                    background: 'linear-gradient(125deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
-                    transform: 'rotate(-5deg)',
-                    filter: 'blur(50px)',
-                    mixBlendMode: 'screen',
+                    background: 'radial-gradient(ellipse 70% 80% at 50% 0%, rgba(10, 25, 60, 0.8) 0%, transparent 70%)',
+                    mixBlendMode: 'screen' // Using screen to ensure the blue glow is visible on dark bg
                 }}
             />
+
 
             {/* Grid Overlay - Fades from top center */}
             <div
