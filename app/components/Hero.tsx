@@ -36,8 +36,8 @@ export default function Hero() {
                 className="absolute inset-0 z-[1] pointer-events-none"
                 style={{
                     backgroundImage: `
-                        linear-gradient(rgba(255, 255, 255, 0.03) 2px, transparent 2px),
-                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 2px, transparent 2px)
+                        linear-gradient(rgba(255, 255, 255, 0.03) 4px, transparent 4px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 4px, transparent 4px)
                     `,
                     backgroundSize: '100px 100px',
                     maskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)',
@@ -158,8 +158,8 @@ export default function Hero() {
                 className="absolute inset-0 z-[5] pointer-events-none"
                 style={{
                     background: `
-                        radial-gradient(ellipse 90% 100% at 50% 0%, transparent 40%, rgba(0,0,0,0.6) 70%, #000000 100%),
-                        linear-gradient(to top, #000000 0%, transparent 40%)
+                        radial-gradient(ellipse 60% 90% at 50% 0%, transparent 20%, rgba(0,0,0,0.8) 50%, #000000 95%),
+                        linear-gradient(to top, #000000 0%, transparent 30%)
                     `
                 }}
             />
