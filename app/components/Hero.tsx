@@ -61,6 +61,16 @@ export default function Hero() {
             {/* Vignette for text readability */}
             <div className="absolute inset-0 z-0 bg-black/20 pointer-events-none" />
 
+            {/* Top-Left Light Beam / God Ray */}
+            <div
+                className="absolute top-0 left-0 w-[800px] h-[400px] z-[2] pointer-events-none origin-top-left"
+                style={{
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 70%)',
+                    transform: 'rotate(-15deg)',
+                    filter: 'blur(30px)',
+                }}
+            />
+
             {/* Grid Overlay - Fades from top center */}
             <div
                 className="absolute inset-0 z-[1] pointer-events-none"
