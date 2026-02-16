@@ -99,10 +99,10 @@ export default function Hero() {
                                 <span className="text-xs font-mono text-blue-300">CPU: 32%</span>
                             </div>
 
-                            {/* Dynamic Nodes Visualization - Shader Cube */}
+                            {/* Dynamic Nodes Visualization - Clean Area */}
                             <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden">
-                                <div className="w-full h-full">
-                                    <ShaderCube />
+                                <div className="w-full h-full bg-blue-500/5 rounded-lg border border-blue-500/10 flex items-center justify-center">
+                                    <div className="text-blue-400/20 font-mono text-xs uppercase tracking-widest">System Neutral</div>
                                 </div>
                             </div>
 
