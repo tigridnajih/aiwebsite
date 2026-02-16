@@ -1,89 +1,26 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import bgAnimated from '../herosection_assets/background_animated.gif';
 
 export default function Hero() {
-    const heroRef = useRef<HTMLElement>(null);
-    const mouseRef = useRef({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const checkHeroRef = () => heroRef.current;
-
-        let animationFrameId: number;
-        let time = 0;
-
-        const animate = () => {
-            const el = checkHeroRef();
-            if (!el) return;
-
-            time += 0.02; // Faster time progression
-
-            // Automatic drift calculation (faster and more complex)
-            // Combined sine waves for organic, non-repetitive motion
-            const driftX = Math.sin(time * 0.5) * 200 + Math.cos(time * 0.2) * 100;
-            const driftY = Math.cos(time * 0.3) * 200 + Math.sin(time * 0.1) * 100;
-
-            // Current mouse position (stored in ref to avoid re-renders)
-            // We need a ref for mouse position
-            const currentMouseX = mouseRef.current.x;
-            const currentMouseY = mouseRef.current.y;
-
-            // Combine drift and mouse interaction
-            el.style.setProperty('--posX', `${currentMouseX + driftX}`);
-            el.style.setProperty('--posY', `${currentMouseY + driftY}`);
-
-            animationFrameId = requestAnimationFrame(animate);
-        };
-
-        const handlePointerMove = (e: PointerEvent) => {
-            const el = checkHeroRef();
-            if (!el) return;
-            const { clientX: x, clientY: y } = e;
-            const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
-            mouseRef.current = { x: x - l - w / 2, y: y - t - h / 2 };
-        };
-
-        window.addEventListener('pointermove', handlePointerMove);
-        // Start animation loop
-        animate();
-
-        return () => {
-            window.removeEventListener('pointermove', handlePointerMove);
-            cancelAnimationFrame(animationFrameId);
-        };
-    }, []);
-
     return (
-        <section
-            ref={heroRef}
-            className="hero-gradient-mesh relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white"
-        >
-            {/* Vignette for text readability */}
-            <div className="absolute inset-0 z-0 bg-black/20 pointer-events-none" />
+        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white">
 
-            {/* Deep Navy Blue Semi-Circle Gradient */}
-            <div
-                className="absolute top-0 left-0 right-0 h-[600px] z-[0] pointer-events-none"
-                style={{
-                    background: 'radial-gradient(ellipse 70% 80% at 50% 0%, rgba(10, 25, 60, 0.8) 0%, transparent 70%)',
-                    mixBlendMode: 'screen' // Using screen to ensure the blue glow is visible on dark bg
-                }}
-            />
-
-
-            {/* Grid Overlay - Fades from top center */}
-            <div
-                className="absolute inset-0 z-[1] pointer-events-none"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(255, 255, 255, 0.03) 4px, transparent 4px),
-                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 4px, transparent 4px)
-                    `,
-                    backgroundSize: '150px 150px',
-                    maskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse 60% 70% at 50% 0%, black 10%, transparent 80%)'
-                }}
-            />
+            {/* Background GIF */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src={bgAnimated}
+                    alt="Background Animation"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    unoptimized
+                    className="opacity-80" // Slight transparency to ensure text readability if needed
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/40" />
+            </div>
 
             <div className="container-custom relative z-10 grid lg:grid-cols-12 gap-16 items-center">
 
@@ -181,17 +118,6 @@ export default function Hero() {
                 </div>
 
             </div>
-
-            {/* Deep U-Shaped Vignette / Spotlight Effect */}
-            <div
-                className="absolute inset-0 z-[5] pointer-events-none"
-                style={{
-                    background: `
-                        radial-gradient(ellipse 80% 90% at 50% 0%, transparent 35%, rgba(0,0,0,0.5) 75%, #000000 100%),
-                        linear-gradient(to top, #000000 0%, transparent 30%)
-                    `
-                }}
-            />
         </section>
     );
 }
