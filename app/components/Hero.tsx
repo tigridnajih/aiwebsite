@@ -98,9 +98,11 @@ export default function Hero() {
                                 <span className="text-xs font-mono text-blue-300">CPU: 32%</span>
                             </div>
 
-                            {/* Dynamic Nodes Visualization - Empty for now */}
+                            {/* Dynamic Nodes Visualization - Shader Cube */}
                             <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden">
-                                {/* Content Removed */}
+                                <div className="w-full h-full">
+                                    <ShaderCube />
+                                </div>
                             </div>
 
                             {/* Code Terminal */}
