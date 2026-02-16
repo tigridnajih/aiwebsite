@@ -164,23 +164,17 @@ export default function Hero() {
                             </div>
 
                             {/* Dynamic Nodes Visualization */}
-                            <div className="flex-1 relative flex items-center justify-center">
-                                {/* Animated Cube */}
-                                <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+                            <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden">
+                                {/* Animated Cube - Maximized */}
+                                <div className="relative w-full h-full min-h-[300px] flex items-center justify-center">
                                     <Image
                                         src={cubeAnimated}
                                         alt="AI Core Processing"
                                         layout="fill"
                                         objectFit="contain"
-                                        className="drop-shadow-[0_0_30px_rgba(96,165,250,0.6)]"
-                                        unoptimized // GIFs often need this to animate correctly if processed
+                                        className="scale-125 md:scale-150 mix-blend-screen"
+                                        unoptimized
                                     />
-                                </div>
-
-                                {/* Satellites - Adjusted for larger cube */}
-                                <div className="absolute inset-0 animate-spin-slow pointer-events-none">
-                                    <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_15px_#60A5FA]" />
-                                    <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-2 h-2 bg-indigo-400 rounded-full shadow-[0_0_15px_#818CF8]" />
                                 </div>
                             </div>
 
