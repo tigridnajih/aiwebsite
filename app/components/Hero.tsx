@@ -23,10 +23,10 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-black/40" />
             </div>
 
-            <div className="container-custom relative z-10 grid lg:grid-cols-12 gap-16 items-center">
+            <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
 
-                {/* Left Side Content */}
-                <div className="lg:col-span-7 flex flex-col gap-8">
+                {/* Content */}
+                <div className="flex flex-col gap-8 max-w-4xl items-center">
                     {/* Badge */}
                     <div className="animate-fade-in opacity-0">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium tracking-widest text-blue-200 uppercase backdrop-blur-md shadow-lg">
@@ -35,22 +35,22 @@ export default function Hero() {
                         </div>
 
                         {/* Headline */}
-                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4 mt-6 text-white drop-shadow-2xl">
+                        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight leading-[1.1] mb-4 mt-6 text-white drop-shadow-2xl">
                             Forgings the <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200 text-6xl md:text-8xl">
                                 Future Intelligence
                             </span>
                         </h1>
                     </div>
 
-                    <p className="text-lg md:text-xl text-blue-100/80 max-w-xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 font-light tracking-wide shadow-black">
+                    <p className="text-lg md:text-2xl text-blue-100/80 max-w-2xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 font-light tracking-wide shadow-black">
                         Deploy autonomous AI architectures that evolve with your business. Processing logic, scaling revenue, and eliminating operational friction.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4">
+                    <div className="flex flex-col sm:flex-row gap-6 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group relative px-8 py-4 rounded-lg bg-blue-600 overflow-hidden font-semibold text-white tracking-wide shadow-lg transition-all hover:shadow-blue-500/50 hover:scale-105"
+                            className="group relative px-10 py-5 rounded-xl bg-blue-600 overflow-hidden font-semibold text-white text-lg tracking-wide shadow-lg transition-all hover:shadow-blue-500/50 hover:scale-105"
                         >
                             <span className="relative z-10">Initialize System</span>
                             {/* Button Glow Effect */}
@@ -59,63 +59,22 @@ export default function Hero() {
 
                         <Link
                             href="#works"
-                            className="px-8 py-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm text-gray-200 hover:text-white font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+                            className="px-10 py-5 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40"
                         >
                             Explore Documentation
                         </Link>
                     </div>
 
                     {/* Stats / Trust */}
-                    <div className="flex items-center gap-6 animate-fade-in opacity-0 animate-delay-300 mt-4 border-t border-white/10 pt-6">
+                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-center">
                         <div>
-                            <div className="text-2xl font-bold text-white">99.9%</div>
-                            <div className="text-xs text-blue-200 uppercase tracking-widest">Uptime</div>
+                            <div className="text-3xl font-bold text-white">99.9%</div>
+                            <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Uptime</div>
                         </div>
-                        <div className="w-px h-8 bg-white/20" />
+                        <div className="w-px h-10 bg-white/20" />
                         <div>
-                            <div className="text-2xl font-bold text-blue-300">50ms</div>
-                            <div className="text-xs text-blue-200 uppercase tracking-widest">Latency</div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right Side - Holographic HUD */}
-                <div className="lg:col-span-5 relative animate-fade-in opacity-0 animate-delay-300 perspective-1000">
-                    {/* Glass Container */}
-                    <div className="relative w-full aspect-[4/5] md:aspect-square bg-white/10 rounded-2xl border border-white/20 backdrop-blur-xl p-1 shadow-2xl overflow-hidden group">
-
-                        {/* Scanning Laser Line */}
-                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-400/50 shadow-[0_0_20px_#60A5FA] animate-scan z-20 pointer-events-none" />
-
-                        {/* Internal UI Shell */}
-                        <div className="absolute inset-2 rounded-xl border border-dashed border-white/10 flex flex-col p-6 bg-black/20">
-
-                            {/* Header */}
-                            <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                    <span className="text-xs font-mono text-gray-300">LIVE_FEED</span>
-                                </div>
-                                <span className="text-xs font-mono text-blue-300">CPU: 32%</span>
-                            </div>
-
-                            {/* Dynamic Nodes Visualization - Clean Area */}
-                            <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden">
-                                <div className="w-full h-full bg-blue-500/5 rounded-lg border border-blue-500/10 flex items-center justify-center">
-                                    <div className="text-blue-400/20 font-mono text-xs uppercase tracking-widest">System Neutral</div>
-                                </div>
-                            </div>
-
-                            {/* Code Terminal */}
-                            <div className="mt-auto h-24 bg-black/20 rounded-lg p-3 font-mono text-[10px] text-green-300 overflow-hidden border border-white/5">
-                                <div className="flex flex-col gap-1 opacity-70">
-                                    <span>{`> initializing_core_protocols...`}</span>
-                                    <span>{`> connection_established: secure`}</span>
-                                    <span>{`> optimizing_neural_paths [||||||||||] 100%`}</span>
-                                    <span className="animate-pulse">{`> awaiting_user_input_`}</span>
-                                </div>
-                            </div>
-
+                            <div className="text-3xl font-bold text-blue-300">50ms</div>
+                            <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Latency</div>
                         </div>
                     </div>
                 </div>
