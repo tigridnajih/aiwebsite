@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import bgAnimated from '../herosection_assets/background_animated.gif';
+import ShaderCube from './ShaderCube';
 
 export default function Hero() {
     return (
