@@ -1,8 +1,6 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import cubeAnimated from '../herosection_assets/cubeanimated.gif';
 
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
@@ -163,19 +161,9 @@ export default function Hero() {
                                 <span className="text-xs font-mono text-blue-300">CPU: 32%</span>
                             </div>
 
-                            {/* Dynamic Nodes Visualization */}
+                            {/* Dynamic Nodes Visualization - Empty for now */}
                             <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden">
-                                {/* Animated Cube - Maximized */}
-                                <div className="relative w-full h-full min-h-[300px] flex items-center justify-center">
-                                    <Image
-                                        src={cubeAnimated}
-                                        alt="AI Core Processing"
-                                        layout="fill"
-                                        objectFit="contain"
-                                        className="scale-125 md:scale-150 mix-blend-screen"
-                                        unoptimized
-                                    />
-                                </div>
+                                {/* Content Removed */}
                             </div>
 
                             {/* Code Terminal */}
