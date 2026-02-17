@@ -1,16 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
-import InteractiveBackground from './InteractiveBackground';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white">
-
-            {/* Interactive Shader Background */}
-            <div className="absolute inset-0 z-0">
-                <InteractiveBackground />
-            </div>
+        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-black">
 
             <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
 
