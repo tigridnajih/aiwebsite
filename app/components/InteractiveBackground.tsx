@@ -69,15 +69,28 @@ const InteractiveBackground: React.FC = () => {
             uniform float u_waterStrength;
             varying vec2 vUv;
 
-            // Cosmic Ocean Theme
+            // Refined Cosmic Ocean to match the 'expected' vibrant purple/white look
             vec4 cosmicOcean(vec2 u, float t) {
-                vec2 p = vec2(u.x * 0.3, u.y);
+                vec2 p = u * 0.4;
                 float a=0., d=0., i=0.;
-                for (; i < 8.; d += sin(i++ * p.y + a + t*0.08))
+                for (; i < 9.; d += sin(i++ * p.y + a + t*0.08))
                     a += cos(i - d + 0.1 * t - a * p.x);
-                vec3 c = mix(vec3(0,0.05,0.2), vec3(0.1,0.2,0.7), smoothstep(-1.,1.,cos(a)));
-                c = mix(c, vec3(0.8,0.8,1.0), pow(smoothstep(0.5,1.,sin(d*2.)), 4.0));
-                return vec4(c, 1.0);
+                
+                // Palette derived from the 'expected' screenshot:
+                vec3 c1 = vec3(0.02, 0.0, 0.15); // Deep space purple
+                vec3 c2 = vec3(0.4, 0.0, 1.0);  // High-frequency neon purple
+                vec3 c3 = vec3(1.0, 1.0, 1.0);  // Brilliant white crests
+                
+                vec3 color = mix(c1, c2, smoothstep(-1.0, 1.2, cos(a)));
+                
+                // Dramatic white peaks for that "cloudy liquid" look
+                float highlights = pow(smoothstep(0.2, 1.0, sin(d * 1.5)), 2.5);
+                color = mix(color, c3, highlights * 0.95);
+                
+                // Add an additional "glow" layer for more saturation
+                color += c2 * pow(highlights, 4.0) * 0.5;
+
+                return vec4(color, 1.0);
             }
 
             void main() {
@@ -90,10 +103,10 @@ const InteractiveBackground: React.FC = () => {
                 float waterInfluence = clamp(waterHeight * u_waterStrength, -1.0, 1.0);
                 
                 // Distort based on water simulation
-                vec2 gradientUV = screenP + vec2(waterInfluence * 0.5, waterInfluence * 0.4);
-                float modifiedTime = u_time * 1.5 + waterInfluence * 3.0;
+                vec2 gradientUV = screenP + vec2(waterInfluence * 0.4, waterInfluence * 0.3);
+                float modifiedTime = u_time * 1.4 + waterInfluence * 2.5;
 
-                // Reverted to original shader output without extra boost or vignette
+                // Full-screen vibrant output
                 gl_FragColor = cosmicOcean(gradientUV, modifiedTime);
             }
         `;
