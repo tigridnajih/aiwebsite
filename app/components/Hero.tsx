@@ -1,35 +1,17 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
-import bgAnimated from '../herosection_assets/background_animated.gif';
-import ShaderCube from './ShaderCube';
+import { useEffect, useRef } from 'react';
+import InteractiveBackground from './InteractiveBackground';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white">
+        <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-[#030712]">
 
-            {/* Background GIF */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={bgAnimated}
-                    alt="Background Animation"
-                    layout="fill"
-                    objectFit="cover"
-                    priority
-                    unoptimized
-                    className="opacity-80"
-                />
+            {/* Interactive Shader Background */}
+            <InteractiveBackground />
 
-                {/* Noise / Grain Overlay */}
-                <div className="absolute inset-0 opacity-[0.035] pointer-events-none mix-blend-overlay"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                    }}
-                />
-
-                {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/40" />
-            </div>
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none" />
 
             <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
 
