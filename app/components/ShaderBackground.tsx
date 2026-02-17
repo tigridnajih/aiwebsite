@@ -81,7 +81,7 @@ const fragmentShader = `
     for (; i < 8.; d += sin(i++ * p.y + a + t*0.08))
        a += cos(i - d + 0.1 * t - a * p.x);
     vec3 c = mix(vec3(0,0.05,0.2), vec3(0.1,0.2,0.7), smoothstep(-1.,1.,cos(a)));
-    c = mix(c, vec3(0.8,0.8,1.0), pow(smoothstep(0.5,1.,sin(d*2.)), 4.0));
+    c = mix(c, vec3(0.0,0.0,0.0), pow(smoothstep(0.5,1.,sin(d*2.)), 4.0));
     return vec4(c, 1.0);
   }
 
