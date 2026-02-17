@@ -348,8 +348,8 @@ const fragmentShader = `
     float waterHeight = texture2D(u_waterTexture, wCoord).r;
     float waterInfluence = clamp(waterHeight * u_waterStrength, -0.5, 0.5);
     
-    float audioPulse = u_audioOverall * u_audioReactivity * 0.1;
-    float waterPulse = waterInfluence * 0.3;
+    // float audioPulse = u_audioOverall * u_audioReactivity * 0.1; // Unused
+    // float waterPulse = waterInfluence * 0.3; // Unused
     
     // Get gradient background
     vec2 gradientUV = screenP;
@@ -410,316 +410,365 @@ const fragmentShader = `
 `;
 
 export default function ShaderBackground() {
-    const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const cameraRef = useRef<THREE.OrthographicCamera | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
+  const waterSettingsRef = useRef({
+    resolution: 256,
+    damping: 0.913,
+    tension: 0.02,
+    rippleStrength: 0.2,
+    mouseIntensity: 1.2,
+    clickIntensity: 3.0,
+    rippleRadius: 8,
+    splatForce: 50000,
+    splatThickness: 0.1,
+    vorticityInfluence: 0.2,
+    swirlIntensity: 0.2,
+    pressure: 0.3,
+    velocityDissipation: 0.08,
+    densityDissipation: 1.0,
+    displacementScale: 0.01,
+    impactForce: 50000,
+    spiralIntensity: 0.2,
+    rippleSize: 0.1
+  });
+  // Keep track of buffer references to use in simulation
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const waterBuffersRef = useRef<any>(null);
+  const waterTextureRef = useRef<THREE.DataTexture | null>(null);
 
-    useEffect(() => {
-        if (!containerRef.current) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-        // Initialize Three.js scene
-        const scene = new THREE.Scene();
-        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
-        const renderer = new THREE.WebGLRenderer({
-            antialias: true,
-            alpha: true
-        });
+    // Initialize Three.js scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
 
-        const pixelRatio = Math.min(window.devicePixelRatio, 2);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(pixelRatio);
-        containerRef.current.appendChild(renderer.domElement);
+    // Store refs
+    sceneRef.current = scene;
+    cameraRef.current = camera;
+    rendererRef.current = renderer;
 
-        // Water Simulation Settings
-        const waterSettings = {
-            resolution: 256,
-            damping: 0.913,
-            tension: 0.02,
-            rippleStrength: 0.2,
-            mouseIntensity: 1.2,
-            clickIntensity: 3.0,
-            rippleRadius: 8,
-            splatForce: 50000,
-            splatThickness: 0.1,
-            vorticityInfluence: 0.2,
-            swirlIntensity: 0.2,
-            pressure: 0.3,
-            velocityDissipation: 0.08,
-            densityDissipation: 1.0,
-            displacementScale: 0.01,
-            impactForce: 50000,
-            spiralIntensity: 0.2,
-            rippleSize: 0.1
-        };
+    const container = containerRef.current;
+    const initialWidth = container.clientWidth;
+    const initialHeight = container.clientHeight;
+    const pixelRatio = Math.min(window.devicePixelRatio, 2);
 
-        const resolution = waterSettings.resolution;
-        const waterBuffers = {
-            current: new Float32Array(resolution * resolution),
-            previous: new Float32Array(resolution * resolution),
-            velocity: new Float32Array(resolution * resolution * 2),
-            vorticity: new Float32Array(resolution * resolution),
-            pressure: new Float32Array(resolution * resolution)
-        };
+    renderer.setSize(initialWidth, initialHeight);
+    renderer.setPixelRatio(pixelRatio);
+    container.appendChild(renderer.domElement);
 
-        // Initialize buffers
-        for (let i = 0; i < resolution * resolution; i++) {
-            waterBuffers.current[i] = 0.0;
-            waterBuffers.previous[i] = 0.0;
-            waterBuffers.velocity[i * 2] = 0.0;
-            waterBuffers.velocity[i * 2 + 1] = 0.0;
-            waterBuffers.vorticity[i] = 0.0;
-            waterBuffers.pressure[i] = 0.0;
-        }
+    // Water Simulation Settings
+    const waterSettings = waterSettingsRef.current;
+    const resolution = waterSettings.resolution;
 
-        const waterTexture = new THREE.DataTexture(
-            waterBuffers.current,
-            waterSettings.resolution,
-            waterSettings.resolution,
-            THREE.RedFormat,
-            THREE.FloatType
-        );
-        waterTexture.minFilter = THREE.LinearFilter;
-        waterTexture.magFilter = THREE.LinearFilter;
-        waterTexture.needsUpdate = true;
+    const waterBuffers = {
+      current: new Float32Array(resolution * resolution),
+      previous: new Float32Array(resolution * resolution),
+      velocity: new Float32Array(resolution * resolution * 2),
+      vorticity: new Float32Array(resolution * resolution),
+      pressure: new Float32Array(resolution * resolution)
+    };
+    waterBuffersRef.current = waterBuffers;
 
-        // Settings from the original code
-        const settings = {
-            gradientTheme: 4, // "Cosmic Ocean"
-            animationSpeed: 1.3,
-            waterStrength: 0.55,
-            mouseIntensity: 1.2,
-            clickIntensity: 3.0,
-            rippleStrength: 0.5,
-            showLogo: false, // Disabled logo for background use
-            audioReactivity: 1.0,
-            motionDecay: 0.08,
-            rippleDecay: 1.0,
-            waveHeight: 0.01,
-            swirlingMotion: 0.2
-        };
+    // Initialize buffers
+    for (let i = 0; i < resolution * resolution; i++) {
+      waterBuffers.current[i] = 0.0;
+      waterBuffers.previous[i] = 0.0;
+      waterBuffers.velocity[i * 2] = 0.0;
+      waterBuffers.velocity[i * 2 + 1] = 0.0;
+      waterBuffers.vorticity[i] = 0.0;
+      waterBuffers.pressure[i] = 0.0;
+    }
 
-        const material = new THREE.ShaderMaterial({
-            vertexShader,
-            fragmentShader,
-            uniforms: {
-                u_time: { value: 0.0 },
-                u_resolution: { value: new THREE.Vector2(window.innerWidth * pixelRatio, window.innerHeight * pixelRatio) },
-                u_speed: { value: settings.animationSpeed },
-                u_waterTexture: { value: waterTexture },
-                u_waterStrength: { value: settings.waterStrength },
-                u_ripple_time: { value: -10.0 },
-                u_ripple_position: { value: new THREE.Vector2(0.5, 0.5) },
-                u_ripple_strength: { value: settings.rippleStrength },
-                u_logoTexture: { value: null },
-                u_showLogo: { value: settings.showLogo },
-                u_audioLow: { value: 0.0 },
-                u_audioMid: { value: 0.0 },
-                u_audioHigh: { value: 0.0 },
-                u_audioOverall: { value: 0.0 },
-                u_audioReactivity: { value: settings.audioReactivity },
-                u_gradientTheme: { value: settings.gradientTheme }
-            }
-        });
-
-        const geometry = new THREE.PlaneGeometry(2, 2);
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-        camera.position.z = 1;
-
-        const clock = new THREE.Clock();
-        let animationFrameId: number;
-
-        // Water Simulation Functions
-        function updateWaterSimulation() {
-            const { current, previous, velocity, vorticity } = waterBuffers;
-            const { damping, resolution, tension } = waterSettings;
-            const safeTension = Math.min(tension, 0.05);
-            const velocityDissipation = settings.motionDecay;
-            const densityDissipation = settings.rippleDecay;
-            const vorticityInfluence = Math.min(Math.max(settings.swirlingMotion, 0.0), 0.5);
-
-            // Velocity step
-            for (let i = 0; i < resolution * resolution * 2; i++) {
-                velocity[i] *= 1.0 - velocityDissipation;
-            }
-
-            // Vorticity step
-            for (let i = 1; i < resolution - 1; i++) {
-                for (let j = 1; j < resolution - 1; j++) {
-                    const index = i * resolution + j;
-                    const left = velocity[(index - 1) * 2 + 1];
-                    const right = velocity[(index + 1) * 2 + 1];
-                    const bottom = velocity[(index - resolution) * 2];
-                    const top = velocity[(index + resolution) * 2];
-                    vorticity[index] = (right - left - (top - bottom)) * 0.5;
-                }
-            }
-
-            if (vorticityInfluence > 0.001) {
-                for (let i = 1; i < resolution - 1; i++) {
-                    for (let j = 1; j < resolution - 1; j++) {
-                        const index = i * resolution + j;
-                        const velIndex = index * 2;
-                        const left = Math.abs(vorticity[index - 1]);
-                        const right = Math.abs(vorticity[index + 1]);
-                        const bottom = Math.abs(vorticity[index - resolution]);
-                        const top = Math.abs(vorticity[index + resolution]);
-                        const gradX = (right - left) * 0.5;
-                        const gradY = (top - bottom) * 0.5;
-                        const length = Math.sqrt(gradX * gradX + gradY * gradY) + 1e-5;
-                        const safeVorticity = Math.max(-1.0, Math.min(1.0, vorticity[index]));
-                        const forceX = (gradY / length) * safeVorticity * vorticityInfluence * 0.1;
-                        const forceY = (-gradX / length) * safeVorticity * vorticityInfluence * 0.1;
-                        velocity[velIndex] += Math.max(-0.1, Math.min(0.1, forceX));
-                        velocity[velIndex + 1] += Math.max(-0.1, Math.min(0.1, forceY));
-                    }
-                }
-            }
-
-            // Wave propagation step
-            for (let i = 1; i < resolution - 1; i++) {
-                for (let j = 1; j < resolution - 1; j++) {
-                    const index = i * resolution + j;
-                    const velIndex = index * 2;
-                    const top = previous[index - resolution];
-                    const bottom = previous[index + resolution];
-                    const left = previous[index - 1];
-                    const right = previous[index + 1];
-
-                    current[index] = (top + bottom + left + right) / 2 - current[index];
-                    current[index] = current[index] * damping + previous[index] * (1 - damping);
-                    current[index] += (0 - previous[index]) * safeTension;
-
-                    const velMagnitude = Math.sqrt(velocity[velIndex] * velocity[velIndex] + velocity[velIndex + 1] * velocity[velIndex + 1]);
-                    const safeVelInfluence = Math.min(velMagnitude * settings.waveHeight, 0.1);
-                    current[index] += safeVelInfluence;
-                    current[index] *= 1.0 - densityDissipation * 0.01;
-                    current[index] = Math.max(-2.0, Math.min(2.0, current[index]));
-                }
-            }
-
-            // Boundary conditions
-            for (let i = 0; i < resolution; i++) {
-                current[i] = 0;
-                current[(resolution - 1) * resolution + i] = 0;
-                velocity[i * 2] = 0;
-                velocity[i * 2 + 1] = 0;
-                velocity[((resolution - 1) * resolution + i) * 2] = 0;
-                velocity[((resolution - 1) * resolution + i) * 2 + 1] = 0;
-                current[i * resolution] = 0;
-                current[i * resolution + (resolution - 1)] = 0;
-                velocity[i * resolution * 2] = 0;
-                velocity[i * resolution * 2 + 1] = 0;
-                velocity[(i * resolution + (resolution - 1)) * 2] = 0;
-                velocity[(i * resolution + (resolution - 1)) * 2 + 1] = 0;
-            }
-
-            // Swap buffers
-            const temp = waterBuffers.current;
-            waterBuffers.current = waterBuffers.previous;
-            waterBuffers.previous = temp;
-
-            waterTexture.image.data = waterBuffers.current;
-            waterTexture.needsUpdate = true;
-        }
-
-        function addRipple(x: number, y: number, strength = 1.0) {
-            const { resolution, rippleRadius } = waterSettings;
-            const normalizedX = x / window.innerWidth;
-            const normalizedY = 1.0 - y / window.innerHeight;
-            const texX = Math.floor(normalizedX * resolution);
-            const texY = Math.floor(normalizedY * resolution);
-            const radius = Math.max(rippleRadius, Math.floor(waterSettings.rippleSize * resolution));
-            const rippleStrength = strength * (waterSettings.impactForce / 100000);
-            const radiusSquared = radius * radius;
-
-            for (let i = -radius; i <= radius; i++) {
-                for (let j = -radius; j <= radius; j++) {
-                    const distanceSquared = i * i + j * j;
-                    if (distanceSquared <= radiusSquared) {
-                        const posX = texX + i;
-                        const posY = texY + j;
-                        if (posX >= 0 && posX < resolution && posY >= 0 && posY < resolution) {
-                            const index = posY * resolution + posX;
-                            const velIndex = index * 2;
-                            const distance = Math.sqrt(distanceSquared);
-                            const falloff = 1.0 - distance / radius;
-                            const rippleValue = Math.cos(distance / radius * Math.PI * 0.5) * rippleStrength * falloff;
-
-                            // Add ripple to previous buffer to initiate wave
-                            waterBuffers.previous[index] += rippleValue;
-
-                            // Add velocity swirl
-                            const angle = Math.atan2(j, i);
-                            const velocityStrength = rippleValue * waterSettings.spiralIntensity;
-                            waterBuffers.velocity[velIndex] += Math.cos(angle) * velocityStrength;
-                            waterBuffers.velocity[velIndex + 1] += Math.sin(angle) * velocityStrength;
-
-                            // Add swirl perpendicular to radius
-                            const swirlAngle = angle + Math.PI * 0.5;
-                            const swirlStrength = Math.min(velocityStrength * 0.3, 0.1);
-                            waterBuffers.velocity[velIndex] += Math.cos(swirlAngle) * swirlStrength;
-                            waterBuffers.velocity[velIndex + 1] += Math.sin(swirlAngle) * swirlStrength;
-                        }
-                    }
-                }
-            }
-        }
-
-        // Event Listeners
-        const onMouseMove = (event: MouseEvent) => {
-            // Basic ripple tracking
-            const now = performance.now();
-            // Throttle check handled by simple logic or just run:
-            addRipple(event.clientX, event.clientY, waterSettings.mouseIntensity);
-        };
-
-        const onClick = (event: MouseEvent) => {
-            addRipple(event.clientX, event.clientY, waterSettings.clickIntensity);
-        };
-
-        const onResize = () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            const newPixelRatio = Math.min(window.devicePixelRatio, 2);
-            renderer.setSize(width, height);
-            renderer.setPixelRatio(newPixelRatio);
-            material.uniforms.u_resolution.value.set(width * newPixelRatio, height * newPixelRatio);
-        };
-
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('click', onClick);
-        window.addEventListener('resize', onResize);
-
-        // Animation Loop
-        const animate = () => {
-            animationFrameId = requestAnimationFrame(animate);
-            material.uniforms.u_time.value = clock.getElapsedTime();
-            updateWaterSimulation();
-            renderer.render(scene, camera);
-        };
-
-        animate();
-
-        // Cleanup
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('click', onClick);
-            window.removeEventListener('resize', onResize);
-            cancelAnimationFrame(animationFrameId);
-            if (containerRef.current && containerRef.current.contains(renderer.domElement)) {
-                containerRef.current.removeChild(renderer.domElement);
-            }
-            renderer.dispose();
-            geometry.dispose();
-            material.dispose();
-            waterTexture.dispose();
-        };
-    }, []);
-
-    return (
-        <div
-            ref={containerRef}
-            className="fixed inset-0 z-0 pointer-events-none"
-            style={{ width: '100vw', height: '100vh' }}
-        />
+    const waterTexture = new THREE.DataTexture(
+      waterBuffers.current,
+      waterSettings.resolution,
+      waterSettings.resolution,
+      THREE.RedFormat,
+      THREE.FloatType
     );
+    waterTexture.minFilter = THREE.LinearFilter;
+    waterTexture.magFilter = THREE.LinearFilter;
+    waterTexture.needsUpdate = true;
+    waterTextureRef.current = waterTexture;
+
+    // Settings from the original code
+    const settings = {
+      gradientTheme: 4, // "Cosmic Ocean"
+      animationSpeed: 1.3,
+      waterStrength: 0.55,
+      mouseIntensity: 1.2,
+      clickIntensity: 3.0,
+      rippleStrength: 0.5,
+      showLogo: false, // Disabled logo for background use
+      audioReactivity: 1.0,
+      motionDecay: 0.08,
+      rippleDecay: 1.0,
+      waveHeight: 0.01,
+      swirlingMotion: 0.2
+    };
+
+    const material = new THREE.ShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      uniforms: {
+        u_time: { value: 0.0 },
+        u_resolution: { value: new THREE.Vector2(initialWidth * pixelRatio, initialHeight * pixelRatio) },
+        u_speed: { value: settings.animationSpeed },
+        u_waterTexture: { value: waterTexture },
+        u_waterStrength: { value: settings.waterStrength },
+        u_ripple_time: { value: -10.0 },
+        u_ripple_position: { value: new THREE.Vector2(0.5, 0.5) },
+        u_ripple_strength: { value: settings.rippleStrength },
+        u_logoTexture: { value: null },
+        u_showLogo: { value: settings.showLogo },
+        u_audioLow: { value: 0.0 },
+        u_audioMid: { value: 0.0 },
+        u_audioHigh: { value: 0.0 },
+        u_audioOverall: { value: 0.0 },
+        u_audioReactivity: { value: settings.audioReactivity },
+        u_gradientTheme: { value: settings.gradientTheme }
+      }
+    });
+    materialRef.current = material;
+
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+    camera.position.z = 1;
+
+    const clock = new THREE.Clock();
+    let animationFrameId: number;
+
+    // Water Simulation Functions
+    function updateWaterSimulation() {
+      if (!waterBuffersRef.current || !waterTextureRef.current) return;
+
+      const waterBuffers = waterBuffersRef.current;
+      const waterTexture = waterTextureRef.current;
+
+      const { current, previous, velocity, vorticity } = waterBuffers;
+      const { damping, resolution, tension } = waterSettingsRef.current;
+      const safeTension = Math.min(tension, 0.05);
+      const velocityDissipation = settings.motionDecay;
+      const densityDissipation = settings.rippleDecay;
+      const vorticityInfluence = Math.min(Math.max(settings.swirlingMotion, 0.0), 0.5);
+
+      // Velocity step
+      for (let i = 0; i < resolution * resolution * 2; i++) {
+        velocity[i] *= 1.0 - velocityDissipation;
+      }
+
+      // Vorticity step
+      for (let i = 1; i < resolution - 1; i++) {
+        for (let j = 1; j < resolution - 1; j++) {
+          const index = i * resolution + j;
+          const left = velocity[(index - 1) * 2 + 1];
+          const right = velocity[(index + 1) * 2 + 1];
+          const bottom = velocity[(index - resolution) * 2];
+          const top = velocity[(index + resolution) * 2];
+          vorticity[index] = (right - left - (top - bottom)) * 0.5;
+        }
+      }
+
+      if (vorticityInfluence > 0.001) {
+        for (let i = 1; i < resolution - 1; i++) {
+          for (let j = 1; j < resolution - 1; j++) {
+            const index = i * resolution + j;
+            const velIndex = index * 2;
+            const left = Math.abs(vorticity[index - 1]);
+            const right = Math.abs(vorticity[index + 1]);
+            const bottom = Math.abs(vorticity[index - resolution]);
+            const top = Math.abs(vorticity[index + resolution]);
+            const gradX = (right - left) * 0.5;
+            const gradY = (top - bottom) * 0.5;
+            const length = Math.sqrt(gradX * gradX + gradY * gradY) + 1e-5;
+            const safeVorticity = Math.max(-1.0, Math.min(1.0, vorticity[index]));
+            const forceX = (gradY / length) * safeVorticity * vorticityInfluence * 0.1;
+            const forceY = (-gradX / length) * safeVorticity * vorticityInfluence * 0.1;
+            velocity[velIndex] += Math.max(-0.1, Math.min(0.1, forceX));
+            velocity[velIndex + 1] += Math.max(-0.1, Math.min(0.1, forceY));
+          }
+        }
+      }
+
+      // Wave propagation step
+      for (let i = 1; i < resolution - 1; i++) {
+        for (let j = 1; j < resolution - 1; j++) {
+          const index = i * resolution + j;
+          const velIndex = index * 2;
+          const top = previous[index - resolution];
+          const bottom = previous[index + resolution];
+          const left = previous[index - 1];
+          const right = previous[index + 1];
+
+          current[index] = (top + bottom + left + right) / 2 - current[index];
+          current[index] = current[index] * damping + previous[index] * (1 - damping);
+          current[index] += (0 - previous[index]) * safeTension;
+
+          const velMagnitude = Math.sqrt(velocity[velIndex] * velocity[velIndex] + velocity[velIndex + 1] * velocity[velIndex + 1]);
+          const safeVelInfluence = Math.min(velMagnitude * settings.waveHeight, 0.1);
+          current[index] += safeVelInfluence;
+          current[index] *= 1.0 - densityDissipation * 0.01;
+          current[index] = Math.max(-2.0, Math.min(2.0, current[index]));
+        }
+      }
+
+      // Boundary conditions - simple zeroing
+      for (let i = 0; i < resolution; i++) {
+        current[i] = 0;
+        current[(resolution - 1) * resolution + i] = 0;
+        velocity[i * 2] = 0;
+        velocity[i * 2 + 1] = 0;
+        velocity[((resolution - 1) * resolution + i) * 2] = 0;
+        velocity[((resolution - 1) * resolution + i) * 2 + 1] = 0;
+        current[i * resolution] = 0;
+        current[i * resolution + (resolution - 1)] = 0;
+        velocity[i * resolution * 2] = 0;
+        velocity[i * resolution * 2 + 1] = 0;
+        velocity[(i * resolution + (resolution - 1)) * 2] = 0;
+        velocity[(i * resolution + (resolution - 1)) * 2 + 1] = 0;
+      }
+
+      // Swap buffers
+      const temp = waterBuffers.current;
+      waterBuffers.current = waterBuffers.previous;
+      waterBuffers.previous = temp;
+
+      waterTexture.image.data = waterBuffers.current;
+      waterTexture.needsUpdate = true;
+    }
+
+    // Animation Loop
+    const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
+      material.uniforms.u_time.value = clock.getElapsedTime();
+      updateWaterSimulation();
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    // Cleanup
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (container && container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+      geometry.dispose();
+      material.dispose();
+      waterTexture.dispose();
+    };
+  }, []);
+
+  // Helper to add ripples safely accessing refs
+  const addRipple = (clientX: number, clientY: number, strength = 1.0) => {
+    if (!containerRef.current || !waterBuffersRef.current || !waterSettingsRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+
+    // Check bounds
+    if (x < 0 || x > rect.width || y < 0 || y > rect.height) return;
+
+    const { resolution, rippleRadius, rippleSize, impactForce, spiralIntensity } = waterSettingsRef.current;
+    const normalizedX = x / rect.width;
+    const normalizedY = 1.0 - y / rect.height; // WebGL coords flip Y
+
+    const texX = Math.floor(normalizedX * resolution);
+    const texY = Math.floor(normalizedY * resolution);
+    const radius = Math.max(rippleRadius, Math.floor(rippleSize * resolution));
+    const rippleStrength = strength * (impactForce / 100000);
+    const radiusSquared = radius * radius;
+
+    const waterBuffers = waterBuffersRef.current;
+
+    for (let i = -radius; i <= radius; i++) {
+      for (let j = -radius; j <= radius; j++) {
+        const distanceSquared = i * i + j * j;
+        if (distanceSquared <= radiusSquared) {
+          const posX = texX + i;
+          const posY = texY + j;
+          if (posX >= 0 && posX < resolution && posY >= 0 && posY < resolution) {
+            const index = posY * resolution + posX;
+            const velIndex = index * 2;
+            const distance = Math.sqrt(distanceSquared);
+            const falloff = 1.0 - distance / radius;
+            const rippleValue = Math.cos(distance / radius * Math.PI * 0.5) * rippleStrength * falloff;
+
+            waterBuffers.previous[index] += rippleValue;
+
+            const angle = Math.atan2(j, i);
+            const velocityStrength = rippleValue * spiralIntensity;
+            waterBuffers.velocity[velIndex] += Math.cos(angle) * velocityStrength;
+            waterBuffers.velocity[velIndex + 1] += Math.sin(angle) * velocityStrength;
+
+            const swirlAngle = angle + Math.PI * 0.5;
+            const swirlStrength = Math.min(velocityStrength * 0.3, 0.1);
+            waterBuffers.velocity[velIndex] += Math.cos(swirlAngle) * swirlStrength;
+            waterBuffers.velocity[velIndex + 1] += Math.sin(swirlAngle) * swirlStrength;
+          }
+        }
+      }
+    }
+  };
+
+  // Event Listeners attached to window but using ref for check
+  useEffect(() => {
+    const onMouseMove = (event: MouseEvent) => {
+      addRipple(event.clientX, event.clientY, waterSettingsRef.current.mouseIntensity);
+    };
+
+    const onClick = (event: MouseEvent) => {
+      addRipple(event.clientX, event.clientY, waterSettingsRef.current.clickIntensity);
+    };
+
+    const onResize = () => {
+      if (!containerRef.current || !rendererRef.current || !materialRef.current) return;
+      const container = containerRef.current;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      const pixelRatio = Math.min(window.devicePixelRatio, 2);
+
+      rendererRef.current.setSize(width, height);
+      rendererRef.current.setPixelRatio(pixelRatio);
+      materialRef.current.uniforms.u_resolution.value.set(width * pixelRatio, height * pixelRatio);
+    }
+
+    // Use ResizeObserver for more robust container sizing
+    const resizeObserver = new ResizeObserver(() => {
+      onResize();
+    });
+
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('click', onClick);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('click', onClick);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="absolute inset-0 z-0 pointer-events-none"
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
 }
