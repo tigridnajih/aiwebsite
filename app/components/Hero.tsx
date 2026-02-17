@@ -12,9 +12,6 @@ export default function Hero() {
                 <InteractiveBackground />
             </div>
 
-            {/* Dark overlay for text readability - Lowered opacity to show background better */}
-            <div className="absolute inset-0 bg-black/30 z-[5] pointer-events-none" />
-
             <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
 
                 {/* Content */}
