@@ -69,23 +69,20 @@ const InteractiveBackground: React.FC = () => {
             uniform float u_waterStrength;
             varying vec2 vUv;
 
-            // Cosmic Ocean Theme from user
+            // High-Contrast Cosmic Ocean for maximum vibrancy
             vec4 cosmicOcean(vec2 u, float t) {
-                vec2 p = vec2(u.x * 0.2, u.y);
+                vec2 p = vec2(u.x * 0.3, u.y);
                 float a=0., d=0., i=0.;
                 for (; i < 8.; d += sin(i++ * p.y + a + t*0.08))
                     a += cos(i - d + 0.1 * t - a * p.x);
-                vec3 c = mix(vec3(0,0.05,0.2), vec3(0.1,0.2,0.7), smoothstep(-1.,1.,cos(a)));
-                c = mix(c, vec3(0.8,0.8,1.0), pow(smoothstep(0.5,1.,sin(d*2.)), 4.0));
-                return vec4(c, 1.0);
-            }
-
-            vec4 electricPlasma(vec2 u, float t) {
-                float a=0., d=0., i=0.;
-                for (; i < 8.; d += sin(i++ * u.y + a))
-                   a += sin(i - d + 0.15 * t - a * u.x);
-                vec3 c = mix(vec3(0.1,0.0,0.8), vec3(0.5,0.2,1.0), .5+.5*cos(a));
-                c = mix(c, vec3(1.0), .5+.5*sin(d));
+                
+                // Rich purple/blue base
+                vec3 c = mix(vec3(0.1, 0.0, 0.4), vec3(0.3, 0.1, 0.9), smoothstep(-1., 1.2, cos(a)));
+                
+                // Intense whites for high-contrast highlights
+                float highlights = pow(smoothstep(0.3, 1.0, sin(d * 2.2)), 3.0);
+                c = mix(c, vec3(1.0, 0.95, 1.0), highlights * 1.5);
+                
                 return vec4(c, 1.0);
             }
 
@@ -96,18 +93,17 @@ const InteractiveBackground: React.FC = () => {
                 
                 vec2 wCoord = FC.xy / r.xy;
                 float waterHeight = texture2D(u_waterTexture, wCoord).r;
-                float waterInfluence = clamp(waterHeight * u_waterStrength, -0.8, 0.8);
+                float waterInfluence = clamp(waterHeight * u_waterStrength, -1.0, 1.0);
                 
                 // Distort based on water simulation
-                vec2 gradientUV = screenP + vec2(waterInfluence * 0.4, waterInfluence * 0.3);
-                float modifiedTime = u_time * 1.2 + waterInfluence * 2.5;
+                vec2 gradientUV = screenP + vec2(waterInfluence * 0.5, waterInfluence * 0.4);
+                float modifiedTime = u_time * 1.5 + waterInfluence * 3.0;
 
-                // Using Electric Plasma for more vibrant colors
-                vec4 col = electricPlasma(gradientUV, modifiedTime);
+                // Removed vignette for full-screen brightness
+                vec4 col = cosmicOcean(gradientUV, modifiedTime);
                 
-                // Add a subtle vignette
-                float vignette = 1.0 - length(screenP * 0.4);
-                col.rgb *= smoothstep(0.0, 1.0, vignette);
+                // Global brightness boost to match expected look
+                col.rgb *= 1.25;
 
                 gl_FragColor = col;
             }
