@@ -419,8 +419,8 @@ export default function ShaderBackground() {
     resolution: 256,
     damping: 0.913,
     tension: 0.02,
-    rippleStrength: 0.2,
-    mouseIntensity: 1.2,
+    rippleStrength: 0.1,
+    mouseIntensity: 0.4,
     clickIntensity: 3.0,
     rippleRadius: 8,
     splatForce: 50000,
@@ -505,9 +505,9 @@ export default function ShaderBackground() {
       gradientTheme: 4, // "Cosmic Ocean"
       animationSpeed: 1.3,
       waterStrength: 0.55,
-      mouseIntensity: 1.2,
+      mouseIntensity: 0.4,
       clickIntensity: 3.0,
-      rippleStrength: 0.5,
+      rippleStrength: 0.3,
       showLogo: false, // Disabled logo for background use
       audioReactivity: 1.0,
       motionDecay: 0.08,
