@@ -7,10 +7,9 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-black">
             <ShaderBackground />
 
-            <div className="container-custom relative z-10 flex flex-col items-start justify-center min-h-[80vh]">
-
+            <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Content */}
-                <div className="flex flex-col gap-8 max-w-5xl items-start text-left w-full">
+                <div className="flex flex-col gap-8 max-w-4xl items-center">
                     {/* Badge */}
                     <div className="animate-fade-in opacity-0">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium tracking-widest text-blue-200 uppercase backdrop-blur-md shadow-lg">
@@ -19,16 +18,16 @@ export default function Hero() {
                         </div>
 
                         {/* Headline */}
-                        <h1 className="text-5xl md:text-[92px] font-bold font-heading tracking-tight leading-[1.1] mb-6 mt-8 text-white drop-shadow-2xl">
-                            Rebuilding Businesses into <br />
+                        <h1 className="text-5xl md:text-[82px] font-bold font-heading tracking-tight leading-[1.05] mb-6 mt-8 text-white drop-shadow-2xl">
+                            Engineering Businesses <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-500 via-pink-500 to-amber-400">
-                                Intelligent Systems
+                                into Intelligent Systems
                             </span>
                         </h1>
                     </div>
 
-                    <p className="text-lg md:text-2xl text-blue-100/80 max-w-2xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 font-light tracking-wide shadow-black">
-                        Deploy autonomous AI architectures that evolve with your business. Processing logic, scaling revenue, and eliminating operational friction.
+                    <p className="text-lg md:text-xl text-blue-100/80 max-w-3xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 font-light tracking-wide shadow-black">
+                        A performance-focused AI automation partner reducing operational drag, automating workflows, and accelerating growth.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
@@ -50,13 +49,13 @@ export default function Hero() {
                     </div>
 
                     {/* Stats / Trust */}
-                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-start">
-                        <div className="text-left">
+                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-center">
+                        <div className="text-center">
                             <div className="text-3xl font-bold text-white">99.9%</div>
                             <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Uptime</div>
                         </div>
                         <div className="w-px h-10 bg-white/20" />
-                        <div className="text-left">
+                        <div className="text-center">
                             <div className="text-3xl font-bold text-blue-300">50ms</div>
                             <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Latency</div>
                         </div>
