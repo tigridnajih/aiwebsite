@@ -17,26 +17,24 @@ export default function TrustLogos() {
     const allLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
-        <section className="relative z-30 py-24 bg-transparent overflow-hidden select-none">
-            <div className="container-custom">
-                <p className="text-center text-[10px] md:text-xs font-semibold text-gray-500 mb-8 tracking-[0.2em] uppercase opacity-70">
-                    Over 50+ business trust us
-                </p>
+        <section className="relative z-50 py-24 bg-transparent overflow-hidden select-none">
+            <p className="text-center text-[10px] md:text-xs font-semibold text-gray-500 mb-8 tracking-[0.3em] uppercase opacity-60">
+                Over 50+ business trust us
+            </p>
 
-                {/* Infinite Scroll Wrapper */}
-                <div className="relative w-full flex items-center overflow-hidden py-4">
-                    {/* Logos Container with CSS Mask for smooth edge fade */}
-                    <div
-                        className="relative z-10 flex animate-infinite-scroll whitespace-nowrap items-center py-2"
-                        style={{
-                            maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
-                            WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
-                        }}
-                    >
-                        {allLogos.map((logo, i) => (
-                            <LogoItem key={i} name={logo.name} index={i} />
-                        ))}
-                    </div>
+            {/* Infinite Scroll Wrapper - Full Width */}
+            <div className="relative w-full flex items-center overflow-hidden py-4">
+                {/* Full-width Logos Container with CSS Mask for edge fade */}
+                <div
+                    className="relative z-10 flex animate-infinite-scroll whitespace-nowrap items-center py-2"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+                    }}
+                >
+                    {allLogos.map((logo, i) => (
+                        <LogoItem key={i} name={logo.name} index={i} />
+                    ))}
                 </div>
             </div>
         </section>
