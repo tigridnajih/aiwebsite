@@ -422,20 +422,20 @@ export default function ShaderBackground() {
     damping: 0.913,
     tension: 0.02,
     rippleStrength: 0.1,
-    mouseIntensity: 0.4,
-    clickIntensity: 3.0,
+    mouseIntensity: 0.2,
+    clickIntensity: 1.0,
     rippleRadius: 8,
     splatForce: 50000,
-    splatThickness: 0.1,
+    splatThickness: 0.3,
     vorticityInfluence: 0.2,
     swirlIntensity: 0.2,
-    pressure: 0.3,
+    pressure: 0.5,
     velocityDissipation: 0.08,
     densityDissipation: 1.0,
     displacementScale: 0.01,
     impactForce: 50000,
-    spiralIntensity: 0.2,
-    rippleSize: 0.1
+    spiralIntensity: 0.4,
+    rippleSize: 0.2
   });
   // Keep track of buffer references to use in simulation
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
