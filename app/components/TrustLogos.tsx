@@ -17,7 +17,7 @@ export default function TrustLogos() {
     const allLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
-        <section className="relative z-50 py-24 bg-transparent overflow-hidden select-none">
+        <section className="relative z-50 py-12 bg-transparent overflow-hidden select-none -mt-32">
             <p className="text-center text-[10px] md:text-xs font-semibold text-gray-500 mb-8 tracking-[0.3em] uppercase opacity-60">
                 Over 50+ business trust us
             </p>
