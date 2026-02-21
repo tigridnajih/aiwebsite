@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import SectionHeader from './SectionHeader';

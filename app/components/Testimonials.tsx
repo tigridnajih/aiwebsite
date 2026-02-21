@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Quote, ArrowRight, ArrowLeft } from 'lucide-react';
 import SectionHeader from './SectionHeader';

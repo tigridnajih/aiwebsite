@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
 import Problem from './components/Problem';
-import Solutions from './components/Solutions';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
