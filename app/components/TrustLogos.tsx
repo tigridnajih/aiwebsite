@@ -17,17 +17,17 @@ export default function TrustLogos() {
     const allLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
-        <section className="py-20 bg-black overflow-hidden select-none">
+        <section className="py-10 bg-black overflow-hidden select-none">
             <div className="container-custom">
-                <p className="text-center text-xs md:text-sm font-medium text-gray-400 mb-12 tracking-tight">
+                <p className="text-center text-[10px] md:text-xs font-medium text-gray-500 mb-4 tracking-widest uppercase">
                     Over 50+ business trust us
                 </p>
 
                 {/* Infinite Scroll Wrapper with Side Masks */}
-                <div className="relative w-full flex overflow-hidden py-10">
+                <div className="relative w-full flex overflow-hidden py-2">
                     {/* Fade Masks */}
-                    <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-black via-black/80 to-transparent z-20" />
-                    <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-black via-black/80 to-transparent z-20" />
+                    <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-20" />
+                    <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-20" />
 
                     <div className="flex animate-infinite-scroll whitespace-nowrap items-center">
                         {allLogos.map((logo, i) => (
@@ -58,10 +58,10 @@ function LogoItem({ name, index }: { name: string, index: number }) {
                 const normalizedDist = Math.min(distance / maxDist, 1);
 
                 // Fisheye math: Scale and Opacity boost in center
-                // 1.0 at center, down to 0.7 at edges
-                const scale = 1.25 - (Math.pow(normalizedDist, 1.5) * 0.5);
-                // 1.0 at center, down to 0.2 at edges
-                const opacity = 1.0 - (Math.pow(normalizedDist, 1.2) * 0.8);
+                // 1.15 at center, down to 0.85 at edges
+                const scale = 1.15 - (Math.pow(normalizedDist, 1.5) * 0.3);
+                // 1.0 at center, down to 0.4 at edges
+                const opacity = 1.0 - (Math.pow(normalizedDist, 1.2) * 0.6);
 
                 // Apply styles directly to DOM for performance
                 itemRef.current.style.transform = `scale(${scale})`;
@@ -77,12 +77,12 @@ function LogoItem({ name, index }: { name: string, index: number }) {
     return (
         <div
             ref={itemRef}
-            className="flex items-center gap-3 mx-8 md:mx-16 will-change-transform transition-opacity duration-300"
+            className="flex items-center gap-2 mx-6 md:mx-10 scale-90 will-change-transform transition-opacity duration-300"
         >
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center shadow-inner">
-                <div className="w-4 h-4 rounded-full bg-white/40" />
+            <div className="w-5 h-5 md:w-6 md:h-6 rounded-md bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-white/40" />
             </div>
-            <span className="text-xl md:text-3xl font-bold tracking-tighter text-white">
+            <span className="text-base md:text-lg font-bold tracking-tighter text-white">
                 {name}
             </span>
         </div>
