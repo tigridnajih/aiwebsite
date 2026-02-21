@@ -1,32 +1,49 @@
 
-
-const logos = [
-    "Microsoft", "Google", "Shopify", "HubSpot", "OpenAI", "Zapier", "Meta", "Amazon"
-];
-
 export default function TrustLogos() {
+    // Array of demo logo items to match the screenshot style
+    const logos = [
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+        { name: "Logoipsum", icon: true },
+    ];
+
     return (
-        <section className="py-12 border-y border-gray-100 bg-white dark:bg-black dark:border-zinc-800">
+        <section className="py-12 bg-black overflow-hidden select-none">
             <div className="container-custom">
-                <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">
-                    Trusted by Innovative Teams
+                <p className="text-center text-xs md:text-sm font-medium text-gray-400 mb-10 tracking-tight">
+                    Over 50+ business trust us
                 </p>
 
                 {/* Infinite Scroll Wrapper */}
-                <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-                    <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                <div className="relative w-full flex overflow-hidden">
+                    <div className="flex animate-infinite-scroll whitespace-nowrap items-center">
+                        {/* FIRST SET */}
                         {logos.map((logo, i) => (
-                            <li key={i} className="text-2xl font-bold text-gray-300 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all cursor-default select-none dark:text-gray-700">
-                                {logo}
-                            </li>
+                            <div key={`logo-1-${i}`} className="flex items-center gap-2 mx-8 md:mx-12 opacity-40 hover:opacity-100 transition-opacity">
+                                <div className="w-6 h-6 rounded-md bg-white/20 border border-white/10 flex-shrink-0" />
+                                <span className="text-lg md:text-xl font-bold tracking-tight text-white">{logo.name}</span>
+                            </div>
                         ))}
-                        {/* DUPLICATE FOR INFINITE LOOP */}
+                        {/* SECOND SET (DUPLICATE FOR CONTINUITY) */}
                         {logos.map((logo, i) => (
-                            <li key={`dup-${i}`} className="text-2xl font-bold text-gray-300 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all cursor-default select-none dark:text-gray-700">
-                                {logo}
-                            </li>
+                            <div key={`logo-2-${i}`} className="flex items-center gap-2 mx-8 md:mx-12 opacity-40 hover:opacity-100 transition-opacity">
+                                <div className="w-6 h-6 rounded-md bg-white/20 border border-white/10 flex-shrink-0" />
+                                <span className="text-lg md:text-xl font-bold tracking-tight text-white">{logo.name}</span>
+                            </div>
                         ))}
-                    </ul>
+                        {/* THIRD SET (EXTRA BUFFER) */}
+                        {logos.map((logo, i) => (
+                            <div key={`logo-3-${i}`} className="flex items-center gap-2 mx-8 md:mx-12 opacity-40 hover:opacity-100 transition-opacity">
+                                <div className="w-6 h-6 rounded-md bg-white/20 border border-white/10 flex-shrink-0" />
+                                <span className="text-lg md:text-xl font-bold tracking-tight text-white">{logo.name}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
