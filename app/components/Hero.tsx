@@ -29,7 +29,7 @@ export default function Hero() {
                         </h1>
                     </div>
 
-                    <p className="text-base md:text-lg text-gray-400/80 max-w-xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-wide">
+                    <p className="text-base md:text-lg text-gray-200 max-w-xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-wide">
                         Bringing AI automation to your fingertips & streamlining operational tasks for accelerated growth.
                     </p>
 
