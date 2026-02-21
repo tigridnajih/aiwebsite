@@ -23,14 +23,16 @@ export default function TrustLogos() {
                     Over 50+ business trust us
                 </p>
 
-                {/* Infinite Scroll Wrapper with Side Masks */}
+                {/* Infinite Scroll Wrapper */}
                 <div className="relative w-full flex items-center overflow-hidden py-4">
-                    {/* Fade Masks - Using black to blend with dark theme background */}
-                    <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-black via-black/90 to-transparent z-20 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-black via-black/90 to-transparent z-20 pointer-events-none" />
-
-                    {/* Logos Container */}
-                    <div className="relative z-10 flex animate-infinite-scroll whitespace-nowrap items-center py-2">
+                    {/* Logos Container with CSS Mask for smooth edge fade */}
+                    <div
+                        className="relative z-10 flex animate-infinite-scroll whitespace-nowrap items-center py-2"
+                        style={{
+                            maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+                            WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+                        }}
+                    >
                         {allLogos.map((logo, i) => (
                             <LogoItem key={i} name={logo.name} index={i} />
                         ))}
