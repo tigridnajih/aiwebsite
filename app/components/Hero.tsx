@@ -9,8 +9,8 @@ export default function Hero() {
             {/* Bottom gradient mask for smooth transition to TrustLogos */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
 
-            {/* Top gradient mask for Navbar readability */}
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent z-10" />
+            {/* Top gradient mask for Navbar readability - Pure black starting point */}
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
 
             {/* Subtle radial glow to match screenshot's positioning of light */}
             <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_60%)]" />
