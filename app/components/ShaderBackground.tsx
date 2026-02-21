@@ -76,18 +76,14 @@ const fragmentShader = `
   }
 
   vec4 cosmicOcean(vec2 u, float t) {
-    u *= 1.2;
+    vec2 p = vec2(u.x * 0.2, u.y);
     float a=0., d=0., i=0.;
-    for (; i < 8.; i++) {
-        float angle = i * 0.785 + t * 0.02; // Rotate directions slowly
-        vec2 dir = vec2(cos(angle), sin(angle));
-        d += sin(dot(u, dir) + a + t * 0.08);
-        a += cos(dot(u, vec2(-dir.y, dir.x)) - d + t * 0.12);
-    }
+    for (; i < 8.; d += sin(i++ * p.y + a + t*0.08))
+       a += cos(i - d + 0.1 * t - a * p.x);
     // Darkened the base blues
-    vec3 c = mix(vec3(0,0.02,0.1), vec3(0.05,0.1,0.4), smoothstep(-1.5,1.5,cos(a)));
-    // Increased black dominance
-    c = mix(c, vec3(0.0,0.0,0.0), pow(smoothstep(0.2,1.0,sin(d*1.5)), 2.5));
+    vec3 c = mix(vec3(0,0.02,0.1), vec3(0.05,0.1,0.4), smoothstep(-1.,1.,cos(a)));
+    // Increased black dominance by adjusting the exponent and step
+    c = mix(c, vec3(0.0,0.0,0.0), pow(smoothstep(0.3,1.,sin(d*2.)), 2.5));
     return vec4(c, 1.0);
   }
 
