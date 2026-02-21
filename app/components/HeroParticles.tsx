@@ -18,7 +18,7 @@ export default function HeroParticles() {
 
         let animationFrameId: number;
         // Adjusted density
-        const pCount = 200;
+        const pCount = 100;
         const particles: Particle[] = [];
 
         class Particle {
