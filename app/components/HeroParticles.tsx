@@ -44,8 +44,8 @@ export default function HeroParticles() {
                     this.y = -10 - Math.random() * 20;
                 }
 
-                // Micro-star sizes like in the image
-                this.size = Math.random() * 0.8 + 0.4;
+                // Uniform micro-star size
+                this.size = 0.4;
 
                 // Downward slow motion
                 this.speedX = (Math.random() - 0.5) * 0.05;
