@@ -45,7 +45,19 @@ const fragmentShader = `
     float waterInfluence = clamp(waterHeight * u_waterStrength, -0.5, 0.5);
     
     // Get gradient background
-    vec2 gradientUV = screenP;
+    vec2 p = screenP;
+
+// First warp
+float w1 = sin(p.y * 2.3 + u_time * 0.4);
+float w2 = cos(p.x * 1.7 - u_time * 0.3);
+p += vec2(w1, w2) * 0.25;
+
+// Second warp (recursive)
+float w3 = sin((p.x + p.y) * 1.9 + u_time * 0.2);
+float w4 = cos((p.x - p.y) * 1.4 - u_time * 0.25);
+p += vec2(w3, w4) * 0.15;
+
+vec2 gradientUV = p;
 
 // Continuous baseline turbulence
 float baseNoise =
