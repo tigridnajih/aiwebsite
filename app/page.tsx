@@ -5,6 +5,7 @@ import Problem from './components/Problem';
 import Solutions from './components/Solutions';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
+import Services from './components/Services';
 import TechStack from './components/TechStack';
 import Stats from './components/Stats';
 import Pricing from './components/Pricing';
@@ -20,9 +21,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustLogos />
+      <Services />
       <Testimonials />
       <Problem />
-      <Solutions />
       <CaseStudies />
       <TechStack />
       <Stats />
