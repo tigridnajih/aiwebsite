@@ -26,9 +26,13 @@ export default function SectionHeader({ badge, title, description, className = "
     }, []);
 
     return (
-        <div className={`relative flex flex-col items-center text-center mb-20 py-10 overflow-hidden ${className}`}>
-            {/* Dark Blue Radial Glow */}
-            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(30,58,138,0.25),transparent_70%)]" />
+        <div className={`relative flex flex-col items-center text-center py-24 px-4 overflow-hidden ${className}`}>
+            {/* Dark Blue Radial Glow - Increased intensity and spread */}
+            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(30,64,175,0.4),transparent_80%)]" />
+
+            {/* Fade overlays to blend with sections above and below */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-0" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-0" />
 
             {/* Animated Particles */}
             <div className="absolute inset-0 z-0 pointer-events-none">
@@ -43,15 +47,13 @@ export default function SectionHeader({ badge, title, description, className = "
                             height: `${p.size}px`,
                             animationDelay: p.delay,
                             animationDuration: p.duration,
-                            // Add a subtle drift animation via inline style if we wanted something more complex
-                            // For now, pulse and positioning is a good start
                         }}
                     />
                 ))}
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
+            <div className="relative z-10 flex flex-col items-center max-w-4xl">
                 {badge && (
                     <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] md:text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6 backdrop-blur-sm shadow-xl shadow-blue-500/10">
                         {badge}
@@ -68,9 +70,6 @@ export default function SectionHeader({ badge, title, description, className = "
                     </p>
                 )}
             </div>
-
-            {/* Subtle bottom fade to merge with section content */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-0" />
         </div>
     );
 }
