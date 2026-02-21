@@ -33,19 +33,19 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group flex items-center gap-2 px-6 py-2.5 rounded-md bg-purple-600 font-medium text-white text-sm transition-all hover:bg-purple-700"
+                            className="group flex items-center gap-2 px-6 py-2.5 rounded-full bg-white font-semibold text-black text-sm transition-all hover:scale-105"
                         >
-                            Get in touch
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            Book a Free Demo
+                            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </Link>
 
                         <Link
                             href="#works"
-                            className="px-6 py-2.5 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm text-gray-300 hover:text-white font-medium text-sm transition-all hover:bg-white/10"
+                            className="px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-sm transition-all hover:bg-white/20"
                         >
-                            View services
+                            See How It Works
                         </Link>
                     </div>
                 </div>
