@@ -80,8 +80,10 @@ const fragmentShader = `
     float a=0., d=0., i=0.;
     for (; i < 8.; d += sin(i++ * p.y + a + t*0.08))
        a += cos(i - d + 0.1 * t - a * p.x);
-    vec3 c = mix(vec3(0,0.05,0.2), vec3(0.1,0.2,0.7), smoothstep(-1.,1.,cos(a)));
-    c = mix(c, vec3(0.0,0.0,0.0), pow(smoothstep(0.5,1.,sin(d*2.)), 4.0));
+    // Darkened the base blues
+    vec3 c = mix(vec3(0,0.02,0.1), vec3(0.05,0.1,0.4), smoothstep(-1.,1.,cos(a)));
+    // Increased black dominance by adjusting the exponent and step
+    c = mix(c, vec3(0.0,0.0,0.0), pow(smoothstep(0.3,1.,sin(d*2.)), 2.5));
     return vec4(c, 1.0);
   }
 
