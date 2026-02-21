@@ -200,8 +200,54 @@ export default function ShaderBackground() {
     scene.add(mesh);
     camera.position.z = 1;
 
+    // Add moving dots (Particle System)
+    const particlesCount = 150;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const posArray = new Float32Array(particlesCount * 3);
+    const velocityArray = new Float32Array(particlesCount * 3);
+
+    for (let i = 0; i < particlesCount * 3; i += 3) {
+      // Position (normalized -1 to 1)
+      posArray[i] = (Math.random() - 0.5) * 2;
+      posArray[i + 1] = (Math.random() - 0.5) * 2;
+      posArray[i + 2] = 0.5; // Slightly in front of the background
+
+      // Velocity
+      velocityArray[i] = (Math.random() - 0.5) * 0.002;
+      velocityArray[i + 1] = (Math.random() - 0.5) * 0.002;
+      velocityArray[i + 2] = 0;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 0.015,
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.4,
+      blending: THREE.AdditiveBlending,
+    });
+
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
     const clock = new THREE.Clock();
     let animationFrameId: number;
+
+    function updateParticles() {
+      const positions = particlesGeometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < particlesCount * 3; i += 3) {
+        // Apply velocity
+        positions[i] += velocityArray[i];
+        positions[i + 1] += velocityArray[i + 1];
+
+        // Wrap around logic
+        if (positions[i] > 1.2) positions[i] = -1.2;
+        if (positions[i] < -1.2) positions[i] = 1.2;
+        if (positions[i + 1] > 1.2) positions[i + 1] = -1.2;
+        if (positions[i + 1] < -1.2) positions[i + 1] = 1.2;
+      }
+      particlesGeometry.attributes.position.needsUpdate = true;
+    }
 
     function updateWaterSimulation() {
       if (!waterBuffersRef.current || !waterTextureRef.current) return;
@@ -300,6 +346,7 @@ export default function ShaderBackground() {
       animationFrameId = requestAnimationFrame(animate);
       material.uniforms.u_time.value = clock.getElapsedTime();
       updateWaterSimulation();
+      updateParticles();
       renderer.render(scene, camera);
     };
 
