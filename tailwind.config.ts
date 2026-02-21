@@ -21,7 +21,7 @@ const config: Config = {
                 }
             },
             fontFamily: {
-                sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+                sans: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
             },
             backgroundImage: {
                 'grid-pattern': "linear-gradient(to right, rgba(30, 79, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(30, 79, 255, 0.1) 1px, transparent 1px)",
