@@ -44,6 +44,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Plus Jakarta Sans Variable';
+  font-style: normal;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yyygA.woff2) format('woff2');
+  font-display: swap;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
@@ -63,6 +70,10 @@ html {
 }
 
 @layer utilities {
+  .font-heading {
+    font-family: 'Plus Jakarta Sans Variable', sans-serif;
+  }
+
   .text-h1 {
     font-size: 64px;
     font-weight: 700;

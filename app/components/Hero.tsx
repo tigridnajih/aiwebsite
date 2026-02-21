@@ -19,10 +19,10 @@ export default function Hero() {
                         </div>
 
                         {/* Headline */}
-                        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight leading-[1.1] mb-4 mt-6 text-white drop-shadow-2xl">
-                            Forging the <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200 text-6xl md:text-8xl">
-                                Future Intelligence
+                        <h1 className="text-5xl md:text-8xl font-extrabold font-heading tracking-tight leading-[1.1] mb-4 mt-6 text-white drop-shadow-2xl">
+                            Rebuilding Businesses <br />
+                            <span className="text-transparent bg-clip-text bg-[linear-gradient(to_right,#fff_10%,#8B5CF6_40%,#EC4899_70%,#F59E0B_100%)] text-6xl md:text-8xl">
+                                into Intelligent Systems
                             </span>
                         </h1>
                     </div>
