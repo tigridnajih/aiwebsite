@@ -19,16 +19,8 @@ export default function HeroParticles() {
 
         let animationFrameId: number;
 
-        interface LayerConfig {
-            count: number;
-            size: number[];
-            opacity: number[];
-            speed: number;
-            parallax: number;
-            glow?: number;
-        }
-
-        const layers: Record<'distant' | 'mid' | 'foreground', LayerConfig> = {
+        // Particle configuration
+        const layers = {
             distant: { count: 120, size: [0.8, 1.5], opacity: [0.15, 0.3], speed: 0.02, parallax: 0.03 },
             mid: { count: 40, size: [1.5, 2.5], opacity: [0.3, 0.5], speed: 0.05, parallax: 0.08, glow: 5 },
             foreground: { count: 4, size: [6, 10], opacity: [0.2, 0.4], speed: 0.03, parallax: 0.15, glow: 15 }
