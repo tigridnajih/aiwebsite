@@ -7,10 +7,10 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-black">
             <ShaderBackground />
 
-            <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
+            <div className="container-custom relative z-10 flex flex-col items-start justify-center min-h-[80vh]">
 
                 {/* Content */}
-                <div className="flex flex-col gap-8 max-w-4xl items-center">
+                <div className="flex flex-col gap-8 max-w-5xl items-start text-left w-full">
                     {/* Badge */}
                     <div className="animate-fade-in opacity-0">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium tracking-widest text-blue-200 uppercase backdrop-blur-md shadow-lg">
@@ -19,14 +19,10 @@ export default function Hero() {
                         </div>
 
                         {/* Headline */}
-                        <h1 className="text-7xl md:text-[130px] font-black font-heading tracking-tighter leading-[0.9] mb-4 mt-8 text-white drop-shadow-2xl">
-                            Rebuilding <br />
-                            Businesses <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500">
-                                into Intelligent
-                            </span><br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-400 to-amber-300">
-                                Systems
+                        <h1 className="text-5xl md:text-[92px] font-bold font-heading tracking-tight leading-[1.1] mb-6 mt-8 text-white drop-shadow-2xl">
+                            Rebuilding Businesses into <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-500 via-pink-500 to-amber-400">
+                                Intelligent Systems
                             </span>
                         </h1>
                     </div>
@@ -54,13 +50,13 @@ export default function Hero() {
                     </div>
 
                     {/* Stats / Trust */}
-                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-center">
-                        <div>
+                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-start">
+                        <div className="text-left">
                             <div className="text-3xl font-bold text-white">99.9%</div>
                             <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Uptime</div>
                         </div>
                         <div className="w-px h-10 bg-white/20" />
-                        <div>
+                        <div className="text-left">
                             <div className="text-3xl font-bold text-blue-300">50ms</div>
                             <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Latency</div>
                         </div>
