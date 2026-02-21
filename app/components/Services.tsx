@@ -1,3 +1,4 @@
+import SectionHeader from './SectionHeader';
 
 export default function Services() {
     const features = [
@@ -119,18 +120,11 @@ export default function Services() {
     return (
         <section id="services" className="py-32 bg-black text-white selection:bg-purple-500/30">
             <div className="container-custom">
-                {/* Header */}
-                <div className="flex flex-col items-center text-center mb-24">
-                    <div className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-gray-400 mb-6 tracking-wide">
-                        Our Services
-                    </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 max-w-4xl leading-[1.1]">
-                        AI Solutions That Take Your <br className="hidden md:block" /> Business to the Next Level
-                    </h2>
-                    <p className="text-base md:text-lg text-gray-400 max-w-2xl">
-                        We design, develop, and implement automation tools that help you work smarter, not harder
-                    </p>
-                </div>
+                <SectionHeader
+                    badge="Our Services"
+                    title={<>AI Solutions That Take Your <br className="hidden md:block" /> Business to the Next Level</>}
+                    description="We design, develop, and implement automation tools that help you work smarter, not harder"
+                />
 
                 {/* Features Loop */}
                 <div className="flex flex-col gap-32 md:gap-48">

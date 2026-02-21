@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SectionHeader from './SectionHeader';
 
 const members = [
     {
@@ -22,11 +23,13 @@ export default function Team() {
     return (
         <section className="py-24 border-t border-gray-100 bg-white dark:bg-black dark:border-zinc-800">
             <div className="container-custom">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                    <div>
-                        <h2 className="text-h2 font-bold mb-4">Meet the Experts</h2>
-                        <p className="text-body text-gray-500">The human intelligence behind the artificial one.</p>
-                    </div>
+                <SectionHeader
+                    badge="Experts"
+                    title="Meet the Team"
+                    description="The human intelligence behind the artificial one. Dedicated to your growth."
+                />
+
+                <div className="flex justify-end mb-8">
                     <Link href="#about" className="text-accent font-semibold hover:underline">Join our team →</Link>
                 </div>
 

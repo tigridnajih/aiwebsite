@@ -1,6 +1,6 @@
-'use client';
 import { useState, useEffect } from 'react';
 import { Quote, ArrowRight, ArrowLeft } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const testimonials = [
     {
@@ -39,7 +39,11 @@ export default function Testimonials() {
     return (
         <section className="py-20 bg-gray-50 dark:bg-black">
             <div className="container-custom">
-                <h2 className="text-h2 text-center mb-16 font-bold">What Our Clients Say</h2>
+                <SectionHeader
+                    badge="Testimonials"
+                    title="What Our Clients Say"
+                    description="Real results from businesses that transformed their operations with AI."
+                />
 
                 <div className="relative max-w-4xl mx-auto">
                     <div className="overflow-hidden">

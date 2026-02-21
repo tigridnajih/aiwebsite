@@ -1,4 +1,5 @@
 import { Cpu } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const stack = [
     { name: "GPT-4o", description: "Advanced Language Model" },
@@ -15,12 +16,11 @@ export default function TechStack() {
     return (
         <section className="py-24 bg-gray-50 dark:bg-zinc-950">
             <div className="container-custom">
-                <div className="max-w-3xl mx-auto text-center mb-16">
-                    <h2 className="text-h2 font-bold mb-4">Our Tech Stack</h2>
-                    <p className="text-body text-gray-500">
-                        We leverage the latest AI models and automation platforms to build robust solutions.
-                    </p>
-                </div>
+                <SectionHeader
+                    badge="Technology"
+                    title="Our Tech Stack"
+                    description="We leverage the latest AI models and automation platforms to build robust, scalable solutions."
+                />
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stack.map((item, idx) => (

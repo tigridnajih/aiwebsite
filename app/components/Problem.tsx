@@ -1,4 +1,5 @@
 import { AlertCircle, Clock, TrendingDown, Users } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const problems = [
     {
@@ -27,12 +28,11 @@ export default function Problem() {
     return (
         <section className="py-24 bg-white dark:bg-black">
             <div className="container-custom">
-                <div className="text-center mb-16">
-                    <h2 className="text-h2 font-bold mb-4">Is This Your Agency?</h2>
-                    <p className="text-body text-gray-500 max-w-2xl mx-auto">
-                        Sound familiar? Many agencies struggle with these common bottlenecks before automating.
-                    </p>
-                </div>
+                <SectionHeader
+                    badge="The Bottleneck"
+                    title="Is This Your Business?"
+                    description="Sound familiar? Many companies struggle with these common bottlenecks before they decide to automate."
+                />
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {problems.map((p, idx) => (

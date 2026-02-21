@@ -1,5 +1,5 @@
-
 import Link from 'next/link';
+import SectionHeader from './SectionHeader';
 
 const cases = [
     {
@@ -29,13 +29,13 @@ export default function CaseStudies() {
     return (
         <section id="case-studies" className="py-24 bg-white dark:bg-black overflow-hidden">
             <div className="container-custom">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                    <div>
-                        <h2 className="text-h2 font-bold mb-4">Case Studies</h2>
-                        <p className="text-body text-gray-500 max-w-xl">
-                            See how we&apos;ve helped other businesses achieve measurable results with AI.
-                        </p>
-                    </div>
+                <SectionHeader
+                    badge="Results"
+                    title="Case Studies"
+                    description="See how we've helped other businesses achieve measurable results with custom AI."
+                />
+
+                <div className="flex justify-end mb-8">
                     <Link href="#" className="hidden md:inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all">
                         View All Projects →
                     </Link>

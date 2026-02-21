@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SectionHeader from './SectionHeader';
 
 const posts = [
     {
@@ -25,8 +26,13 @@ export default function Blog() {
     return (
         <section className="py-24 bg-gray-50 dark:bg-black">
             <div className="container-custom">
-                <div className="flex justify-between items-center mb-16">
-                    <h2 className="text-h2 font-bold">Latest Insights</h2>
+                <SectionHeader
+                    badge="Insights"
+                    title="Latest Blog Posts"
+                    description="Stay updated with the latest trends in AI automation and business scaling."
+                />
+
+                <div className="flex justify-end mb-8">
                     <Link href="/blog" className="text-accent font-semibold hover:underline hidden md:inline-block">View All Articles →</Link>
                 </div>
 

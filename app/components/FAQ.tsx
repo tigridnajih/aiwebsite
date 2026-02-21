@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const faq = [
     {
@@ -26,8 +27,12 @@ export default function FAQ() {
 
     return (
         <section className="py-24 bg-gray-50 dark:bg-black">
-            <div className="container-custom max-w-3xl">
-                <h2 className="text-h2 font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="container-custom">
+                <SectionHeader
+                    badge="Support"
+                    title="Frequently Asked Questions"
+                    description="Everything you need to know about our AI implementation process and security."
+                />
 
                 <div className="space-y-4">
                     {faq.map((item, idx) => (

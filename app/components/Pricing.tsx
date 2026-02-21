@@ -1,6 +1,6 @@
-'use client';
 import { useState } from 'react';
 import { Check } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const plans = [
     {
@@ -35,10 +35,13 @@ export default function Pricing() {
     return (
         <section id="pricing" className="py-24 bg-white dark:bg-black">
             <div className="container-custom">
-                <div className="text-center mb-16">
-                    <h2 className="text-h2 font-bold mb-4">Transparent Pricing</h2>
-                    <p className="text-body text-gray-500 mb-8">Choose the plan that fits your growth stage.</p>
+                <SectionHeader
+                    badge="Pricing"
+                    title="Transparent Pricing"
+                    description="Choose the plan that fits your growth stage. Scale as you automate."
+                />
 
+                <div className="text-center mb-16">
                     {/* Toggle */}
                     <div className="inline-flex items-center p-1 bg-gray-100 rounded-full dark:bg-zinc-800">
                         <button
