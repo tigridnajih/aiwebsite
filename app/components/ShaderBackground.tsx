@@ -46,6 +46,16 @@ const fragmentShader = `
     
     // Get gradient background
     vec2 gradientUV = screenP;
+
+// Continuous baseline turbulence
+float baseNoise =
+    sin(screenP.x * 1.7 + u_time * 0.3) *
+    cos(screenP.y * 1.3 - u_time * 0.25);
+
+float swirl =
+    sin((screenP.x + screenP.y) * 0.8 + u_time * 0.15);
+
+gradientUV += vec2(baseNoise * 0.08, swirl * 0.06);
     float totalWaterInfluence = clamp(waterInfluence * u_waterStrength, -0.8, 0.8);
     
     // Apply water distortion to gradient
