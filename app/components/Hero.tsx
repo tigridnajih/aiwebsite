@@ -5,6 +5,7 @@ import ShaderBackground from './ShaderBackground';
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-black">
+            <ShaderBackground />
             {/* Subtle radial glow to match screenshot's positioning of light */}
             <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_60%)]" />
 
