@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 /**
  * HeroParticles - High-performance canvas-based particle system.
- * Designed to be dense at the top and fade out towards the middle.
+ * Features: Uniform size, pure white color, glow effect, and slow drift.
  */
 export default function HeroParticles() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -17,8 +17,8 @@ export default function HeroParticles() {
         if (!ctx) return;
 
         let animationFrameId: number;
-        // High density for the hero section
-        const pCount = 300;
+        // Adjusted density
+        const pCount = 200;
         const particles: Particle[] = [];
 
         class Particle {
@@ -34,18 +34,19 @@ export default function HeroParticles() {
 
             constructor(w: number, h: number) {
                 this.x = Math.random() * w;
-                // Density bias: more particles in the top 30-40% of the screen
-                // Math.pow(Math.random(), 2.0) clusters particles heavily at y=0
-                this.y = Math.pow(Math.random(), 2.2) * h;
+                // Keep the density bias towards the top but slightly more spread out
+                this.y = Math.pow(Math.random(), 1.8) * h;
 
-                this.size = Math.random() * 1.5 + 0.3;
-                // Very slow drift
-                this.speedX = (Math.random() - 0.5) * 0.12;
-                this.speedY = (Math.random() - 0.5) * 0.12;
+                // Uniform size for all particles
+                this.size = 1.2;
 
-                this.maxOpacity = Math.random() * 0.5 + 0.1;
+                // Slow consistent drift
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
+
+                this.maxOpacity = Math.random() * 0.7 + 0.3;
                 this.opacity = this.maxOpacity;
-                this.pulseSpeed = 0.005 + Math.random() * 0.01;
+                this.pulseSpeed = 0.01 + Math.random() * 0.02;
                 this.pulseTimer = Math.random() * Math.PI * 2;
             }
 
@@ -53,28 +54,37 @@ export default function HeroParticles() {
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // Subtle pulsing effect
+                // Subtle pulsing effect for the glow feel
                 this.pulseTimer += this.pulseSpeed;
-                this.opacity = this.maxOpacity * (0.6 + Math.sin(this.pulseTimer) * 0.4);
+                this.opacity = this.maxOpacity * (0.7 + Math.sin(this.pulseTimer) * 0.3);
 
-                // Wrap around Logic
-                if (this.x > w) this.x = 0;
-                else if (this.x < 0) this.x = w;
+                // Wrap around logic with a small margin
+                if (this.x > w + 10) this.x = -10;
+                else if (this.x < -10) this.x = w + 10;
 
-                if (this.y > h) this.y = 0;
-                else if (this.y < 0) this.y = h;
+                if (this.y > h + 10) this.y = -10;
+                else if (this.y < -10) this.y = h + 10;
             }
 
             draw(context: CanvasRenderingContext2D) {
+                context.save();
+
+                // Pure white color with opacity
+                context.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+
+                // Glow effect
+                context.shadowBlur = 8;
+                context.shadowColor = 'white';
+
                 context.beginPath();
                 context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                context.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
                 context.fill();
+
+                context.restore();
             }
         }
 
         const handleResize = () => {
-            // Set canvas size accounting for DPR for sharp dots
             const dpr = window.devicePixelRatio || 1;
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
@@ -93,6 +103,7 @@ export default function HeroParticles() {
         };
 
         const animate = () => {
+            // Clear the canvas properly
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             const w = window.innerWidth;
