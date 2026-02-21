@@ -9,56 +9,42 @@ export default function Hero() {
 
             <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Content */}
-                <div className="flex flex-col gap-8 max-w-4xl items-center">
-                    {/* Badge */}
+                <div className="flex flex-col gap-10 max-w-4xl items-center">
                     <div className="animate-fade-in opacity-0">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-medium tracking-widest text-blue-200 uppercase backdrop-blur-md shadow-lg">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_#60A5FA]" />
-                            Neural System v4.0 Active
-                        </div>
-
                         {/* Headline */}
                         <h1 className="text-5xl md:text-[82px] font-bold font-heading tracking-tight leading-[1.05] mb-6 mt-8 text-white drop-shadow-2xl">
                             Engineering Businesses <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-500 via-pink-500 to-amber-400">
-                                into Intelligent Systems
-                            </span>
+                            into Intelligent Systems
                         </h1>
                     </div>
 
-                    <p className="text-lg md:text-xl text-blue-100/80 max-w-3xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 font-light tracking-wide shadow-black">
-                        A performance-focused AI automation partner reducing operational drag, automating workflows, and accelerating growth.
+                    <p className="text-lg md:text-xl text-blue-100/60 max-w-3xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-wide">
+                        <span className="text-white">A performance-focused AI automation partner</span> reducing operational drag, automating workflows, and accelerating growth.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
+                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-2 items-center">
                         <Link
                             href="#contact"
-                            className="group relative px-10 py-5 rounded-xl bg-blue-600 overflow-hidden font-semibold text-white text-lg tracking-wide shadow-lg transition-all hover:shadow-blue-500/50 hover:scale-105"
+                            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-white font-semibold text-black text-lg transition-all hover:scale-105"
                         >
-                            <span className="relative z-10">Initialize System</span>
-                            {/* Button Glow Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            Book a Free Demo
+                            <svg
+                                className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="right-arrow-placeholder" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </Link>
 
                         <Link
                             href="#works"
-                            className="px-10 py-5 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-lg transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+                            className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-lg transition-all hover:bg-white/20"
                         >
-                            Explore Documentation
+                            See How It Works
                         </Link>
-                    </div>
-
-                    {/* Stats / Trust */}
-                    <div className="flex items-center gap-8 animate-fade-in opacity-0 animate-delay-300 mt-8 border-t border-white/10 pt-8 w-full justify-center">
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-white">99.9%</div>
-                            <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Uptime</div>
-                        </div>
-                        <div className="w-px h-10 bg-white/20" />
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-blue-300">50ms</div>
-                            <div className="text-xs text-blue-200 uppercase tracking-widest mt-1">Latency</div>
-                        </div>
                     </div>
                 </div>
 
