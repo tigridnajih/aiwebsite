@@ -1,11 +1,13 @@
 'use client';
 import Link from 'next/link';
 import ShaderBackground from './ShaderBackground';
+import HeroParticles from './HeroParticles';
 
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden text-white bg-black">
             <ShaderBackground />
+            <HeroParticles />
             {/* Bottom gradient mask for smooth transition to TrustLogos */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
 
