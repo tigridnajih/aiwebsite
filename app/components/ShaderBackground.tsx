@@ -77,14 +77,7 @@ gradientUV += vec2(baseNoise * 0.08, swirl * 0.06);
     float totalWaterEffect = totalWaterInfluence + clickRipple * 0.2;
     gradientUV += vec2(totalWaterEffect * 0.4, totalWaterEffect * 0.3);
     
-    float slowMod =
-    sin(u_time * 0.07) * 0.8 +
-    cos(u_time * 0.043) * 0.6;
-
-float modifiedTime =
-    (u_time + slowMod) * u_speed +
-    totalWaterEffect * 2.0 +
-    audioInfluence * 1.5;
+    float modifiedTime = u_time * u_speed + totalWaterEffect * 2.0;
     vec4 gradientColor = cosmicOcean(gradientUV, modifiedTime);
     
     gl_FragColor = vec4(gradientColor.rgb, 1.0);
