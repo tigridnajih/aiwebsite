@@ -66,8 +66,8 @@ export default function HeroParticles() {
                 const twinkle = 0.8 + Math.sin(this.pulseTimer) * 0.2;
 
                 // Vertical Fade Logic: 
-                // Full opacity at top, fades to 0 as it reaches ~45% of the height
-                const centerBoundary = h * 0.45;
+                // Full opacity at top, fades to 0 as it reaches ~55% of the height
+                const centerBoundary = h * 0.55;
                 if (this.y < 0) {
                     this.opacity = 0;
                 } else if (this.y < centerBoundary) {
