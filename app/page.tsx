@@ -19,7 +19,6 @@ export default function Home() {
     <main className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-sans selection:bg-accent/30">
       <Navbar />
       <Hero />
-      <TrustLogos />
       <Services />
       <Testimonials />
       <Problem />
@@ -31,6 +30,7 @@ export default function Home() {
       <FAQ />
       <Blog />
       <Contact />
+      <TrustLogos />
       <Footer />
     </main>
   );
