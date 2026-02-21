@@ -12,7 +12,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-10 max-w-4xl items-center">
                     <div className="animate-fade-in opacity-0">
                         {/* Headline */}
-                        <h1 className="text-5xl md:text-[82px] font-bold font-heading tracking-tight leading-[1.05] mb-6 mt-8 text-white drop-shadow-2xl">
+                        <h1 className="text-5xl md:text-[82px] font-semibold font-heading tracking-tight leading-[1.05] mb-6 mt-8 text-white drop-shadow-2xl">
                             Engineering Businesses <br />
                             into Intelligent Systems
                         </h1>
@@ -25,7 +25,7 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-2 items-center">
                         <Link
                             href="#contact"
-                            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-white font-semibold text-black text-lg transition-all hover:scale-105"
+                            className="group flex items-center gap-2 px-6 py-3 rounded-full bg-white font-semibold text-black text-lg transition-all hover:scale-105"
                         >
                             Book a Free Demo
                             <svg
@@ -41,7 +41,7 @@ export default function Hero() {
 
                         <Link
                             href="#works"
-                            className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-lg transition-all hover:bg-white/20"
+                            className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-lg transition-all hover:bg-white/20"
                         >
                             See How It Works
                         </Link>
