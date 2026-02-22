@@ -38,7 +38,7 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-24 bg-black overflow-hidden relative">
+        <section className="pt-0 pb-4 bg-black overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
