@@ -63,11 +63,11 @@ const Card = ({ number, title, description, children, className = "", style, bad
         className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${className}`}
         style={style}
     >
-        {/* Bottom-Right Dark Glow */}
+        {/* Top-Left Dark Glow */}
         <div
             className="absolute inset-0 pointer-events-none z-0"
             style={{
-                background: 'radial-gradient(circle at bottom right, rgba(12, 34, 100, 0.15), transparent 70%)'
+                background: 'radial-gradient(circle at top left, rgba(12, 34, 100, 0.18), transparent 70%)'
             }}
         />
 
