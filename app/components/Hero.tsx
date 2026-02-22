@@ -46,23 +46,20 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
+                            className="group relative inline-flex h-12 items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-r from-[#5A2DFF] to-[#2C0F66] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_8px_30px_rgba(90,45,255,0.35)] hover:shadow-[0_12px_40px_rgba(90,45,255,0.45)]"
                         >
-                            {/* The Border Glow (Circulating Beam) - Violet/White theme */}
-                            <div className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#8b5cf6_40%,#ffffff_50%,#8b5cf6_60%,transparent_80%)] animate-spin-slow" style={{ animationDuration: '4s' }} />
+                            {/* Inner Glow Overlay */}
+                            <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] pointer-events-none" />
 
-                            {/* Inner background - Violet/Black Gradient */}
-                            <div className="relative h-full w-full flex items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-br from-violet-950 to-black text-white font-semibold text-sm z-10">
-                                Book a Strategy Call
-                                <svg className="relative z-10 w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-                                </svg>
-                            </div>
+                            <span className="relative z-10">Book a Strategy Call</span>
+                            <svg className="relative z-10 w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
                         </Link>
 
                         <Link
                             href="#works"
-                            className="px-8 py-3 rounded-full bg-white text-black font-semibold text-sm transition-all hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98]"
+                            className="px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white font-semibold text-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20"
                         >
                             See How It Works
                         </Link>
