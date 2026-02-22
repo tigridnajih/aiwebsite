@@ -38,7 +38,7 @@ export default function HeroParticles() {
                 // Steeper density bias: cluster heavily at the top
                 // If it's the initial load, spread them slightly more in the top half
                 if (isInitial) {
-                    this.y = Math.pow(Math.random(), 2.5) * (h * 0.6);
+                    this.y = Math.pow(Math.random(), 2.5) * (h * 0.85);
                 } else {
                     // New particles always start at the very top (negative offset for smooth entry)
                     this.y = -10 - Math.random() * 20;
@@ -66,8 +66,8 @@ export default function HeroParticles() {
                 const twinkle = 0.8 + Math.sin(this.pulseTimer) * 0.2;
 
                 // Vertical Fade Logic: 
-                // Full opacity at top, fades to 0 as it reaches ~55% of the height
-                const centerBoundary = h * 0.55;
+                // Full opacity at top, fades to 0 as it reaches ~85% of the height
+                const centerBoundary = h * 0.85;
                 if (this.y < 0) {
                     this.opacity = 0;
                 } else if (this.y < centerBoundary) {
