@@ -42,9 +42,6 @@ export default function TrustLogos() {
     return (
         <section className="relative z-50 py-10 bg-transparent overflow-hidden select-none">
             {/* Heading matching screenshot: smaller, centered, pure white */}
-            <p className="text-center text-[12px] md:text-xs font-medium text-white mb-6 tracking-tight">
-                Over 50+ business trust us
-            </p>
 
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div

@@ -25,10 +25,11 @@ export default function Hero() {
             <div className="container-custom relative z-20 flex flex-col items-center justify-center text-center -translate-y-4">
                 {/* Content */}
                 <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
-                    {/* Badge */}
-                    <div className="animate-fade-in opacity-0 animate-delay-100 flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-xs md:text-sm text-gray-400 mb-1">
-                        <span className="bg-purple-600 text-[10px] font-bold px-2 py-0.5 rounded-full text-white uppercase tracking-tighter">New</span>
-                        <span>Automated Lead Generation</span>
+                    {/* Trusted Proof */}
+                    <div className="animate-fade-in opacity-0 animate-delay-100 mb-2">
+                        <span className="text-sm md:text-base font-bold tracking-tight bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent uppercase">
+                            Trusted by 50+ growing businesses
+                        </span>
                     </div>
 
                     <div className="animate-fade-in opacity-0">
