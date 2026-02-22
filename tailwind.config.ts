@@ -51,6 +51,7 @@ const config: Config = {
                 "float-tech": "floatTech 6s ease-in-out infinite",
                 "shimmer": "shimmer 2s linear infinite",
                 "text-particle": "textParticle 2s ease-out infinite",
+                "float-up": "floatUp 10s linear infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -65,6 +66,12 @@ const config: Config = {
                     "0%": { transform: "translate(0, 0)", opacity: "0" },
                     "10%": { opacity: "0.8" },
                     "100%": { transform: "translate(var(--tx), var(--ty))", opacity: "0" },
+                },
+                floatUp: {
+                    "0%": { transform: "translateY(100%) scale(1)", opacity: "0" },
+                    "10%": { opacity: "0.2" },
+                    "90%": { opacity: "0.2" },
+                    "100%": { transform: "translateY(-100%) scale(0.5)", opacity: "0" },
                 },
                 "infinite-scroll": {
                     "0%": { transform: "translateX(0)" },
