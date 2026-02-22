@@ -22,9 +22,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-black/40 backdrop-blur-xl border-b border-white/10 h-16'
-        : 'bg-transparent h-20'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled
+        ? 'bg-black/60 backdrop-blur-xl border-white/10 h-16'
+        : 'bg-transparent border-transparent h-20'
       }`}>
       <div className="container-custom h-full flex items-center justify-between">
         {/* Logo */}
