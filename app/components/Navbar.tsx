@@ -46,9 +46,15 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contact"
-            className="px-6 py-2 rounded-full bg-white text-black text-sm font-semibold transition-all hover:bg-gray-100 shadow-sm"
+            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            Book a Call
+            {/* The Border Glow (Circulating Beam) - Blue & White */}
+            <div className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#3b82f6_40%,#ffffff_50%,#3b82f6_60%,transparent_80%)] animate-spin-slow shadow-lg" style={{ animationDuration: '4s' }} />
+
+            {/* Inner primary background - Dark Blue */}
+            <div className="relative h-full w-full flex items-center justify-center px-6 rounded-full bg-blue-950 text-white text-sm font-semibold z-10">
+              Book a Call
+            </div>
           </Link>
         </div>
 
