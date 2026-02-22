@@ -55,7 +55,7 @@ export default function SectionHeader({ badge, title, description, className = "
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center max-w-4xl">
                 {badge && (
-                    <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] md:text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6 backdrop-blur-sm shadow-xl shadow-blue-500/10">
+                    <div className="px-4 py-1.5 rounded-full border border-white/50 bg-gradient-to-r from-indigo-600 via-indigo-400 to-white/20 text-[10px] md:text-xs font-bold text-white uppercase tracking-widest mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.5),_inset_0_0_8px_rgba(255,255,255,0.2)]">
                         {badge}
                     </div>
                 )}

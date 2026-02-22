@@ -41,7 +41,7 @@ export default function Blog() {
                         <div key={idx} className="group cursor-pointer">
                             <div className="aspect-[16/9] rounded-xl bg-gray-200 mb-6 overflow-hidden relative dark:bg-zinc-800">
                                 <div className="w-full h-full bg-gray-300 group-hover:scale-105 transition-transform duration-500 dark:bg-zinc-700" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-black">
+                                <div className="absolute top-4 left-4 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg border border-white/40">
                                     {p.category}
                                 </div>
                             </div>
