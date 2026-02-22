@@ -46,7 +46,7 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group relative inline-flex h-12 items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-r from-[#5A2DFF] to-[#2C0F66] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_8px_30px_rgba(90,45,255,0.35)] hover:shadow-[0_12px_40px_rgba(90,45,255,0.45)]"
+                            className="group relative inline-flex h-12 items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-r from-[#431dff] to-[#120636] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_8px_30px_rgba(67,29,255,0.3)] hover:shadow-[0_12px_40px_rgba(67,29,255,0.4)]"
                         >
                             {/* Inner Glow Overlay */}
                             <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] pointer-events-none" />

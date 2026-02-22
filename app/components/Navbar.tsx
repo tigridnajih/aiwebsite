@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contact"
-            className="group relative inline-flex h-10 items-center justify-center px-6 rounded-full bg-gradient-to-r from-[#5A2DFF] to-[#2C0F66] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_4px_20px_rgba(90,45,255,0.3)] hover:shadow-[0_8px_25px_rgba(90,45,255,0.4)]"
+            className="group relative inline-flex h-10 items-center justify-center px-6 rounded-full bg-gradient-to-r from-[#431dff] to-[#120636] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_4px_20px_rgba(67,29,255,0.25)] hover:shadow-[0_8px_25px_rgba(67,29,255,0.35)]"
           >
             {/* Inner Glow Overlay */}
             <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] pointer-events-none" />
