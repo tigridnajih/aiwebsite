@@ -203,7 +203,7 @@ export default function HowItWorks() {
                     >
                         <div className="relative w-full h-full flex flex-col items-center justify-center">
                             {/* Secondary Background Mockup - Offset Top-Right */}
-                            <div className="absolute w-72 h-44 bg-black/40 border border-[#2C4EDC]/30 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(44,78,220,0.15)] animate-float-x-short z-[1] translate-x-4 -translate-y-4">
+                            <div className="absolute w-72 h-44 bg-black/40 border border-[#2C4EDC]/40 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(44,78,220,0.15)] animate-float-x-short z-[1] translate-x-10 -translate-y-10">
                                 {/* Dashboard Header - Simplified */}
                                 <div className="h-7 bg-[#2C4EDC]/40 flex items-center px-3 gap-1.5 opacity-30">
                                     <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
@@ -237,10 +237,10 @@ export default function HowItWorks() {
                                 </div>
                             </div>
 
-                            {/* Share Orbit in Bottom-Left - Gradient */}
+                            {/* Play Orbit in Bottom-Left - Gradient */}
                             <div className="absolute bottom-2 left-2 w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(44,78,220,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-white/10 backdrop-blur-sm z-[2]" style={orbGradient}>
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                <Share2 className="text-white w-7 h-7" />
+                                <Play className="text-white w-7 h-7 fill-white pl-0.5" />
                             </div>
 
                             {/* Background Glows */}
