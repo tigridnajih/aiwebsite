@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import PortfolioShowcase from './components/PortfolioShowcase';
 import Testimonials from './components/Testimonials';
 import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white font-sans selection:bg-accent/30">
       <Navbar />
       <Hero />
+      <PortfolioShowcase />
       <Services />
       <Testimonials />
       <Problem />

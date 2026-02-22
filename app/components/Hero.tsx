@@ -28,7 +28,7 @@ export default function Hero() {
                     {/* Trusted Proof */}
                     <div className="animate-fade-in opacity-0 animate-delay-100 mb-2">
                         <span className="text-sm md:text-base font-bold tracking-tight bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent uppercase">
-                            Trusted by 50+ growing businesses
+                            Supercharge your Business
                         </span>
                     </div>
 

@@ -39,6 +39,7 @@ const config: Config = {
                 "fade-in": "fadeIn 0.8s ease-out forwards",
                 "infinite-scroll": "infinite-scroll 40s linear infinite",
                 "infinite-scroll-slow": "infinite-scroll 60s linear infinite",
+                "infinite-scroll-right": "infinite-scroll-right 60s linear infinite",
                 pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 "drift-slow": "drift 35s linear infinite",
                 "flow-slow": "flow 30s ease-in-out infinite",
@@ -58,6 +59,10 @@ const config: Config = {
                 "infinite-scroll": {
                     "0%": { transform: "translateX(0)" },
                     "100%": { transform: "translateX(-50%)" },
+                },
+                "infinite-scroll-right": {
+                    "0%": { transform: "translateX(-50%)" },
+                    "100%": { transform: "translateX(0)" },
                 },
                 slideDown: {
                     "0%": { transform: "translateY(-100%)" },
