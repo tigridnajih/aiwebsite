@@ -22,7 +22,7 @@ export default function Hero() {
             {/* Subtle radial glow to match screenshot's positioning of light */}
             <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_60%)]" />
 
-            <div className="container-custom relative z-20 flex flex-col items-center justify-center text-center -translate-y-12">
+            <div className="container-custom relative z-20 flex flex-col items-center justify-center text-center -translate-y-4">
                 {/* Content */}
                 <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
                     {/* Badge */}
