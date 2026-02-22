@@ -117,7 +117,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - ELECTRIC BLUE ORBS */}
+                    {/* Card 1: Share Your Workflow - BLUE GLOW ORBS */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -135,18 +135,18 @@ export default function HowItWorks() {
                                 ].map((item, i) => (
                                     <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
                                         style={{ transform: `translate(calc(-50% + ${Math.cos(item.angle * Math.PI / 180) * item.dist}px), calc(-50% + ${Math.sin(item.angle * Math.PI / 180) * item.dist}px))` }}>
-                                        <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
+                                        <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                                             <item.Icon className="relative z-10 text-white w-7 h-7" />
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                            <div className="absolute w-52 h-52 bg-blue-500/5 rounded-full blur-[100px] z-[1]" />
+                            <div className="absolute w-52 h-52 bg-blue-500/10 rounded-full blur-[100px] z-[1]" />
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - ELECTRIC BLUE DUAL LINEAR ORBS */}
+                    {/* Card 2: We Build the System - BLUE GLOW DUAL LINEAR ORBS */}
                     <Card
                         number="2"
                         title="We Build the System"
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical py-12">
                                     {[...automationIcons, ...automationIcons].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                                             <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
@@ -174,7 +174,7 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical-reverse py-12">
                                     {[...[...automationIcons].reverse(), ...[...automationIcons].reverse()].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                                             <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
@@ -189,14 +189,14 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control - ANIMATED BLUE & WHITE DASHBOARD */}
+                    {/* Card 3: Launch and Take Control - GLOWING BLUE & WHITE DASHBOARD */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-72 h-44 bg-white border border-white/20 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(30,79,255,0.2)] animate-float-x z-[2]">
+                        <div className="relative w-72 h-44 bg-white border border-white/20 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(30,79,255,0.25)] animate-float-x z-[2]">
                             {/* Dashboard Header - Electric Blue */}
                             <div className="h-7 bg-[#1E4FFF] border-b border-white/10 flex items-center px-3 gap-1.5">
                                 <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
@@ -243,6 +243,8 @@ export default function HowItWorks() {
                             {/* Blue Accent Glow */}
                             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#1E4FFF]/10 rounded-full blur-2xl pointer-events-none" />
                         </div>
+                        {/* Glow Behind the Dashboard */}
+                        <div className="absolute inset-0 bg-blue-500/5 blur-[40px] z-[1] animate-pulse" />
                     </Card>
                 </div>
             </div>
