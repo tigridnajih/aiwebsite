@@ -54,6 +54,7 @@ const config: Config = {
                 "custom-float": "custom-float-key 3s ease-in-out infinite",
                 "custom-scan": "custom-scan-key 3s ease-in-out infinite",
                 "breath": "breath-key 4s ease-in-out infinite",
+                "drift-slow-subtle": "drift-subtle-key 8s ease-in-out infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -148,6 +149,10 @@ const config: Config = {
                 "breath-key": {
                     "0%, 100%": { transform: "scale(1)", opacity: "0.8" },
                     "50%": { transform: "scale(1.1)", opacity: "1" },
+                },
+                "drift-subtle-key": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-10px)" },
                 },
             },
         },
