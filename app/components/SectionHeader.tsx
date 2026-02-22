@@ -25,8 +25,8 @@ export default function SectionHeader({ badge, title, description, className = "
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center max-w-4xl">
                 {badge && (
-                    <div className="mb-6 px-4 py-1.5 rounded-full border border-white/30 transition-shadow duration-300">
-                        <span className="text-xs font-bold tracking-[0.2em] text-white uppercase">
+                    <div className="mb-6 px-3 py-1 rounded-full border border-white/20 transition-shadow duration-300">
+                        <span className="text-[10px] font-bold tracking-widest text-white/90">
                             {badge}
                         </span>
                     </div>
