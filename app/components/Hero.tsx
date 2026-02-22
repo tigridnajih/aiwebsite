@@ -46,12 +46,18 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group flex items-center gap-2 px-6 py-2.5 rounded-full bg-white font-semibold text-black text-sm transition-all hover:scale-105"
+                            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
                         >
-                            Book a Free Demo
-                            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
+                            {/* The Border Glow (Circulating Beam) - Violet/White theme */}
+                            <div className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#8b5cf6_40%,#ffffff_50%,#8b5cf6_60%,transparent_80%)] animate-spin-slow" style={{ animationDuration: '4s' }} />
+
+                            {/* Inner background - Violet/Black Gradient */}
+                            <div className="relative h-full w-full flex items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-br from-violet-950 to-black text-white font-semibold text-sm z-10">
+                                Book a Free Demo
+                                <svg className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
                         </Link>
 
                         <Link
