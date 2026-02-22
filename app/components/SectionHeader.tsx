@@ -26,7 +26,7 @@ export default function SectionHeader({ badge, title, description, className = "
     }, []);
 
     return (
-        <div className={`relative flex flex-col items-center text-center py-24 px-4 overflow-hidden ${className}`}>
+        <div className={`relative flex flex-col items-center text-center py-12 px-4 overflow-hidden ${className}`}>
             {/* Dark Blue Radial Glow - Increased intensity and spread */}
             <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(30,64,175,0.4),transparent_80%)]" />
 

@@ -119,7 +119,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="py-32 bg-black text-white selection:bg-purple-500/30">
+        <section id="services" className="py-20 bg-black text-white selection:bg-purple-500/30">
             <div className="container-custom">
                 <SectionHeader
                     badge="Our Services"
