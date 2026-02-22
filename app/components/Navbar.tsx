@@ -23,8 +23,8 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled
-        ? 'bg-black/60 backdrop-blur-xl border-white/10 h-16'
-        : 'bg-transparent border-transparent h-20'
+      ? 'bg-black/60 backdrop-blur-xl border-white/10 h-16'
+      : 'bg-transparent border-transparent h-20'
       }`}>
       <div className="container-custom h-full flex items-center justify-between">
         {/* Logo */}
@@ -44,8 +44,22 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Link href="#contact" className="px-6 py-2 rounded-full bg-white/10 text-white text-sm font-medium border border-white/10 hover:bg-white/20 transition-all backdrop-blur-sm shadow-lg shadow-purple-500/10">
-            Work with Us
+          <Link
+            href="#contact"
+            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full font-medium transition-all"
+          >
+            {/* The Animated Border Reflection (Beam) - Always active */}
+            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_20%,#3B82F6_50%,transparent_80%)] animate-spin-slow opacity-30 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* The Gradient Background (Dark Blue Majority) */}
+            <div className="absolute inset-[1px] bg-gradient-to-br from-[#1E3A8A] via-[#172554] to-black rounded-full z-10" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 z-20" />
+
+            {/* Button Content */}
+            <span className="relative z-30 px-6 text-sm text-white/90 group-hover:text-white transition-colors">
+              Book a Demo
+            </span>
           </Link>
         </div>
 
