@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers, List, StickyNote, NotebookPen } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
@@ -63,50 +63,7 @@ const Card = ({ number, title, description, children, className = "", noHover = 
     </div>
 );
 
-const GlassyOrb = ({ children, size, className, delay, mousePos }: { children: React.ReactNode, size: string, className: string, delay: string, mousePos: { x: number, y: number } }) => {
-    const factor = parseInt(size.split('-')[1]) / 20; // Larger orbs move more
-    const translateX = mousePos.x * factor;
-    const translateY = mousePos.y * factor;
-
-    return (
-        <div
-            className={`absolute ${size} rounded-full flex items-center justify-center border border-white/10 backdrop-blur-2xl animate-drift-slow-subtle transition-transform duration-500 ease-out ${className}`}
-            style={{
-                background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
-                boxShadow: '0 20px 50px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(60,120,255,0.2)',
-                animationDelay: delay,
-                transform: `translate(${translateX}px, ${translateY}px)`
-            }}
-        >
-            {/* Specular Highlight */}
-            <div className="absolute top-[15%] left-[15%] w-[30%] h-[30%] bg-white/20 rounded-full blur-[4px] pointer-events-none" />
-
-            {/* Internal Glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/10 to-transparent opacity-50" />
-
-            <div className="relative z-10">
-                {children}
-            </div>
-        </div>
-    );
-};
-
 export default function HowItWorks() {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!cardRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const x = (e.clientX - rect.left - rect.width / 2) / 15;
-        const y = (e.clientY - rect.top - rect.height / 2) / 15;
-        setMousePos({ x, y });
-    };
-
-    const handleMouseLeave = () => {
-        setMousePos({ x: 0, y: 0 });
-    };
-
     return (
         <section id="how-it-works" className="py-24 bg-black overflow-hidden">
             <div className="container-custom">
@@ -116,56 +73,11 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - 3D REFINEMENT */}
-                    <div ref={cardRef} className="h-full">
-                        <Card
-                            number="1"
-                            title="Share Your Workflow"
-                            description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                            style={{
-                                background: '#000000',
-                                border: '1px solid rgba(30, 90, 255, 0.4)',
-                                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(30, 90, 255, 0.2)'
-                            }}
-                            noHover={true}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                                <div className="relative w-64 h-64">
-                                    {/* Email - Extra Large Orb */}
-                                    <GlassyOrb size="w-28 h-28" className="top-0 right-4 z-30" delay="0s" mousePos={mousePos}>
-                                        <Mail className="text-white w-12 h-12 filter drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]" />
-                                    </GlassyOrb>
-
-                                    {/* List - Large Orb */}
-                                    <GlassyOrb size="w-24 h-24" className="top-16 left-2 z-20" delay="-2s" mousePos={mousePos}>
-                                        <List className="text-white w-10 h-10 filter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
-                                    </GlassyOrb>
-
-                                    {/* Calendar - Medium Orb */}
-                                    <GlassyOrb size="w-20 h-20" className="bottom-8 left-10 z-10" delay="-4s" mousePos={mousePos}>
-                                        <Calendar className="text-white w-8 h-8 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
-                                    </GlassyOrb>
-
-                                    {/* Note - Medium Orb */}
-                                    <GlassyOrb size="w-16 h-16" className="bottom-4 right-16 z-20" delay="-1.5s" mousePos={mousePos}>
-                                        <NotebookPen className="text-white w-7 h-7 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
-                                    </GlassyOrb>
-
-                                    {/* Page - Small Orb */}
-                                    <GlassyOrb size="w-14 h-14" className="top-1/2 right-0 z-10" delay="-5s" mousePos={mousePos}>
-                                        <FileText className="text-white w-6 h-6 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
-                                    </GlassyOrb>
-                                </div>
-                            </div>
-                        </Card>
-                    </div>
-
+                    {/* Card 1: Share Your Workflow */}
                     <Card
-                        number="2"
-                        title="We Build the System"
-                        description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
+                        number="1"
+                        title="Share Your Workflow"
+                        description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                         noHover={true}
                     >
@@ -183,13 +95,33 @@ export default function HowItWorks() {
                                 <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s]">
                                     <Calendar className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
-                                {/* Notes - Blue 3D breathing */}
-                                <div className="absolute bottom-0 right-12 w-14 h-14 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-0.8s]">
-                                    <StickyNote className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                            </div>
+                            {/* Blue Core Glow */}
+                            <div className="absolute w-32 h-32 bg-blue-500/20 rounded-full blur-[80px] z-[1]" />
+                        </div>
+                    </Card>
+
+                    {/* Card 2: We Build the System */}
+                    <Card
+                        number="2"
+                        title="We Build the System"
+                        description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
+                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        noHover={true}
+                    >
+                        <div className="relative w-full h-full flex items-center justify-center z-[2]">
+                            <div className="relative w-48 h-48">
+                                {/* Layout - Blue 3D breathing */}
+                                <div className="absolute top-4 right-0 w-24 h-24 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath">
+                                    <Layout className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
-                                {/* Page - Blue 3D breathing */}
-                                <div className="absolute top-1/2 right-6 w-12 h-12 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.8s]">
-                                    <FileText className="text-white w-5 h-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                {/* RefreshCw - Blue 3D breathing */}
+                                <div className="absolute top-12 left-0 w-20 h-20 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.2s]">
+                                    <RefreshCw className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                </div>
+                                {/* Layers - Blue 3D breathing */}
+                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s]">
+                                    <Layers className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
                             </div>
                             {/* Blue Core Glow */}
@@ -197,11 +129,12 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control WITH BG */}
+                    {/* Card 3: Launch and Take Control */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
+                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 z-[2]">
                             {/* Dashboard Header UI */}
