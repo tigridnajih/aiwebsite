@@ -7,7 +7,6 @@ import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
 import TechStack from './components/TechStack';
 import Stats from './components/Stats';
-import Pricing from './components/Pricing';
 import Team from './components/Team';
 import FAQ from './components/FAQ';
 import Blog from './components/Blog';
@@ -25,7 +24,6 @@ export default function Home() {
       <CaseStudies />
       <TechStack />
       <Stats />
-      <Pricing />
       <Team />
       <FAQ />
       <Blog />
