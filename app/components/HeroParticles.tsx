@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * HeroParticles - Stardust system matching the reference image.
+ * HeroParticles - Stardust system matching the referenced image.
  * Features: High density at top, downward slow motion and center fade-out.
  */
 export default function HeroParticles() {
