@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers, List, StickyNote, NotebookPen } from 'lucide-react';
+import { Mail, Calendar, Play, RefreshCw, List, NotebookPen, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 interface CardProps {
@@ -63,7 +63,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - 3D GLASS ORBS */}
+                    {/* Card 1: Share Your Workflow - FROSTED DARK GLASS (Matches Screenshot) */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -71,67 +71,57 @@ export default function HowItWorks() {
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                            {/* Rotating Base Container */}
-                            <div className="relative w-64 h-64 animate-spin-slow-extremely">
+                            {/* Semi-Static Container with minimal drift */}
+                            <div className="relative w-64 h-64">
 
-                                {/* 1. Email - Largest (0deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 transform"
-                                    style={{ transform: 'translate(calc(-50% + 115px), calc(-50% + 0px)) rotate(0deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_-8px_20px_rgba(0,0,0,0.4),inset_0_8px_20px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/30 to-transparent rounded-full blur-[2px] -rotate-45" />
-                                        <Mail className="relative z-10 text-white w-14 h-14 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]" />
+                                {/* 1. Email - Top Right (Largest, tilted) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 transform z-[5]"
+                                    style={{ transform: 'translate(calc(-50% + 75px), calc(-50% - 70px)) rotate(12deg)' }}>
+                                    <div className="relative w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-white/10 backdrop-blur-md animate-breath">
+                                        <div className="absolute top-[12%] left-[18%] w-[35%] h-[18%] bg-gradient-to-b from-white/10 to-transparent rounded-full blur-[2px] -rotate-45" />
+                                        <Mail className="relative z-10 text-zinc-100 w-14 h-14 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]" />
                                     </div>
                                 </div>
 
-                                {/* 2. List - Medium-Large (60deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
-                                    style={{ transform: 'translate(calc(-50% + 57.5px), calc(-50% + 99.6px)) rotate(60deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-500 via-blue-700 to-blue-950 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.6),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-0.5s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1px] -rotate-45" />
-                                        <List className="relative z-10 text-white w-10 h-10 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
+                                {/* 2. List - Top Left (Medium-Large, tilted) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform z-[4]"
+                                    style={{ transform: 'translate(calc(-50% - 65px), calc(-50% - 55px)) rotate(-15deg)' }}>
+                                    <div className="relative w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.8),inset_0_3px_10px_rgba(255,255,255,0.08)] border border-white/10 backdrop-blur-md animate-breath [animation-delay:-0.5s]">
+                                        <div className="absolute top-[12%] left-[18%] w-[35%] h-[18%] bg-gradient-to-b from-white/10 to-transparent rounded-full blur-[2px] -rotate-45" />
+                                        <List className="relative z-10 text-zinc-100 w-11 h-11 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]" />
                                     </div>
                                 </div>
 
-                                {/* 3. Calendar - Medium-Large (120deg) - INCREASED SIZE */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-26 h-26 transform"
-                                    style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% + 99.6px)) rotate(120deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-1s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1.5px] -rotate-45" />
-                                        <Calendar className="relative z-10 text-white w-11 h-11 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
+                                {/* 3. Calendar - Center Left (Small-Medium) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform z-[3]"
+                                    style={{ transform: 'translate(calc(-50% - 95px), calc(-50% + 50px)) rotate(-8deg)' }}>
+                                    <div className="relative w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center shadow-[0_15px_30px_rgba(0,0,0,0.8),inset_0_2px_8px_rgba(255,255,255,0.06)] border border-white/5 backdrop-blur-md animate-breath [animation-delay:-1s]">
+                                        <div className="absolute top-[12%] left-[18%] w-[35%] h-[18%] bg-gradient-to-b from-white/10 to-transparent rounded-full blur-[1px] -rotate-45" />
+                                        <Calendar className="relative z-10 text-zinc-300 w-9 h-9 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]" />
                                     </div>
                                 </div>
 
-                                {/* 4. Layout - Medium-Large (180deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
-                                    style={{ transform: 'translate(calc(-50% - 115px), calc(-50% + 0px)) rotate(180deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-500 via-blue-700 to-blue-950 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.6),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-1.5s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1px] -rotate-45" />
-                                        <Layout className="relative z-10 text-white w-10 h-10 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
+                                {/* 4. Notebook - Bottom Center (Medium) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform z-[2]"
+                                    style={{ transform: 'translate(calc(-50% + 5px), calc(-50% + 105px)) rotate(5deg)' }}>
+                                    <div className="relative w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.8),inset_0_3px_10px_rgba(255,255,255,0.08)] border border-white/10 backdrop-blur-md animate-breath [animation-delay:-1.5s]">
+                                        <div className="absolute top-[12%] left-[18%] w-[35%] h-[18%] bg-gradient-to-b from-white/10 to-transparent rounded-full blur-[1.5px] -rotate-45" />
+                                        <NotebookPen className="relative z-10 text-zinc-200 w-10 h-10 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]" />
                                     </div>
                                 </div>
 
-                                {/* 5. RefreshCw - Medium-Large (240deg) - INCREASED SIZE */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-26 h-26 transform"
-                                    style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% - 99.6px)) rotate(240deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-2s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1.5px] -rotate-45" />
-                                        <RefreshCw className="relative z-10 text-white w-11 h-11 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
-                                    </div>
-                                </div>
-
-                                {/* 6. Layers - Medium-Large (300deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
-                                    style={{ transform: 'translate(calc(-50% + 57.5px), calc(-50% - 99.6px)) rotate(300deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-500 via-blue-700 to-blue-950 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.6),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-2.5s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1px] -rotate-45" />
-                                        <Layers className="relative z-10 text-white w-10 h-10 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
+                                {/* 5. FileText - Center Right (Small) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-18 h-18 transform z-[1]"
+                                    style={{ transform: 'translate(calc(-50% + 85px), calc(-50% + 35px)) rotate(18deg)' }}>
+                                    <div className="relative w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center shadow-[0_15px_30px_rgba(0,0,0,0.8),inset_0_2px_6px_rgba(255,255,255,0.05)] border border-white/5 backdrop-blur-md animate-breath [animation-delay:-2s]">
+                                        <div className="absolute top-[12%] left-[18%] w-[35%] h-[18%] bg-gradient-to-b from-white/8 to-transparent rounded-full blur-[1px] -rotate-45" />
+                                        <FileText className="relative z-10 text-zinc-400 w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]" />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Central Warp Core Glow */}
-                            <div className="absolute w-44 h-44 bg-blue-500/20 rounded-full blur-[120px] z-[1] animate-pulse" />
-                            <div className="absolute w-20 h-20 bg-blue-400/10 rounded-full blur-[40px] z-[1]" />
+                            {/* Central Warp Core Glow (Subtle) */}
+                            <div className="absolute w-44 h-44 bg-white/2 rounded-full blur-[120px] z-[1]" />
                         </div>
                     </Card>
 
