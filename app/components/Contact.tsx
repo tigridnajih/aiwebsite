@@ -2,7 +2,7 @@ import SectionHeader from './SectionHeader';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-24 bg-white dark:bg-black overflow-hidden relative">
+        <section id="contact" className="py-20 bg-white dark:bg-black overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 translate-x-32" />
 
             <div className="container-custom relative z-10">
