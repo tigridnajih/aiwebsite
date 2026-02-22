@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Calendar, Play, List, NotebookPen, FileText, Link as LinkIcon } from 'lucide-react';
+import { Mail, Calendar, Play, List, NotebookPen, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 // Custom Brand Icons for Automation Card
@@ -77,7 +77,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
         {/* Step Badge */}
         <div
             className="relative z-10 w-11 h-11 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-xl mb-10 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-            style={badgeGlow ? { boxShadow: badgeGlow } : {}}
+            style={badgeGlow ? { boxShadow: badgeGlow ? badgeGlow : undefined } : {}}
         >
             {number}
         </div>
@@ -146,15 +146,15 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - ENHANCED CLEAN MASKING & BLUE LINK ICON */}
+                    {/* Card 2: We Build the System - DUAL LINEAR MOVING ICONS */}
                     <Card
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-between z-[2]">
-                            {/* Vertical Scrolling Icons Section */}
+                        <div className="relative w-full h-full flex items-center justify-between z-[2] px-4">
+                            {/* Left Side: Upward Scrolling Icons */}
                             <div className="relative flex-1 h-full overflow-hidden"
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical py-12">
@@ -167,18 +167,21 @@ export default function HowItWorks() {
                                 </div>
                             </div>
 
-                            {/* System Status / Blue Link Indicator */}
-                            <div className="relative flex-1 flex items-center justify-center">
-                                <div className="relative w-32 h-32 flex items-center justify-center">
-                                    {/* Electric Blue Circular Indicator */}
-                                    <div className="absolute inset-0 rounded-full border-[3px] border-[#1E4FFF]/20" />
-                                    <div className="absolute inset-0 rounded-full border-[3px] border-t-[#1E4FFF] border-r-[#1E4FFF] animate-spin-slow shadow-[0_0_30px_rgba(30,79,255,0.2)]" />
-                                    <LinkIcon className="text-[#1E4FFF] w-12 h-12 animate-pulse" />
+                            {/* Right Side: Downward Scrolling Icons */}
+                            <div className="relative flex-1 h-full overflow-hidden"
+                                style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
+                                <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical-reverse py-12">
+                                    {[...[...automationIcons].reverse(), ...[...automationIcons].reverse()].map((item, i) => (
+                                        <div key={i} className="relative w-24 h-24 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.3),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                            <item.Icon />
+                                        </div>
+                                    ))}
                                 </div>
-
-                                {/* Blue System Glow */}
-                                <div className="absolute w-40 h-40 bg-blue-500/10 rounded-full blur-[60px] z-[0]" />
                             </div>
+
+                            {/* Central Glow Balance */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-500/5 rounded-full blur-[60px] z-[0]" />
                         </div>
                     </Card>
 
