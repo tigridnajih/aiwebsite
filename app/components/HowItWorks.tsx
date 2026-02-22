@@ -207,11 +207,17 @@ export default function HowItWorks() {
                                     <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
                                 </div>
 
-                                {/* Dashboard Body - Black with Animated Tick */}
-                                <div className="flex items-center justify-center h-full -mt-3">
-                                    <div className="relative">
-                                        <div className="absolute inset-0 bg-[#1E4FFF]/20 blur-xl animate-pulse rounded-full" />
-                                        <Check className="text-[#1E4FFF] w-20 h-20 animate-bounce drop-shadow-[0_0_15px_rgba(30,79,255,0.8)]" />
+                                {/* Dashboard Body - Black with Animated LIVE Button */}
+                                <div className="flex items-center justify-center h-full -mt-4">
+                                    <div className="relative group/live flex items-center gap-3 bg-[#1E4FFF]/10 border border-[#1E4FFF]/50 px-6 py-3 rounded-full shadow-[0_0_20px_rgba(30,79,255,0.2)]">
+                                        <div className="relative flex h-3 w-3">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]"></span>
+                                        </div>
+                                        <span className="text-white font-bold text-xl tracking-widest uppercase drop-shadow-[0_0_10px_rgba(30,79,255,0.5)]">Live</span>
+
+                                        {/* External Glow */}
+                                        <div className="absolute inset-0 rounded-full bg-[#1E4FFF]/5 blur-md -z-1" />
                                     </div>
                                 </div>
                             </div>
