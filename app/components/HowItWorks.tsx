@@ -1,6 +1,6 @@
 'use client';
 
-import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers } from 'lucide-react';
+import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers, List, StickyNote, NotebookPen } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 interface CardProps {
@@ -8,12 +8,16 @@ interface CardProps {
     title: string;
     description: string;
     children: React.ReactNode;
+    className?: string;
+    noHover?: boolean;
 }
 
-const Card = ({ number, title, description, children }: CardProps) => (
-    <div className="relative group p-8 rounded-3xl bg-black border border-white/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col items-start min-h-[480px] overflow-hidden">
+const Card = ({ number, title, description, children, className = "", noHover = false }: CardProps) => (
+    <div className={`relative group p-8 rounded-3xl bg-black border border-white/5 transition-all duration-500 flex flex-col items-start min-h-[480px] overflow-hidden ${!noHover ? 'hover:border-blue-500/30' : ''} ${className}`}>
         {/* Subtle Blue Glow Backdrop */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        {!noHover && (
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        )}
 
         <div className="relative z-10 w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold text-lg mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
             {number}
@@ -28,7 +32,7 @@ const Card = ({ number, title, description, children }: CardProps) => (
         </p>
 
         {/* Animation Container */}
-        <div className="relative z-10 w-full h-40 mt-6 flex items-center justify-center">
+        <div className="relative z-10 w-full h-56 mt-6 flex items-center justify-center">
             {children}
         </div>
     </div>
@@ -51,53 +55,65 @@ export default function HowItWorks() {
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                     >
                         <div className="relative w-full h-full flex items-center justify-center">
-                            {/* Floating Icons Orbit */}
-                            <div className="relative w-32 h-32 flex items-center justify-center">
-                                <div className="absolute w-12 h-12 bg-zinc-900 border border-white/10 rounded-xl flex items-center justify-center animate-custom-float">
-                                    <Mail className="text-blue-400 w-6 h-6" />
+                            {/* Floating Icons Orbit - Matching Ref Image Style */}
+                            <div className="relative w-48 h-48">
+                                {/* Email - Large Circle */}
+                                <div className="absolute top-4 right-0 w-24 h-24 bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-xl border border-white/10 animate-custom-float">
+                                    <Mail className="text-white w-10 h-10 drop-shadow-lg" />
                                 </div>
-                                <div className="absolute w-10 h-10 bg-zinc-900 border border-white/10 rounded-xl flex items-center justify-center animate-custom-float [animation-delay:-1s] -translate-x-12 -translate-y-8">
-                                    <FileText className="text-blue-300 w-4 h-4" />
+                                {/* List - Medium Circle */}
+                                <div className="absolute top-12 left-0 w-20 h-20 bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-xl border border-white/10 animate-custom-float [animation-delay:-1.5s]">
+                                    <List className="text-white w-8 h-8 drop-shadow-lg" />
                                 </div>
-                                <div className="absolute w-10 h-10 bg-zinc-900 border border-white/10 rounded-xl flex items-center justify-center animate-custom-float [animation-delay:-2s] translate-x-12 -translate-y-4">
-                                    <Calendar className="text-blue-500 w-4 h-4" />
+                                {/* Calendar - Small Circle */}
+                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-xl border border-white/10 animate-custom-float [animation-delay:-3s]">
+                                    <Calendar className="text-white w-6 h-6 drop-shadow-lg" />
                                 </div>
-                                <div className="absolute w-8 h-8 bg-zinc-900 border border-white/10 rounded-xl flex items-center justify-center animate-custom-float [animation-delay:-3.5s] -translate-x-4 translate-y-12">
-                                    <RefreshCw className="text-white/40 w-4 h-4" />
+                                {/* Note - Small Circle */}
+                                <div className="absolute bottom-0 right-12 w-14 h-14 bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-xl border border-white/10 animate-custom-float [animation-delay:-0.5s]">
+                                    <NotebookPen className="text-white w-6 h-6 drop-shadow-lg" />
+                                </div>
+                                {/* Page - Tiny Circle */}
+                                <div className="absolute top-1/2 right-6 w-12 h-12 bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-xl border border-white/10 animate-custom-float [animation-delay:-2.2s]">
+                                    <FileText className="text-white w-5 h-5 drop-shadow-lg" />
                                 </div>
                             </div>
-                            {/* Central Glow */}
-                            <div className="absolute w-24 h-24 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System */}
+                    {/* Card 2: We Build the System - BLUE 3D STYLE */}
                     <Card
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
+                        className="bg-gradient-to-br from-blue-900/40 via-blue-950/40 to-black border-blue-500/40 shadow-[inset_0_0_30px_rgba(59,130,246,0.1)]"
+                        noHover={true}
                     >
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="relative">
-                                {/* Connection Lines Simulation */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent rotate-45 animate-pulse" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent -rotate-45 animate-pulse" />
-
-                                {/* Core Processing Icon */}
-                                <div className="relative z-10 w-20 h-20 bg-zinc-900 border-2 border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.3)] rounded-2xl flex items-center justify-center overflow-hidden">
-                                    <Layers className="text-blue-400 w-10 h-10 animate-pulse" />
-                                    {/* Scan Line */}
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/20 to-transparent h-1/2 animate-custom-scan" />
+                            <div className="relative w-48 h-48">
+                                {/* Email - Blue 3D breathing */}
+                                <div className="absolute top-4 right-0 w-24 h-24 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath">
+                                    <Mail className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
-
-                                {/* Floating Sub-icons */}
-                                <div className="absolute -top-6 -right-6 w-10 h-10 bg-black border border-white/10 rounded-lg flex items-center justify-center animate-bounce">
-                                    <RefreshCw className="text-blue-500 w-5 h-5" />
+                                {/* List - Blue 3D breathing */}
+                                <div className="absolute top-12 left-0 w-20 h-20 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.2s]">
+                                    <List className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
-                                <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-black border border-white/10 rounded-lg flex items-center justify-center animate-custom-float">
-                                    <div className="font-bold text-xs text-blue-400">AI</div>
+                                {/* Calendar - Blue 3D breathing */}
+                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s]">
+                                    <Calendar className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                </div>
+                                {/* Notes - Blue 3D breathing */}
+                                <div className="absolute bottom-0 right-12 w-14 h-14 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-0.8s]">
+                                    <StickyNote className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                </div>
+                                {/* Page - Blue 3D breathing */}
+                                <div className="absolute top-1/2 right-6 w-12 h-12 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.8s]">
+                                    <FileText className="text-white w-5 h-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                 </div>
                             </div>
+                            {/* Blue Core Glow */}
+                            <div className="absolute w-32 h-32 bg-blue-500/20 rounded-full blur-[80px]" />
                         </div>
                     </Card>
 
@@ -107,7 +123,7 @@ export default function HowItWorks() {
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                     >
-                        <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                        <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105">
                             {/* Dashboard Header UI */}
                             <div className="h-6 bg-zinc-800 border-b border-white/5 flex items-center px-3 gap-1.5 focus:outline-none">
                                 <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
@@ -138,9 +154,6 @@ export default function HowItWorks() {
                                     <div className="h-10 bg-zinc-800/50 rounded-lg border border-white/5" />
                                 </div>
                             </div>
-
-                            {/* Circular Hover Effect */}
-                            <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/0 transition-colors pointer-events-none" />
                         </div>
                     </Card>
                 </div>

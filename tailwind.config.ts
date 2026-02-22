@@ -53,6 +53,7 @@ const config: Config = {
                 "text-particle": "textParticle 2s ease-out infinite",
                 "custom-float": "custom-float-key 3s ease-in-out infinite",
                 "custom-scan": "custom-scan-key 3s ease-in-out infinite",
+                "breath": "breath-key 4s ease-in-out infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -143,6 +144,10 @@ const config: Config = {
                     "0%, 100%": { transform: "translateY(-100%)", opacity: "0" },
                     "50%": { opacity: "0.5" },
                     "100%": { transform: "translateY(200%)", opacity: "0" },
+                },
+                "breath-key": {
+                    "0%, 100%": { transform: "scale(1)", opacity: "0.8" },
+                    "50%": { transform: "scale(1.1)", opacity: "1" },
                 },
             },
         },
