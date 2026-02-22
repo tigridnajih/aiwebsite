@@ -40,7 +40,7 @@ export default function TrustLogos() {
     const allLogos = [...Array(10)].map((_, i) => LOGOS[i % LOGOS.length]);
 
     return (
-        <section className="relative z-50 py-10 bg-transparent overflow-hidden select-none">
+        <section className="relative z-50 py-2 bg-transparent overflow-hidden select-none">
             <p className="text-center text-[12px] md:text-xs font-medium text-white mb-6 tracking-tight">
                 Trusted by Leading Companies
             </p>

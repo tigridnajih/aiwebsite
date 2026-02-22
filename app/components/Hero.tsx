@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-16 pb-24 overflow-hidden text-white bg-black">
+        <section className="relative min-h-screen flex items-center pt-16 pb-8 overflow-hidden text-white bg-black">
             {/* Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"

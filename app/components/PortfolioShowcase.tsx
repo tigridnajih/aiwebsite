@@ -38,7 +38,7 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="py-24 bg-black overflow-hidden relative border-t border-white/5">
+        <section className="pt-0 pb-24 bg-black overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
@@ -50,9 +50,9 @@ export default function PortfolioShowcase() {
                 {/* Scrolling Container */}
                 <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
                     {allProjects.map((project, idx) => (
-                        <div key={idx} className="flex flex-col gap-4 flex-shrink-0">
-                            {/* Image with Blue Glowing Border - Thick and Permanent */}
-                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-2 border-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)] bg-zinc-900">
+                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
+                            {/* Image with Blue Glowing Border - Extra Thick and Permanent */}
+                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-[5px] border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.4)] bg-zinc-900 font-mono">
                                 <img
                                     src={project.url}
                                     alt={project.title}
