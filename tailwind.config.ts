@@ -51,7 +51,8 @@ const config: Config = {
                 "float-tech": "floatTech 6s ease-in-out infinite",
                 "shimmer": "shimmer 2s linear infinite",
                 "text-particle": "textParticle 2s ease-out infinite",
-                "float-up": "floatUp 10s linear infinite",
+                "custom-float": "custom-float-key 3s ease-in-out infinite",
+                "custom-scan": "custom-scan-key 3s ease-in-out infinite",
             },
             keyframes: {
                 fadeIn: {
@@ -98,10 +99,7 @@ const config: Config = {
                     "100%": { transform: "rotate(0deg)" },
                 },
                 scan: {
-                    "0%, 100%": { top: "0%", opacity: "0" },
-                    "10%": { opacity: "1" },
-                    "90%": { opacity: "1" },
-                    "100%": { top: "100%", opacity: "0" },
+                    "0%, 100%": { top: "100%", opacity: "0" },
                 },
                 floatTech: {
                     "0%, 100%": { transform: "translateY(0) scale(1)" },
@@ -122,10 +120,6 @@ const config: Config = {
                     "0%, 100%": { transform: "scale(1)" },
                     "50%": { transform: "scale(1.03)" },
                 },
-                float: {
-                    "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-20px)" },
-                },
                 drift1: {
                     "0%, 100%": { transform: "translate(0, 0) scale(1)" },
                     "33%": { transform: "translate(100px, -50px) scale(1.1)" },
@@ -140,6 +134,15 @@ const config: Config = {
                     "0%, 100%": { transform: "translate(0, 0) scale(1)" },
                     "33%": { transform: "translate(60px, 60px) scale(1.2)" },
                     "66%": { transform: "translate(-100px, -40px) scale(0.8)" },
+                },
+                "custom-float-key": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-10px)" },
+                },
+                "custom-scan-key": {
+                    "0%, 100%": { transform: "translateY(-100%)", opacity: "0" },
+                    "50%": { opacity: "0.5" },
+                    "100%": { transform: "translateY(200%)", opacity: "0" },
                 },
             },
         },

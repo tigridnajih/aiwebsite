@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PortfolioShowcase from './components/PortfolioShowcase';
+import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
 import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PortfolioShowcase />
+      <HowItWorks />
       <Services />
       <Testimonials />
       <Problem />
