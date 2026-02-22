@@ -21,7 +21,7 @@ const members = [
 
 export default function Team() {
     return (
-        <section className="py-24 border-t border-gray-100 bg-white dark:bg-black dark:border-zinc-800">
+        <section className="py-20 border-t border-gray-100 bg-white dark:bg-black dark:border-zinc-800">
             <div className="container-custom">
                 <SectionHeader
                     badge="Experts"

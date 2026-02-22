@@ -27,7 +27,7 @@ const cases = [
 
 export default function CaseStudies() {
     return (
-        <section id="case-studies" className="py-24 bg-white dark:bg-black overflow-hidden">
+        <section id="case-studies" className="py-20 bg-white dark:bg-black overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
                     badge="Results"
