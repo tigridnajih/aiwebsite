@@ -202,7 +202,17 @@ export default function HowItWorks() {
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex flex-col items-center justify-center">
-                            {/* Animated Gradient Dashboard Mockup */}
+                            {/* Secondary Background Mockup - Offset Top-Right */}
+                            <div className="absolute w-72 h-44 bg-black/40 border border-[#2C4EDC]/30 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(44,78,220,0.15)] animate-float-x-short z-[1] translate-x-4 -translate-y-4">
+                                {/* Dashboard Header - Simplified */}
+                                <div className="h-7 bg-[#2C4EDC]/40 flex items-center px-3 gap-1.5 opacity-30">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                                    <div className="ml-auto w-10 h-2 bg-white/10 rounded-full" />
+                                </div>
+                            </div>
+
+                            {/* Animated Gradient Dashboard Mockup (Main Screen) */}
                             <div className="relative w-72 h-44 bg-black border border-white/20 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(44,78,220,0.25)] animate-float-x z-[2]">
                                 {/* Dashboard Header - Using Orb Gradient */}
                                 <div className="h-7 flex items-center px-3 gap-1.5 shadow-[0_4px_12px_rgba(0,0,0,0.5)]" style={orbGradient}>
