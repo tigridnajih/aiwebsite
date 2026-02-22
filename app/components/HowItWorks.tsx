@@ -4,7 +4,7 @@ import React from 'react';
 import { Mail, Calendar, Play, List, NotebookPen, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
-// Custom Brand Icons for Automation Card - Reduced to w-8
+// Custom Brand Icons for Automation Card - Optimized for White Icons on Blue Orbs
 const BrandIcons = {
     ChatGPT: () => (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -117,7 +117,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - COMPACT WHITE ORBS (No Glow) */}
+                    {/* Card 1: Share Your Workflow - ELECTRIC BLUE ORBS */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -135,9 +135,9 @@ export default function HowItWorks() {
                                 ].map((item, i) => (
                                     <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
                                         style={{ transform: `translate(calc(-50% + ${Math.cos(item.angle * Math.PI / 180) * item.dist}px), calc(-50% + ${Math.sin(item.angle * Math.PI / 180) * item.dist}px))` }}>
-                                        <div className="relative w-full h-full bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm">
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
-                                            <item.Icon className="relative z-10 text-[#0B2574] w-7 h-7" />
+                                        <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                            <item.Icon className="relative z-10 text-white w-7 h-7" />
                                         </div>
                                     </div>
                                 ))}
@@ -146,7 +146,7 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - COMPACT WHITE ICONS (No Glow) */}
+                    {/* Card 2: We Build the System - ELECTRIC BLUE DUAL LINEAR ORBS */}
                     <Card
                         number="2"
                         title="We Build the System"
@@ -159,9 +159,9 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical py-12">
                                     {[...automationIcons, ...automationIcons].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
-                                            <div className="text-[#0B2574] relative z-10 flex items-center justify-center">
+                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                            <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
                                             </div>
                                         </div>
@@ -174,9 +174,9 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical-reverse py-12">
                                     {[...[...automationIcons].reverse(), ...[...automationIcons].reverse()].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
-                                            <div className="text-[#0B2574] relative z-10 flex items-center justify-center">
+                                        <div key={i} className="relative w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm shrink-0">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                            <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
                                             </div>
                                         </div>
