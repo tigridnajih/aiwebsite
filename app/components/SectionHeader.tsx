@@ -14,13 +14,13 @@ export default function SectionHeader({ badge, title, description, className = "
 
     useEffect(() => {
         // Generate random particles only on client
-        const newParticles = Array.from({ length: 30 }).map((_, i) => ({
+        const newParticles = Array.from({ length: 50 }).map((_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
-            top: `${100 + Math.random() * 50}%`, // Start below the container
+            top: `${Math.random() * 100}%`,
             size: Math.random() * 1.5 + 0.5, // Tiny particles
             delay: `${Math.random() * 10}s`,
-            duration: `${15 + Math.random() * 20}s`, // Slow rise
+            duration: `${10 + Math.random() * 15}s`, // Slightly faster rise
         }));
         setParticles(newParticles);
     }, []);
@@ -31,7 +31,7 @@ export default function SectionHeader({ badge, title, description, className = "
             <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),rgba(30,58,138,0.1),transparent_70%)] blur-[80px]" />
 
             {/* Core Glow Center - To prevent "collapsed" look */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-blue-600/10 rounded-full blur-[120px] z-0" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-blue-600/15 rounded-full blur-[120px] z-0" />
 
             {/* Fade overlays for smooth transitions */}
             <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/20 to-transparent z-0" />
@@ -42,12 +42,13 @@ export default function SectionHeader({ badge, title, description, className = "
                 {particles.map((p) => (
                     <div
                         key={p.id}
-                        className="absolute bg-white rounded-full opacity-30 animate-float-up"
+                        className="absolute bg-white rounded-full animate-float-up"
                         style={{
                             left: p.left,
                             top: p.top,
                             width: `${p.size}px`,
                             height: `${p.size}px`,
+                            opacity: 0.8,
                             animationDelay: p.delay,
                             animationDuration: p.duration,
                         }}
