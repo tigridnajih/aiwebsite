@@ -47,6 +47,8 @@ const config: Config = {
                 "grid-flow": "gridFlow 2s linear infinite",
                 "spin-slow": "spin 15s linear infinite",
                 "spin-reverse-slow": "spin-reverse 20s linear infinite",
+                "spin-slow-extremely": "spin 30s linear infinite",
+                "spin-slow-extremely-reverse": "spin-reverse 30s linear infinite",
                 "scan": "scan 4s ease-in-out infinite",
                 "float-tech": "floatTech 6s ease-in-out infinite",
                 "shimmer": "shimmer 2s linear infinite",
