@@ -49,12 +49,22 @@ const config: Config = {
                 "spin-reverse-slow": "spin-reverse 20s linear infinite",
                 "scan": "scan 4s ease-in-out infinite",
                 "float-tech": "floatTech 6s ease-in-out infinite",
-                "shimmer": "shimmer 3s ease-in-out infinite",
+                "shimmer": "shimmer 2s linear infinite",
+                "text-particle": "textParticle 2s ease-out infinite",
             },
             keyframes: {
                 fadeIn: {
                     "0%": { opacity: "0", transform: "translateY(20px)" },
                     "100%": { opacity: "1", transform: "translateY(0)" },
+                },
+                shimmer: {
+                    "0%": { backgroundPosition: "100% 0%" },
+                    "100%": { backgroundPosition: "0% 0%" },
+                },
+                textParticle: {
+                    "0%": { transform: "translate(0, 0)", opacity: "0" },
+                    "10%": { opacity: "0.8" },
+                    "100%": { transform: "translate(var(--tx), var(--ty))", opacity: "0" },
                 },
                 "infinite-scroll": {
                     "0%": { transform: "translateX(0)" },
@@ -123,11 +133,6 @@ const config: Config = {
                     "0%, 100%": { transform: "translate(0, 0) scale(1)" },
                     "33%": { transform: "translate(60px, 60px) scale(1.2)" },
                     "66%": { transform: "translate(-100px, -40px) scale(0.8)" },
-                },
-                shimmer: {
-                    "0%": { backgroundPosition: "0% 50%" },
-                    "50%": { backgroundPosition: "100% 50%" },
-                    "100%": { backgroundPosition: "0% 50%" },
                 },
             },
         },

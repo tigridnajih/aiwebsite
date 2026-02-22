@@ -26,8 +26,24 @@ export default function Hero() {
                 {/* Content */}
                 <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
                     {/* Trusted Proof */}
-                    <div className="animate-fade-in opacity-0 animate-delay-100 mb-2">
-                        <span className="text-sm md:text-base font-bold tracking-tight bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-clip-text text-transparent uppercase">
+                    {/* Trusted Proof */}
+                    <div className="animate-fade-in opacity-0 animate-delay-100 mb-2 relative flex items-center justify-center">
+                        {/* Particle Emitter for this specific text */}
+                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-full w-full pointer-events-none overflow-visible">
+                            {[...Array(8)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="absolute left-1/2 top-1/2 w-1 h-1 bg-white rounded-full opacity-0 animate-text-particle"
+                                    style={{
+                                        animationDelay: `${i * 0.4}s`,
+                                        '--tx': `${(Math.random() - 0.5) * 150}px`,
+                                        '--ty': `${(Math.random() - 0.5) * 100}px`,
+                                    } as any}
+                                />
+                            ))}
+                        </div>
+
+                        <span className="relative text-sm md:text-base font-bold tracking-[0.15em] bg-[linear-gradient(110deg,#000319,45%,#3b82f6,55%,#ffffff,65%,#000319)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">
                             Supercharge your Business
                         </span>
                     </div>
