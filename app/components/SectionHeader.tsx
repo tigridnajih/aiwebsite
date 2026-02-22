@@ -14,7 +14,7 @@ export default function SectionHeader({ badge, title, description, className = "
 
     useEffect(() => {
         // Generate random particles only on client
-        const newParticles = Array.from({ length: 50 }).map((_, i) => ({
+        const newParticles = Array.from({ length: 100 }).map((_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
