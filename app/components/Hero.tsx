@@ -47,13 +47,10 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
                         <Link
                             href="#contact"
-                            className="group relative inline-flex h-12 items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-r from-[#1b0eb5] to-[#070312] text-white font-semibold text-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 shadow-[0_8px_30px_rgba(27,14,181,0.2)] hover:shadow-[0_12px_40px_rgba(27,14,181,0.3)]"
+                            className="group flex items-center gap-2 px-8 py-3 rounded-full bg-white text-black font-semibold text-sm transition-all hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98]"
                         >
-                            {/* Inner Glow Overlay */}
-                            <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] pointer-events-none" />
-
-                            <span className="relative z-10">Book a Strategy Call</span>
-                            <svg className="relative z-10 w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                            Book a Strategy Call
+                            <svg className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                             </svg>
                         </Link>
