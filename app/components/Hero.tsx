@@ -34,8 +34,8 @@ export default function Hero() {
                     <div className="animate-fade-in opacity-0">
                         {/* Headline */}
                         <h1 className="text-4xl md:text-7xl font-semibold font-heading tracking-tight leading-[1.1] text-white drop-shadow-2xl">
-                            Supercharge your Businesss<br />
-                            with Intelligent Automation.
+                            Intelligent Automation for <br />
+                            Modern Businesses.
                         </h1>
                     </div>
 
