@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import HeroParticles from './HeroParticles';
+import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
@@ -12,7 +13,7 @@ export default function Hero() {
             />
             <HeroParticles />
 
-            {/* Bottom gradient mask for smooth transition to TrustLogos */}
+            {/* Bottom gradient mask for smooth transition to next section */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
 
             {/* Top gradient mask for Navbar readability - Softened for better background visibility */}
@@ -61,7 +62,11 @@ export default function Hero() {
                         </Link>
                     </div>
                 </div>
+            </div>
 
+            {/* Integrated TrustLogos at the bottom of the Hero section, overlaying the background */}
+            <div className="absolute bottom-4 inset-x-0 z-30">
+                <TrustLogos />
             </div>
         </section>
     );
