@@ -51,8 +51,8 @@ export default function Navbar() {
             {/* The Border Glow (Circulating Beam) - Blue & White */}
             <div className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#3b82f6_40%,#ffffff_50%,#3b82f6_60%,transparent_80%)] animate-spin-slow shadow-lg" style={{ animationDuration: '4s' }} />
 
-            {/* Inner primary background - Black & Blue Gradient */}
-            <div className="relative h-full w-full flex items-center justify-center px-6 rounded-full bg-gradient-to-br from-blue-900 via-blue-950 to-black text-white text-sm font-semibold z-10">
+            {/* Inner primary background - Dark Blue & Black Gradient */}
+            <div className="relative h-full w-full flex items-center justify-center px-6 rounded-full bg-gradient-to-br from-[#000d26] to-black text-white text-sm font-semibold z-10">
               Book a Call
             </div>
           </Link>
