@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Calendar, Play, List, NotebookPen, FileText } from 'lucide-react';
+import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 // Custom Brand Icons for Automation Card - Optimized for White Icons on Blue Orbs
@@ -189,62 +189,42 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control - GLOWING BLUE & WHITE DASHBOARD */}
+                    {/* Card 3: Launch and Take Control - GLOWING BLACK DASHBOARD WITH BLUE TICK */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-72 h-44 bg-white border border-white/20 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(30,79,255,0.25)] animate-float-x z-[2]">
-                            {/* Dashboard Header - Electric Blue */}
-                            <div className="h-7 bg-[#1E4FFF] border-b border-white/10 flex items-center px-3 gap-1.5">
-                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
-                            </div>
-
-                            {/* Dashboard Body */}
-                            <div className="flex h-full">
-                                {/* Sidebar */}
-                                <div className="w-16 h-full bg-zinc-50 border-r border-zinc-100 p-2 space-y-2">
-                                    <div className="w-full h-2 bg-[#1E4FFF]/10 rounded-full" />
-                                    <div className="w-full h-2 bg-zinc-200 rounded-full" />
-                                    <div className="w-2/3 h-2 bg-zinc-200 rounded-full" />
+                        <div className="relative w-full h-full flex flex-col items-center justify-center">
+                            {/* Animated Black Dashboard Mockup */}
+                            <div className="relative w-72 h-44 bg-black border border-[#1E4FFF]/50 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(30,79,255,0.3)] animate-float-x z-[2]">
+                                {/* Dashboard Header - Electric Blue */}
+                                <div className="h-7 bg-[#1E4FFF] flex items-center px-3 gap-1.5 shadow-[0_4px_12px_rgba(30,79,255,0.4)]">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
                                 </div>
 
-                                {/* Content Area */}
-                                <div className="flex-1 p-4 space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-12 h-12 bg-[#1E4FFF] rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                                            <Play className="text-white fill-white w-5 h-5" />
-                                        </div>
-                                        <div className="space-y-1.5">
-                                            <div className="w-28 h-2.5 bg-[#1E4FFF]/20 rounded-full" />
-                                            <div className="w-16 h-2 bg-zinc-200 rounded-full" />
-                                        </div>
-                                    </div>
-
-                                    {/* Stats Grid */}
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <div className="p-2 bg-zinc-50 rounded-lg border border-zinc-100 flex flex-col gap-1.5">
-                                            <div className="w-full h-1.5 bg-[#1E4FFF]/30 rounded-full" />
-                                            <div className="w-2/3 h-3 bg-[#1E4FFF] rounded-sm" />
-                                        </div>
-                                        <div className="p-2 bg-zinc-50 rounded-lg border border-zinc-100 flex flex-col gap-1.5">
-                                            <div className="w-full h-1.5 bg-zinc-200 rounded-full" />
-                                            <div className="w-2/3 h-3 bg-zinc-300 rounded-sm" />
-                                        </div>
+                                {/* Dashboard Body - Black with Animated Tick */}
+                                <div className="flex items-center justify-center h-full -mt-3">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 bg-[#1E4FFF]/20 blur-xl animate-pulse rounded-full" />
+                                        <Check className="text-[#1E4FFF] w-20 h-20 animate-bounce drop-shadow-[0_0_15px_rgba(30,79,255,0.8)]" />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Blue Accent Glow */}
-                            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#1E4FFF]/10 rounded-full blur-2xl pointer-events-none" />
+                            {/* Share Orbit in Bottom-Left */}
+                            <div className="absolute bottom-2 left-2 w-20 h-20 bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm z-[2]">
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                <Share2 className="text-white w-7 h-7" />
+                            </div>
+
+                            {/* Background Glows */}
+                            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 bg-blue-500/10 rounded-full blur-[80px] z-[1] animate-pulse" />
                         </div>
-                        {/* Glow Behind the Dashboard */}
-                        <div className="absolute inset-0 bg-blue-500/5 blur-[40px] z-[1] animate-pulse" />
                     </Card>
                 </div>
             </div>
