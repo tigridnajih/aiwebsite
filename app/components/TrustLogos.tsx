@@ -2,38 +2,82 @@
 
 import { useEffect, useRef } from 'react';
 
-const LOGO_NAMES = ["Books", "Opal", "Dune", "Oasis", "Asterisk", "Echo"];
+const LOGOS = [
+    {
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L14.85 8.65L22 9.24L16.5 13.97L18.18 21L12 17.27L5.82 21L7.5 13.97L2 9.24L9.15 8.65L12 2Z" fill="white" />
+            </svg>
+        )
+    },
+    {
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 0L24.49 15.51L40 20L24.49 24.49L20 40L15.51 24.49L0 20L15.51 15.51L20 0Z" fill="white" />
+            </svg>
+        )
+    },
+    {
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="2" />
+                <circle cx="12" cy="12" r="4" fill="white" />
+            </svg>
+        )
+    },
+    {
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" fill="white" />
+                <path d="M12 22V12L20 7" stroke="black" strokeWidth="1.5" />
+            </svg>
+        )
+    }
+];
 
 export default function TrustLogos() {
-    // Combine multiple sets for smooth infinite scroll
-    const allLogos = [...LOGO_NAMES, ...LOGO_NAMES, ...LOGO_NAMES, ...LOGO_NAMES, ...LOGO_NAMES];
+    // Generate a longer list for smooth infinite scroll
+    const allLogos = [...Array(10)].map((_, i) => LOGOS[i % LOGOS.length]);
 
     return (
-        <section className="relative z-50 py-4 bg-transparent overflow-hidden select-none">
-            <p className="text-center text-[10px] md:text-xs font-semibold text-gray-500 mb-6 tracking-[0.3em] uppercase opacity-60">
+        <section className="relative z-50 py-10 bg-transparent overflow-hidden select-none">
+            {/* Heading matching screenshot: smaller, centered, gray */}
+            <p className="text-center text-[12px] md:text-sm font-medium text-white/50 mb-10 tracking-tight">
                 Over 50+ business trust us
             </p>
 
-            {/* Infinite Scroll Wrapper - Full Width */}
-            <div className="relative w-full flex items-center overflow-hidden py-4">
-                {/* Full-width Logos Container with CSS Mask for edge fade */}
-                <div
-                    className="relative z-10 flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2"
-                    style={{
-                        maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)'
-                    }}
-                >
-                    {allLogos.map((name, i) => (
+            {/* Infinite Scroll Wrapper */}
+            <div className="relative w-full flex items-center overflow-hidden">
+                {/* Black Gradient Masks for left and right edges */}
+                <div className="absolute inset-y-0 left-0 w-32 z-20 bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-32 z-20 bg-gradient-to-l from-black via-black/80 to-transparent pointer-events-none" />
+
+                {/* Logos Container */}
+                <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2">
+                    {allLogos.map((logo, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-2 mx-12 md:mx-20"
+                            className="flex items-center gap-3 mx-10 md:mx-16"
                         >
-                            <div className="w-5 h-5 md:w-6 md:h-6 rounded-md bg-white/5 border border-white/10 flex-shrink-0 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-white/20" />
+                            <div className="flex-shrink-0">
+                                {logo.icon}
                             </div>
-                            <span className="text-base md:text-lg font-bold tracking-tighter text-white/70">
-                                {name}
+                            <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                                logoipsum
+                            </span>
+                        </div>
+                    ))}
+                    {/* Duplicate for seamless loop */}
+                    {allLogos.map((logo, i) => (
+                        <div
+                            key={`dup-${i}`}
+                            className="flex items-center gap-3 mx-10 md:mx-16"
+                        >
+                            <div className="flex-shrink-0">
+                                {logo.icon}
+                            </div>
+                            <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                                logoipsum
                             </span>
                         </div>
                     ))}
