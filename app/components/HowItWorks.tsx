@@ -108,16 +108,16 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - PREMIUM OVERHAUL */}
+                    {/* Card 1: Share Your Workflow - 3D REFINEMENT */}
                     <div ref={cardRef} className="h-full">
                         <Card
                             number="1"
                             title="Share Your Workflow"
                             description="From lead gen to client onboarding, just share your workflow and the tools you use."
                             style={{
-                                background: 'radial-gradient(circle at center, #131B36 0%, #0A0F24 100%)',
-                                border: '1px solid rgba(255,255,255,0.08)',
-                                boxShadow: '0 30px 100px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(255,255,255,0.03)'
+                                background: '#000000',
+                                border: '1px solid rgba(30, 90, 255, 0.4)',
+                                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(30, 90, 255, 0.2)'
                             }}
                             noHover={true}
                             onMouseMove={handleMouseMove}
