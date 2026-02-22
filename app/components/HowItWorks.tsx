@@ -68,56 +68,56 @@ export default function HowItWorks() {
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
                             {/* Rotating Base Container */}
                             <div className="relative w-64 h-64 animate-spin-slow-extremely">
                                 {/* 1. Email - Largest (0deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
-                                    style={{ transform: 'translate(calc(-50% + 90px), calc(-50% + 0px)) rotate(0deg)' }}>
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 transform"
+                                    style={{ transform: 'translate(calc(-50% + 115px), calc(-50% + 0px)) rotate(0deg)' }}>
                                     <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath rotate-slow-reverse">
-                                        <Mail className="text-white w-12 h-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                        <Mail className="text-white w-14 h-14 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
                                 {/* 2. List - Medium-Large (60deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
-                                    style={{ transform: 'translate(calc(-50% + 45px), calc(-50% + 78px)) rotate(60deg)' }}>
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
+                                    style={{ transform: 'translate(calc(-50% + 57.5px), calc(-50% + 99.6px)) rotate(60deg)' }}>
                                     <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-0.5s] rotate-slow-reverse">
-                                        <List className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                        <List className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
-                                {/* 3. Calendar - Small (120deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 transform"
-                                    style={{ transform: 'translate(calc(-50% - 45px), calc(-50% + 78px)) rotate(120deg)' }}>
-                                    <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1s] rotate-slow-reverse">
-                                        <Calendar className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
-                                    </div>
-                                </div>
-
-                                {/* 4. Layout - Medium (180deg) */}
+                                {/* 3. Calendar - Medium (120deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-22 h-22 transform"
-                                    style={{ transform: 'translate(calc(-50% - 90px), calc(-50% + 0px)) rotate(180deg)' }}>
+                                    style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% + 99.6px)) rotate(120deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1s] rotate-slow-reverse">
+                                        <Calendar className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
+                                </div>
+
+                                {/* 4. Layout - Medium-Large (180deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
+                                    style={{ transform: 'translate(calc(-50% - 115px), calc(-50% + 0px)) rotate(180deg)' }}>
                                     <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.5s] rotate-slow-reverse">
-                                        <Layout className="text-white w-9 h-9 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                        <Layout className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
-                                {/* 5. RefreshCw - Small (240deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-18 h-18 transform"
-                                    style={{ transform: 'translate(calc(-50% - 45px), calc(-50% - 78px)) rotate(240deg)' }}>
+                                {/* 5. RefreshCw - Medium (240deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-22 h-22 transform"
+                                    style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% - 99.6px)) rotate(240deg)' }}>
                                     <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2s] rotate-slow-reverse">
-                                        <RefreshCw className="text-white w-7 h-7 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                        <RefreshCw className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
-                                {/* 6. Layers - Medium-Small (300deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
-                                    style={{ transform: 'translate(calc(-50% + 45px), calc(-50% - 78px)) rotate(300deg)' }}>
+                                {/* 6. Layers - Medium-Large (300deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
+                                    style={{ transform: 'translate(calc(-50% + 57.5px), calc(-50% - 99.6px)) rotate(300deg)' }}>
                                     <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s] rotate-slow-reverse">
-                                        <Layers className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                        <Layers className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@ export default function HowItWorks() {
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
-                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
                             <div className="relative w-48 h-48 flex items-center justify-center">
@@ -161,7 +161,7 @@ export default function HowItWorks() {
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 z-[2]">
                             {/* Dashboard Header UI */}
