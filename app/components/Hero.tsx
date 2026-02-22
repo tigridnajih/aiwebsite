@@ -53,7 +53,7 @@ export default function Hero() {
 
                             {/* Inner background - Violet/Black Gradient */}
                             <div className="relative h-full w-full flex items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-br from-violet-950 to-black text-white font-semibold text-sm z-10">
-                                Book a Free Demo
+                                Book a Strategy Call
                                 <svg className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -62,7 +62,7 @@ export default function Hero() {
 
                         <Link
                             href="#works"
-                            className="px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-gray-200 hover:text-white font-medium text-sm transition-all hover:bg-white/20"
+                            className="px-8 py-3 rounded-full bg-white text-black font-semibold text-sm transition-all hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98]"
                         >
                             See How It Works
                         </Link>
