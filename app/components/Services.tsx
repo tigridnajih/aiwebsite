@@ -137,25 +137,12 @@ export default function Services() {
                         >
                             {/* Text Content */}
                             <div className="flex-1 space-y-6">
-                                <div className="inline-block px-3 py-1 rounded-full border border-white/40 bg-gradient-to-r from-indigo-600 to-indigo-400 text-[10px] font-bold text-white uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.3)]">
-                                    {feature.badge}
-                                </div>
                                 <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
                                     {feature.title}
                                 </h3>
                                 <p className="text-gray-400 leading-relaxed text-lg max-w-xl">
                                     {feature.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2 pt-2">
-                                    {feature.tags.map((tag, tIdx) => (
-                                        <span
-                                            key={tIdx}
-                                            className="px-3 py-1 rounded-md border border-white/20 bg-white/5 text-[10px] text-white font-bold uppercase tracking-tight"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
                             </div>
 
                             {/* Mockup Content */}

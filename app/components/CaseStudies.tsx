@@ -47,9 +47,6 @@ export default function CaseStudies() {
                             <div className="aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-6 relative dark:bg-zinc-800">
                                 {/* Image Placeholder */}
                                 <div className="w-full h-full bg-gray-200 group-hover:scale-105 transition-transform duration-500 dark:bg-zinc-700" />
-                                <div className="absolute top-4 left-4 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg border border-white/40">
-                                    {c.category}
-                                </div>
                             </div>
                             <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{c.title}</h3>
                             <p className="text-gray-500 text-sm leading-relaxed">{c.description}</p>

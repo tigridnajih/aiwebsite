@@ -66,11 +66,6 @@ export default function Pricing() {
                             key={idx}
                             className={`relative p-8 rounded-2xl border ${p.popular ? 'border-accent shadow-2xl scale-105 z-10 bg-white ring-2 ring-accent/20 dark:bg-zinc-900' : 'border-gray-200 bg-white hover:border-accent/50 dark:bg-zinc-900 dark:border-zinc-800'} transition-all duration-300`}
                         >
-                            {p.popular && (
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-white/50">
-                                    Most Popular
-                                </div>
-                            )}
 
                             <h3 className="text-xl font-bold mb-2">{p.name}</h3>
                             <div className="flex items-baseline gap-1 mb-6">
