@@ -60,7 +60,7 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-8 rounded-[32px] bg-black border border-white/10 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${className}`}
         style={style}
     >
         {/* Bottom-Right Dark Blue Glow */}
@@ -122,7 +122,7 @@ export default function HowItWorks() {
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/30 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
                             <div className="relative w-64 h-64 animate-spin-slow-extremely">
@@ -151,7 +151,7 @@ export default function HowItWorks() {
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/30 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-between z-[2] px-4">
                             {/* Left Side: Upward Scrolling Icons */}
@@ -190,7 +190,7 @@ export default function HowItWorks() {
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/30 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 z-[2]">
                             <div className="h-6 bg-zinc-800 border-b border-white/5 flex items-center px-3 gap-1.5 focus:outline-none">
