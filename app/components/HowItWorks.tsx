@@ -4,11 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers, List, StickyNote, NotebookPen } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
-// Import background images
-import card1Bg from '../assets_bg/card1_bg.png';
-import card2Bg from '../assets_bg/card2_bg.png';
-import card3Bg from '../assets_bg/card3_bg.png';
-
 interface CardProps {
     number: string;
     title: string;
@@ -18,31 +13,27 @@ interface CardProps {
     noHover?: boolean;
     style?: React.CSSProperties;
     badgeGlow?: string;
-    bgImage?: any;
     onMouseMove?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseLeave?: () => void;
 }
 
-const Card = ({ number, title, description, children, className = "", noHover = false, style, badgeGlow, bgImage, onMouseMove, onMouseLeave }: CardProps) => (
+const Card = ({ number, title, description, children, className = "", noHover = false, style, badgeGlow, onMouseMove, onMouseLeave }: CardProps) => (
     <div
         className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${!noHover ? 'hover:border-blue-500/30' : ''} ${className}`}
         style={style}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
     >
-        {/* Background Image Layer */}
-        {bgImage && (
-            <div
-                className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen"
-                style={{
-                    backgroundImage: `url(${typeof bgImage === 'string' ? bgImage : bgImage.src})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            />
-        )}
+        {/* Bottom-Right Dark Blue Glow */}
+        <div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+                background: 'radial-gradient(circle at bottom right, rgba(30, 90, 255, 0.12), transparent 70%)'
+            }}
+        />
+
         {/* Subtle Noise Overlay */}
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px]" />
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px] z-[1]" />
 
         {/* Subtle Blue Glow Backdrop (if not custom) */}
         {!noHover && !style?.background && (
@@ -131,7 +122,6 @@ export default function HowItWorks() {
                             number="1"
                             title="Share Your Workflow"
                             description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                            bgImage={card1Bg}
                             style={{
                                 background: '#000000',
                                 border: '1px solid rgba(30, 90, 255, 0.4)',
@@ -141,10 +131,6 @@ export default function HowItWorks() {
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                         >
-                            {/* Deep Atmospheric Glows */}
-                            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-600/15 rounded-full blur-[120px] pointer-events-none z-[1]" />
-                            <div className="absolute -top-20 -right-20 w-60 h-60 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-[1]" />
-
                             <div className="relative w-full h-full flex items-center justify-center z-[2]">
                                 <div className="relative w-64 h-64">
                                     {/* Email - Extra Large Orb */}
@@ -176,13 +162,11 @@ export default function HowItWorks() {
                         </Card>
                     </div>
 
-                    {/* Card 2: We Build the System - BLUE 3D STYLE WITH BG */}
                     <Card
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
-                        bgImage={card2Bg}
-                        className="bg-gradient-to-br from-blue-900/40 via-blue-950/40 to-black border-blue-500/40 shadow-[inset_0_0_30px_rgba(59,130,246,0.1)]"
+                        className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                         noHover={true}
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
@@ -218,7 +202,6 @@ export default function HowItWorks() {
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        bgImage={card3Bg}
                     >
                         <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 z-[2]">
                             {/* Dashboard Header UI */}
