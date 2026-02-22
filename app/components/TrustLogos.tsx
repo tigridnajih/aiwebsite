@@ -42,7 +42,7 @@ export default function TrustLogos() {
     return (
         <section className="relative z-50 py-10 bg-transparent overflow-hidden select-none">
             {/* Heading matching screenshot: smaller, centered, gray */}
-            <p className="text-center text-[12px] md:text-sm font-medium text-white/50 mb-10 tracking-tight">
+            <p className="text-center text-[12px] md:text-xs font-medium text-white/50 mb-6 tracking-tight">
                 Over 50+ business trust us
             </p>
 
@@ -57,12 +57,12 @@ export default function TrustLogos() {
                     {allLogos.map((logo, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 mx-10 md:mx-16"
+                            className="flex items-center gap-3 mx-8 md:mx-12"
                         >
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0 scale-90">
                                 {logo.icon}
                             </div>
-                            <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                            <span className="text-lg md:text-xl font-bold tracking-tighter text-white">
                                 logoipsum
                             </span>
                         </div>
@@ -71,12 +71,12 @@ export default function TrustLogos() {
                     {allLogos.map((logo, i) => (
                         <div
                             key={`dup-${i}`}
-                            className="flex items-center gap-3 mx-10 md:mx-16"
+                            className="flex items-center gap-3 mx-8 md:mx-12"
                         >
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0 scale-90">
                                 {logo.icon}
                             </div>
-                            <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                            <span className="text-lg md:text-xl font-bold tracking-tighter text-white">
                                 logoipsum
                             </span>
                         </div>
