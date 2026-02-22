@@ -41,6 +41,7 @@ const config: Config = {
                 "infinite-scroll-vertical": "infinite-scroll-vertical 20s linear infinite",
                 "infinite-scroll-vertical-reverse": "infinite-scroll-vertical-reverse 20s linear infinite",
                 "infinite-scroll-slow": "infinite-scroll 60s linear infinite",
+                "float-x": "float-x 6s ease-in-out infinite",
                 "infinite-scroll-right": "infinite-scroll-right 30s linear infinite",
                 pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 "drift-slow": "drift 35s linear infinite",
@@ -91,6 +92,10 @@ const config: Config = {
                 "infinite-scroll-vertical-reverse": {
                     "0%": { transform: "translateY(-50%)" },
                     "100%": { transform: "translateY(0)" },
+                },
+                "float-x": {
+                    "0%, 100%": { transform: "translateX(-15px)" },
+                    "50%": { transform: "translateX(15px)" },
                 },
                 "infinite-scroll-right": {
                     "0%": { transform: "translateX(-50%)" },

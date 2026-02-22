@@ -86,7 +86,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
             {title}
         </h3>
 
-        <p className="relative z-10 text-[rgba(200,210,255,0.8)] text-lg leading-[1.8] mb-auto max-w-[95%]">
+        <p className="relative z-10 text-zinc-400 text-lg leading-[1.8] mb-auto max-w-[95%]">
             {description}
         </p>
 
@@ -189,39 +189,59 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control */}
+                    {/* Card 3: Launch and Take Control - ANIMATED BLUE & WHITE DASHBOARD */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 z-[2]">
-                            <div className="h-6 bg-zinc-800 border-b border-white/5 flex items-center px-3 gap-1.5 focus:outline-none">
-                                <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                                <div className="ml-auto w-8 h-2 bg-zinc-700 rounded-full" />
+                        <div className="relative w-72 h-44 bg-white border border-white/20 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(30,79,255,0.2)] animate-float-x z-[2]">
+                            {/* Dashboard Header - Electric Blue */}
+                            <div className="h-7 bg-[#1E4FFF] border-b border-white/10 flex items-center px-3 gap-1.5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
                             </div>
-                            <div className="absolute top-8 right-3 flex items-center gap-1.5 bg-red-500/10 px-2 py-0.5 rounded-full">
-                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                                <span className="text-[10px] text-red-500 font-bold uppercase tracking-wider">Live</span>
-                            </div>
-                            <div className="p-4 space-y-3">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-blue-500/10 rounded-lg border border-blue-500/20 flex items-center justify-center">
-                                        <Play className="text-blue-500 fill-blue-500 w-4 h-4" />
+
+                            {/* Dashboard Body */}
+                            <div className="flex h-full">
+                                {/* Sidebar */}
+                                <div className="w-16 h-full bg-zinc-50 border-r border-zinc-100 p-2 space-y-2">
+                                    <div className="w-full h-2 bg-[#1E4FFF]/10 rounded-full" />
+                                    <div className="w-full h-2 bg-zinc-200 rounded-full" />
+                                    <div className="w-2/3 h-2 bg-zinc-200 rounded-full" />
+                                </div>
+
+                                {/* Content Area */}
+                                <div className="flex-1 p-4 space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-[#1E4FFF] rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
+                                            <Play className="text-white fill-white w-5 h-5" />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <div className="w-28 h-2.5 bg-[#1E4FFF]/20 rounded-full" />
+                                            <div className="w-16 h-2 bg-zinc-200 rounded-full" />
+                                        </div>
                                     </div>
-                                    <div className="space-y-1">
-                                        <div className="w-24 h-2 bg-zinc-800 rounded-full" />
-                                        <div className="w-16 h-2 bg-zinc-700 rounded-full" />
+
+                                    {/* Stats Grid */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="p-2 bg-zinc-50 rounded-lg border border-zinc-100 flex flex-col gap-1.5">
+                                            <div className="w-full h-1.5 bg-[#1E4FFF]/30 rounded-full" />
+                                            <div className="w-2/3 h-3 bg-[#1E4FFF] rounded-sm" />
+                                        </div>
+                                        <div className="p-2 bg-zinc-50 rounded-lg border border-zinc-100 flex flex-col gap-1.5">
+                                            <div className="w-full h-1.5 bg-zinc-200 rounded-full" />
+                                            <div className="w-2/3 h-3 bg-zinc-300 rounded-sm" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-2">
-                                    <div className="h-10 bg-zinc-800/50 rounded-lg border border-white/5" />
-                                    <div className="h-10 bg-zinc-800/50 rounded-lg border border-white/5" />
-                                </div>
                             </div>
+
+                            {/* Blue Accent Glow */}
+                            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#1E4FFF]/10 rounded-full blur-2xl pointer-events-none" />
                         </div>
                     </Card>
                 </div>
