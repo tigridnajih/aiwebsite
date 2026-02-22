@@ -123,7 +123,7 @@ export default function Services() {
             <div className="container-custom">
                 <SectionHeader
                     badge="Our Services"
-                    title={<>AI Solutions That Take Your <br className="hidden md:block" /> Business to the Next Level</>}
+                    title="What we build"
                     description="We design, develop, and implement automation tools that help you work smarter, not harder"
                 />
 
