@@ -46,12 +46,14 @@ export default function TrustLogos() {
                 Over 50+ business trust us
             </p>
 
-            {/* Infinite Scroll Wrapper */}
-            <div className="relative w-full flex items-center overflow-hidden">
-                {/* Black Gradient Masks for left and right edges - Increased width to focus on center */}
-                <div className="absolute inset-y-0 left-0 w-[50%] z-20 bg-gradient-to-r from-black via-black/90 to-transparent pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-[50%] z-20 bg-gradient-to-l from-black via-black/90 to-transparent pointer-events-none" />
-
+            {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
+            <div
+                className="relative w-full flex items-center overflow-hidden"
+                style={{
+                    maskImage: 'linear-gradient(to right, transparent, black 40%, black 60%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 40%, black 60%, transparent)'
+                }}
+            >
                 {/* Logos Container */}
                 <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2">
                     {allLogos.map((logo, i) => (
