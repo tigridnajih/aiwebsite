@@ -10,19 +10,14 @@ interface CardProps {
     description: string;
     children: React.ReactNode;
     className?: string;
-    noHover?: boolean;
     style?: React.CSSProperties;
     badgeGlow?: string;
-    onMouseMove?: (e: React.MouseEvent<HTMLDivElement>) => void;
-    onMouseLeave?: () => void;
 }
 
-const Card = ({ number, title, description, children, className = "", noHover = false, style, badgeGlow, onMouseMove, onMouseLeave }: CardProps) => (
+const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${!noHover ? 'hover:border-blue-500/30' : ''} ${className}`}
+        className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${className}`}
         style={style}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
     >
         {/* Bottom-Right Dark Blue Glow */}
         <div
@@ -35,11 +30,6 @@ const Card = ({ number, title, description, children, className = "", noHover = 
         {/* Subtle Noise Overlay */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px] z-[1]" />
 
-        {/* Subtle Blue Glow Backdrop (if not custom) */}
-        {!noHover && !style?.background && (
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-[1]" />
-        )}
-
         {/* Step Badge */}
         <div
             className="relative z-10 w-11 h-11 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-xl mb-10 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
@@ -48,7 +38,7 @@ const Card = ({ number, title, description, children, className = "", noHover = 
             {number}
         </div>
 
-        <h3 className="relative z-10 text-[32px] font-bold text-[#F5F7FF] mb-5 tracking-tight group-hover:text-blue-400 transition-colors drop-shadow-md">
+        <h3 className="relative z-10 text-[32px] font-bold text-[#F5F7FF] mb-5 tracking-tight transition-colors drop-shadow-md">
             {title}
         </h3>
 
@@ -73,59 +63,96 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow */}
+                    {/* Card 1: Share Your Workflow - CIRCULAR ANIMATION */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
-                        noHover={true}
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                            <div className="relative w-48 h-48">
-                                {/* Email - Blue 3D breathing */}
-                                <div className="absolute top-4 right-0 w-24 h-24 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath">
-                                    <Mail className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                            {/* Rotating Base Container */}
+                            <div className="relative w-64 h-64 animate-spin-slow-extremely">
+                                {/* 1. Email - Largest (0deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
+                                    style={{ transform: 'translate(calc(-50% + 90px), calc(-50% + 0px)) rotate(0deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath rotate-slow-reverse">
+                                        <Mail className="text-white w-12 h-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
                                 </div>
-                                {/* List - Blue 3D breathing */}
-                                <div className="absolute top-12 left-0 w-20 h-20 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.2s]">
-                                    <List className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+
+                                {/* 2. List - Medium-Large (60deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
+                                    style={{ transform: 'translate(calc(-50% + 45px), calc(-50% + 78px)) rotate(60deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-0.5s] rotate-slow-reverse">
+                                        <List className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
                                 </div>
-                                {/* Calendar - Blue 3D breathing */}
-                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s]">
-                                    <Calendar className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+
+                                {/* 3. Calendar - Small (120deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 transform"
+                                    style={{ transform: 'translate(calc(-50% - 45px), calc(-50% + 78px)) rotate(120deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1s] rotate-slow-reverse">
+                                        <Calendar className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
+                                </div>
+
+                                {/* 4. Layout - Medium (180deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-22 h-22 transform"
+                                    style={{ transform: 'translate(calc(-50% - 90px), calc(-50% + 0px)) rotate(180deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.5s] rotate-slow-reverse">
+                                        <Layout className="text-white w-9 h-9 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
+                                </div>
+
+                                {/* 5. RefreshCw - Small (240deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-18 h-18 transform"
+                                    style={{ transform: 'translate(calc(-50% - 45px), calc(-50% - 78px)) rotate(240deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2s] rotate-slow-reverse">
+                                        <RefreshCw className="text-white w-7 h-7 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
+                                </div>
+
+                                {/* 6. Layers - Medium-Small (300deg) */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
+                                    style={{ transform: 'translate(calc(-50% + 45px), calc(-50% - 78px)) rotate(300deg)' }}>
+                                    <div className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s] rotate-slow-reverse">
+                                        <Layers className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                                    </div>
                                 </div>
                             </div>
-                            {/* Blue Core Glow */}
-                            <div className="absolute w-32 h-32 bg-blue-500/20 rounded-full blur-[80px] z-[1]" />
+                            {/* Central Glow Core */}
+                            <div className="absolute w-40 h-40 bg-blue-500/15 rounded-full blur-[100px] z-[1]" />
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System */}
+                    {/* Card 2: We Build the System - NEURAL HUB */}
                     <Card
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
                         className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
-                        noHover={true}
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                            <div className="relative w-48 h-48">
-                                {/* Layout - Blue 3D breathing */}
-                                <div className="absolute top-4 right-0 w-24 h-24 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath">
-                                    <Layout className="text-white w-10 h-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
+                            <div className="relative w-48 h-48 flex items-center justify-center">
+                                {/* Neural Core Animation */}
+                                <div className="relative w-32 h-32 bg-blue-600/10 rounded-full border border-blue-500/30 flex items-center justify-center animate-pulse-slow shadow-[0_0_50px_rgba(30,90,255,0.2)]">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-transparent blur-sm" />
+                                    <NotebookPen className="text-blue-400 w-16 h-16 animate-breath drop-shadow-[0_0_15px_rgba(30,90,255,0.5)]" />
                                 </div>
-                                {/* RefreshCw - Blue 3D breathing */}
-                                <div className="absolute top-12 left-0 w-20 h-20 bg-gradient-to-b from-blue-700 to-blue-900 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-1.2s]">
-                                    <RefreshCw className="text-white w-8 h-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
-                                </div>
-                                {/* Layers - Blue 3D breathing */}
-                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-b from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-blue-400/30 animate-breath [animation-delay:-2.5s]">
-                                    <Layers className="text-white w-6 h-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" />
-                                </div>
+
+                                {/* Orbiting Pulse Rings */}
+                                <div className="absolute w-44 h-44 rounded-full border border-blue-500/5 animate-spin-slow" />
+                                <div className="absolute w-40 h-40 rounded-full border border-white/5 animate-spin-slow-extremely [animation-duration:15s]" />
+
+                                {/* Floating Particles/Nodes */}
+                                <div className="absolute top-0 right-4 w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                                <div className="absolute bottom-8 left-0 w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse [animation-delay:1s]" />
+                                <div className="absolute top-1/2 left-4 w-1 h-1 rounded-full bg-white/40 animate-pulse [animation-delay:2s]" />
                             </div>
-                            {/* Blue Core Glow */}
-                            <div className="absolute w-32 h-32 bg-blue-500/20 rounded-full blur-[80px] z-[1]" />
+
+                            {/* Blue Hub Glow */}
+                            <div className="absolute w-48 h-48 bg-blue-600/10 rounded-full blur-[80px] z-[1]" />
                         </div>
                     </Card>
 
@@ -136,7 +163,7 @@ export default function HowItWorks() {
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 z-[2]">
+                        <div className="relative w-64 h-36 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 z-[2]">
                             {/* Dashboard Header UI */}
                             <div className="h-6 bg-zinc-800 border-b border-white/5 flex items-center px-3 gap-1.5 focus:outline-none">
                                 <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
