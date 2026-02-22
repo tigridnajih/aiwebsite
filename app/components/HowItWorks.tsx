@@ -112,11 +112,12 @@ export default function HowItWorks() {
         <section id="how-it-works" className="py-24 bg-black overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
+                    badge="Process"
                     title="How it works"
                     description="Our seamless process to take your agency to the next level with custom AI solutions."
                 />
 
-                <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
+                <div className="grid lg:grid-cols-3 gap-10 mt-12 pb-20">
                     {/* Card 1: Share Your Workflow - BLUE GLOW ORBS */}
                     <Card
                         number="1"

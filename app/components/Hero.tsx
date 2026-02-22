@@ -27,8 +27,9 @@ export default function Hero() {
                 <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
                     {/* Trusted Proof */}
                     {/* Trusted Proof */}
-                    <div className="animate-fade-in opacity-0 animate-delay-100 mb-2">
-                        <span className="text-sm md:text-base font-bold tracking-tight text-white">
+                    {/* Trusted Proof Badge */}
+                    <div className="animate-fade-in opacity-0 animate-delay-100 mb-4 px-4 py-1.5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm">
+                        <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-white uppercase">
                             Supercharge your Business
                         </span>
                     </div>
