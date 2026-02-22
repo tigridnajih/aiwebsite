@@ -108,6 +108,10 @@ export default function HowItWorks() {
         { Icon: BrandIcons.n8n, name: 'n8n' },
     ];
 
+    const orbGradient = {
+        background: 'radial-gradient(circle, #4F8CFF 0%, #2F63FF 50%, #0B1F5C 100%)'
+    };
+
     return (
         <section id="how-it-works" className="py-24 bg-black overflow-hidden">
             <div className="container-custom">
@@ -118,7 +122,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-12 pb-20">
-                    {/* Card 1: Share Your Workflow - NAVY BLUE ORBS */}
+                    {/* Card 1: Share Your Workflow - GRADIENT ORBS */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -136,9 +140,9 @@ export default function HowItWorks() {
                                 ].map((item, i) => (
                                     <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
                                         style={{ transform: `translate(calc(-50% + ${Math.cos(item.angle * Math.PI / 180) * item.dist}px), calc(-50% + ${Math.sin(item.angle * Math.PI / 180) * item.dist}px))` }}>
-                                        <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(11,37,116,0.5),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-blue-900/50 backdrop-blur-sm">
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-                                            <item.Icon className="relative z-10 text-white w-7 h-7 opacity-90" />
+                                        <div className="relative w-full h-full rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(47,99,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-white/10 backdrop-blur-sm" style={orbGradient}>
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                            <item.Icon className="relative z-10 text-white w-7 h-7" />
                                         </div>
                                     </div>
                                 ))}
@@ -147,7 +151,7 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - NAVY BLUE DUAL LINEAR ORBS */}
+                    {/* Card 2: We Build the System - GRADIENT DUAL LINEAR ORBS */}
                     <Card
                         number="2"
                         title="We Build the System"
@@ -160,9 +164,9 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical py-12">
                                     {[...automationIcons, ...automationIcons].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(11,37,116,0.5),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-blue-900/50 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(47,99,255,0.3),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-white/10 backdrop-blur-sm shrink-0" style={orbGradient}>
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-                                            <div className="text-white relative z-10 flex items-center justify-center opacity-90">
+                                            <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
                                             </div>
                                         </div>
@@ -175,9 +179,9 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical-reverse py-12">
                                     {[...[...automationIcons].reverse(), ...[...automationIcons].reverse()].map((item, i) => (
-                                        <div key={i} className="relative w-20 h-20 bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(11,37,116,0.5),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-blue-900/50 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(47,99,255,0.3),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-white/10 backdrop-blur-sm shrink-0" style={orbGradient}>
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-                                            <div className="text-white relative z-10 flex items-center justify-center opacity-90">
+                                            <div className="text-white relative z-10 flex items-center justify-center">
                                                 <item.Icon />
                                             </div>
                                         </div>
@@ -190,7 +194,7 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control - NAVY BLUE GLOWING DASHBOARD */}
+                    {/* Card 3: Launch and Take Control - GRADIENT DASHBOARD */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
@@ -198,35 +202,35 @@ export default function HowItWorks() {
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex flex-col items-center justify-center">
-                            {/* Animated Navy Dashboard Mockup */}
-                            <div className="relative w-72 h-44 bg-black border border-[#0B2574]/60 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(11,37,116,0.4)] animate-float-x z-[2]">
-                                {/* Dashboard Header - Navy Blue */}
-                                <div className="h-7 bg-[#0B2574] flex items-center px-3 gap-1.5 shadow-[0_4px_12px_rgba(11,37,116,0.5)]">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-                                    <div className="ml-auto w-10 h-2 bg-white/10 rounded-full" />
+                            {/* Animated Gradient Dashboard Mockup */}
+                            <div className="relative w-72 h-44 bg-black border border-white/20 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(47,99,255,0.25)] animate-float-x z-[2]">
+                                {/* Dashboard Header - Using Orb Gradient */}
+                                <div className="h-7 flex items-center px-3 gap-1.5 shadow-[0_4px_12px_rgba(0,0,0,0.5)]" style={orbGradient}>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                                    <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
                                 </div>
 
                                 {/* Dashboard Body - Black with Animated LIVE Button */}
                                 <div className="flex items-center justify-center h-full -mt-4">
-                                    <div className="relative group/live flex items-center gap-3 bg-[#0B2574]/20 border border-[#0B2574]/50 px-6 py-3 rounded-full shadow-[0_0_20px_rgba(11,37,116,0.3)]">
+                                    <div className="relative group/live flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(47,99,255,0.2)]" style={{ background: 'rgba(47, 99, 255, 0.1)' }}>
                                         <div className="relative flex h-3 w-3">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]"></span>
                                         </div>
-                                        <span className="text-white font-bold text-xl tracking-widest uppercase drop-shadow-[0_0_10px_rgba(11,37,116,0.8)]">Live</span>
+                                        <span className="text-white font-bold text-xl tracking-widest uppercase drop-shadow-[0_0_10px_rgba(47,99,255,0.5)]">Live</span>
 
                                         {/* External Glow */}
-                                        <div className="absolute inset-0 rounded-full bg-[#0B2574]/10 blur-md -z-1" />
+                                        <div className="absolute inset-0 rounded-full bg-blue-600/5 blur-md -z-1" />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Share Orbit in Bottom-Left - Navy */}
-                            <div className="absolute bottom-2 left-2 w-20 h-20 bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(11,37,116,0.5),inset_0_4px_12px_rgba(255,255,255,0.1)] border border-blue-900/50 backdrop-blur-sm z-[2]">
-                                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-                                <Share2 className="text-white w-7 h-7 opacity-90" />
+                            {/* Share Orbit in Bottom-Left - Gradient */}
+                            <div className="absolute bottom-2 left-2 w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(47,99,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-white/10 backdrop-blur-sm z-[2]" style={orbGradient}>
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                                <Share2 className="text-white w-7 h-7" />
                             </div>
 
                             {/* Background Glows */}
