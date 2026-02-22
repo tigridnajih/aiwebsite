@@ -48,24 +48,22 @@ export default function PortfolioShowcase() {
                 }}
             >
                 {/* Scrolling Container */}
-                <div className="flex animate-infinite-scroll-right hover:[animation-play-state:paused] gap-12 whitespace-nowrap py-8">
+                <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
                     {allProjects.map((project, idx) => (
-                        <div key={idx} className="flex flex-col gap-6 flex-shrink-0 group">
-                            {/* Image with Blue Glowing Border */}
-                            <div className="relative h-[350px] md:h-[450px] w-auto rounded-[20px] overflow-hidden border border-blue-500/20 group-hover:border-blue-400 transition-all duration-500 shadow-[0_0_20px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_35px_rgba(59,130,246,0.3)] bg-zinc-900">
+                        <div key={idx} className="flex flex-col gap-4 flex-shrink-0">
+                            {/* Image with Blue Glowing Border - Thick and Permanent */}
+                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-2 border-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.35)] bg-zinc-900">
                                 <img
                                     src={project.url}
                                     alt={project.title}
-                                    className="h-full w-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                                    className="h-full w-auto object-contain"
                                 />
-                                {/* Glass Overlay on hover */}
-                                <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-colors duration-500 pointer-events-none" />
                             </div>
 
                             {/* Caption Text Below Image - Styled to match reference */}
                             <div className="px-1">
-                                <p className="text-[#666] font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase transition-colors duration-300 group-hover:text-blue-400">
-                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-[#999] group-hover:text-white transition-colors">{project.title.split(' - ')[1]}</span>
+                                <p className="text-[#666] font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase">
+                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-[#999]">{project.title.split(' - ')[1]}</span>
                                 </p>
                             </div>
                         </div>
