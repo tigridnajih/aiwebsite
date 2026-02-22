@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 /**
  * HeroParticles - Stardust system matching the reference image.
- * Features: High density at top, downward slow motion, and center fade-out.
+ * Features: High density at top, downward slow motion and center fade-out.
  */
 export default function HeroParticles() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
