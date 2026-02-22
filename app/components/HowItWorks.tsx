@@ -63,7 +63,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - VIBRANT ELECTRIC BLUE ORBS */}
+                    {/* Card 1: Share Your Workflow - DEEP MIDNIGHT BLUE ORBS */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -71,57 +71,57 @@ export default function HowItWorks() {
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                            {/* Main Clockwise Orbit Container - Perfectly spinning clockwise */}
+                            {/* Main Clockwise Orbit Container */}
                             <div className="relative w-64 h-64 animate-spin-slow-extremely">
 
                                 {/* 1. Email (0deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
                                     style={{ transform: 'translate(calc(-50% + 115px), calc(-50% + 0px))' }}>
-                                    <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <Mail className="relative z-10 text-white w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]" />
+                                    <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_4px_12px_rgba(255,255,255,0.15)] border border-blue-500/30 backdrop-blur-sm">
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                                        <Mail className="relative z-10 text-white/90 w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
                                     </div>
                                 </div>
 
                                 {/* 2. List (72deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
                                     style={{ transform: 'translate(calc(-50% + 35.5px), calc(-50% + 109.4px))' }}>
-                                    <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <List className="relative z-10 text-white w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]" />
+                                    <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_4px_12px_rgba(255,255,255,0.15)] border border-blue-500/30 backdrop-blur-sm">
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                                        <List className="relative z-10 text-white/90 w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
                                     </div>
                                 </div>
 
                                 {/* 3. Calendar (144deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
                                     style={{ transform: 'translate(calc(-50% - 93px), calc(-50% + 67.6px))' }}>
-                                    <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <Calendar className="relative z-10 text-white w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]" />
+                                    <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_4px_12px_rgba(255,255,255,0.15)] border border-blue-500/30 backdrop-blur-sm">
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                                        <Calendar className="relative z-10 text-white/90 w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
                                     </div>
                                 </div>
 
                                 {/* 4. NotebookPen (216deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
                                     style={{ transform: 'translate(calc(-50% - 93px), calc(-50% - 67.6px))' }}>
-                                    <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <NotebookPen className="relative z-10 text-white w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]" />
+                                    <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_4px_12px_rgba(255,255,255,0.15)] border border-blue-500/30 backdrop-blur-sm">
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                                        <NotebookPen className="relative z-10 text-white/90 w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
                                     </div>
                                 </div>
 
                                 {/* 5. FileText (288deg) */}
                                 <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-28 h-28 transform"
                                     style={{ transform: 'translate(calc(-50% + 35.5px), calc(-50% - 109.4px))' }}>
-                                    <div className="relative w-full h-full bg-[#1E4FFF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(30,79,255,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-blue-400/50 backdrop-blur-sm">
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <FileText className="relative z-10 text-white w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]" />
+                                    <div className="relative w-full h-full bg-[#0B2574] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_4px_12px_rgba(255,255,255,0.15)] border border-blue-500/30 backdrop-blur-sm">
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                                        <FileText className="relative z-10 text-white/90 w-10 h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
                                     </div>
                                 </div>
                             </div>
 
                             {/* Central Warp Core Glow */}
-                            <div className="absolute w-52 h-52 bg-blue-500/10 rounded-full blur-[100px] z-[1]" />
+                            <div className="absolute w-52 h-52 bg-blue-500/5 rounded-full blur-[100px] z-[1]" />
                         </div>
                     </Card>
 
