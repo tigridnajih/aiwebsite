@@ -54,8 +54,8 @@ export default function Hero() {
                             {/* Inner background - Violet/Black Gradient */}
                             <div className="relative h-full w-full flex items-center justify-center gap-2 px-8 rounded-full bg-gradient-to-br from-violet-950 to-black text-white font-semibold text-sm z-10">
                                 Book a Strategy Call
-                                <svg className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                <svg className="relative z-10 w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                                 </svg>
                             </div>
                         </Link>
