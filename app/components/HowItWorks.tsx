@@ -92,12 +92,12 @@ export default function HowItWorks() {
                                     </div>
                                 </div>
 
-                                {/* 3. Calendar - Medium (120deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-22 h-22 transform"
+                                {/* 3. Calendar - Medium-Large (120deg) - INCREASED SIZE */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-26 h-26 transform"
                                     style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% + 99.6px)) rotate(120deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.5),inset_0_-5px_12px_rgba(0,0,0,0.4),inset_0_5px_12px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-1s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/20 to-transparent rounded-full blur-[1px] -rotate-45" />
-                                        <Calendar className="relative z-10 text-white w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]" />
+                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-1s] rotate-slow-reverse">
+                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1.5px] -rotate-45" />
+                                        <Calendar className="relative z-10 text-white w-11 h-11 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
@@ -110,12 +110,12 @@ export default function HowItWorks() {
                                     </div>
                                 </div>
 
-                                {/* 5. RefreshCw - Medium (240deg) */}
-                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-22 h-22 transform"
+                                {/* 5. RefreshCw - Medium-Large (240deg) - INCREASED SIZE */}
+                                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-26 h-26 transform"
                                     style={{ transform: 'translate(calc(-50% - 57.5px), calc(-50% - 99.6px)) rotate(240deg)' }}>
-                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.5),inset_0_-5px_12px_rgba(0,0,0,0.4),inset_0_5px_12px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-2s] rotate-slow-reverse">
-                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/20 to-transparent rounded-full blur-[1px] -rotate-45" />
-                                        <RefreshCw className="relative z-10 text-white w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]" />
+                                    <div className="relative w-full h-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_-6px_15px_rgba(0,0,0,0.4),inset_0_6px_15px_rgba(255,255,255,0.2)] border border-blue-400/40 backdrop-blur-sm animate-breath [animation-delay:-2s] rotate-slow-reverse">
+                                        <div className="absolute top-[10%] left-[15%] w-[40%] h-[20%] bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[1.5px] -rotate-45" />
+                                        <RefreshCw className="relative z-10 text-white w-11 h-11 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]" />
                                     </div>
                                 </div>
 
