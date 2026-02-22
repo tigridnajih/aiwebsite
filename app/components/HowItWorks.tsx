@@ -4,40 +4,40 @@ import React from 'react';
 import { Mail, Calendar, Play, List, NotebookPen, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
-// Custom Brand Icons for Automation Card - Optimized for Dark Blue Theme
+// Custom Brand Icons for Automation Card - Reduced to w-8
 const BrandIcons = {
     ChatGPT: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M22.28 12c0-2.048-1.356-3.846-3.387-4.192-.462-.145-1.064-.247-1.383-.357A10.852 10.852 0 0015.5 1.054c-.653-.406-1.464-.216-1.896.425-.262.388-.415.748-.485 1.15-.175.986-.145 2.103-.145 3.102 0 .425.035.85.08 1.258-2.614-.23-5.23-.23-7.844 0a17.228 17.228 0 00.08-1.258c0-.999.03-2.116-.145-3.102-.07-.402-.223-.762-.485-1.15-.432-.641-1.243-.831-1.896-.425A10.859 10.859 0 001.644 7.451c-.319.11-.921.212-1.383.357C-1.744 8.154-3.1 9.952-3.1 12c0 2.048 1.356 3.846 3.387 4.192.462.145 1.064.247 1.383.357.348 1.574.969 3.016 1.856 4.394.653.406 1.464.216 1.896-.425.262-.388.415-.748.485-1.15.175-.986.145-2.103.145-3.102 0-.425-.035-.85-.08-1.258 2.614.23 5.23.23 7.844 0-.045.408-.08.833-.08 1.258 0 .999-.03 2.116.145 3.102.07.402.223.762.485 1.15.432.641 1.243.831 1.896.425.887-1.378 1.508-2.82 1.856-4.394.319-.11.921-.212 1.383-.357 2.031-.346 3.387-2.144 3.387-4.192zM12 13.125a1.125 1.125 0 110-2.25 1.125 1.125 0 010 2.25z" />
         </svg>
     ),
     Gemini: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M12 2l2.4 7.2L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" />
         </svg>
     ),
     Airtable: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M12.5 3.5L3.5 8v8l9 4.5 9-4.5V8l-9-4.5zM12.5 17l-6-3V9l6 3 6-3v5l-6 3z" />
         </svg>
     ),
     Figma: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M12 2C9.5 2 7.5 4 7.5 6.5S9.5 11 12 11h2.5c2.5 0 4.5-2 4.5-4.5S17 2 14.5 2H12zm0 11C9.5 13 7.5 15 7.5 17.5S9.5 22 12 22s4.5-2 4.5-4.5S14.5 13 12 13zM7.5 12c0 2.5 2 4.5 4.5 4.5V7.5C9.5 7.5 7.5 9.5 7.5 12z" />
         </svg>
     ),
     Notion: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M4 3h16c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zm2 4v10h2V7H6zm5 0v10h2V7h-2zm5 0v10h2V7h-2z" />
         </svg>
     ),
     Zapier: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <path d="M12 2l1.6 6.3 6.4 1.7-5.5 4.1 2.3 6.9-5.8-4.2-5.8 4.2 2.3-6.9-5.5-4.1 6.4-1.7z" />
         </svg>
     ),
     n8n: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
             <circle cx="12" cy="12" r="3" />
             <circle cx="12" cy="5" r="2" />
             <circle cx="12" cy="19" r="2" />
@@ -117,7 +117,7 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
-                    {/* Card 1: Share Your Workflow - PLAIN WHITE ORBS */}
+                    {/* Card 1: Share Your Workflow - COMPACT WHITE ORBS (No Glow) */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
@@ -127,17 +127,17 @@ export default function HowItWorks() {
                         <div className="relative w-full h-full flex items-center justify-center z-[2]">
                             <div className="relative w-64 h-64 animate-spin-slow-extremely">
                                 {[
-                                    { Icon: Mail, angle: 0, dist: 115 },
-                                    { Icon: List, angle: 72, dist: 115 },
-                                    { Icon: Calendar, angle: 144, dist: 115 },
-                                    { Icon: NotebookPen, angle: 216, dist: 115 },
-                                    { Icon: FileText, angle: 288, dist: 115 }
+                                    { Icon: Mail, angle: 0, dist: 110 },
+                                    { Icon: List, angle: 72, dist: 110 },
+                                    { Icon: Calendar, angle: 144, dist: 110 },
+                                    { Icon: NotebookPen, angle: 216, dist: 110 },
+                                    { Icon: FileText, angle: 288, dist: 110 }
                                 ].map((item, i) => (
-                                    <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 transform"
+                                    <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
                                         style={{ transform: `translate(calc(-50% + ${Math.cos(item.angle * Math.PI / 180) * item.dist}px), calc(-50% + ${Math.sin(item.angle * Math.PI / 180) * item.dist}px))` }}>
-                                        <div className="relative w-full h-full bg-white rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(255,255,255,0.4),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm">
+                                        <div className="relative w-full h-full bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
-                                            <item.Icon className="relative z-10 text-[#0B2574] w-8 h-8 drop-shadow-[0_1px_3px_rgba(0,0,0,0.1)]" />
+                                            <item.Icon className="relative z-10 text-[#0B2574] w-7 h-7" />
                                         </div>
                                     </div>
                                 ))}
@@ -146,7 +146,7 @@ export default function HowItWorks() {
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - PLAIN WHITE DUAL LINEAR ORBS */}
+                    {/* Card 2: We Build the System - COMPACT WHITE ICONS (No Glow) */}
                     <Card
                         number="2"
                         title="We Build the System"
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical py-12">
                                     {[...automationIcons, ...automationIcons].map((item, i) => (
-                                        <div key={i} className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(255,255,255,0.4),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
                                             <div className="text-[#0B2574] relative z-10 flex items-center justify-center">
                                                 <item.Icon />
@@ -174,7 +174,7 @@ export default function HowItWorks() {
                                 style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
                                 <div className="flex flex-col items-center gap-8 animate-infinite-scroll-vertical-reverse py-12">
                                     {[...[...automationIcons].reverse(), ...[...automationIcons].reverse()].map((item, i) => (
-                                        <div key={i} className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(255,255,255,0.4),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
+                                        <div key={i} className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.2),inset_0_4px_10px_rgba(0,0,0,0.05)] border border-white/80 backdrop-blur-sm shrink-0">
                                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
                                             <div className="text-[#0B2574] relative z-10 flex items-center justify-center">
                                                 <item.Icon />
