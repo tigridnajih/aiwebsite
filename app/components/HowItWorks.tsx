@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState, useRef, useEffect } from 'react';
 import { LucideIcon, Mail, FileText, Calendar, Layout, Play, RefreshCw, Layers, List, StickyNote, NotebookPen } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
@@ -12,15 +13,19 @@ interface CardProps {
     noHover?: boolean;
     style?: React.CSSProperties;
     badgeGlow?: string;
+    onMouseMove?: (e: React.MouseEvent<HTMLDivElement>) => void;
+    onMouseLeave?: () => void;
 }
 
-const Card = ({ number, title, description, children, className = "", noHover = false, style, badgeGlow }: CardProps) => (
+const Card = ({ number, title, description, children, className = "", noHover = false, style, badgeGlow, onMouseMove, onMouseLeave }: CardProps) => (
     <div
-        className={`relative group p-8 rounded-[24px] bg-black border border-white/5 transition-all duration-500 flex flex-col items-start min-h-[480px] overflow-hidden ${!noHover ? 'hover:border-blue-500/30' : ''} ${className}`}
+        className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${!noHover ? 'hover:border-blue-500/30' : ''} ${className}`}
         style={style}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
     >
         {/* Subtle Noise Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150" />
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px]" />
 
         {/* Subtle Blue Glow Backdrop (if not custom) */}
         {!noHover && !style?.background && (
@@ -29,94 +34,129 @@ const Card = ({ number, title, description, children, className = "", noHover = 
 
         {/* Step Badge */}
         <div
-            className="relative z-10 w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold text-lg mb-8 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+            className="relative z-10 w-11 h-11 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-xl mb-10 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             style={badgeGlow ? { boxShadow: badgeGlow } : {}}
         >
             {number}
         </div>
 
-        <h3 className="relative z-10 text-[26px] font-bold text-[#F5F7FF] mb-4 tracking-tight group-hover:text-blue-400 transition-colors drop-shadow-sm">
+        <h3 className="relative z-10 text-[32px] font-bold text-[#F5F7FF] mb-5 tracking-tight group-hover:text-blue-400 transition-colors drop-shadow-md">
             {title}
         </h3>
 
-        <p className="relative z-10 text-[rgba(200,210,255,0.75)] leading-[1.7] mb-auto max-w-[90%]">
+        <p className="relative z-10 text-[rgba(200,210,255,0.8)] text-lg leading-[1.8] mb-auto max-w-[95%]">
             {description}
         </p>
 
         {/* Animation Container */}
-        <div className="relative z-10 w-full h-64 mt-6 flex items-center justify-center">
+        <div className="relative z-10 w-full h-72 mt-8 flex items-center justify-center">
             {children}
         </div>
     </div>
 );
 
-const GlassyOrb = ({ children, size, className, delay }: { children: React.ReactNode, size: string, className: string, delay: string }) => (
-    <div
-        className={`absolute ${size} rounded-full flex items-center justify-center border border-white/10 backdrop-blur-md animate-drift-slow-subtle ${className}`}
-        style={{
-            background: 'radial-gradient(circle at center, rgba(255,255,255,0.12), rgba(255,255,255,0.04))',
-            boxShadow: '0 0 30px rgba(60,120,255,0.25), inset 0 0 10px rgba(255,255,255,0.1)',
-            animationDelay: delay
-        }}
-    >
-        {children}
-    </div>
-);
+const GlassyOrb = ({ children, size, className, delay, mousePos }: { children: React.ReactNode, size: string, className: string, delay: string, mousePos: { x: number, y: number } }) => {
+    const factor = parseInt(size.split('-')[1]) / 20; // Larger orbs move more
+    const translateX = mousePos.x * factor;
+    const translateY = mousePos.y * factor;
+
+    return (
+        <div
+            className={`absolute ${size} rounded-full flex items-center justify-center border border-white/10 backdrop-blur-2xl animate-drift-slow-subtle transition-transform duration-500 ease-out ${className}`}
+            style={{
+                background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
+                boxShadow: '0 20px 50px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(60,120,255,0.2)',
+                animationDelay: delay,
+                transform: `translate(${translateX}px, ${translateY}px)`
+            }}
+        >
+            {/* Specular Highlight */}
+            <div className="absolute top-[15%] left-[15%] w-[30%] h-[30%] bg-white/20 rounded-full blur-[4px] pointer-events-none" />
+
+            {/* Internal Glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/10 to-transparent opacity-50" />
+
+            <div className="relative z-10">
+                {children}
+            </div>
+        </div>
+    );
+};
 
 export default function HowItWorks() {
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / 15;
+        const y = (e.clientY - rect.top - rect.height / 2) / 15;
+        setMousePos({ x, y });
+    };
+
+    const handleMouseLeave = () => {
+        setMousePos({ x: 0, y: 0 });
+    };
+
     return (
-        <section id="how-it-works" className="py-20 bg-black">
+        <section id="how-it-works" className="py-24 bg-black overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
                     title="How it works"
                     description="Our seamless process to take your agency to the next level with custom AI solutions."
                 />
 
-                <div className="grid lg:grid-cols-3 gap-8 mt-16 pb-20">
-                    {/* Card 1: Share Your Workflow - REDESIGNED */}
-                    <Card
-                        number="1"
-                        title="Share Your Workflow"
-                        description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                        style={{
-                            background: 'linear-gradient(to bottom, #0B1020, #0A1B3F)',
-                            border: '1px solid rgba(255,255,255,0.06)',
-                            boxShadow: '0 0 60px rgba(30, 90, 255, 0.08), inset 0 0 20px rgba(255,255,255,0.02)'
-                        }}
-                        noHover={true}
-                    >
-                        {/* Atmospheric Lighting */}
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2" />
+                <div className="grid lg:grid-cols-3 gap-10 mt-20 pb-20">
+                    {/* Card 1: Share Your Workflow - PREMIUM OVERHAUL */}
+                    <div ref={cardRef} className="h-full">
+                        <Card
+                            number="1"
+                            title="Share Your Workflow"
+                            description="From lead gen to client onboarding, just share your workflow and the tools you use."
+                            style={{
+                                background: 'radial-gradient(circle at center, #131B36 0%, #0A0F24 100%)',
+                                border: '1px solid rgba(255,255,255,0.08)',
+                                boxShadow: '0 30px 100px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(255,255,255,0.03)'
+                            }}
+                            noHover={true}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            {/* Deep Atmospheric Glows */}
+                            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
+                            <div className="absolute -top-20 -right-20 w-60 h-60 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-                        <div className="relative w-full h-full flex items-center justify-center">
-                            <div className="relative w-56 h-56">
-                                {/* Email - Large Orb */}
-                                <GlassyOrb size="w-24 h-24" className="top-2 right-0 z-30" delay="0s">
-                                    <Mail className="text-white w-10 h-10 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
-                                </GlassyOrb>
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                <div className="relative w-64 h-64">
+                                    {/* Email - Extra Large Orb */}
+                                    <GlassyOrb size="w-28 h-28" className="top-0 right-4 z-30" delay="0s" mousePos={mousePos}>
+                                        <Mail className="text-white w-12 h-12 filter drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]" />
+                                    </GlassyOrb>
 
-                                {/* List - Medium Orb */}
-                                <GlassyOrb size="w-20 h-20" className="top-12 left-0 z-20" delay="-2s">
-                                    <List className="text-white w-8 h-8 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
-                                </GlassyOrb>
+                                    {/* List - Large Orb */}
+                                    <GlassyOrb size="w-24 h-24" className="top-16 left-2 z-20" delay="-2s" mousePos={mousePos}>
+                                        <List className="text-white w-10 h-10 filter drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                                    </GlassyOrb>
 
-                                {/* Calendar - Medium Orb */}
-                                <GlassyOrb size="w-18 h-18" className="bottom-4 left-6 z-10" delay="-4s">
-                                    <Calendar className="text-white w-7 h-7 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
-                                </GlassyOrb>
+                                    {/* Calendar - Medium Orb */}
+                                    <GlassyOrb size="w-20 h-20" className="bottom-8 left-10 z-10" delay="-4s" mousePos={mousePos}>
+                                        <Calendar className="text-white w-8 h-8 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                                    </GlassyOrb>
 
-                                {/* Note - Small Orb */}
-                                <GlassyOrb size="w-14 h-14" className="bottom-2 right-12 z-20" delay="-1.5s">
-                                    <NotebookPen className="text-white w-6 h-6 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
-                                </GlassyOrb>
+                                    {/* Note - Medium Orb */}
+                                    <GlassyOrb size="w-16 h-16" className="bottom-4 right-16 z-20" delay="-1.5s" mousePos={mousePos}>
+                                        <NotebookPen className="text-white w-7 h-7 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                                    </GlassyOrb>
 
-                                {/* Page - Small Orb */}
-                                <GlassyOrb size="w-12 h-12" className="top-1/2 right-4 z-10" delay="-5s">
-                                    <FileText className="text-white w-5 h-5 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
-                                </GlassyOrb>
+                                    {/* Page - Small Orb */}
+                                    <GlassyOrb size="w-14 h-14" className="top-1/2 right-0 z-10" delay="-5s" mousePos={mousePos}>
+                                        <FileText className="text-white w-6 h-6 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                                    </GlassyOrb>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
+                        </Card>
+                    </div>
 
                     {/* Card 2: We Build the System - BLUE 3D STYLE */}
                     <Card
