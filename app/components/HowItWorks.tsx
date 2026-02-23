@@ -185,31 +185,31 @@ export default function HowItWorks() {
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-4">
+                        <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-2">
                             {/* IDE Mockup Window */}
-                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col">
+                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-blue-500/20 overflow-hidden shadow-2xl flex flex-col">
                                 {/* IDE Header */}
-                                <div className="h-9 bg-[#121214] border-bottom border-white/5 flex items-center px-4 gap-4">
+                                <div className="h-9 bg-[#121214] border-b border-white/5 flex items-center px-4 gap-4">
                                     <div className="flex items-center gap-2">
-                                        <MoveLeft className="w-3.5 h-3.5 text-zinc-600" />
-                                        <MoveRight className="w-3.5 h-3.5 text-zinc-600" />
+                                        <MoveLeft className="w-3.5 h-3.5 text-blue-500/40" />
+                                        <MoveRight className="w-3.5 h-3.5 text-blue-500/40" />
                                     </div>
-                                    <div className="flex-1 h-5 bg-[#0A0A0B] border border-white/5 rounded-md mx-4 animate-pulse" />
+                                    <div className="flex-1 h-5 bg-[#0A0A0B] border border-blue-500/10 rounded-md mx-4 animate-pulse" />
                                     <div className="flex items-center gap-3">
-                                        <Minus className="w-3 h-3 text-zinc-600" />
-                                        <Square className="w-2.5 h-2.5 text-zinc-600" />
-                                        <X className="w-3 h-3 text-zinc-600" />
+                                        <Minus className="w-3 h-3 text-blue-500/40" />
+                                        <Square className="w-2.5 h-2.5 text-blue-500/40" />
+                                        <X className="w-3 h-3 text-blue-500/40" />
                                     </div>
                                 </div>
 
                                 <div className="flex-1 flex overflow-hidden">
                                     {/* IDE Sidebar */}
-                                    <div className="w-12 bg-[#121214] border-right border-white/5 flex flex-col items-center py-4 gap-6">
-                                        <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                                            <File className="w-4 h-4 text-[#F5F7FF]/80" />
+                                    <div className="w-12 bg-[#121214] border-r border-white/5 flex flex-col items-center py-4 gap-6">
+                                        <div className="w-8 h-8 rounded-lg bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                            <File className="w-4 h-4 text-blue-400" />
                                         </div>
-                                        <Search className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
-                                        <Puzzle className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
+                                        <Search className="w-4 h-4 text-blue-400/40 hover:text-blue-400 transition-colors cursor-pointer" />
+                                        <Puzzle className="w-4 h-4 text-blue-400/40 hover:text-blue-400 transition-colors cursor-pointer" />
                                     </div>
 
                                     {/* IDE Code Area */}
@@ -283,7 +283,7 @@ export default function HowItWorks() {
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)] !p-5 md:!p-7"
                     >
                         <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-8">
                             {/* Chatbot System */}
