@@ -5,32 +5,43 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-black text-white pt-6 pb-12 border-t border-white/[0.03]">
-            {/* 🌌 1. Background & Gradient */}
+        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-6 pb-12 border-t border-white/[0.03]">
+            {/* 🌌 Atmospheric Background System */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/40 via-black to-black" />
+                {/* 🌌 Base Layer: Very dark navy base */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050914] to-[#070C1F]" />
 
-                {/* Subtle radial blue glow behind CTA */}
+                {/* 🌊 Primary Blue Flow: Large radial glow from the right */}
                 <div
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none opacity-60"
+                    className="absolute inset-0 pointer-events-none"
                     style={{
-                        background: 'radial-gradient(circle at 50% 30%, rgba(60,110,255,0.25), transparent 60%)'
+                        background: 'radial-gradient(circle at 80% 40%, rgba(40, 90, 255, 0.35) 0%, rgba(20, 45, 140, 0.25) 30%, transparent 65%)',
+                        filter: 'blur(40px)'
                     }}
                 />
 
-                {/* 🌠 6. Subtle Atmosphere Enhancements (Star Particles) */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    {[...Array(20)].map((_, i) => (
+                {/* 🌑 Secondary Depth: Subtle darker radial from bottom-left */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        background: 'radial-gradient(circle at 20% 90%, rgba(10, 20, 60, 0.5) 0%, transparent 60%)',
+                        filter: 'blur(30px)'
+                    }}
+                />
+
+                {/* 🌠 Atmospheric Dust: Extremely low-opacity floating particles */}
+                <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+                    {[...Array(12)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute bg-white rounded-full animate-pulse"
+                            className="absolute bg-blue-100 rounded-full animate-pulse"
                             style={{
-                                width: Math.random() * 2 + 'px',
-                                height: Math.random() * 2 + 'px',
+                                width: Math.random() * 1.5 + 'px',
+                                height: Math.random() * 1.5 + 'px',
                                 top: Math.random() * 100 + '%',
                                 left: Math.random() * 100 + '%',
-                                animationDuration: (Math.random() * 3 + 2) + 's',
-                                opacity: Math.random() * 0.5 + 0.2
+                                animationDuration: (Math.random() * 4 + 3) + 's',
+                                opacity: Math.random() * 0.3 + 0.1
                             }}
                         />
                     ))}
