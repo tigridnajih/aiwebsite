@@ -60,7 +60,7 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={style}
     >
         {/* Top-Left Medium Glow */}
@@ -82,16 +82,16 @@ const Card = ({ number, title, description, children, className = "", style, bad
             {number}
         </div>
 
-        <h3 className="relative z-10 text-[32px] font-bold text-[#F5F7FF] mb-5 tracking-tight transition-colors drop-shadow-md">
+        <h3 className="relative z-10 text-[28px] md:text-[32px] font-bold text-[#F5F7FF] mb-4 md:mb-5 tracking-tight transition-colors drop-shadow-md">
             {title}
         </h3>
 
-        <p className="relative z-10 text-zinc-400 text-lg leading-[1.8] mb-auto max-w-[95%]">
+        <p className="relative z-10 text-zinc-400 text-base md:text-lg leading-[1.6] md:leading-[1.8] mb-auto max-w-[95%]">
             {description}
         </p>
 
         {/* Animation Container */}
-        <div className="relative z-10 w-full h-72 mt-8 flex items-center justify-center">
+        <div className="relative z-10 w-full h-auto md:h-72 mt-8 flex items-center justify-center">
             {children}
         </div>
     </div>
@@ -129,10 +129,10 @@ export default function HowItWorks() {
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-between z-[2] px-2 gap-4">
+                        <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between z-[2] px-2 gap-8 sm:gap-4 py-8 sm:py-0">
                             {/* Left Side: Radar Scanner */}
-                            <div className="flex-1 flex flex-col items-center justify-center pt-8">
-                                <div className="relative w-36 h-36 rounded-full border border-white/10 flex items-center justify-center">
+                            <div className="w-full sm:flex-1 flex flex-col items-center justify-center">
+                                <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center">
                                     {/* Radar Rings */}
                                     <div className="absolute inset-0 border border-white/5 rounded-full" />
                                     <div className="absolute inset-4 border border-white/[0.08] rounded-full" />
@@ -156,7 +156,7 @@ export default function HowItWorks() {
                             </div>
 
                             {/* Right Side: Check Items */}
-                            <div className="flex-1 flex flex-col gap-2.5">
+                            <div className="w-full sm:flex-1 flex flex-col gap-2.5">
                                 {[
                                     { Icon: Shield, text: "System check" },
                                     { Icon: Cpu, text: "Process check" },
@@ -185,9 +185,9 @@ export default function HowItWorks() {
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-center z-[2] px-4">
+                        <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-4">
                             {/* IDE Mockup Window */}
-                            <div className="relative w-full h-[280px] bg-[#0A0A0B] rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col">
+                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col">
                                 {/* IDE Header */}
                                 <div className="h-9 bg-[#121214] border-bottom border-white/5 flex items-center px-4 gap-4">
                                     <div className="flex items-center gap-2">

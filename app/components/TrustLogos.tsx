@@ -49,8 +49,8 @@ export default function TrustLogos() {
             <div
                 className="relative w-full flex items-center overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%)'
+                    maskImage: 'linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%)'
                 }}
             >
                 {/* Logos Container */}
@@ -58,7 +58,7 @@ export default function TrustLogos() {
                     {allLogos.map((logo, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 mx-8 md:mx-12"
+                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12"
                         >
                             <div className="flex-shrink-0 scale-90">
                                 {logo.icon}
@@ -72,7 +72,7 @@ export default function TrustLogos() {
                     {allLogos.map((logo, i) => (
                         <div
                             key={`dup-${i}`}
-                            className="flex items-center gap-3 mx-8 md:mx-12"
+                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12"
                         >
                             <div className="flex-shrink-0 scale-90">
                                 {logo.icon}

@@ -17,9 +17,9 @@ export default function Services() {
                         <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-500/5 blur-[100px] rounded-full" />
                     </div>
 
-                    <div className="relative w-full h-full flex items-center gap-4 md:gap-8">
+                    <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left: Bubble Column */}
-                        <div className="flex-[1.8] flex flex-col gap-4">
+                        <div className="w-full md:flex-[1.8] flex flex-col gap-3 md:gap-4">
                             {/* Emma - Top Bubble (Replying) */}
                             <div className="relative bg-gradient-to-br from-[#0B1F5C] to-[#040816] border border-blue-500/30 rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
                                 <div className="flex items-start gap-3">
@@ -40,7 +40,7 @@ export default function Services() {
                                             <span className="text-[#F5F7FF] font-bold text-sm">Emma, RetailSync</span>
                                             <span className="text-[10px] text-blue-400 font-mono opacity-60">09:45 PM</span>
                                         </div>
-                                        <p className="text-zinc-400 text-[11px] font-medium italic leading-snug">
+                                        <p className="text-zinc-400 text-[10px] md:text-[11px] font-medium italic leading-snug">
                                             &ldquo;We&apos;re looking to automate inventory updates. Can you help?&rdquo;
                                         </p>
                                         <div className="mt-2.5 flex items-center gap-2">
@@ -111,7 +111,7 @@ export default function Services() {
                         </div>
 
                         {/* Center: Animated Connecting Lines */}
-                        <div className="flex-1 h-full relative hidden sm:block">
+                        <div className="hidden md:block flex-1 h-full relative">
                             <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
                                 {/* Emma Curve */}
                                 <path
@@ -148,7 +148,7 @@ export default function Services() {
                         </div>
 
                         {/* Right: Automation Node */}
-                        <div className="flex-[0.5] flex justify-center">
+                        <div className="flex-none md:flex-[0.5] flex justify-center">
                             <div className="relative">
                                 {/* Orbiting rings */}
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-green-500/20 rounded-full animate-spin-slow-extremely" />
@@ -283,7 +283,7 @@ export default function Services() {
                             </div>
 
                             {/* Mockup Content */}
-                            <div className="flex-1 w-full max-w-2xl px-4 md:px-0">
+                            <div className="flex-1 w-full max-w-2xl px-0 md:px-0">
                                 {feature.mockup}
                             </div>
                         </div>
