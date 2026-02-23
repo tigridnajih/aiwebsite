@@ -295,8 +295,8 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Chatbot system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Efficiency will increase by 20%</p>
                                 </div>
-                                <div className="shrink-0">
-                                    <RefreshCw className="w-4 h-4 text-blue-500/40 animate-spin-slow" />
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_15px_rgba(44,78,220,0.1)]">
+                                    <RefreshCw className="w-4 h-4 text-blue-400 animate-spin-slow" />
                                 </div>
                             </div>
 
@@ -309,7 +309,7 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
                                 </div>
-                                <div className="shrink-0 w-7 h-7 rounded-lg bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_15px_rgba(44,78,220,0.1)]">
                                     <ArrowUp className="w-4 h-4 text-blue-400 animate-bounce" />
                                 </div>
                             </div>
@@ -323,8 +323,8 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
                                 </div>
-                                <div className="shrink-0">
-                                    <Check className="w-5 h-5 text-blue-500 shadow-[0_0_10px_rgba(44,78,220,0.5)]" />
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_20px_rgba(44,78,220,0.4)]">
+                                    <Check className="w-5 h-5 text-blue-400 animate-pulse" />
                                 </div>
                             </div>
 
