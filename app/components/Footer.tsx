@@ -5,10 +5,10 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-[#070C1F] text-white">
+        <footer className="relative w-full overflow-hidden bg-black text-white pt-6 pb-12 border-t border-white/[0.03]">
             {/* 🌌 1. Background & Gradient */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#070C1F] via-[#0A1535] to-[#0D1F4F]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/40 via-black to-black" />
 
                 {/* Subtle radial blue glow behind CTA */}
                 <div
@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="relative z-10">
                 {/* 🧠 2. Large Moving Text Section + 🎭 3. Edge Masking */}
                 <div
-                    className="relative w-full pt-4 md:pt-6 overflow-hidden"
+                    className="relative w-full pt-0 overflow-hidden"
                     style={{
                         maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
