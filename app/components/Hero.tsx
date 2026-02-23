@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-black">
+        <section className="relative min-h-[700px] md:min-h-screen flex flex-col items-center pt-16 overflow-hidden text-white bg-black">
             {/* Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
@@ -22,8 +22,8 @@ export default function Hero() {
             {/* Subtle radial glow to match screenshot's positioning of light */}
             <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_60%)]" />
 
-            {/* Main Content Area - Flexible height to prevent overlap */}
-            <div className="flex-1 flex items-center justify-center relative z-20 w-full py-12 md:py-20 lg:py-0">
+            {/* Main Content Area - Stable spacing to prevent vertical drift on zoom */}
+            <div className="relative z-20 w-full pt-20 md:pt-32 pb-4">
                 <div className="container-custom flex flex-col items-center justify-center text-center md:-translate-y-4">
                     {/* Content */}
                     <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
@@ -68,8 +68,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Integrated TrustLogos - Using flow instead of absolute to maintain spacing */}
-            <div className="relative z-30 pb-12 md:pb-8 mt-auto">
+            {/* Integrated TrustLogos - Using stable margins instead of mt-auto to maintain spacing */}
+            <div className="relative z-30 w-full mt-12 md:mt-24 pb-12 md:pb-16">
                 <TrustLogos />
             </div>
         </section>
