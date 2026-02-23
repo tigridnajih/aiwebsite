@@ -63,6 +63,20 @@ html {
 }
 
 @layer utilities {
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-infinite-scroll-slow-extremely {
+    animation: infinite-scroll 30s linear infinite;
+  }
+
   .font-heading {
     font-family: var(--font-plus-jakarta), sans-serif;
   }
