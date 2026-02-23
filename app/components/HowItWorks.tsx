@@ -187,18 +187,18 @@ export default function HowItWorks() {
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-2">
                             {/* IDE Mockup Window */}
-                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-blue-500/20 overflow-hidden shadow-2xl flex flex-col">
+                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col">
                                 {/* IDE Header */}
                                 <div className="h-9 bg-[#121214] border-b border-white/5 flex items-center px-4 gap-4">
                                     <div className="flex items-center gap-2">
-                                        <MoveLeft className="w-3.5 h-3.5 text-blue-500/40" />
-                                        <MoveRight className="w-3.5 h-3.5 text-blue-500/40" />
+                                        <MoveLeft className="w-3.5 h-3.5 text-zinc-600" />
+                                        <MoveRight className="w-3.5 h-3.5 text-zinc-600" />
                                     </div>
-                                    <div className="flex-1 h-5 bg-[#0A0A0B] border border-blue-500/10 rounded-md mx-4 animate-pulse" />
+                                    <div className="flex-1 h-5 bg-[#0A0A0B] border border-white/5 rounded-md mx-4" />
                                     <div className="flex items-center gap-3">
-                                        <Minus className="w-3 h-3 text-blue-500/40" />
-                                        <Square className="w-2.5 h-2.5 text-blue-500/40" />
-                                        <X className="w-3 h-3 text-blue-500/40" />
+                                        <Minus className="w-3 h-3 text-zinc-600" />
+                                        <Square className="w-2.5 h-2.5 text-zinc-600" />
+                                        <X className="w-3 h-3 text-zinc-600" />
                                     </div>
                                 </div>
 
