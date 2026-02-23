@@ -5,7 +5,7 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-1.5 pb-6 border-t border-white/[0.03]">
+        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-0 pb-2 border-t border-white/[0.03]">
             {/* 🌌 Atmospheric Background System */}
             <div className="absolute inset-0 z-0">
                 {/* 🌌 Base Layer: Very dark navy base */}
@@ -57,10 +57,10 @@ export default function Footer() {
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
                     }}
                 >
-                    <div className="flex whitespace-nowrap overflow-hidden py-10">
+                    <div className="flex whitespace-nowrap overflow-hidden pt-4 pb-12">
                         <div className="flex animate-infinite-scroll-slow-extremely pause-on-hover">
                             {[1, 2].map((group) => (
-                                <h1 key={group} className="text-[90px] md:text-[165px] font-bold tracking-tighter text-[#F2F5FF] opacity-90 px-10 leading-none select-none">
+                                <h1 key={group} className="text-[65px] md:text-[110px] font-medium tracking-tighter text-[#F2F5FF] opacity-90 px-10 leading-none select-none">
                                     You need better systems. You don&apos;t need more people.
                                 </h1>
                             ))}
@@ -86,8 +86,8 @@ export default function Footer() {
                 </div>
 
                 {/* 🧩 5. Footer Content Grid */}
-                <div className="container-custom border-t border-[rgba(255,255,255,0.06)] pt-16 pb-20">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+                <div className="container-custom border-t border-[rgba(255,255,255,0.06)] pt-16 pb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-8">
                         {/* Brand Column */}
                         <div className="md:col-span-5">
                             <Link href="/" className="flex items-center gap-2 mb-6 group/logo">
