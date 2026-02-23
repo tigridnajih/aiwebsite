@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2, Shield, Cpu, Gauge, Bot, RotateCw, File, Search, Puzzle, MoveLeft, MoveRight, Minus, Square, X } from 'lucide-react';
+import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2, Shield, Cpu, Gauge, Bot, RotateCw, File, Search, Puzzle, MoveLeft, MoveRight, Minus, Square, X, MessageSquare, Settings, Filter, ArrowUp, RefreshCw } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 // Custom Brand Icons for Automation Card - Optimized for White Icons on Orbs
@@ -285,57 +285,50 @@ export default function HowItWorks() {
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-between px-6 z-[2]">
-                            {/* Left Node: Our Solution */}
-                            <div className="flex flex-col items-center gap-4">
-                                <div className="relative w-24 h-24 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center p-4">
-                                    <div className="relative w-full h-full rounded-full flex items-center justify-center overflow-hidden">
-                                        {/* Pulsing Concentric Circles */}
-                                        <div className="absolute inset-2 border-2 border-blue-500/40 rounded-full animate-ping [animation-duration:3s]" />
-                                        <div className="absolute inset-4 border-2 border-blue-500/60 rounded-full animate-ping [animation-duration:3s] [animation-delay:1s]" />
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#2C4EDC] to-[#4E7BFF] shadow-[0_0_30px_rgba(44,78,220,0.4)]" />
-                                        <Bot className="relative z-10 text-white w-8 h-8" />
-                                    </div>
+                        <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-2">
+                            {/* Chatbot System */}
+                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <MessageSquare className="w-5 h-5" />
                                 </div>
-                                <span className="text-sm font-semibold text-[#F5F7FF] tracking-wide">Our solution</span>
-                            </div>
-
-                            {/* Center: Connection Bridge */}
-                            <div className="flex-1 relative h-24 mt-[-24px]">
-                                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stopColor="#4E7BFF" stopOpacity="0" />
-                                            <stop offset="50%" stopColor="#4E7BFF" stopOpacity="0.8" />
-                                            <stop offset="100%" stopColor="#4E7BFF" stopOpacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    {/* Connection Lines */}
-                                    <line x1="10%" y1="40%" x2="90%" y2="40%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
-                                    <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
-                                    <line x1="10%" y1="60%" x2="90%" y2="60%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
-
-                                    {/* Animated Data Pulse */}
-                                    <rect x="0" y="48" width="40" height="4" fill="url(#flowGradient)" className="animate-infinite-scroll-right">
-                                        <animateTransform attributeName="transform" type="translate" from="-40 0" to="200 0" dur="2s" repeatCount="indefinite" />
-                                    </rect>
-                                </svg>
-                            </div>
-
-                            {/* Right Node: Your Stack */}
-                            <div className="flex flex-col items-center gap-4">
-                                <div className="relative w-24 h-24 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center p-4">
-                                    <div className="relative w-full h-full rounded-full flex items-center justify-center bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors duration-500">
-                                        <Mail className="text-[#F5F7FF]/80 group-hover:text-blue-400 transition-colors w-10 h-10" />
-
-                                        {/* Subtle Reception Ripples */}
-                                        <div className="absolute inset-0 rounded-full border border-blue-500/20 animate-pulse" />
-                                    </div>
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Chatbot system</h4>
+                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Efficiency will increase by 20%</p>
                                 </div>
-                                <span className="text-sm font-semibold text-[#F5F7FF] tracking-wide">Your stack</span>
+                                <div className="shrink-0">
+                                    <RefreshCw className="w-4 h-4 text-blue-500/40 animate-spin-slow" />
+                                </div>
                             </div>
 
-                            {/* Background Glow Balance */}
+                            {/* Workflow System */}
+                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <Settings className="w-5 h-5" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
+                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
+                                </div>
+                                <div className="shrink-0 w-7 h-7 rounded-lg bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                    <ArrowUp className="w-4 h-4 text-blue-400 animate-bounce" />
+                                </div>
+                            </div>
+
+                            {/* Sales System */}
+                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <Filter className="w-5 h-5" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
+                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
+                                </div>
+                                <div className="shrink-0">
+                                    <Check className="w-5 h-5 text-blue-500 shadow-[0_0_10px_rgba(44,78,220,0.5)]" />
+                                </div>
+                            </div>
+
+                            {/* Background Glow */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-900/5 rounded-full blur-[80px] z-[0]" />
                         </div>
                     </Card>
