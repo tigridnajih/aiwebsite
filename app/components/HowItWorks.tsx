@@ -145,13 +145,8 @@ export default function HowItWorks() {
                                     {/* Radar Center Dot */}
                                     <div className="relative w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(44,78,220,1)]" />
                                 </div>
-                                <div className="mt-6 flex items-center gap-1.5">
-                                    <span className="text-sm font-medium text-[#F5F7FF]/60">Analyzing current workflow</span>
-                                    <span className="flex gap-0.5">
-                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse" />
-                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.2s]" />
-                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.4s]" />
-                                    </span>
+                                <div className="mt-6">
+                                    <span className="text-sm font-medium text-[#F5F7FF]/60">Analyzing Workflow</span>
                                 </div>
                             </div>
 
