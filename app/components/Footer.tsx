@@ -5,7 +5,7 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-6 pb-12 border-t border-white/[0.03]">
+        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-1.5 pb-6 border-t border-white/[0.03]">
             {/* 🌌 Atmospheric Background System */}
             <div className="absolute inset-0 z-0">
                 {/* 🌌 Base Layer: Very dark navy base */}
@@ -60,7 +60,7 @@ export default function Footer() {
                     <div className="flex whitespace-nowrap overflow-hidden py-10">
                         <div className="flex animate-infinite-scroll-slow-extremely pause-on-hover">
                             {[1, 2].map((group) => (
-                                <h1 key={group} className="text-[120px] md:text-[220px] font-bold tracking-tighter text-[#F2F5FF] opacity-90 px-10 leading-none select-none">
+                                <h1 key={group} className="text-[90px] md:text-[165px] font-bold tracking-tighter text-[#F2F5FF] opacity-90 px-10 leading-none select-none">
                                     You need better systems. You don&apos;t need more people.
                                 </h1>
                             ))}
@@ -133,33 +133,28 @@ export default function Footer() {
                         </div>
 
                         {/* Social Icons Row */}
-                        <div className="flex items-center gap-6">
-                            {[
-                                { Icon: Youtube, href: "#" },
-                                { Icon: Facebook, href: "#" },
-                                { Icon: Linkedin, href: "#" },
-                                { Icon: Instagram, href: "#" }
-                            ].map((social, idx) => (
-                                <Link key={idx} href={social.href} className="text-[rgba(200,210,255,0.75)] hover:text-white transition-colors">
-                                    <social.Icon size={18} strokeWidth={1.5} />
-                                </Link>
-                            ))}
+                        <div className="flex items-center gap-7">
+                            {/* Instagram */}
+                            <Link href="#" className="text-[rgba(200,210,255,0.75)] hover:text-white transition-colors">
+                                <Instagram size={22} strokeWidth={1.5} />
+                            </Link>
+
                             {/* X (Twitter) */}
                             <Link href="#" className="text-[rgba(200,210,255,0.75)] hover:text-white transition-colors">
-                                <svg className="w-[16px] h-[16px]" fill="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                 </svg>
                             </Link>
-                            {/* Bluesky */}
+
+                            {/* LinkedIn */}
                             <Link href="#" className="text-[rgba(200,210,255,0.75)] hover:text-white transition-colors">
-                                <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 10.8c-1.32-2.4-5.16-5.4-7.8-5.4-3.6 0-3.6 3.6-1.8 5.4 1.8 1.8 4.2 1.8 6 1.2-1.8.6-4.2.6-6 2.4-1.8 1.8-1.8 5.4 1.8 5.4 2.64 0 6.48-3 7.8-5.4 1.32 2.4 5.16 5.4 7.8 5.4 3.6 0 3.6-3.6 1.8-5.4-1.8-1.8-4.2-1.8-6-2.4 1.8.6 4.2.6 6-1.2 1.8-1.8 1.8-5.4-1.8-5.4-2.64 0-6.48 3-7.8 5.4z" />
-                                </svg>
+                                <Linkedin size={22} strokeWidth={1.5} />
                             </Link>
-                            {/* Threads */}
+
+                            {/* X (Twitter) again as requested */}
                             <Link href="#" className="text-[rgba(200,210,255,0.75)] hover:text-white transition-colors">
-                                <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M14.886 11.284c-.057-.5-.224-.871-.5-1.114-.275-.24-.627-.361-1.054-.361-.413 0-.756.115-1.028.344s-.442.548-.511.956h3.093zm-3.14 2.768c.071.424.254.763.548 1.018.293.255.65.383 1.07.383s.766-.118 1.055-.353.486-.549.589-.94h3.142c-.172 1.27-.698 2.277-1.577 3.019S14.59 18.25 13.314 18.25c-1.393 0-2.54-.428-3.442-1.285-1-1-1.486-2.316-1.486-4.09 0-1.782.494-3.13 1.482-4.043.916-.843 2.062-1.264 3.438-1.264 1.385 0 2.503.418 3.352 1.255.848.837 1.296 1.956 1.343 3.358h-6.255zM24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12m-6.035 0c0-1.238-.288-2.288-.865-3.15-.576-.862-1.422-1.527-2.538-1.996-1.116-.469-2.352-.703-3.708-.703s-2.593.234-3.709.703c-1.116.469-1.962 1.134-2.538 1.996-.577.862-.865 1.912-.865 3.15s.288 2.288.865 3.15c.576.862 1.422 1.527 2.538 1.996s2.352.703 3.709.703 2.592-.234 3.708-.703c1.116-.469 1.962-1.134 2.538-1.996s.865-1.912.865-3.15" />
+                                <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                 </svg>
                             </Link>
                         </div>
