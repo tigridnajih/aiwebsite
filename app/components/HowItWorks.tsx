@@ -285,7 +285,7 @@ export default function HowItWorks() {
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-2">
+                        <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-8">
                             {/* Chatbot System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
                                 <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
@@ -295,7 +295,7 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Chatbot system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Efficiency will increase by 20%</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_15px_rgba(44,78,220,0.1)]">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
                                     <RefreshCw className="w-4 h-4 text-blue-400 animate-spin-slow" />
                                 </div>
                             </div>
@@ -309,7 +309,7 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_15px_rgba(44,78,220,0.1)]">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
                                     <ArrowUp className="w-4 h-4 text-blue-400 animate-bounce" />
                                 </div>
                             </div>
@@ -323,7 +323,7 @@ export default function HowItWorks() {
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center shadow-[0_0_20px_rgba(44,78,220,0.4)]">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
                                     <Check className="w-5 h-5 text-blue-400 animate-pulse" />
                                 </div>
                             </div>
