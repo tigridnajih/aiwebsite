@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="relative z-10">
                 {/* 🧠 2. Large Moving Text Section + 🎭 3. Edge Masking */}
                 <div
-                    className="relative w-full pt-12 md:pt-20 overflow-hidden"
+                    className="relative w-full pt-4 md:pt-6 overflow-hidden"
                     style={{
                         maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
