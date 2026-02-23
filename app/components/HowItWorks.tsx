@@ -285,50 +285,58 @@ export default function HowItWorks() {
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex flex-col items-center justify-center">
-                            {/* Secondary Background Mockup - Offset Top-Right */}
-                            <div className="absolute w-72 h-44 bg-black/40 border border-[#2C4EDC]/40 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(44,78,220,0.15)] animate-float-x-short z-[1] translate-x-10 -translate-y-10">
-                                {/* Dashboard Header - Simplified */}
-                                <div className="h-7 bg-[#2C4EDC]/40 flex items-center px-3 gap-1.5 opacity-30">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                                    <div className="ml-auto w-10 h-2 bg-white/10 rounded-full" />
-                                </div>
-                            </div>
-
-                            {/* Animated Gradient Dashboard Mockup (Main Screen) */}
-                            <div className="relative w-72 h-44 bg-black border border-white/20 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(44,78,220,0.25)] animate-float-x z-[2]">
-                                {/* Dashboard Header - Using Orb Gradient */}
-                                <div className="h-7 flex items-center px-3 gap-1.5 shadow-[0_4px_12px_rgba(0,0,0,0.5)]" style={orbGradient}>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
-                                    <div className="ml-auto w-10 h-2 bg-white/20 rounded-full" />
-                                </div>
-
-                                {/* Dashboard Body - Black with Animated LIVE Button */}
-                                <div className="flex items-center justify-center h-full -mt-4">
-                                    <div className="relative group/live flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(44,78,220,0.2)]" style={{ background: 'rgba(44, 78, 220, 0.1)' }}>
-                                        <div className="relative flex h-3 w-3">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]"></span>
-                                        </div>
-                                        <span className="text-white font-bold text-xl tracking-widest uppercase drop-shadow-[0_0_10px_rgba(44,78,220,0.5)]">Live</span>
-
-                                        {/* External Glow */}
-                                        <div className="absolute inset-0 rounded-full bg-blue-600/5 blur-md -z-1" />
+                        <div className="relative w-full h-full flex items-center justify-between px-6 z-[2]">
+                            {/* Left Node: Our Solution */}
+                            <div className="flex flex-col items-center gap-4">
+                                <div className="relative w-24 h-24 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center p-4">
+                                    <div className="relative w-full h-full rounded-full flex items-center justify-center overflow-hidden">
+                                        {/* Pulsing Concentric Circles */}
+                                        <div className="absolute inset-2 border-2 border-blue-500/40 rounded-full animate-ping [animation-duration:3s]" />
+                                        <div className="absolute inset-4 border-2 border-blue-500/60 rounded-full animate-ping [animation-duration:3s] [animation-delay:1s]" />
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#2C4EDC] to-[#4E7BFF] shadow-[0_0_30px_rgba(44,78,220,0.4)]" />
+                                        <Bot className="relative z-10 text-white w-8 h-8" />
                                     </div>
                                 </div>
+                                <span className="text-sm font-semibold text-[#F5F7FF] tracking-wide">Our solution</span>
                             </div>
 
-                            {/* Play Orbit in Bottom-Left - Gradient */}
-                            <div className="absolute bottom-2 left-2 w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(44,78,220,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-white/10 backdrop-blur-sm z-[2]" style={orbGradient}>
-                                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                <Play className="text-white w-7 h-7 fill-white pl-0.5" />
+                            {/* Center: Connection Bridge */}
+                            <div className="flex-1 relative h-24 mt-[-24px]">
+                                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stopColor="#4E7BFF" stopOpacity="0" />
+                                            <stop offset="50%" stopColor="#4E7BFF" stopOpacity="0.8" />
+                                            <stop offset="100%" stopColor="#4E7BFF" stopOpacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                    {/* Connection Lines */}
+                                    <line x1="10%" y1="40%" x2="90%" y2="40%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
+                                    <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
+                                    <line x1="10%" y1="60%" x2="90%" y2="60%" stroke="white" strokeOpacity="0.05" strokeWidth="1" />
+
+                                    {/* Animated Data Pulse */}
+                                    <rect x="0" y="48" width="40" height="4" fill="url(#flowGradient)" className="animate-infinite-scroll-right">
+                                        <animateTransform attributeName="transform" type="translate" from="-40 0" to="200 0" dur="2s" repeatCount="indefinite" />
+                                    </rect>
+                                </svg>
                             </div>
 
-                            {/* Background Glows */}
-                            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 bg-blue-900/10 rounded-full blur-[80px] z-[1] animate-pulse" />
+                            {/* Right Node: Your Stack */}
+                            <div className="flex flex-col items-center gap-4">
+                                <div className="relative w-24 h-24 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center p-4">
+                                    <div className="relative w-full h-full rounded-full flex items-center justify-center bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors duration-500">
+                                        <Mail className="text-[#F5F7FF]/80 group-hover:text-blue-400 transition-colors w-10 h-10" />
+
+                                        {/* Subtle Reception Ripples */}
+                                        <div className="absolute inset-0 rounded-full border border-blue-500/20 animate-pulse" />
+                                    </div>
+                                </div>
+                                <span className="text-sm font-semibold text-[#F5F7FF] tracking-wide">Your stack</span>
+                            </div>
+
+                            {/* Background Glow Balance */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-900/5 rounded-full blur-[80px] z-[0]" />
                         </div>
                     </Card>
                 </div>
