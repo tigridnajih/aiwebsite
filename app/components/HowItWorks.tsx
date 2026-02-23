@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2 } from 'lucide-react';
+import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2, Shield, Cpu, Gauge, Bot, RotateCw } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 // Custom Brand Icons for Automation Card - Optimized for White Icons on Orbs
@@ -129,25 +129,52 @@ export default function HowItWorks() {
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="relative w-full h-full flex items-center justify-center z-[2]">
-                            <div className="relative w-64 h-64 animate-spin-slow-extremely">
+                        <div className="relative w-full h-full flex items-center justify-between z-[2] px-2 gap-4">
+                            {/* Left Side: Radar Scanner */}
+                            <div className="flex-1 flex flex-col items-center justify-center pt-8">
+                                <div className="relative w-36 h-36 rounded-full border border-white/10 flex items-center justify-center">
+                                    {/* Radar Rings */}
+                                    <div className="absolute inset-0 border border-white/5 rounded-full" />
+                                    <div className="absolute inset-4 border border-white/[0.08] rounded-full" />
+                                    <div className="absolute inset-10 border border-white/[0.12] rounded-full" />
+                                    <div className="absolute inset-16 border border-white/[0.16] rounded-full" />
+
+                                    {/* Radar Sweep */}
+                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(44,78,220,0.4)_100%)] animate-spin-slow-extremely" />
+
+                                    {/* Radar Center Dot */}
+                                    <div className="relative w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(44,78,220,1)]" />
+                                </div>
+                                <div className="mt-6 flex items-center gap-1.5">
+                                    <span className="text-sm font-medium text-[#F5F7FF]/60">Analyzing current workflow</span>
+                                    <span className="flex gap-0.5">
+                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse" />
+                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.2s]" />
+                                        <span className="w-0.5 h-0.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.4s]" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Right Side: Check Items */}
+                            <div className="flex-1 flex flex-col gap-2.5">
                                 {[
-                                    { Icon: Mail, angle: 0, dist: 110 },
-                                    { Icon: List, angle: 72, dist: 110 },
-                                    { Icon: Calendar, angle: 144, dist: 110 },
-                                    { Icon: NotebookPen, angle: 216, dist: 110 },
-                                    { Icon: FileText, angle: 288, dist: 110 }
+                                    { Icon: Shield, text: "System check" },
+                                    { Icon: Cpu, text: "Process check" },
+                                    { Icon: Gauge, text: "Speed check" },
+                                    { Icon: Bot, text: "Manual work" },
+                                    { Icon: RotateCw, text: "Repetitive task" }
                                 ].map((item, i) => (
-                                    <div key={i} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 transform"
-                                        style={{ transform: `translate(calc(-50% + ${Math.cos(item.angle * Math.PI / 180) * item.dist}px), calc(-50% + ${Math.sin(item.angle * Math.PI / 180) * item.dist}px))` }}>
-                                        <div className="relative w-full h-full rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(44,78,220,0.4),inset_0_4px_12px_rgba(255,255,255,0.2)] border border-white/10 backdrop-blur-sm" style={orbGradient}>
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                            <item.Icon className="relative z-10 text-white w-7 h-7" />
+                                    <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-transform">
+                                            <item.Icon className="w-4 h-4" />
                                         </div>
+                                        <span className="text-xs font-semibold text-[#F5F7FF]/80 tracking-wide uppercase">{item.text}</span>
                                     </div>
                                 ))}
                             </div>
-                            <div className="absolute w-52 h-52 bg-blue-900/10 rounded-full blur-[100px] z-[1]" />
+
+                            {/* Background Glow */}
+                            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-32 h-32 bg-blue-900/10 rounded-full blur-[60px] z-[0]" />
                         </div>
                     </Card>
 
