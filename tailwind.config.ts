@@ -44,7 +44,6 @@ const config: Config = {
                 "float-x": "float-x 6s ease-in-out infinite",
                 "float-x-short": "float-x-short 6s ease-in-out infinite",
                 "infinite-scroll-right": "infinite-scroll-right 30s linear infinite",
-                "infinite-scroll-right-slow": "infinite-scroll-right 60s linear infinite",
                 pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 "drift-slow": "drift 35s linear infinite",
                 "flow-slow": "flow 30s ease-in-out infinite",
