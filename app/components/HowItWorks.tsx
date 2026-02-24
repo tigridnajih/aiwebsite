@@ -108,14 +108,7 @@ export default function HowItWorks() {
     };
 
     return (
-        <section id="how-it-works" className="py-24 bg-[#050505] overflow-hidden relative">
-            {/* Soft Neutral Radial Glow behind section */}
-            <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0"
-                style={{
-                    background: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.04), transparent 60%)'
-                }}
-            />
+        <section id="how-it-works" className="py-24 bg-[#0A0A0A] overflow-hidden relative">
             <div className="container-custom">
                 <SectionHeader
                     badge="Process"

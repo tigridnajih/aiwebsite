@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import HeroParticles from './HeroParticles';
 import TrustLogos from './TrustLogos';
 
 export default function Hero() {
@@ -11,7 +10,6 @@ export default function Hero() {
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
                 style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
             />
-            <HeroParticles />
 
             {/* Bottom gradient mask for smooth transition to next section */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
@@ -19,8 +17,6 @@ export default function Hero() {
             {/* Top gradient mask for Navbar readability - Softened for better background visibility */}
             <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/50 via-black/20 to-transparent z-10" />
 
-            {/* Subtle radial glow to match screenshot's positioning of light */}
-            <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_60%)]" />
 
             {/* Main Content Area - Flexible height to prevent overlap */}
             <div className="flex-1 flex items-center justify-center relative z-20 w-full py-12 md:py-20 lg:py-0">

@@ -34,7 +34,7 @@ export default function Pricing() {
     const [isYearly, setIsYearly] = useState(false);
 
     return (
-        <section id="pricing" className="py-24 bg-white dark:bg-black">
+        <section id="pricing" className="py-24 bg-[#0A0A0A]">
             <div className="container-custom">
                 <SectionHeader
                     badge="Pricing"

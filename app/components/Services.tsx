@@ -11,11 +11,6 @@ export default function Services() {
             imageSide: "left",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#111111] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
-                    {/* Background Glows */}
-                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#2C4EDC]/10 blur-[100px] rounded-full" />
-                        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-500/5 blur-[100px] rounded-full" />
-                    </div>
 
                     <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left: Bubble Column */}
@@ -178,7 +173,7 @@ export default function Services() {
             imageSide: "right",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1),transparent_70%)]" />
+
                     <div className="flex flex-col items-center justify-center h-full p-10 text-center">
                         <div className="w-20 h-20 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center mb-6 animate-pulse">
                             <div className="w-12 h-12 rounded-full bg-purple-500/40" />
@@ -256,7 +251,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="py-20 bg-black text-white selection:bg-purple-500/30">
+        <section id="services" className="py-20 bg-[#0A0A0A] text-white selection:bg-purple-500/30">
             <div className="container-custom">
                 <SectionHeader
                     badge="Our Services"

@@ -14,7 +14,7 @@ const stack = [
 
 export default function TechStack() {
     return (
-        <section className="py-20 bg-gray-50 dark:bg-zinc-950">
+        <section className="py-20 bg-[#0A0A0A]">
             <div className="container-custom">
                 <SectionHeader
                     badge="Technology"
