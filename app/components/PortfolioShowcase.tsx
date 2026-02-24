@@ -53,7 +53,7 @@ export default function PortfolioShowcase() {
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
                             {/* Image with Refined Minimal Border and Depth Shadow */}
                             <div
-                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden bg-[#111111]"
+                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden bg-[#0d0d0d]"
                                 style={{
                                     border: '1px solid rgba(255, 255, 255, 0.06)',
                                     boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'

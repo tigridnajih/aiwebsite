@@ -10,7 +10,7 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#111111] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
+                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
 
                     <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left: Bubble Column */}

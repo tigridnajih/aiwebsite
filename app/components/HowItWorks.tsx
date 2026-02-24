@@ -60,7 +60,7 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#111111] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0d0d0d] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={{
             ...style,
             border: '1px solid rgba(255, 255, 255, 0.06)'
