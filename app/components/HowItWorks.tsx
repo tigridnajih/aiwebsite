@@ -60,24 +60,18 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-6 md:p-8 rounded-[32px] bg-black border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
-        style={style}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0B1225] border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
+        style={{
+            ...style,
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.55)'
+        }}
     >
-        {/* Top-Left Medium Glow */}
-        <div
-            className="absolute inset-0 pointer-events-none z-0"
-            style={{
-                background: 'radial-gradient(circle at top left, rgba(44, 78, 220, 0.2), transparent 70%)'
-            }}
-        />
-
         {/* Subtle Noise Overlay */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px] z-[1]" />
 
         {/* Step Badge */}
         <div
-            className="relative z-10 w-11 h-11 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-xl mb-10 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-            style={badgeGlow ? { boxShadow: badgeGlow ? badgeGlow : undefined } : {}}
+            className="relative z-10 w-11 h-11 rounded-full bg-[#EAEFF8] flex items-center justify-center text-[#0A1020] font-extrabold text-xl mb-10 border border-black/5"
         >
             {number}
         </div>
@@ -113,7 +107,14 @@ export default function HowItWorks() {
     };
 
     return (
-        <section id="how-it-works" className="py-24 bg-black overflow-hidden">
+        <section id="how-it-works" className="py-24 bg-[#070C1F] overflow-hidden relative">
+            {/* Soft Radial Glow behind section */}
+            <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0"
+                style={{
+                    background: 'radial-gradient(circle at 50% 20%, rgba(40, 90, 255, 0.18), transparent 60%)'
+                }}
+            />
             <div className="container-custom">
                 <SectionHeader
                     badge="Process"
@@ -121,13 +122,13 @@ export default function HowItWorks() {
                     description="Our seamless process to take your agency to the next level with custom AI solutions."
                 />
 
-                <div className="grid lg:grid-cols-3 gap-10 mt-12 pb-20">
+                <div className="grid lg:grid-cols-3 gap-10 mt-12 pb-20 relative z-10">
                     {/* Card 1: Share Your Workflow - GRADIENT ORBS */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/[0.06]"
                     >
                         <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between z-[2] px-2 gap-8 sm:gap-4 py-8 sm:py-0">
                             {/* Left Side: Radar Scanner */}
@@ -140,13 +141,13 @@ export default function HowItWorks() {
                                     <div className="absolute inset-16 border border-white/[0.16] rounded-full" />
 
                                     {/* Radar Sweep */}
-                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(44,78,220,0.4)_100%)] animate-spin-slow-extremely" />
+                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(60,110,255,0.15)_100%)] animate-spin-slow-extremely" />
 
                                     {/* Radar Center Dot */}
-                                    <div className="relative w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(44,78,220,1)]" />
+                                    <div className="relative w-1.5 h-1.5 bg-[#3c6eff] rounded-full shadow-[0_0_10px_rgba(60,110,255,0.3)]" />
                                 </div>
                                 <div className="mt-6">
-                                    <span className="text-sm font-medium text-[#F5F7FF]/60">Analyzing Workflow</span>
+                                    <span className="text-sm font-medium text-[#F5F7FF]/40">Analyzing Workflow</span>
                                 </div>
                             </div>
 
@@ -160,7 +161,7 @@ export default function HowItWorks() {
                                     { Icon: RotateCw, text: "Repetitive task" }
                                 ].map((item, i) => (
                                     <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-transform">
+                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-transform">
                                             <item.Icon className="w-4 h-4" />
                                         </div>
                                         <span className="text-xs font-semibold text-[#F5F7FF]/80 tracking-wide uppercase">{item.text}</span>
@@ -168,8 +169,6 @@ export default function HowItWorks() {
                                 ))}
                             </div>
 
-                            {/* Background Glow */}
-                            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-32 h-32 bg-blue-900/10 rounded-full blur-[60px] z-[0]" />
                         </div>
                     </Card>
 
@@ -178,7 +177,7 @@ export default function HowItWorks() {
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)]"
+                        className="border border-white/[0.06]"
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-2">
                             {/* IDE Mockup Window */}
@@ -200,11 +199,11 @@ export default function HowItWorks() {
                                 <div className="flex-1 flex overflow-hidden">
                                     {/* IDE Sidebar */}
                                     <div className="w-12 bg-[#121214] border-r border-white/5 flex flex-col items-center py-4 gap-6">
-                                        <div className="w-8 h-8 rounded-lg bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                        <div className="w-8 h-8 rounded-lg bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                             <File className="w-4 h-4 text-blue-400" />
                                         </div>
-                                        <Search className="w-4 h-4 text-blue-400/40 hover:text-blue-400 transition-colors cursor-pointer" />
-                                        <Puzzle className="w-4 h-4 text-blue-400/40 hover:text-blue-400 transition-colors cursor-pointer" />
+                                        <Search className="w-4 h-4 text-blue-400/20 hover:text-blue-400 transition-colors cursor-pointer" />
+                                        <Puzzle className="w-4 h-4 text-blue-400/20 hover:text-blue-400 transition-colors cursor-pointer" />
                                     </div>
 
                                     {/* IDE Code Area */}
@@ -267,9 +266,6 @@ export default function HowItWorks() {
                                 </div>
                             </div>
 
-                            {/* Decorative Glows */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/5 rounded-full blur-[60px] animate-pulse" />
-                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/5 rounded-full blur-[60px] animate-pulse" />
                         </div>
                     </Card>
 
@@ -278,12 +274,12 @@ export default function HowItWorks() {
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        className="border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.4)] !p-5 md:!p-7"
+                        className="border border-white/[0.06] !p-5 md:!p-7"
                     >
                         <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-8">
                             {/* Chatbot System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                     <MessageSquare className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -297,34 +293,32 @@ export default function HowItWorks() {
 
                             {/* Workflow System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                     <Settings className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.05] border border-[#3c6eff]/[0.15] flex items-center justify-center">
                                     <ArrowUp className="w-4 h-4 text-blue-400 animate-bounce" />
                                 </div>
                             </div>
 
                             {/* Sales System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                     <Filter className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.05] border border-[#3c6eff]/[0.15] flex items-center justify-center">
                                     <Check className="w-5 h-5 text-blue-400 animate-pulse" />
                                 </div>
                             </div>
 
-                            {/* Background Glow */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-900/5 rounded-full blur-[80px] z-[0]" />
                         </div>
                     </Card>
                 </div>
