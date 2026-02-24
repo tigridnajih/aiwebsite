@@ -4,7 +4,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-black">
+        <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-[#0A0A0A]">
             {/* Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
@@ -12,10 +12,10 @@ export default function Hero() {
             />
 
             {/* Bottom gradient mask for smooth transition to next section */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0A0A0A] to-transparent z-10" />
 
             {/* Top gradient mask for Navbar readability - Softened for better background visibility */}
-            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/50 via-black/20 to-transparent z-10" />
+            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#0A0A0A]/50 via-[#0A0A0A]/20 to-transparent z-10" />
 
 
             {/* Main Content Area - Flexible height to prevent overlap */}
