@@ -63,8 +63,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
         className={`relative group p-6 md:p-8 rounded-[32px] bg-[#111111] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={{
             ...style,
-            border: '1px solid rgba(255, 255, 255, 0.06)',
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
+            border: '1px solid rgba(255, 255, 255, 0.06)'
         }}
     >
         {/* Subtle Noise Overlay */}
