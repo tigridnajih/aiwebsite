@@ -123,9 +123,9 @@ export default function HowItWorks() {
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className=""
                     >
-                        <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between z-[2] px-2 gap-8 sm:gap-4 py-8 sm:py-0">
+                        <div className="relative w-full h-auto flex flex-col sm:flex-row items-center justify-between z-[2] p-5 gap-6 border border-white/[0.06] rounded-[24px] bg-black/10">
                             {/* Left Side: Radar Scanner */}
-                            <div className="w-full sm:flex-1 flex flex-col items-center justify-center border border-white/[0.06] rounded-2xl bg-black/20 py-8">
+                            <div className="w-full sm:flex-1 flex flex-col items-center justify-center py-4">
                                 <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center">
                                     {/* Radar Rings */}
                                     <div className="absolute inset-0 border border-white/5 rounded-full" />
