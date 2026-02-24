@@ -60,9 +60,10 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0B0B0D] border border-white/[0.05] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0B0B0D] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={{
             ...style,
+            border: '1px solid rgba(255, 255, 255, 0.06)',
             boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
         }}
     >
@@ -128,7 +129,7 @@ export default function HowItWorks() {
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
-                        className="border border-white/[0.06]"
+                        className=""
                     >
                         <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between z-[2] px-2 gap-8 sm:gap-4 py-8 sm:py-0">
                             {/* Left Side: Radar Scanner */}
@@ -177,7 +178,7 @@ export default function HowItWorks() {
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
-                        className="border border-white/[0.06]"
+                        className=""
                     >
                         <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-2">
                             {/* IDE Mockup Window */}

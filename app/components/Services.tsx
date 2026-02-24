@@ -10,7 +10,7 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#080808] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
+                <div className="relative w-full aspect-[4/3] bg-[#080808] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
                     {/* Background Glows */}
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                         <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#2C4EDC]/10 blur-[100px] rounded-full" />
@@ -24,7 +24,7 @@ export default function Services() {
                             <div className="relative bg-gradient-to-br from-[#0B1F5C] to-[#040816] border border-blue-500/30 rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
-                                        <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/10">
+                                        <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
                                                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100&h=100"
                                                 alt="Emma"
@@ -56,10 +56,10 @@ export default function Services() {
                             </div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-[#121212]/80 border border-white/5 rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
+                            <div className="bg-[#121212]/80 border border-white/[0.06] rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/5">
+                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
                                                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100"
                                                 alt="Liam"
@@ -83,10 +83,10 @@ export default function Services() {
                             </div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-[#121212]/80 border border-white/5 rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
+                            <div className="bg-[#121212]/80 border border-white/[0.06] rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/5">
+                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
                                                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100"
                                                 alt="Olivia"
@@ -177,7 +177,7 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1),transparent_70%)]" />
                     <div className="flex flex-col items-center justify-center h-full p-10 text-center">
                         <div className="w-20 h-20 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center mb-6 animate-pulse">
@@ -186,8 +186,8 @@ export default function Services() {
                         <div className="w-48 h-3 bg-white/20 rounded mb-3" />
                         <div className="w-32 h-2 bg-white/10 rounded" />
                         <div className="mt-8 grid grid-cols-2 gap-3 w-full">
-                            <div className="h-10 bg-white/5 rounded-lg border border-white/10" />
-                            <div className="h-10 bg-white/5 rounded-lg border border-white/10" />
+                            <div className="h-10 bg-white/5 rounded-lg border border-white/[0.06]" />
+                            <div className="h-10 bg-white/5 rounded-lg border border-white/[0.06]" />
                         </div>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ export default function Services() {
             tags: ["Leads", "Content", "Social post"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
                     <div className="p-8">
                         <div className="flex items-end gap-2 h-48">
                             {[40, 70, 45, 90, 65, 80, 100].map((h, i) => (
@@ -228,7 +228,7 @@ export default function Services() {
             tags: ["Strategy", "Custom AI", "Consulting"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
                     <div className="p-8 font-mono text-[10px] text-purple-400/60 break-all">
                         {`{
   "project": "Intelligent_Sync",
@@ -242,10 +242,10 @@ export default function Services() {
   "last_check": "2024-02-21T16:25:52Z"
 }`}
                         <div className="mt-8 flex gap-4">
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center">
                                 <div className="w-8 h-8 rounded bg-purple-500/20" />
                             </div>
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-[20px]">
+                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center text-[20px]">
                                 +
                             </div>
                         </div>

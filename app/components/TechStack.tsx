@@ -24,7 +24,7 @@ export default function TechStack() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stack.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-accent hover:shadow-md transition-all dark:bg-zinc-900 dark:border-zinc-800">
+                        <div key={idx} className="flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-accent hover:shadow-md transition-all dark:bg-zinc-900 dark:border-white/[0.06]">
                             <div className="w-12 h-12 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 dark:bg-zinc-800">
                                 <Cpu className="w-6 h-6" />
                             </div>
