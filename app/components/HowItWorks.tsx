@@ -60,10 +60,10 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0B1225] border border-white/5 transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0B0B0D] border border-white/[0.05] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={{
             ...style,
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.55)'
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
         }}
     >
         {/* Subtle Noise Overlay */}
@@ -71,7 +71,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
 
         {/* Step Badge */}
         <div
-            className="relative z-10 w-11 h-11 rounded-full bg-[#EAEFF8] flex items-center justify-center text-[#0A1020] font-extrabold text-xl mb-10 border border-black/5"
+            className="relative z-10 w-11 h-11 rounded-full bg-[#EDEDED] flex items-center justify-center text-[#0A0A0A] font-extrabold text-xl mb-10 border border-black/5"
         >
             {number}
         </div>
@@ -107,12 +107,12 @@ export default function HowItWorks() {
     };
 
     return (
-        <section id="how-it-works" className="py-24 bg-[#070C1F] overflow-hidden relative">
-            {/* Soft Radial Glow behind section */}
+        <section id="how-it-works" className="py-24 bg-[#050505] overflow-hidden relative">
+            {/* Soft Neutral Radial Glow behind section */}
             <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0"
                 style={{
-                    background: 'radial-gradient(circle at 50% 20%, rgba(40, 90, 255, 0.18), transparent 60%)'
+                    background: 'radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.04), transparent 60%)'
                 }}
             />
             <div className="container-custom">
@@ -160,7 +160,7 @@ export default function HowItWorks() {
                                     { Icon: Bot, text: "Manual work" },
                                     { Icon: RotateCw, text: "Repetitive task" }
                                 ].map((item, i) => (
-                                    <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                                    <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
                                         <div className="shrink-0 w-8 h-8 rounded-lg bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-transform">
                                             <item.Icon className="w-4 h-4" />
                                         </div>
@@ -292,7 +292,7 @@ export default function HowItWorks() {
                             </div>
 
                             {/* Workflow System */}
-                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
                                 <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                     <Settings className="w-5 h-5" />
                                 </div>
@@ -306,7 +306,7 @@ export default function HowItWorks() {
                             </div>
 
                             {/* Sales System */}
-                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
                                 <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
                                     <Filter className="w-5 h-5" />
                                 </div>
