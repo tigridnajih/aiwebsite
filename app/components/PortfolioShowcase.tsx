@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import React from 'react';
 
 const projects = [
     {
@@ -38,7 +38,15 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-12 bg-black overflow-hidden relative">
+        <section className="py-[120px] bg-[#030712] overflow-hidden relative">
+            {/* Extremely Subtle Radial Blue Glow */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: 'radial-gradient(circle at 50% 20%, rgba(40, 90, 255, 0.08), transparent 70%)'
+                }}
+            />
+
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
@@ -47,27 +55,39 @@ export default function PortfolioShowcase() {
                     WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
                 }}
             >
-                {/* Scrolling Container */}
-                <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
-                    {allProjects.map((project, idx) => (
-                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
-                            {/* Image with Blue Glowing Border - Extra Thick and Permanent */}
-                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-[5px] border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.4)] bg-zinc-900 font-mono">
-                                <img
-                                    src={project.url}
-                                    alt={project.title}
-                                    className="h-full w-auto object-contain"
-                                />
-                            </div>
+                {/* Scrolling Container - Slower Cinematic Motion */}
+                <div className="flex animate-infinite-scroll-right-slow gap-12 whitespace-nowrap py-8">
+                    {allProjects.map((project, idx) => {
+                        const [category, title] = project.title.split(' - ');
+                        return (
+                            <div key={idx} className="flex flex-col gap-6 flex-shrink-0 group cursor-pointer">
+                                {/* Refined Card Frame */}
+                                <div className="relative h-[300px] md:h-[450px] w-auto aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.06] bg-[#0A0A0A] shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-all duration-500 group-hover:scale-[1.02] group-hover:border-white/[0.12]">
+                                    {/* Subtle Top Highlight */}
+                                    <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-none h-[40%]" />
 
-                            {/* Caption Text Below Image - Styled to match reference */}
-                            <div className="px-1">
-                                <p className="text-[#666] font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase">
-                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-[#999]">{project.title.split(' - ')[1]}</span>
-                                </p>
+                                    <img
+                                        src={project.url}
+                                        alt={project.title}
+                                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                                    />
+
+                                    {/* Optional Shine Effect on Hover */}
+                                    <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent" />
+                                </div>
+
+                                {/* Refined Typography Below Card */}
+                                <div className="px-2 space-y-1">
+                                    <p className="text-white/50 font-mono text-[12px] tracking-[0.15em] uppercase">
+                                        {category}
+                                    </p>
+                                    <h3 className="text-white text-lg font-medium tracking-tight">
+                                        {title}
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>
