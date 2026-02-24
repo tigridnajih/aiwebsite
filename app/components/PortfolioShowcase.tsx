@@ -51,8 +51,14 @@ export default function PortfolioShowcase() {
                 <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
                     {allProjects.map((project, idx) => (
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
-                            {/* Image with Blue Glowing Border - Extra Thick and Permanent */}
-                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-[5px] border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.4)] bg-zinc-900 font-mono">
+                            {/* Image with Refined Minimal Border and Depth Shadow */}
+                            <div
+                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden bg-[#0a0a0a]"
+                                style={{
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                                    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(40, 90, 255, 0.08)'
+                                }}
+                            >
                                 <img
                                     src={project.url}
                                     alt={project.title}
