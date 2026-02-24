@@ -64,7 +64,7 @@ export default function Pricing() {
                     {plans.map((p, idx) => (
                         <div
                             key={idx}
-                            className={`relative p-8 rounded-2xl border ${p.popular ? 'border-accent shadow-2xl scale-105 z-10 bg-white ring-2 ring-accent/20 dark:bg-zinc-900' : 'border-gray-200 bg-white hover:border-accent/50 dark:bg-zinc-900 dark:border-white/[0.06]'} transition-all duration-300`}
+                            className={`relative p-8 rounded-2xl border ${p.popular ? 'border-accent shadow-2xl scale-105 z-10 bg-white ring-2 ring-accent/20 dark:bg-[#111111] shadow-[0_20px_50px_rgba(0,0,0,0.6)]' : 'border-gray-200 bg-white hover:border-accent/50 dark:bg-[#111111] shadow-[0_20px_50px_rgba(0,0,0,0.6)] dark:border-white/[0.06]'} transition-all duration-300`}
                         >
 
                             <h3 className="text-xl font-bold mb-2">{p.name}</h3>

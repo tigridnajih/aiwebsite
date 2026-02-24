@@ -54,7 +54,7 @@ export default function Testimonials() {
                         >
                             {testimonials.map((t) => (
                                 <div key={t.id} className="w-full flex-shrink-0 px-4">
-                                    <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 dark:bg-zinc-900 dark:border-white/[0.06]">
+                                    <div className="bg-white p-8 md:p-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-gray-100 dark:bg-[#111111] dark:border-white/[0.06]">
                                         <Quote className="w-12 h-12 text-accent/20 mb-6" />
                                         <p className="text-xl md:text-2xl font-medium mb-8 leading-relaxed">&quot;{t.quote}&quot;</p>
                                         <div className="flex items-center gap-4">

@@ -12,6 +12,10 @@ const config: Config = {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
                 accent: "#2563EB",
+                sapphire: {
+                    DEFAULT: "#3B5BFF",
+                    soft: "rgba(59, 91, 255, 0.12)",
+                },
                 hero: {
                     base: "#020408", // Darker, almost void-like black
                     glow: "#0F1C3F",

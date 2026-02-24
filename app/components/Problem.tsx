@@ -36,7 +36,7 @@ export default function Problem() {
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {problems.map((p, idx) => (
-                        <div key={idx} className="flex gap-6 p-6 rounded-xl hover:bg-gray-50 transition-colors dark:hover:bg-zinc-900 border border-transparent hover:border-gray-100 dark:hover:border-white/[0.06]">
+                        <div key={idx} className="flex gap-6 p-6 rounded-xl hover:bg-gray-50 transition-colors dark:hover:bg-[#111111] border border-transparent hover:border-gray-100 dark:hover:border-white/[0.06] hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
                             <div className="w-12 h-12 flex-shrink-0 rounded-lg bg-red-50 text-red-500 flex items-center justify-center dark:bg-red-900/20">
                                 <p.icon className="w-6 h-6" />
                             </div>

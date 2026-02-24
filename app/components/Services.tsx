@@ -10,7 +10,7 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#080808] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
+                <div className="relative w-full aspect-[4/3] bg-[#111111] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
                     {/* Background Glows */}
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                         <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#2C4EDC]/10 blur-[100px] rounded-full" />
