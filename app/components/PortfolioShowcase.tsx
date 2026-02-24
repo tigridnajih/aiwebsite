@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
     {
@@ -34,139 +33,43 @@ const projects = [
     }
 ];
 
+// Double the projects array for seamless looping
+const allProjects = [...projects, ...projects];
+
 export default function PortfolioShowcase() {
-    const containerRef = useRef<HTMLDivElement>(null);
-
     return (
-        <section className="py-32 bg-[#030712] overflow-hidden relative">
-            {/* Top Divider Line */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-white/[0.03]" />
-
-            <div className="container-custom mb-20">
-                <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[10px] tracking-[0.3em] text-[#64748B] uppercase">
-                        Portfolio Selection
-                    </span>
-                    <h2 className="text-white text-3xl font-medium tracking-tight">
-                        Selected Works
-                    </h2>
-                </div>
-            </div>
-
-            {/* Carousel Container */}
+        <section className="pt-0 pb-12 bg-black overflow-hidden relative">
+            {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
-                ref={containerRef}
-                className="flex gap-12 overflow-x-auto pb-32 px-[10vw] no-scrollbar snap-x snap-mandatory"
+                className="relative w-full overflow-hidden"
                 style={{
-                    scrollbarWidth: 'none',
-                    msOverflowStyle: 'none',
-                    maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
                 }}
             >
-                {projects.map((project, index) => {
-                    const [category, title] = project.title.split(' - ');
-                    return (
-                        <ProjectCard
-                            key={index}
-                            project={{ ...project, category, title }}
-                            containerRef={containerRef}
-                        />
-                    );
-                })}
-                {/* Spacer for end of scroll */}
-                <div className="flex-shrink-0 w-[10vw]" />
-            </div>
+                {/* Scrolling Container */}
+                <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
+                    {allProjects.map((project, idx) => (
+                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
+                            {/* Image with Blue Glowing Border - Extra Thick and Permanent */}
+                            <div className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden border-[5px] border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.4)] bg-zinc-900 font-mono">
+                                <img
+                                    src={project.url}
+                                    alt={project.title}
+                                    className="h-full w-auto object-contain"
+                                />
+                            </div>
 
-            {/* Bottom Divider Line */}
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/[0.03]" />
-        </section>
-    );
-}
-
-interface ProjectCardProps {
-    project: {
-        url: string;
-        category: string;
-        title: string;
-    };
-    containerRef: React.RefObject<HTMLDivElement | null>;
-}
-
-function ProjectCard({ project, containerRef }: ProjectCardProps) {
-    const cardRef = useRef<HTMLDivElement>(null);
-    const { scrollXProgress } = useScroll({
-        container: containerRef,
-        target: cardRef,
-        offset: ["center end", "center center", "center start"]
-    });
-
-    // Scale logic: 85% at periphery, 100% at center
-    const scale = useTransform(scrollXProgress, [0, 0.5, 1], [0.85, 1, 0.85]);
-
-    // Smooth transition for values
-    const springScale = useSpring(scale, { stiffness: 120, damping: 20 });
-
-    // Border and Shadow transitions
-    // Center is around 0.5 in the [center end, center center, center start] range
-    const borderOpacity = useTransform(scrollXProgress, [0.4, 0.5, 0.6], [0.05, 1, 0.05]);
-    const shadowIntensity = useTransform(scrollXProgress, [0.4, 0.5, 0.6], [0, 1, 0]);
-
-    return (
-        <motion.div
-            ref={cardRef}
-            style={{ scale: springScale }}
-            className="flex-shrink-0 w-[80vw] md:w-[600px] snap-center"
-        >
-            {/* The "Invisible" Frame / Frame Logic */}
-            <motion.div
-                className="relative aspect-video rounded-xl overflow-hidden pointer-events-none"
-                style={{
-                    border: '1px solid',
-                    borderColor: useTransform(borderOpacity, (v) => `rgba(59, 130, 246, ${v})`),
-                    // For inactive cards, we use the fallback color
-                    backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
-                    boxShadow: useTransform(shadowIntensity, (v) => `0 40px 100px -20px rgba(59, 130, 246, ${v * 0.12})`),
-                }}
-            >
-                {/* Fallback Inactive Border (when active border is invisible) */}
-                <motion.div
-                    className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none"
-                    style={{ opacity: useTransform(borderOpacity, (v) => 1 - v) }}
-                />
-
-                <div className="p-[2px] h-full w-full">
-                    <img
-                        src={project.url}
-                        alt={project.title}
-                        className="h-full w-full object-cover rounded-[5px]"
-                    />
+                            {/* Caption Text Below Image - Styled to match reference */}
+                            <div className="px-1">
+                                <p className="text-[#666] font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase">
+                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-[#999]">{project.title.split(' - ')[1]}</span>
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </motion.div>
-
-            {/* Typography & Precision Details */}
-            <div className="mt-8 flex flex-col items-center text-center">
-                <motion.span
-                    className="text-[10px] tracking-[0.3em] text-[#64748B] uppercase mb-3"
-                    style={{
-                        opacity: useTransform(scrollXProgress, [0.3, 0.5, 0.7], [0.3, 1, 0.3]),
-                        fontFamily: 'var(--font-geist-mono)'
-                    }}
-                >
-                    {project.category}
-                </motion.span>
-                <motion.h3
-                    className="text-white text-xl md:text-2xl font-medium tracking-[-0.02em]"
-                    style={{
-                        opacity: useTransform(scrollXProgress, [0.3, 0.5, 0.7], [0.4, 1, 0.4]),
-                        fontFamily: 'var(--font-geist-sans)'
-                    }}
-                >
-                    {project.title}
-                </motion.h3>
             </div>
-        </motion.div>
+        </section>
     );
 }
