@@ -43,7 +43,7 @@ export default function Hero() {
                         </div>
 
                         <p className="text-sm md:text-base text-gray-300/80 max-w-xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-wide px-4">
-                            Bringing AI automation to your fingertips & streamlining operational tasks for accelerated growth.
+                            Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
