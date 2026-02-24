@@ -38,13 +38,13 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-12 bg-[#0A0A0A] overflow-hidden relative">
+        <section className="pt-0 pb-12 bg-[##070707] overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 0%, #0A0A0A 15%, #0A0A0A 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #0A0A0A 15%, #0A0A0A 85%, transparent 100%)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)'
                 }}
             >
                 {/* Scrolling Container */}

@@ -49,8 +49,8 @@ export default function TrustLogos() {
             <div
                 className="relative w-full flex items-center overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 5%, #0A0A0A 20%, #0A0A0A 80%, transparent 95%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 5%, #0A0A0A 20%, #0A0A0A 80%, transparent 95%)'
+                    maskImage: 'linear-gradient(to right, transparent 5%, ##070707 20%, ##070707 80%, transparent 95%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 5%, ##070707 20%, ##070707 80%, transparent 95%)'
                 }}
             >
                 {/* Logos Container */}

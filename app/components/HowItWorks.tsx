@@ -71,7 +71,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
 
         {/* Step Badge */}
         <div
-            className="relative z-10 w-11 h-11 rounded-full bg-[#EDEDED] flex items-center justify-center text-[#0A0A0A] font-extrabold text-xl mb-10 border border-black/5"
+            className="relative z-10 w-11 h-11 rounded-full bg-[#EDEDED] flex items-center justify-center text-[##070707] font-extrabold text-xl mb-10 border border-black/5"
         >
             {number}
         </div>
@@ -107,7 +107,7 @@ export default function HowItWorks() {
     };
 
     return (
-        <section id="how-it-works" className="py-24 bg-[#0A0A0A] overflow-hidden relative">
+        <section id="how-it-works" className="py-24 bg-[##070707] overflow-hidden relative">
             <div className="container-custom">
                 <SectionHeader
                     badge="Process"

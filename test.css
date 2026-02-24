@@ -1986,7 +1986,7 @@ video {
 
 :root {
   --background: #ffffff;
-  --foreground: #0A0A0A;
+  --foreground: ##070707;
   --color-primary-text: #000000;
   --color-secondary-text: #333333;
   --color-accent: #2563EB;
@@ -1995,7 +1995,7 @@ video {
   --font-primary: var(--font-plus-jakarta), sans-serif;
   --font-secondary: var(--font-plus-jakarta), sans-serif;
   --color-text: #ffffff;
-  --color-bg: #0A0A0A;
+  --color-bg: ##070707;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.25rem;
@@ -2035,7 +2035,7 @@ video {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0A0A0A;
+    --background: ##070707;
     --foreground: #ededed;
   }
 }
