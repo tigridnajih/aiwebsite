@@ -69,9 +69,9 @@ const Card = ({ number, title, description, children, className = "", style, bad
         {/* Subtle Noise Overlay */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 rounded-[32px] z-[1]" />
 
-        {/* Step Badge */}
+        {/* Step Number */}
         <div
-            className="relative z-10 w-11 h-11 rounded-full bg-[#EDEDED] flex items-center justify-center text-[##070707] font-extrabold text-xl mb-10 border border-black/5"
+            className="relative z-10 text-5xl font-bold text-zinc-600 mb-8 select-none"
         >
             {number}
         </div>
