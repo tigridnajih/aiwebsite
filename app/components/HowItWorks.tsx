@@ -125,7 +125,7 @@ export default function HowItWorks() {
                     >
                         <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between z-[2] px-2 gap-8 sm:gap-4 py-8 sm:py-0">
                             {/* Left Side: Radar Scanner */}
-                            <div className="w-full sm:flex-1 flex flex-col items-center justify-center">
+                            <div className="w-full sm:flex-1 flex flex-col items-center justify-center border border-white/[0.06] rounded-2xl bg-black/20 py-8">
                                 <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center">
                                     {/* Radar Rings */}
                                     <div className="absolute inset-0 border border-white/5 rounded-full" />
@@ -134,10 +134,10 @@ export default function HowItWorks() {
                                     <div className="absolute inset-16 border border-white/[0.16] rounded-full" />
 
                                     {/* Radar Sweep */}
-                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(60,110,255,0.15)_100%)] animate-spin-slow-extremely" />
+                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(255,255,255,0.08)_100%)] animate-spin-slow-extremely" />
 
                                     {/* Radar Center Dot */}
-                                    <div className="relative w-1.5 h-1.5 bg-[#3c6eff] rounded-full shadow-[0_0_10px_rgba(60,110,255,0.3)]" />
+                                    <div className="relative w-1.5 h-1.5 bg-zinc-400 rounded-full" />
                                 </div>
                                 <div className="mt-6">
                                     <span className="text-sm font-medium text-[#F5F7FF]/40">Analyzing Workflow</span>
@@ -154,7 +154,7 @@ export default function HowItWorks() {
                                     { Icon: RotateCw, text: "Repetitive task" }
                                 ].map((item, i) => (
                                     <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400 group-hover/item:scale-110 transition-transform">
+                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400 group-hover/item:scale-110 transition-transform">
                                             <item.Icon className="w-4 h-4" />
                                         </div>
                                         <span className="text-xs font-semibold text-[#F5F7FF]/80 tracking-wide uppercase">{item.text}</span>
@@ -192,11 +192,11 @@ export default function HowItWorks() {
                                 <div className="flex-1 flex overflow-hidden">
                                     {/* IDE Sidebar */}
                                     <div className="w-12 bg-[#121214] border-r border-white/5 flex flex-col items-center py-4 gap-6">
-                                        <div className="w-8 h-8 rounded-lg bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
-                                            <File className="w-4 h-4 text-blue-400" />
+                                        <div className="w-8 h-8 rounded-lg bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
+                                            <File className="w-4 h-4 text-zinc-400" />
                                         </div>
-                                        <Search className="w-4 h-4 text-blue-400/20 hover:text-blue-400 transition-colors cursor-pointer" />
-                                        <Puzzle className="w-4 h-4 text-blue-400/20 hover:text-blue-400 transition-colors cursor-pointer" />
+                                        <Search className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
+                                        <Puzzle className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
                                     </div>
 
                                     {/* IDE Code Area */}
@@ -272,43 +272,43 @@ export default function HowItWorks() {
                         <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-8">
                             {/* Chatbot System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
                                     <MessageSquare className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Chatbot system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Efficiency will increase by 20%</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center">
-                                    <RefreshCw className="w-4 h-4 text-blue-400 animate-spin-slow" />
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    <RefreshCw className="w-4 h-4 text-zinc-400 animate-spin-slow" />
                                 </div>
                             </div>
 
                             {/* Workflow System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
                                     <Settings className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.05] border border-[#3c6eff]/[0.15] flex items-center justify-center">
-                                    <ArrowUp className="w-4 h-4 text-blue-400 animate-bounce" />
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    <ArrowUp className="w-4 h-4 text-zinc-400 animate-bounce" />
                                 </div>
                             </div>
 
                             {/* Sales System */}
                             <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.12] border border-[#3c6eff]/[0.25] flex items-center justify-center text-blue-400">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
                                     <Filter className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
                                     <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
                                 </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#3c6eff]/[0.05] border border-[#3c6eff]/[0.15] flex items-center justify-center">
-                                    <Check className="w-5 h-5 text-blue-400 animate-pulse" />
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    <Check className="w-5 h-5 text-zinc-400 animate-pulse" />
                                 </div>
                             </div>
 
