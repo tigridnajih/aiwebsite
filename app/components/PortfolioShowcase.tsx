@@ -43,12 +43,15 @@ export default function PortfolioShowcase() {
             <div
                 className="relative w-full overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)'
                 }}
             >
                 {/* Scrolling Container */}
-                <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
+                <div
+                    className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8"
+                    style={{ animationDuration: '20s' }}
+                >
                     {allProjects.map((project, idx) => (
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
                             {/* Image with Refined Minimal Border and Depth Shadow */}
