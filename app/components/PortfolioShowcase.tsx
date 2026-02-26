@@ -53,17 +53,25 @@ export default function PortfolioShowcase() {
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
                             {/* Image with Refined Minimal Border and Depth Shadow */}
                             <div
-                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden bg-[#0d0d0d]"
+                                className="group relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
                                 style={{
-                                    border: '1px solid rgba(255, 255, 255, 0.06)',
                                     boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
                                 }}
                             >
-                                <img
-                                    src={project.url}
-                                    alt={project.title}
-                                    className="h-full w-auto object-contain"
+                                {/* Animated Border */}
+                                <div
+                                    className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#3b82f6_40%,#ffffff_50%,#3b82f6_60%,transparent_80%)] animate-spin-slow"
+                                    style={{ animationDuration: '4s' }}
                                 />
+
+                                {/* Image Container */}
+                                <div className="relative h-full w-full rounded-[19px] overflow-hidden bg-[#0d0d0d] z-10 font-mono">
+                                    <img
+                                        src={project.url}
+                                        alt={project.title}
+                                        className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
                             </div>
 
                             {/* Caption Text Below Image - Styled to match reference */}
