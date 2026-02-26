@@ -38,7 +38,7 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-12 bg-[##070707] overflow-hidden relative">
+        <section className="pt-0 pb-12 bg-[#070707] overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
@@ -49,12 +49,11 @@ export default function PortfolioShowcase() {
             >
                 {/* Scrolling Container */}
                 <div
-                    className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8"
-                    style={{ animationDuration: '20s' }}
+                    className="flex animate-infinite-scroll-right py-8 [animation-duration:12s] md:[animation-duration:25s]"
                 >
                     {allProjects.map((project, idx) => (
-                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
-                            {/* Image with Refined Minimal Border and Depth Shadow */}
+                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0 pr-6">
+                            {/* Image with Refined Animated Border and Depth Shadow */}
                             <div
                                 className="group relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
                                 style={{
