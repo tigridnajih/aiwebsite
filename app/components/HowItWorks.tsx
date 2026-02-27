@@ -60,10 +60,10 @@ interface CardProps {
 
 const Card = ({ number, title, description, children, className = "", style, badgeGlow }: CardProps) => (
     <div
-        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0d0d0d] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
+        className={`relative group p-6 md:p-8 rounded-[32px] bg-[#0851f5] transition-all duration-700 flex flex-col items-start min-h-[480px] md:min-h-[520px] overflow-hidden ${className}`}
         style={{
             ...style,
-            border: '1px solid rgba(255, 255, 255, 0.06)'
+            border: 'none'
         }}
     >
         {/* Subtle Noise Overlay */}
@@ -71,7 +71,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
 
         {/* Step Number */}
         <div
-            className="relative z-10 text-5xl font-bold text-zinc-600 mb-8 select-none"
+            className="relative z-10 text-5xl font-bold text-white/20 mb-8 select-none"
         >
             {number}
         </div>
@@ -80,7 +80,7 @@ const Card = ({ number, title, description, children, className = "", style, bad
             {title}
         </h3>
 
-        <p className="relative z-10 text-zinc-400 text-base md:text-lg leading-[1.6] md:leading-[1.8] mb-auto max-w-[95%]">
+        <p className="relative z-10 text-white/80 text-base md:text-lg leading-[1.6] md:leading-[1.8] mb-auto max-w-[95%]">
             {description}
         </p>
 
@@ -102,12 +102,8 @@ export default function HowItWorks() {
         { Icon: BrandIcons.n8n, name: 'n8n' },
     ];
 
-    const orbGradient = {
-        background: 'radial-gradient(circle, #4E7BFF 0%, #2C4EDC 50%, #0C1B4F 100%)'
-    };
-
     return (
-        <section id="how-it-works" className="py-24 bg-[##070707] overflow-hidden relative">
+        <section id="how-it-works" className="py-24 bg-[#070707] overflow-hidden relative">
             <div className="container-custom">
                 <SectionHeader
                     badge="Process"
@@ -116,31 +112,31 @@ export default function HowItWorks() {
                 />
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-12 pb-20 relative z-10">
-                    {/* Card 1: Share Your Workflow - GRADIENT ORBS */}
+                    {/* Card 1: Share Your Workflow */}
                     <Card
                         number="1"
                         title="Share Your Workflow"
                         description="From lead gen to client onboarding, just share your workflow and the tools you use."
                         className=""
                     >
-                        <div className="relative w-full h-auto flex flex-col sm:flex-row items-center justify-between z-[2] p-5 gap-6 border border-white/[0.06] rounded-[24px] bg-black/10">
+                        <div className="relative w-full h-auto flex flex-col sm:flex-row items-center justify-between z-[2] p-5 gap-6 border border-white/10 rounded-[24px] bg-white/5 backdrop-blur-sm">
                             {/* Left Side: Radar Scanner */}
                             <div className="w-full sm:flex-1 flex flex-col items-center justify-center py-4">
-                                <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/10 flex items-center justify-center">
+                                <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full border border-white/20 flex items-center justify-center">
                                     {/* Radar Rings */}
-                                    <div className="absolute inset-0 border border-white/5 rounded-full" />
-                                    <div className="absolute inset-4 border border-white/[0.08] rounded-full" />
-                                    <div className="absolute inset-10 border border-white/[0.12] rounded-full" />
-                                    <div className="absolute inset-16 border border-white/[0.16] rounded-full" />
+                                    <div className="absolute inset-0 border border-white/10 rounded-full" />
+                                    <div className="absolute inset-4 border border-white/20 rounded-full" />
+                                    <div className="absolute inset-10 border border-white/30 rounded-full" />
+                                    <div className="absolute inset-16 border border-white/40 rounded-full" />
 
                                     {/* Radar Sweep */}
-                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(255,255,255,0.08)_100%)] animate-spin-slow-extremely" />
+                                    <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_70%,rgba(255,255,255,0.2)_100%)] animate-spin-slow-extremely" />
 
                                     {/* Radar Center Dot */}
-                                    <div className="relative w-1.5 h-1.5 bg-zinc-400 rounded-full" />
+                                    <div className="relative w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_white]" />
                                 </div>
                                 <div className="mt-6">
-                                    <span className="text-sm font-medium text-[#F5F7FF]/40">Analyzing Workflow</span>
+                                    <span className="text-sm font-medium text-white/60">Analyzing Workflow</span>
                                 </div>
                             </div>
 
@@ -153,165 +149,115 @@ export default function HowItWorks() {
                                     { Icon: Bot, text: "Manual work" },
                                     { Icon: RotateCw, text: "Repetitive task" }
                                 ].map((item, i) => (
-                                    <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400 group-hover/item:scale-110 transition-transform">
+                                    <div key={i} className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/10 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300">
+                                        <div className="shrink-0 w-8 h-8 rounded-lg bg-white/20 border border-white/10 flex items-center justify-center text-white group-hover/item:scale-110 transition-transform">
                                             <item.Icon className="w-4 h-4" />
                                         </div>
-                                        <span className="text-xs font-semibold text-[#F5F7FF]/80 tracking-wide uppercase">{item.text}</span>
+                                        <span className="text-xs font-semibold text-white tracking-wide uppercase">{item.text}</span>
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                     </Card>
 
-                    {/* Card 2: We Build the System - GRADIENT DUAL LINEAR ORBS */}
+                    {/* Card 2: We Build the System */}
                     <Card
                         number="2"
                         title="We Build the System"
                         description="We design and set up custom automations that connect your tools with AI—so work happens while you sleep."
                         className=""
                     >
-                        <div className="relative w-full h-full flex items-center justify-center z-[2] px-0 md:px-2">
+                        <div className="relative w-full h-[280px] flex items-center justify-center z-[2]">
                             {/* IDE Mockup Window */}
-                            <div className="relative w-full h-[260px] md:h-[280px] bg-[#0A0A0B] rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col">
+                            <div className="relative w-full h-full bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden shadow-2xl flex flex-col">
                                 {/* IDE Header */}
-                                <div className="h-9 bg-[#121214] border-b border-white/5 flex items-center px-4 gap-4">
+                                <div className="h-9 bg-white/10 border-b border-white/10 flex items-center px-4 gap-4">
                                     <div className="flex items-center gap-2">
-                                        <MoveLeft className="w-3.5 h-3.5 text-zinc-600" />
-                                        <MoveRight className="w-3.5 h-3.5 text-zinc-600" />
+                                        <MoveLeft className="w-3.5 h-3.5 text-white/40" />
+                                        <MoveRight className="w-3.5 h-3.5 text-white/40" />
                                     </div>
-                                    <div className="flex-1 h-5 bg-[#0A0A0B] border border-white/5 rounded-md mx-4" />
+                                    <div className="flex-1 h-5 bg-white/5 border border-white/10 rounded-md mx-4" />
                                     <div className="flex items-center gap-3">
-                                        <Minus className="w-3 h-3 text-zinc-600" />
-                                        <Square className="w-2.5 h-2.5 text-zinc-600" />
-                                        <X className="w-3 h-3 text-zinc-600" />
+                                        <Minus className="w-3 h-3 text-white/40" />
+                                        <Square className="w-2.5 h-2.5 text-white/40" />
+                                        <X className="w-3 h-3 text-white/40" />
                                     </div>
                                 </div>
 
                                 <div className="flex-1 flex overflow-hidden">
                                     {/* IDE Sidebar */}
-                                    <div className="w-12 bg-[#121214] border-r border-white/5 flex flex-col items-center py-4 gap-6">
-                                        <div className="w-8 h-8 rounded-lg bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
-                                            <File className="w-4 h-4 text-zinc-400" />
+                                    <div className="w-12 bg-white/5 border-r border-white/10 flex flex-col items-center py-4 gap-6">
+                                        <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white/60">
+                                            <File className="w-4 h-4 text-white/60" />
                                         </div>
-                                        <Search className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
-                                        <Puzzle className="w-4 h-4 text-zinc-600 hover:text-white transition-colors cursor-pointer" />
+                                        <Search className="w-4 h-4 text-white/40 hover:text-white transition-colors cursor-pointer" />
+                                        <Puzzle className="w-4 h-4 text-white/40 hover:text-white transition-colors cursor-pointer" />
                                     </div>
 
                                     {/* IDE Code Area */}
-                                    <div className="flex-1 relative overflow-hidden bg-black p-6 font-mono text-[13px] leading-relaxed">
-                                        <div className="flex flex-col gap-0 animate-infinite-scroll-vertical" style={{ animationDuration: '15s' }}>
+                                    <div className="flex-1 relative overflow-hidden bg-white/5 p-6 font-mono text-[11px] leading-relaxed">
+                                        <div className="flex flex-col gap-0 animate-infinite-scroll-vertical" style={{ animationDuration: '10s' }}>
                                             {[1, 2].map((group) => (
-                                                <div key={group} className="flex flex-col gap-6 py-4">
-                                                    <div className="space-y-1">
-                                                        <div className="flex gap-4">
-                                                            <span className="text-[#A78BFA]">def</span>
-                                                            <span className="text-[#F5F7FF]">__init__(self, threshold):</span>
+                                                <div key={group} className="flex flex-col gap-4 py-2">
+                                                    <div className="space-y-0.5">
+                                                        <div className="flex gap-2">
+                                                            <span className="text-white/60">def</span>
+                                                            <span className="text-white">init_system(self):</span>
                                                         </div>
-                                                        <div className="flex gap-4 pl-8">
-                                                            <span className="text-[#F5F7FF]">self.threshold = threshold</span>
-                                                        </div>
-                                                        <div className="flex gap-4 pl-8">
-                                                            <span className="text-[#F5F7FF]">self.status = </span>
-                                                            <span className="text-[#2DD4BF]">&quot;inactive&quot;</span>
+                                                        <div className="flex gap-2 pl-4">
+                                                            <span className="text-white">self.status = &quot;active&quot;</span>
                                                         </div>
                                                     </div>
-
-                                                    <div className="space-y-1">
-                                                        <div className="flex gap-4">
-                                                            <span className="text-[#A78BFA]">def</span>
-                                                            <span className="text-[#F5F7FF]">check_trigger(self, value):</span>
+                                                    <div className="space-y-0.5">
+                                                        <div className="flex gap-2">
+                                                            <span className="text-white/60">def</span>
+                                                            <span className="text-white">sync_data(data):</span>
                                                         </div>
-                                                        <div className="flex gap-4 pl-8">
-                                                            <span className="text-[#A78BFA]">if</span>
-                                                            <span className="text-[#F5F7FF]">value &gt; self.threshold:</span>
+                                                        <div className="flex gap-2 pl-4">
+                                                            <span className="text-white/60">for</span>
+                                                            <span className="text-white">item in data:</span>
                                                         </div>
-                                                        <div className="flex gap-4 pl-16">
-                                                            <span className="text-[#F5F7FF]">self.status = </span>
-                                                            <span className="text-[#2DD4BF]">&quot;active&quot;</span>
-                                                        </div>
-                                                        <div className="flex gap-4 pl-16">
-                                                            <span className="text-[#A78BFA]">return</span>
-                                                            <span className="text-[#2DD4BF]">&quot;Automation triggered!&quot;</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="space-y-1">
-                                                        <div className="flex gap-4">
-                                                            <span className="text-[#A78BFA]">def</span>
-                                                            <span className="text-[#F5F7FF]">sync_database(data):</span>
-                                                        </div>
-                                                        <div className="flex gap-4 pl-8">
-                                                            <span className="text-[#A78BFA]">for</span>
-                                                            <span className="text-[#F5F7FF]">item in data:</span>
-                                                        </div>
-                                                        <div className="flex gap-4 pl-16">
-                                                            <span className="text-[#F5F7FF]">record.update(id=item.id)</span>
+                                                        <div className="flex gap-2 pl-8">
+                                                            <span className="text-white">item.process()</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             ))}
                                         </div>
                                         {/* Code Shadow Overlays */}
-                                        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#000] via-transparent to-[#000] opacity-60" />
+                                        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-white/10 opacity-30" />
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </Card>
 
-                    {/* Card 3: Launch and Take Control - GRADIENT DASHBOARD */}
+                    {/* Card 3: Launch and Take Control */}
                     <Card
                         number="3"
                         title="Launch and Take Control"
                         description="You get a plug-and-play dashboard with a walkthrough to manage everything easily."
-                        className="border border-white/[0.06] !p-5 md:!p-7"
+                        className="!p-5 md:!p-7"
                     >
                         <div className="relative w-full h-full flex flex-col gap-3 z-[2] pt-8">
-                            {/* Chatbot System */}
-                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
-                                    <MessageSquare className="w-5 h-5" />
+                            {[
+                                { Icon: MessageSquare, title: "Chatbot system", sub: "Efficiency increase 20%", Action: RefreshCw, actionClass: "animate-spin-slow" },
+                                { Icon: Settings, title: "Workflow system", sub: "Update available..", Action: ArrowUp, actionClass: "animate-bounce" },
+                                { Icon: Filter, title: "Sales system", sub: "Up to date", Action: Check, actionClass: "animate-pulse" }
+                            ].map((item, i) => (
+                                <div key={i} className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300">
+                                    <div className="shrink-0 w-10 h-10 rounded-xl bg-white/20 border border-white/10 flex items-center justify-center text-white">
+                                        <item.Icon className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className="text-white font-bold text-base leading-tight">{item.title}</h4>
+                                        <p className="text-white/60 text-[11px] font-medium mt-1">{item.sub}</p>
+                                    </div>
+                                    <div className="shrink-0 w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center">
+                                        <item.Action className={`w-4 h-4 text-white/80 ${item.actionClass}`} />
+                                    </div>
                                 </div>
-                                <div className="flex-1 min-w-0">
-                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Chatbot system</h4>
-                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Efficiency will increase by 20%</p>
-                                </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                                    <RefreshCw className="w-4 h-4 text-zinc-400 animate-spin-slow" />
-                                </div>
-                            </div>
-
-                            {/* Workflow System */}
-                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
-                                    <Settings className="w-5 h-5" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Workflow system</h4>
-                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Update available..</p>
-                                </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                                    <ArrowUp className="w-4 h-4 text-zinc-400 animate-bounce" />
-                                </div>
-                            </div>
-
-                            {/* Sales System */}
-                            <div className="group/item flex items-center gap-4 px-5 py-3 rounded-2xl border border-white/[0.05] bg-[#111114] hover:bg-[#16161a] transition-all duration-300">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400">
-                                    <Filter className="w-5 h-5" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <h4 className="text-[#F5F7FF] font-bold text-base leading-tight">Sales system</h4>
-                                    <p className="text-zinc-500 text-[11px] font-medium mt-1">Up to date</p>
-                                </div>
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                                    <Check className="w-5 h-5 text-zinc-400 animate-pulse" />
-                                </div>
-                            </div>
-
+                            ))}
                         </div>
                     </Card>
                 </div>
@@ -319,3 +265,4 @@ export default function HowItWorks() {
         </section>
     );
 }
+
