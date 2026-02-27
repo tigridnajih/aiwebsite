@@ -58,7 +58,7 @@ export default function Footer() {
                     }}
                 >
                     <div className="flex whitespace-nowrap overflow-hidden pt-4 pb-12">
-                        <div className="flex animate-infinite-scroll-slow-extremely pause-on-hover">
+                        <div className="flex w-max animate-infinite-scroll-slow-extremely pause-on-hover">
                             {[1, 2].map((group) => (
                                 <h1 key={group} className="text-[65px] md:text-[110px] font-medium tracking-tighter text-[#F2F5FF] opacity-90 px-10 leading-none select-none">
                                     You need better systems. You don&apos;t need more people.

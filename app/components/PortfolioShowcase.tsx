@@ -49,7 +49,7 @@ export default function PortfolioShowcase() {
             >
                 {/* Scrolling Container */}
                 <div
-                    className="flex animate-infinite-scroll-right py-8 [animation-duration:12s] md:[animation-duration:25s]"
+                    className="flex w-max animate-infinite-scroll-right py-8 [animation-duration:12s] md:[animation-duration:25s]"
                 >
                     {allProjects.map((project, idx) => (
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0 pr-6">
