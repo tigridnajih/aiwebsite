@@ -76,8 +76,22 @@ html {
     }
   }
 
+  @keyframes infinite-scroll-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
   .animate-infinite-scroll-slow-extremely {
-    animation: infinite-scroll 30s linear infinite;
+    animation: infinite-scroll 40s linear infinite;
+  }
+
+  .animate-infinite-scroll-reverse-slow-extremely {
+    animation: infinite-scroll-reverse 40s linear infinite;
   }
 
   .font-heading {
