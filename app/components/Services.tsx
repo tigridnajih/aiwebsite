@@ -213,7 +213,7 @@ export default function Services() {
                                             ease: "easeOut"
                                         }}
                                         style={{
-                                            background: "linear-gradient(180deg, #00A3FF 0%, #000000 100%)",
+                                            background: "linear-gradient(180deg, #3B5BFF 0%, #000000 100%)",
                                             boxShadow: "none"
                                         }}
                                         className="w-full rounded-t-md origin-bottom relative overflow-hidden"
@@ -229,7 +229,7 @@ export default function Services() {
                                             }}
                                             className="absolute inset-0 w-full h-[60%]"
                                             style={{
-                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%)",
+                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(59,91,255,0.08) 50%, rgba(255,255,255,0) 100%)",
                                             }}
                                         />
                                     </motion.div>
