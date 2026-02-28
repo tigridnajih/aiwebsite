@@ -203,25 +203,25 @@ const SystemStatusCards = () => {
     ];
 
     return (
-        <div className="w-full h-full p-8 flex flex-col gap-4 justify-center">
+        <div className="w-full h-full p-4 md:p-5 flex flex-col gap-3 justify-center bg-black/20">
             {systems.map((sys, i) => (
                 <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.2 }}
-                    className="p-5 rounded-3xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-between group/sys hover:bg-blue-600/5 transition-all duration-500"
+                    transition={{ delay: i * 0.15 }}
+                    className="p-4 rounded-[24px] bg-white/[0.03] border border-white/[0.05] flex items-center justify-between group/sys hover:bg-blue-600/5 transition-all duration-500"
                 >
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 group-hover/sys:scale-110 transition-transform">
-                            <sys.icon className="w-6 h-6 text-blue-400" />
+                        <div className="w-11 h-11 rounded-2xl bg-blue-500/5 flex items-center justify-center border border-blue-500/10 group-hover/sys:scale-105 transition-transform">
+                            <sys.icon className="w-5 h-5 text-blue-400" />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-base font-bold text-white mb-0.5">{sys.title}</span>
-                            <span className="text-xs text-zinc-500 tracking-tight font-medium">{sys.desc}</span>
+                            <span className="text-[15px] font-bold text-white leading-snug">{sys.title}</span>
+                            <span className="text-[13px] text-zinc-500 tracking-tight font-medium leading-tight">{sys.desc}</span>
                         </div>
                     </div>
-                    <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-zinc-500 group-hover/sys:text-blue-400 group-hover/sys:border-blue-500/30 transition-all">
+                    <div className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-zinc-500 group-hover/sys:text-blue-400 group-hover/sys:border-blue-500/30 transition-all">
                         <sys.endIcon className="w-4 h-4" />
                     </div>
                 </motion.div>
