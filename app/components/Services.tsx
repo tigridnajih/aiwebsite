@@ -191,15 +191,16 @@ export default function Services() {
                             <div key={i} className="flex-1 flex flex-col items-center justify-end gap-3 group h-full">
                                 <div className="relative w-full h-full flex items-end">
                                     <motion.div
-                                        initial={{ height: "0%" }}
-                                        whileInView={{ height: `${height}%` }}
+                                        initial={{ scaleY: 0 }}
+                                        whileInView={{ scaleY: 1 }}
                                         viewport={{ once: true, margin: "-50px" }}
                                         transition={{
                                             duration: 1.2,
                                             delay: i * 0.1,
                                             ease: [0.33, 1, 0.68, 1],
                                         }}
-                                        className="w-full rounded-t-lg bg-gradient-to-t from-[#0B1F5C] via-blue-600 to-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.25)] relative overflow-hidden"
+                                        style={{ height: `${height}%` }}
+                                        className="w-full origin-bottom rounded-t-lg bg-gradient-to-t from-[#0B1F5C] via-blue-600 to-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.25)] relative overflow-hidden"
                                     >
                                         {/* Electric Sweep effect */}
                                         <motion.div
