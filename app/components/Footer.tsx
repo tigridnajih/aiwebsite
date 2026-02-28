@@ -8,15 +8,11 @@ export default function Footer() {
         <footer className="relative w-full overflow-hidden bg-black text-white pt-0 pb-2 border-t border-white/[0.03]">
             {/* 🌌 Atmospheric Background System */}
             <div className="absolute inset-0 z-0">
-                {/* 🌌 Base Layer: Pure black */}
-                <div className="absolute inset-0 bg-black" />
-
-                {/* 🌊 Primary Blue Glow: Large centered radial glow using #385BFF */}
+                {/* 🌊 Linear Blue Gradient: #385BFF top to 50% opacity bottom */}
                 <div
-                    className="absolute inset-0 pointer-events-none"
+                    className="absolute inset-0"
                     style={{
-                        background: 'radial-gradient(ellipse at 50% 50%, rgba(56, 91, 255, 0.4) 0%, rgba(56, 91, 255, 0.05) 50%, transparent 80%)',
-                        filter: 'blur(60px)'
+                        background: 'linear-gradient(to bottom, #385BFF 0%, rgba(56, 91, 255, 0.5) 100%)'
                     }}
                 />
 
