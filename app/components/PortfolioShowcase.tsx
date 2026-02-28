@@ -55,23 +55,17 @@ export default function PortfolioShowcase() {
                         <div key={idx} className="flex flex-col gap-3 flex-shrink-0 pr-6">
                             {/* Image with Refined Animated Border and Depth Shadow */}
                             <div
-                                className="group relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden p-px transition-all hover:scale-[1.02] active:scale-[0.98]"
+                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden"
                                 style={{
-                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
+                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
                                 }}
                             >
-                                {/* Animated Border */}
-                                <div
-                                    className="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_20%,#3b82f6_40%,#ffffff_50%,#3b82f6_60%,transparent_80%)] animate-spin-slow"
-                                    style={{ animationDuration: '4s' }}
-                                />
-
                                 {/* Image Container */}
-                                <div className="relative h-full w-full rounded-[19px] overflow-hidden bg-[#0d0d0d] z-10 font-mono">
+                                <div className="relative h-full w-full bg-[#0d0d0d]">
                                     <img
                                         src={project.url}
                                         alt={project.title}
-                                        className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                        className="h-full w-auto object-contain"
                                     />
                                 </div>
                             </div>
