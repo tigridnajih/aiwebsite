@@ -174,8 +174,6 @@ export default function Services() {
             imageSide: "right",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
-                    {/* Background Subtle Gradient */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,102,255,0.03),transparent)] pointer-events-none" />
 
                     {/* Top Section Details */}
                     <div className="relative flex justify-between items-start z-10 w-full mb-4">
@@ -183,19 +181,25 @@ export default function Services() {
                             <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                             <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
                         </div>
-                        <div className="flex gap-2">
-                            {[...Array(2)].map((_, i) => (
-                                <div key={i} className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.06]" />
-                            ))}
+                        {/* "85%+" Highlight Box */}
+                        <div className="px-4 py-2 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center shadow-[0_4px_20px_rgba(59,91,255,0.1)]">
+                            <span className="text-[#3B5BFF] text-[11px] font-bold tracking-widest font-mono">85%+</span>
                         </div>
                     </div>
 
                     {/* Chart Container */}
                     <div className="relative flex-1 mt-6 flex flex-col z-10">
-                        {/* Technical Grid lines */}
-                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
-                            {[...Array(6)].map((_, i) => (
-                                <div key={i} className="w-full h-[1px] border-t border-dashed border-white/20" />
+                        {/* Behind-the-bars Grid System */}
+                        <div className="absolute inset-0 top-8 flex flex-col justify-between pointer-events-none opacity-[0.12]">
+                            {[...Array(7)].map((_, i) => (
+                                <div key={i} className="w-full h-[1px] bg-white" />
+                            ))}
+                        </div>
+
+                        {/* Vertical Accent lines */}
+                        <div className="absolute inset-0 flex justify-between pointer-events-none opacity-[0.03]">
+                            {[...Array(9)].map((_, i) => (
+                                <div key={i} className="h-full w-[1px] bg-white" />
                             ))}
                         </div>
 
