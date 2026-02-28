@@ -17,8 +17,7 @@ export default function Services() {
                         {/* Bubble Column */}
                         <div className="w-full flex flex-col gap-4">
                             {/* Emma - Top Bubble (Replying) */}
-                            <div className="relative bg-white/[0.03] backdrop-blur-md border border-[#3B5BFF]/30 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#3B5BFF]/5 to-transparent rounded-2xl pointer-events-none" />
+                            <div className="relative bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -53,7 +52,7 @@ export default function Services() {
                             </div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-20 hover:opacity-100 transition-opacity">
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -80,7 +79,7 @@ export default function Services() {
                             </div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-20 hover:opacity-100 transition-opacity">
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
