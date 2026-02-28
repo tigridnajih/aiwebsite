@@ -173,82 +173,72 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
+                <div className="relative w-full h-[320px] md:h-[380px] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
                     {/* Background Subtle Gradient */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(44,78,220,0.05),transparent)] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,102,255,0.03),transparent)] pointer-events-none" />
 
-                    {/* Top Section */}
-                    <div className="relative flex justify-between items-start z-10">
+                    {/* Top Section Details */}
+                    <div className="relative flex justify-between items-start z-10 w-full mb-4">
                         <div className="flex flex-col gap-2">
                             <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                             <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
                         </div>
-                        <motion.div
-                            animate={{ boxShadow: ["0 0 0px rgba(59,163,255,0)", "0 0 10px rgba(59,163,255,0.2)", "0 0 0px rgba(59,163,255,0)"] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            className="px-3 py-1.5 rounded-full bg-[rgba(59,163,255,0.08)] border border-[rgba(59,163,255,0.2)] flex items-center justify-center"
-                        >
-                            <span className="text-[#7FDBFF] text-[10px] font-bold tracking-[0.08em] leading-none uppercase">Live Analysis</span>
-                        </motion.div>
+                        <div className="flex gap-2">
+                            {[...Array(2)].map((_, i) => (
+                                <div key={i} className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.06]" />
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Chart Container with Details */}
-                    <div className="relative flex-1 mt-10 mb-2 flex flex-col z-10">
-                        {/* Subtle Grid Lines */}
+                    {/* Chart Container */}
+                    <div className="relative flex-1 mt-6 flex flex-col z-10">
+                        {/* Technical Grid lines */}
                         <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
-                            {[...Array(4)].map((_, i) => (
+                            {[...Array(6)].map((_, i) => (
                                 <div key={i} className="w-full h-[1px] border-t border-dashed border-white/20" />
                             ))}
                         </div>
 
-                        {/* Bars Area */}
-                        <div className="flex-1 w-full flex items-end justify-between gap-4 md:gap-6 relative z-10">
-                            {[
-                                { val: 72, label: "Mon" },
-                                { val: 48, label: "Tue" },
-                                { val: 85, label: "Wed" },
-                                { val: 63, label: "Thu" },
-                                { val: 91, label: "Fri" },
-                                { val: 54, label: "Sat" }
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex-1 h-full flex flex-col items-center justify-end group">
+                        {/* Bars Area with robust height parent */}
+                        <div className="flex-1 w-full flex items-end justify-between gap-3 md:gap-5 pt-8 relative z-10">
+                            {[72, 48, 85, 63, 91, 54, 76, 58].map((val, idx) => (
+                                <div key={idx} className="flex-1 h-full flex items-end justify-center group">
                                     <motion.div
-                                        initial={{ scaleY: 0 }}
-                                        whileInView={{ scaleY: 1 }}
-                                        viewport={{ once: true, margin: "-10px" }}
+                                        initial={{ height: "0%" }}
+                                        whileInView={{ height: `${val}%` }}
+                                        viewport={{ once: true }}
                                         transition={{
-                                            duration: 1.4,
+                                            duration: 1.2,
                                             delay: idx * 0.1,
-                                            ease: [0.22, 1, 0.36, 1],
-                                            times: [0, 0.8, 1]
+                                            ease: "easeOut"
                                         }}
                                         style={{
-                                            height: `${item.val * 0.85}%`,
-                                            background: "linear-gradient(180deg, #7FDBFF 0%, #3BA3FF 50%, #0A84FF 100%)",
+                                            background: "linear-gradient(180deg, #00A3FF 0%, #000000 100%)",
+                                            boxShadow: "none"
                                         }}
-                                        className="w-full rounded-t-lg origin-bottom relative overflow-hidden"
+                                        className="w-full rounded-t-md origin-bottom relative overflow-hidden"
                                     >
                                         {/* Shimmer Loop Effect */}
                                         <motion.div
                                             animate={{ y: ["-150%", "300%"] }}
                                             transition={{
-                                                duration: 8,
+                                                duration: 7,
                                                 repeat: Infinity,
                                                 ease: "linear",
-                                                delay: 1.5 + (idx * 0.4)
+                                                delay: 1 + (idx * 0.2)
                                             }}
-                                            className="absolute inset-0 w-full h-[50%]"
+                                            className="absolute inset-0 w-full h-[60%]"
                                             style={{
-                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)",
+                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%)",
                                             }}
                                         />
                                     </motion.div>
-                                    <span className="mt-3 text-[10px] font-mono text-white/30 group-hover:text-white/60 transition-colors">
-                                        {item.label}
-                                    </span>
                                 </div>
                             ))}
                         </div>
+
+                        {/* Base Line */}
+                        <div className="w-full h-[1px] bg-white/[0.08] mt-2" />
                     </div>
                 </div>
             ),
