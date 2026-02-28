@@ -52,7 +52,7 @@ export default function Services() {
                             </div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-20 hover:opacity-100 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -79,7 +79,7 @@ export default function Services() {
                             </div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-20 hover:opacity-100 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
