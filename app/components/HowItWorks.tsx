@@ -40,7 +40,7 @@ export default function HowItWorks() {
                         {PHASES.map((phase) => (
                             <div
                                 key={phase.number}
-                                className="group relative flex flex-col items-start p-8 md:p-10 bg-gradient-to-b from-[#385BFF]/20 to-black rounded-3xl transition-all duration-300 overflow-hidden"
+                                className="group relative flex flex-col items-start p-8 md:p-10 bg-gradient-to-b from-[#385BFF] to-black rounded-3xl transition-all duration-300 overflow-hidden"
                             >
                                 {/* Visual Marker Layer */}
                                 <div className="relative z-10 w-full">
