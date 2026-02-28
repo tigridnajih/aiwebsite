@@ -199,7 +199,7 @@ export default function Services() {
                                     <motion.div
                                         initial={{ height: "0%" }}
                                         whileInView={{ height: `${val}%` }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: false, amount: 0.4 }}
                                         transition={{
                                             duration: 1.2,
                                             delay: idx * 0.1,
