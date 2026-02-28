@@ -7,6 +7,7 @@ import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
+import HowItWorks from './components/HowItWorks';
 import TechStack from './components/TechStack';
 import Stats from './components/Stats';
 import Team from './components/Team';
@@ -23,6 +24,7 @@ export default function Home() {
       <PortfolioShowcase />
       <Integrations />
       <Services />
+      <HowItWorks />
       <Testimonials />
       <Problem />
       <CaseStudies />
