@@ -59,7 +59,7 @@ export default function TrustLogos() {
                         {allLogos.map((logo, i) => (
                             <div
                                 key={i}
-                                className="flex items-center gap-3 mx-8 md:mx-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                                className="flex items-center gap-3 mx-8 md:mx-16 transition-all duration-500"
                             >
                                 <div className="flex-shrink-0 scale-95 md:scale-100 invert brightness-0">
                                     <div className="text-white fill-current">
@@ -75,7 +75,7 @@ export default function TrustLogos() {
                         {allLogos.map((logo, i) => (
                             <div
                                 key={`dup-${i}`}
-                                className="flex items-center gap-3 mx-8 md:mx-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                                className="flex items-center gap-3 mx-8 md:mx-16 transition-all duration-500"
                             >
                                 <div className="flex-shrink-0 scale-95 md:scale-100 invert brightness-0">
                                     <div className="text-white fill-current">
