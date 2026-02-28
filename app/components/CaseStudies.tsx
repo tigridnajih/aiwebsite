@@ -69,19 +69,20 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
             </div>
 
             {/* Image Right */}
-            <div className="flex-1 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 w-24 hidden md:block" />
-                <img
-                    src={c.image}
-                    alt={c.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+            <div className="flex-1 flex items-center justify-center p-4 md:p-6 group">
+                <div className="relative w-full h-full min-h-[300px] md:min-h-full rounded-2xl md:rounded-[24px] overflow-hidden border border-white/[0.05]">
+                    <img
+                        src={c.image}
+                        alt={c.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
 
-                {/* Logo Placeholder like screenshot */}
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 flex items-center gap-3">
-                        <div className="w-8 h-8 bg-white rounded-lg" />
-                        <span className="text-white font-bold text-xl tracking-tight">Logoipsum</span>
+                    {/* Logo Placeholder like screenshot */}
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                        <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 flex items-center gap-3">
+                            <div className="w-8 h-8 bg-white rounded-lg" />
+                            <span className="text-white font-bold text-xl tracking-tight">Logoipsum</span>
+                        </div>
                     </div>
                 </div>
             </div>
