@@ -173,68 +173,81 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full h-full bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex flex-col p-8 md:p-10">
-                    {/* Header Area */}
-                    <div className="flex justify-between items-center mb-10">
-                        <div className="space-y-1.5">
-                            <div className="w-24 h-2 bg-white/10 rounded-full" />
-                            <div className="w-16 h-1.5 bg-white/5 rounded-full" />
-                        </div>
-                        <div className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.15)]">
-                            <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">Live Analysis</span>
-                        </div>
-                    </div>
+                <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[320px] bg-[#0B0F14] rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-4">
 
-                    {/* Animated Bar Graph Area */}
-                    <div className="flex-1 flex items-end justify-between gap-3 md:gap-4 relative px-2 min-h-[180px]">
-                        {[65, 40, 85, 55, 95, 70, 45, 80].map((height, i) => (
-                            <div key={i} className="flex-1 flex flex-col items-center justify-end gap-3 group h-full">
-                                <div className="relative w-full h-full flex items-end">
+                    {/* Inner Card Container */}
+                    <div className="relative w-full max-w-[500px] h-[320px] bg-[#0E1116] rounded-[20px] p-[40px] flex flex-col justify-between shadow-2xl"
+                        style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)" }}>
+
+                        {/* Top Action Ribbon - LIVE ANALYSIS Pill */}
+                        <div className="absolute top-[40px] right-[40px]">
+                            <motion.div
+                                animate={{ boxShadow: ["0 0 0px rgba(59,163,255,0)", "0 0 15px rgba(59,163,255,0.3)", "0 0 0px rgba(59,163,255,0)"] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                className="px-3 py-1.5 rounded-full bg-[rgba(59,163,255,0.12)] border border-[rgba(59,163,255,0.4)] flex items-center justify-center"
+                            >
+                                <span className="text-[#7FDBFF] text-[10px] font-bold tracking-[0.08em] leading-none uppercase">Live Analysis</span>
+                            </motion.div>
+                        </div>
+
+                        {/* Header placeholders (minimalist structural elements) */}
+                        <div className="mt-1 flex flex-col gap-2">
+                            <div className="w-[88px] h-[4px] bg-white/[0.08] rounded-full" />
+                            <div className="w-[56px] h-[3px] bg-white/[0.04] rounded-full" />
+                        </div>
+
+                        {/* Chart Area */}
+                        <div className="flex-1 w-full mt-6 flex items-end justify-between gap-[24px]">
+                            {[72, 48, 85, 63, 91, 54].map((val, idx) => (
+                                <div key={idx} className="flex-1 h-full flex items-end justify-center group relative">
                                     <motion.div
                                         initial={{ scaleY: 0 }}
                                         whileInView={{ scaleY: 1 }}
-                                        viewport={{ once: true, margin: "-50px" }}
+                                        viewport={{ once: true, margin: "-10px" }}
                                         transition={{
-                                            duration: 1.2,
-                                            delay: i * 0.1,
-                                            ease: [0.33, 1, 0.68, 1],
+                                            duration: 1.4,
+                                            delay: idx * 0.1,
+                                            ease: [0.22, 1, 0.36, 1],
+                                            // Simulated overshoot effect
+                                            times: [0, 0.8, 1]
                                         }}
-                                        style={{ height: `${height}%` }}
-                                        className="w-full origin-bottom rounded-t-lg bg-gradient-to-t from-[#0B1F5C] via-blue-600 to-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.25)] relative overflow-hidden"
+                                        style={{
+                                            height: `${val}%`,
+                                            background: "linear-gradient(180deg, #7FDBFF 0%, #3BA3FF 50%, #0A84FF 100%)",
+                                            boxShadow: "0 0 20px rgba(59,163,255,0.35), 0 10px 40px rgba(10,132,255,0.25)"
+                                        }}
+                                        className="w-full rounded-[12px] origin-bottom relative overflow-hidden"
                                     >
-                                        {/* Electric Sweep effect */}
+                                        {/* Shimmer Loop Effect */}
                                         <motion.div
-                                            animate={{ y: ["-100%", "200%"] }}
-                                            transition={{ duration: 2.5, repeat: Infinity, ease: "linear", delay: i * 0.15 }}
-                                            className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent pointer-events-none"
+                                            animate={{ y: ["-150%", "300%"] }}
+                                            transition={{
+                                                duration: 8,
+                                                repeat: Infinity,
+                                                ease: "linear",
+                                                delay: 1.5 + (idx * 0.4)
+                                            }}
+                                            className="absolute inset-0 w-full h-[50%]"
+                                            style={{
+                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
+                                            }}
                                         />
                                     </motion.div>
                                 </div>
-                                <div className="w-full h-1 bg-white/5 rounded-full shrink-0" />
-                            </div>
-                        ))}
+                            ))}
+                        </div>
 
-                        {/* Background Grid Lines */}
-                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-[0.03] z-[-1]">
-                            {[...Array(5)].map((_, i) => (
-                                <div key={i} className="w-full h-px bg-white" />
+                        {/* Very subtle base markers to dock the bars visually */}
+                        <div className="w-full flex justify-between gap-[24px] mt-3">
+                            {[...Array(6)].map((_, idx) => (
+                                <div key={idx} className="flex-1 flex justify-center">
+                                    <div className="w-4 h-1 rounded-full bg-white/[0.03]"></div>
+                                </div>
                             ))}
                         </div>
                     </div>
-
-                    {/* Bottom Data Legend */}
-                    <div className="mt-10 flex gap-6">
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
-                            <div className="w-12 h-1.5 bg-white/10 rounded-full" />
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-white/10" />
-                            <div className="w-12 h-1.5 bg-white/5 rounded-full" />
-                        </div>
-                    </div>
                 </div>
-            )
+            ),
         },
         {
             badge: "Sales & Marketing",
