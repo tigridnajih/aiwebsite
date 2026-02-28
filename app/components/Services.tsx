@@ -75,7 +75,7 @@ const AutomationMockup = () => {
     }, [messages, isInView]);
 
     return (
-        <div ref={containerRef} className="w-full max-w-md mx-auto relative px-4 min-h-[420px] flex flex-col justify-start">
+        <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-start">
             <AnimatePresence mode="popLayout" initial={false}>
                 {visibleMessages.map((msg, idx) => (
                     <motion.div
@@ -333,7 +333,7 @@ export default function Services() {
             imageSide: "left",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl flex items-center justify-center p-4 md:p-6">
-                    <div className="relative w-full max-w-lg mx-auto">
+                    <div className="relative w-full max-w-xl mx-auto">
                         <AutomationMockup />
                     </div>
                 </div>
