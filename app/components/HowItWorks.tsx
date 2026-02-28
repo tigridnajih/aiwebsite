@@ -26,20 +26,20 @@ const Card = ({ number, title, description, children, className = "" }: CardProp
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className={`relative group p-8 rounded-[32px] bg-white/[0.02] backdrop-blur-sm transition-all duration-700 flex flex-col min-h-[580px] overflow-hidden border border-white/[0.05] hover:border-blue-500/20 hover:bg-white/[0.03] ${className}`}
+        className={`relative group p-0 flex flex-col min-h-[500px] overflow-hidden ${className}`}
     >
         {/* Sapphire Glows */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/10 blur-[80px] rounded-full group-hover:bg-blue-600/20 transition-colors" />
 
         {/* Visual Container (Top) */}
-        <div className="relative w-full aspect-[4/3] mb-10 bg-black/40 rounded-3xl border border-white/[0.05] overflow-hidden flex items-center justify-center shadow-2xl">
+        <div className="relative w-full aspect-[4/3] mb-10 overflow-hidden flex items-center justify-center">
             {children}
         </div>
 
         {/* Content (Bottom) */}
         <div className="flex flex-col gap-4 mt-auto">
             <div className="flex items-center gap-4">
-                <span className="text-[32px] font-bold text-white/20 font-mono tracking-tighter leading-none group-hover:text-blue-500/40 transition-colors">
+                <span className="text-[32px] font-bold text-white/10 font-mono tracking-tighter leading-none group-hover:text-blue-500/20 transition-colors">
                     {number.padStart(2, '0')}
                 </span>
                 <h3 className="text-[26px] md:text-[30px] font-bold text-white tracking-tight">
@@ -47,7 +47,7 @@ const Card = ({ number, title, description, children, className = "" }: CardProp
                 </h3>
             </div>
 
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-[95%]">
+            <p className="text-zinc-500 text-base md:text-lg leading-relaxed max-w-[95%]">
                 {description}
             </p>
         </div>
@@ -64,7 +64,7 @@ const RadarScanner = () => {
     ];
 
     return (
-        <div className="w-full h-full p-6 flex flex-row items-center justify-between gap-4">
+        <div className="w-full h-full flex flex-row items-center justify-between gap-4">
             {/* Left: Radar */}
             <div className="flex-1 flex flex-col items-center gap-4">
                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/10 flex items-center justify-center overflow-hidden">
@@ -203,7 +203,7 @@ const SystemStatusCards = () => {
     ];
 
     return (
-        <div className="w-full h-full p-4 md:p-5 flex flex-col gap-3 justify-center bg-black/20">
+        <div className="w-full h-full flex flex-col gap-3 justify-center">
             {systems.map((sys, i) => (
                 <motion.div
                     key={i}
