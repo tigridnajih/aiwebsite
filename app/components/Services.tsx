@@ -203,7 +203,7 @@ const SalesMarketingMockup = () => {
                                     </div>
                                     <span className="text-[10px] uppercase tracking-widest text-[#3B5BFF] font-bold">AI Assistant</span>
                                 </div>
-                                <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none shadow-[0_10px_30px_rgba(59,91,255,0.2)] border border-white/10 max-w-[90%]">
+                                <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none max-w-[90%]">
                                     {step === 1 ? (
                                         <div className="flex gap-1 py-1">
                                             <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
