@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-[#070707]">
-            {/* Background Image */}
+            {/*Hero Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
                 style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
