@@ -163,6 +163,77 @@ const AutomationMockup = () => {
     );
 };
 
+const SalesMarketingMockup = () => {
+    const [step, setStep] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            setStep((prev) => (prev + 1) % 4);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <div className="w-full max-w-sm mx-auto space-y-6">
+            <AnimatePresence mode="wait">
+                {step >= 0 && (
+                    <div className="space-y-6">
+                        {/* Customer Query */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="space-y-2"
+                        >
+                            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Customer Query</span>
+                            <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 rounded-tl-none max-w-[85%]">
+                                <p className="text-sm text-zinc-300">"What are your business hours and do you offer enterprise pricing?"</p>
+                            </div>
+                        </motion.div>
+
+                        {/* AI Response Bubble */}
+                        {step >= 1 && (
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                className="flex flex-col items-end space-y-2"
+                            >
+                                <div className="flex items-center gap-2 mb-1 mr-1">
+                                    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center p-1">
+                                        <div className="w-full h-full rounded-full bg-white/20 animate-pulse" />
+                                    </div>
+                                    <span className="text-[10px] uppercase tracking-widest text-[#3B5BFF] font-bold">AI Assistant</span>
+                                </div>
+                                <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none shadow-[0_10px_30px_rgba(59,91,255,0.2)] border border-white/10 max-w-[90%]">
+                                    {step === 1 ? (
+                                        <div className="flex gap-1 py-1">
+                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
+                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:0.8s]" />
+                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:0.8s]" />
+                                        </div>
+                                    ) : (
+                                        <p className="text-sm text-white font-medium italic">
+                                            "We operate 24/7! I've attached our customized enterprise tier proposal based on your current scale."
+                                        </p>
+                                    )}
+                                </div>
+                                {step >= 2 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-[10px] text-zinc-500 italic font-medium mr-1"
+                                    >
+                                        Automated Response • Sent via Email
+                                    </motion.div>
+                                )}
+                            </motion.div>
+                        )}
+                    </div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
+
 export default function Services() {
     const features = [
         {
@@ -246,24 +317,12 @@ export default function Services() {
             tags: ["Leads", "Content", "Social post"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
-                    <div className="relative w-full">
-                        <div className="flex items-end gap-2 h-40 md:h-48">
-                            {[40, 70, 45, 90, 65, 80, 100].map((h, i) => (
-                                <div key={i} className="flex-1 bg-purple-500/20 border-t border-purple-500/40 rounded-t-sm" style={{ height: `${h}%` }} />
-                            ))}
-                        </div>
-                        <div className="mt-6 flex justify-between">
-                            <div className="space-y-2">
-                                <div className="w-20 h-2 bg-white/10 rounded" />
-                                <div className="w-12 h-4 bg-white/20 rounded" />
-                            </div>
-                            <div className="space-y-2 text-right">
-                                <div className="w-20 h-2 bg-white/10 rounded" />
-                                <div className="w-12 h-4 bg-green-500/30 rounded" />
-                            </div>
-                        </div>
-                    </div>
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                    <SalesMarketingMockup />
+
+                    {/* Background Decorative Elements to match Card 1/2 */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#3B5BFF]/5 blur-[60px] rounded-full" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 blur-[40px] rounded-full" />
                 </div>
             )
         },
