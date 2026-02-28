@@ -8,9 +8,7 @@ import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
 import HowItWorks from './components/HowItWorks';
-import TechStack from './components/TechStack';
 import Stats from './components/Stats';
-import Team from './components/Team';
 import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
@@ -28,9 +26,7 @@ export default function Home() {
       <Testimonials />
       <Problem />
       <CaseStudies />
-      <TechStack />
       <Stats />
-      <Team />
       <FAQ />
       <Blog />
       <Contact />

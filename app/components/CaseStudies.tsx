@@ -44,7 +44,7 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 * index }}
-        className="sticky w-full bg-[#0d0d0d] rounded-[32px] overflow-hidden border border-white/[0.05] shadow-2xl mb-12"
+        className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12"
         style={{ top: `${80 + index * 40}px` }}
     >
         <div className="flex flex-col md:flex-row min-h-[450px]">
@@ -69,8 +69,8 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
             </div>
 
             {/* Image Right */}
-            <div className="flex-1 flex items-center justify-center p-4 md:p-6 group">
-                <div className="relative w-full h-full min-h-[300px] md:min-h-full rounded-2xl md:rounded-[24px] overflow-hidden border border-white/[0.05]">
+            <div className="flex-1 flex items-center justify-center p-2 md:p-3 group">
+                <div className="relative w-full h-full min-h-[300px] md:min-h-full rounded-lg md:rounded-xl overflow-hidden border border-white/[0.05]">
                     <img
                         src={c.image}
                         alt={c.title}
