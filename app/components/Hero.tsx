@@ -53,12 +53,6 @@ export default function Hero() {
                                 </svg>
                             </Link>
 
-                            <Link
-                                href="#works"
-                                className="px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white font-semibold text-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20"
-                            >
-                                See How It Works
-                            </Link>
                         </div>
                     </div>
                 </div>
