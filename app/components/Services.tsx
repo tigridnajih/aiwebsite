@@ -83,8 +83,9 @@ const AutomationMockup = () => {
                             x: 0,
                             scale: idx === 0 ? 1.05 : 1,
                             zIndex: 10 - idx,
-                            filter: idx === 0 ? "blur(0px)" : `blur(${idx * 1}px)`,
                             marginTop: idx === 0 ? 0 : 16,
+                            borderWidth: idx === 0 ? 0 : 1,
+                            borderColor: "rgba(255, 255, 255, 0.06)",
                         }}
                         exit={{
                             opacity: 0,
@@ -96,12 +97,13 @@ const AutomationMockup = () => {
                             layout: { type: "spring", stiffness: 250, damping: 30 },
                             opacity: { duration: 0.4 },
                             scale: { duration: 0.4 },
-                            filter: { duration: 0.4 }
+                            borderWidth: { duration: 0.3 }
                         }}
                         style={{
-                            originY: 0
+                            originY: 0,
+                            borderStyle: "solid"
                         }}
-                        className={`relative rounded-2xl p-5 border overflow-hidden shadow-xl w-full transition-colors duration-500 bg-[#0d0d0d]/80 backdrop-blur-sm border-white/[0.06]`}
+                        className={`relative rounded-2xl p-5 overflow-hidden shadow-xl w-full transition-colors duration-500 bg-[#0d0d0d]/80 backdrop-blur-sm`}
                     >
                         {/* Sapphire Gradient Overlay - Controlled via Opacity for Smoothness */}
                         <motion.div
