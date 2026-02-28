@@ -263,27 +263,27 @@ const CustomProjectsMockup = () => {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.2 }}
-                        className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 flex items-center justify-between backdrop-blur-sm"
+                        className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 flex items-center justify-between shadow-xl"
                     >
                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center border border-white/[0.06]">
-                                <svg viewBox="0 0 16 16" className="w-5 h-5" fill="none" stroke="#3B5BFF" strokeWidth="1.5">
+                            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                                <svg viewBox="0 0 16 16" className="w-5 h-5" fill="none" stroke="#FFFFFF" strokeWidth="1.5">
                                     <path d={item.icon} />
                                 </svg>
                             </div>
                             <div>
                                 <h4 className="text-sm font-bold text-white">{item.name}</h4>
-                                <p className="text-[10px] text-zinc-500 font-medium">{item.action}</p>
+                                <p className="text-[10px] text-white/50 font-medium">{item.action}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-end gap-1">
                             {i === 0 ? (
-                                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#3B5BFF]/10 border border-[#3B5BFF]/30">
-                                    <div className="w-1 h-1 rounded-full bg-[#3B5BFF] animate-pulse" />
-                                    <span className="text-[8px] font-bold text-[#3B5BFF] uppercase tracking-wider">Running</span>
+                                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 border border-white/30">
+                                    <div className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                                    <span className="text-[8px] font-bold text-white uppercase tracking-wider">Running</span>
                                 </div>
                             ) : (
-                                <span className="text-[10px] text-zinc-600 font-mono tracking-tight">{item.name === "AirTable" ? "Syncing..." : "Standby"}</span>
+                                <span className="text-[10px] text-white/40 font-mono tracking-tight">{item.name === "AirTable" ? "Syncing..." : "Standby"}</span>
                             )}
                         </div>
                     </motion.div>
@@ -396,19 +396,7 @@ export default function Services() {
             imageSide: "right",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
-                    <div className="absolute top-8 left-8 font-mono text-[8px] text-zinc-700 max-w-[150px] opacity-40 select-none hidden md:block group-hover:opacity-60 transition-opacity">
-                        {`{
-  "system": "Custom_Node",
-  "status": "integrated",
-  "intelligence": "0.98",
-  "secure": true
-}`}
-                    </div>
-
                     <CustomProjectsMockup />
-
-                    {/* Background Glow */}
-                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#3B5BFF]/5 blur-[100px] rounded-full" />
                 </div>
             )
         }
