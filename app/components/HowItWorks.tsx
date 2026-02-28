@@ -1,8 +1,15 @@
 'use client';
 
-import React from 'react';
-import { Mail, Calendar, Play, List, NotebookPen, FileText, Check, Share2, Shield, Cpu, Gauge, Bot, RotateCw, File, Search, Puzzle, MoveLeft, MoveRight, Minus, Square, X, MessageSquare, Settings, Filter, ArrowUp, RefreshCw, Layout } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+    Mail, Database, MessageSquare, List, Workflow,
+    Search, Layout, Bot, ArrowUp, Cpu, Shield,
+    Code, Settings, RefreshCw, Layers, Zap
+} from 'lucide-react';
 import SectionHeader from './SectionHeader';
+
+const SAPPHIRE = "#0F52BA";
 
 interface CardProps {
     number: string;
@@ -13,145 +20,246 @@ interface CardProps {
 }
 
 const Card = ({ number, title, description, children, className = "" }: CardProps) => (
-    <div
-        className={`relative group p-6 rounded-[32px] bg-[#0d0d0d] transition-all duration-700 flex flex-col min-h-[500px] overflow-hidden border border-white/5 ${className}`}
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className={`relative group p-8 rounded-[32px] bg-white/[0.02] backdrop-blur-sm transition-all duration-700 flex flex-col min-h-[550px] overflow-hidden border border-white/[0.05] hover:border-blue-500/20 hover:bg-white/[0.03] ${className}`}
     >
-        {/* Top Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.1)]" />
+        {/* Sapphire Glows */}
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/10 blur-[80px] rounded-full group-hover:bg-blue-600/20 transition-colors" />
+        <div className="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
 
         {/* Animation/Visual Container (Top) */}
-        <div className="relative w-full aspect-[4/3] mb-8 bg-black/40 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center">
+        <div className="relative w-full aspect-[4/3] mb-10 bg-black/40 rounded-2xl border border-white/[0.05] overflow-hidden flex items-center justify-center shadow-inner">
             {children}
         </div>
 
         {/* Content (Bottom) */}
-        <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-                <span className="text-[28px] font-bold text-white/40 font-mono tracking-tighter leading-none">
+        <div className="flex flex-col gap-4 mt-auto">
+            <div className="flex items-center gap-4">
+                <span className="text-[32px] font-bold text-white/20 font-mono tracking-tighter leading-none group-hover:text-blue-500/40 transition-colors">
                     {number.padStart(2, '0')}
                 </span>
-                <h3 className="text-[24px] md:text-[28px] font-bold text-white tracking-tight">
+                <h3 className="text-[26px] md:text-[30px] font-bold text-white tracking-tight group-hover:text-blue-50 shadow-blue-500/20">
                     {title}
                 </h3>
             </div>
 
-            <p className="text-zinc-500 text-sm md:text-base leading-relaxed max-w-[90%]">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-[95%]">
                 {description}
             </p>
         </div>
-    </div>
+    </motion.div>
 );
+
+const WorkflowScanner = () => {
+    const icons = [Mail, MessageSquare, Database, List, Search, Layout, Settings, Workflow];
+    return (
+        <div className="relative w-full h-full flex items-center justify-center">
+            {/* Rotating Scanning Beam */}
+            <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+                <div className="w-[120%] h-[120%] bg-gradient-to-tr from-blue-600/20 via-transparent to-transparent blur-2xl"
+                    style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%)' }} />
+            </motion.div>
+
+            {/* Orbiting Icons */}
+            <div className="relative w-48 h-48">
+                {icons.map((Icon, i) => {
+                    const angle = (i * 360) / icons.length;
+                    return (
+                        <motion.div
+                            key={i}
+                            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                            animate={{
+                                rotate: [0, 360]
+                            }}
+                            transition={{
+                                duration: 25,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                        >
+                            <motion.div
+                                style={{
+                                    transform: `rotate(${-angle}deg) translate(80px) rotate(${angle}deg)`
+                                }}
+                                className="p-3 rounded-xl bg-white/5 border border-white/10 text-blue-400/60 shadow-lg backdrop-blur-md"
+                            >
+                                <Icon className="w-5 h-5" />
+                            </motion.div>
+                        </motion.div>
+                    );
+                })}
+
+                {/* Central Core */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <motion.div
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.6, 1, 0.6]
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-20 h-20 rounded-full bg-blue-600/20 blur-xl absolute -inset-2"
+                    />
+                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)] border border-blue-400/30">
+                        <Bot className="w-8 h-8 text-white" />
+                        <div className="absolute inset-0 bg-white/10 rounded-2xl animate-pulse" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const CodeEditor = () => {
+    const [line, setLine] = useState(0);
+    const codeLines = [
+        "const AI_Agent = new WorkflowAnalyzer({",
+        "  detectPatterns: true,",
+        "  optimizeSpeed: 'ULTRA',",
+        "  security: 'ENTERPRISE_SHIELD',",
+        "  deploy: () => sync(client.daily_tasks)",
+        "});",
+        "AI_Agent.start();"
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setLine(prev => (prev + 1) % codeLines.length);
+        }, 1500);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="w-full h-full p-6 flex flex-col font-mono text-[13px] leading-relaxed">
+            <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
+                <div className="flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-red-500/40" />
+                    <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
+                    <div className="w-2 h-2 rounded-full bg-green-500/40" />
+                </div>
+                <div className="text-[10px] text-zinc-500 ml-2">builder.ts</div>
+            </div>
+            <div className="space-y-1.5 overflow-hidden">
+                {codeLines.map((l, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{
+                            opacity: i <= line ? 1 : 0.2,
+                            x: i <= line ? 0 : -10,
+                            color: i === line ? SAPPHIRE : '#71717a'
+                        }}
+                        className="flex gap-4"
+                    >
+                        <span className="text-zinc-700 w-4 text-right select-none">{i + 1}</span>
+                        <span className={i === line ? "text-blue-400 font-bold" : ""}>{l}</span>
+                    </motion.div>
+                ))}
+            </div>
+            {/* Cursor cursor */}
+            <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5, repeat: Infinity }}
+                className="w-2 h-4 bg-blue-500/60 mt-1 ml-8"
+            />
+        </div>
+    );
+};
+
+const SuccessStats = () => {
+    const stats = [
+        { label: 'Workflows Optimized', value: '+45%', color: 'text-blue-400' },
+        { label: 'Manual Time Saved', value: '250h/mo', color: 'text-cyan-400' },
+        { label: 'System Reliability', value: '99.9%', color: 'text-indigo-400' }
+    ];
+
+    return (
+        <div className="w-full h-full p-6 flex flex-col gap-4 justify-center">
+            {stats.map((s, i) => (
+                <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.2 }}
+                    className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-between group/stat hover:bg-blue-600/5 transition-colors"
+                >
+                    <div className="flex flex-col">
+                        <span className="text-xs text-zinc-500 uppercase tracking-widest">{s.label}</span>
+                        <motion.span
+                            className={`text-2xl font-bold ${s.color}`}
+                        >
+                            {s.value}
+                        </motion.span>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center opacity-0 group-hover/stat:opacity-100 transition-opacity">
+                        <Zap className="w-4 h-4 text-blue-400" />
+                    </div>
+                </motion.div>
+            ))}
+
+            <motion.div
+                animate={{
+                    boxShadow: ["0 0 10px rgba(37,99,235,0)", "0 0 20px rgba(37,99,235,0.2)", "0 0 10px rgba(37,99,235,0)"]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="mt-2 p-4 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center gap-3"
+            >
+                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-xs font-semibold text-blue-100 italic">Continuously learning...</span>
+            </motion.div>
+        </div>
+    );
+};
 
 export default function HowItWorks() {
     return (
-        <section id="works" className="py-24 bg-[#070707] overflow-hidden relative">
-            <div className="container-custom">
+        <section id="works" className="py-32 bg-[#070707] overflow-hidden relative">
+            {/* Background elements */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,82,186,0.03),transparent)] pointer-events-none" />
+
+            <div className="container-custom relative z-10">
                 <SectionHeader
-                    badge="Process"
+                    badge="The Process"
                     title="How it works"
-                    description="Our seamless process to take your agency to the next level with custom AI solutions."
+                    description="Our multi-stage approach to integrating high-performance AI into your business architecture."
                 />
 
-                <div className="grid lg:grid-cols-3 gap-8 mt-16 relative z-10">
-                    {/* Card 1: Analyze */}
+                <div className="grid lg:grid-cols-3 gap-8 mt-20">
                     <Card
                         number="1"
-                        title="Analyze"
-                        description="We start with a thorough analysis of your current workflows to see how AI could improve your processes."
+                        title="Deep Analysis"
+                        description="We conduct a high-fidelity audit of your daily operations to identify specific, high-ROI automation opportunities."
                     >
-                        <div className="grid grid-cols-3 gap-3 p-8 w-full max-w-[280px]">
-                            {[
-                                Mail, Shield, MessageSquare,
-                                Cpu, Bot, Search,
-                                Layout, NotebookPen, List
-                            ].map((Icon, i) => (
-                                <div
-                                    key={i}
-                                    className={`aspect-square rounded-xl border flex items-center justify-center transition-all duration-500 ${i === 4
-                                        ? 'bg-blue-600/10 border-blue-500/50 shadow-[0_0_20px_rgba(37,99,235,0.2)]'
-                                        : 'bg-white/5 border-white/10 opacity-40'
-                                        }`}
-                                >
-                                    <Icon className={`w-6 h-6 ${i === 4 ? 'text-blue-400' : 'text-white'}`} />
-                                    {i === 4 && (
-                                        <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full animate-pulse" />
-                                    )}
-                                </div>
-                            ))}
-                        </div>
+                        <WorkflowScanner />
                     </Card>
 
-                    {/* Card 2: Build & Implement */}
                     <Card
                         number="2"
-                        title="Build & Implement"
-                        description="Then, our developers will start crafting custom AI-solutions for your company, continuously prioritising quality and safety."
+                        title="Build & Deploy"
+                        description="Our team engineers bespoke neural networks and automation logic tailored to your specific infrastructure."
                     >
-                        <div className="w-full h-full p-4 flex flex-col gap-3">
-                            {/* Window Tabs */}
-                            <div className="flex items-center gap-2 px-2">
-                                <div className="flex gap-1.5 mr-4">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                                </div>
-                                <div className="flex gap-2">
-                                    {['HTML', 'React', 'CSS'].map((tab, i) => (
-                                        <div key={i} className={`text-[10px] px-3 py-1 rounded-md border font-medium ${i === 1 ? 'bg-white/10 border-white/20 text-white' : 'border-white/5 text-zinc-500'}`}>
-                                            {tab}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {/* Code Area */}
-                            <div className="flex-1 bg-black/40 rounded-xl p-4 font-mono text-[11px] leading-relaxed border border-white/5 relative">
-                                <div className="flex flex-col gap-1 opacity-50">
-                                    <div className="flex gap-4"><span className="text-white/20">1</span><span className="text-zinc-500">&lt;html lang=&quot;en&quot;&gt;</span></div>
-                                    <div className="flex gap-4"><span className="text-white/20">2</span><span className="text-zinc-500">&nbsp;&nbsp;&lt;head&gt;</span></div>
-                                    <div className="flex gap-4"><span className="text-white/20">3</span><span className="text-zinc-500">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot;&gt;</span></div>
-                                    <div className="flex gap-4 items-center bg-blue-500/10 -mx-2 px-2 py-0.5 border-y border-blue-500/20">
-                                        <span className="text-white/20">4</span>
-                                        <span className="text-blue-400">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name=&quot;viewport&quot;&gt;</span>
-                                        <div className="ml-auto flex items-center gap-1 bg-blue-500 px-1.5 py-0.5 rounded text-[8px] text-white">
-                                            <div className="w-1 h-1 rounded-full bg-white animate-ping" />
-                                            Tibor
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4"><span className="text-white/20">5</span><span className="text-zinc-500">&nbsp;&nbsp;&nbsp;&nbsp;content=&quot;width=dev</span></div>
-                                    <div className="flex gap-4"><span className="text-white/20">6</span><span className="text-zinc-500">&nbsp;&nbsp;&nbsp;&nbsp;width, initial-</span></div>
-                                    <div className="flex gap-4"><span className="text-white/20">7</span><span className="text-zinc-500">&nbsp;&nbsp;&nbsp;&nbsp;scale=1.0&quot;&gt;</span></div>
-                                </div>
-                            </div>
-                        </div>
+                        <CodeEditor />
                     </Card>
 
-                    {/* Card 3: Maintain & improve */}
                     <Card
                         number="3"
-                        title="Maintain & improve"
-                        description="After deployment, our team will keep working hard by providing support and continuously improving the implemented solutions."
+                        title="Continuous Evolution"
+                        description="We provide real-time updates and performance hardening to ensure your AI systems stay ahead of the curve."
                     >
-                        <div className="w-full h-full p-8 flex flex-col gap-4">
-                            {[
-                                { label: 'Software speed', value: '+38%', color: 'text-green-400' },
-                                { label: 'Workflow efficiency', value: '+25%', color: 'text-blue-400' },
-                                { label: 'Operational cost', value: '-11%', color: 'text-red-400' }
-                            ].map((stat, i) => (
-                                <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5">
-                                    <span className="text-sm font-medium text-zinc-400">{stat.label}</span>
-                                    <span className={`text-sm font-bold ${stat.color}`}>{stat.value}</span>
-                                </div>
-                            ))}
-                            <div className="mt-2 flex items-center justify-between p-4 rounded-xl border border-white/10 bg-gradient-to-r from-blue-600/10 to-transparent">
-                                <span className="text-sm font-medium text-white">Update available</span>
-                                <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg border border-white/20 transition-colors text-xs font-bold text-white uppercase tracking-wider">
-                                    Update <ArrowUp className="w-3 h-3" />
-                                </button>
-                            </div>
-                        </div>
+                        <SuccessStats />
                     </Card>
                 </div>
             </div>
+
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/10 to-transparent" />
         </section>
     );
 }
