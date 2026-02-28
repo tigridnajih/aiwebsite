@@ -40,48 +40,54 @@ export default function TrustLogos() {
     const allLogos = [...Array(10)].map((_, i) => LOGOS[i % LOGOS.length]);
 
     return (
-        <section className="relative z-50 py-2 bg-transparent overflow-hidden select-none">
-            <p className="text-center text-[12px] md:text-xs font-medium text-white mb-6 tracking-tight">
-                Trusted by Leading Companies
-            </p>
+        <section className="relative z-50 py-12 bg-transparent select-none">
+            <div className="container-custom">
+                <p className="text-center text-[12px] md:text-sm font-medium text-white/40 mb-10 tracking-[0.2em] uppercase">
+                    Trusted by 100+ companies worldwide:
+                </p>
 
-            {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
-            <div
-                className="relative w-full flex items-center overflow-hidden"
-                style={{
-                    maskImage: 'linear-gradient(to right, transparent 5%, ##070707 20%, ##070707 80%, transparent 95%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 5%, ##070707 20%, ##070707 80%, transparent 95%)'
-                }}
-            >
-                {/* Logos Container */}
-                <div className="flex w-max animate-infinite-scroll-slow whitespace-nowrap items-center py-2">
-                    {allLogos.map((logo, i) => (
-                        <div
-                            key={i}
-                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12"
-                        >
-                            <div className="flex-shrink-0 scale-90">
-                                {logo.icon}
+                {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
+                <div
+                    className="relative mx-auto overflow-hidden"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+                    }}
+                >
+                    {/* Logos Container */}
+                    <div className="flex w-max animate-infinite-scroll-slow whitespace-nowrap items-center py-4">
+                        {allLogos.map((logo, i) => (
+                            <div
+                                key={i}
+                                className="flex items-center gap-3 mx-8 md:mx-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                            >
+                                <div className="flex-shrink-0 scale-95 md:scale-100 invert brightness-0">
+                                    <div className="text-white fill-current">
+                                        {logo.icon}
+                                    </div>
+                                </div>
+                                <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                                    logoipsum
+                                </span>
                             </div>
-                            <span className="text-lg md:text-xl font-bold tracking-tighter text-white">
-                                logoipsum
-                            </span>
-                        </div>
-                    ))}
-                    {/* Duplicate for seamless loop */}
-                    {allLogos.map((logo, i) => (
-                        <div
-                            key={`dup-${i}`}
-                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12"
-                        >
-                            <div className="flex-shrink-0 scale-90">
-                                {logo.icon}
+                        ))}
+                        {/* Duplicate for seamless loop */}
+                        {allLogos.map((logo, i) => (
+                            <div
+                                key={`dup-${i}`}
+                                className="flex items-center gap-3 mx-8 md:mx-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                            >
+                                <div className="flex-shrink-0 scale-95 md:scale-100 invert brightness-0">
+                                    <div className="text-white fill-current">
+                                        {logo.icon}
+                                    </div>
+                                </div>
+                                <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                                    logoipsum
+                                </span>
                             </div>
-                            <span className="text-lg md:text-xl font-bold tracking-tighter text-white">
-                                logoipsum
-                            </span>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
