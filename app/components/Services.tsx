@@ -17,8 +17,26 @@ export default function Services() {
                         {/* Bubble Column */}
                         <div className="w-full flex flex-col gap-4">
                             {/* Emma - Top Bubble (Replying) */}
-                            <div className="relative bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
-                                <div className="flex items-start gap-4">
+                            <motion.div
+                                initial={{ x: -20, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                animate={{ y: [0, -6, 0] }}
+                                viewport={{ once: false, amount: 0.3 }}
+                                transition={{
+                                    x: { duration: 0.8, ease: "easeOut" },
+                                    opacity: { duration: 0.8 },
+                                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                                className="relative bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] group/emma overflow-hidden"
+                            >
+                                {/* Active Shimmer Effect */}
+                                <motion.div
+                                    animate={{ x: ["-100%", "200%"] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
+                                    className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 pointer-events-none"
+                                />
+
+                                <div className="flex items-start gap-4 relative z-10">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
@@ -49,10 +67,21 @@ export default function Services() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm">
+                            <motion.div
+                                initial={{ x: -20, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                animate={{ y: [0, -4, 0] }}
+                                viewport={{ once: false, amount: 0.3 }}
+                                transition={{
+                                    x: { duration: 0.8, ease: "easeOut", delay: 0.2 },
+                                    opacity: { duration: 0.8, delay: 0.2 },
+                                    y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                                }}
+                                className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm"
+                            >
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -76,10 +105,21 @@ export default function Services() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm">
+                            <motion.div
+                                initial={{ x: -20, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                animate={{ y: [0, -5, 0] }}
+                                viewport={{ once: false, amount: 0.3 }}
+                                transition={{
+                                    x: { duration: 0.8, ease: "easeOut", delay: 0.4 },
+                                    opacity: { duration: 0.8, delay: 0.4 },
+                                    y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }
+                                }}
+                                className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm"
+                            >
                                 <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -103,7 +143,7 @@ export default function Services() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
