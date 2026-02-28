@@ -190,19 +190,7 @@ export default function Services() {
                         <div className="absolute top-[20%] left-[5%] px-3.5 py-2 rounded-xl bg-zinc-900/90 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-2xl z-20">
                             <span className="text-white text-[11px] font-bold">87% +</span>
                         </div>
-                        {/* Behind-the-bars Grid System */}
-                        <div className="absolute inset-0 top-8 flex flex-col justify-between pointer-events-none opacity-[0.12]">
-                            {[...Array(7)].map((_, i) => (
-                                <div key={i} className="w-full h-[1px] bg-white" />
-                            ))}
-                        </div>
 
-                        {/* Vertical Accent lines */}
-                        <div className="absolute inset-0 flex justify-between pointer-events-none opacity-[0.03]">
-                            {[...Array(9)].map((_, i) => (
-                                <div key={i} className="h-full w-[1px] bg-white" />
-                            ))}
-                        </div>
 
                         {/* Bars Area with robust height parent */}
                         <div className="flex-1 w-full flex items-end justify-between gap-3 md:gap-5 pt-8 relative z-10">
@@ -242,8 +230,6 @@ export default function Services() {
                             ))}
                         </div>
 
-                        {/* Base Line */}
-                        <div className="w-full h-[1px] bg-white/[0.08] mt-2" />
                     </div>
                 </div>
             ),
