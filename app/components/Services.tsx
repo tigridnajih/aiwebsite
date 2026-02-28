@@ -13,13 +13,13 @@ export default function Services() {
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-8 md:p-12">
 
-                    <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                        {/* Left: Bubble Column */}
-                        <div className="w-full md:flex-[1.8] flex flex-col gap-3 md:gap-4">
+                    <div className="relative w-full max-w-md mx-auto">
+                        {/* Bubble Column */}
+                        <div className="w-full flex flex-col gap-4">
                             {/* Emma - Top Bubble (Replying) */}
                             <div className="relative bg-white/[0.03] backdrop-blur-md border border-[#3B5BFF]/30 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#3B5BFF]/5 to-transparent rounded-2xl pointer-events-none" />
-                                <div className="flex items-start gap-3">
+                                <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
@@ -34,18 +34,18 @@ export default function Services() {
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="flex justify-between items-center mb-1">
-                                            <span className="text-[#F5F7FF] font-bold text-sm">Emma, RetailSync</span>
-                                            <span className="text-[10px] text-blue-400 font-mono opacity-60">09:45 PM</span>
+                                            <span className="text-[#F5F7FF] font-bold text-base">Emma, RetailSync</span>
+                                            <span className="text-xs text-blue-400 font-mono opacity-60">09:45 PM</span>
                                         </div>
-                                        <p className="text-zinc-400 text-[10px] md:text-[11px] font-medium italic leading-snug">
+                                        <p className="text-zinc-400 text-xs md:text-sm font-medium italic leading-relaxed">
                                             &ldquo;We&apos;re looking to automate inventory updates. Can you help?&rdquo;
                                         </p>
-                                        <div className="mt-2.5 flex items-center gap-2">
-                                            <span className="text-blue-400 text-[10px] font-bold tracking-wider uppercase">Replying</span>
-                                            <span className="flex gap-0.5 items-center">
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-duration:1s]" />
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
+                                        <div className="mt-3 flex items-center gap-2">
+                                            <span className="text-[#3B5BFF] text-[10px] font-bold tracking-widest uppercase">Replying</span>
+                                            <span className="flex gap-1 items-center">
+                                                <span className="w-1.5 h-1.5 bg-[#3B5BFF] rounded-full animate-bounce [animation-duration:1s]" />
+                                                <span className="w-1.5 h-1.5 bg-[#3B5BFF] rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
+                                                <span className="w-1.5 h-1.5 bg-[#3B5BFF] rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
                                             </span>
                                         </div>
                                     </div>
@@ -53,10 +53,10 @@ export default function Services() {
                             </div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-4 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
-                                <div className="flex items-start gap-3">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                                <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
+                                        <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
                                                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100"
                                                 alt="Liam"
@@ -69,10 +69,10 @@ export default function Services() {
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="flex justify-between items-center mb-1">
-                                            <span className="text-[#F5F7FF] font-bold text-xs">Liam, FinEdge Analytics</span>
-                                            <span className="text-[9px] text-zinc-500 font-mono">12:45 AM</span>
+                                            <span className="text-[#F5F7FF] font-bold text-sm">Liam, FinEdge Analytics</span>
+                                            <span className="text-[10px] text-zinc-500 font-mono">12:45 AM</span>
                                         </div>
-                                        <p className="text-zinc-500 text-[10px] leading-snug truncate">
+                                        <p className="text-zinc-500 text-xs truncate">
                                             &ldquo;How does your AI handle financial data processing?&rdquo;
                                         </p>
                                     </div>
@@ -80,10 +80,10 @@ export default function Services() {
                             </div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-4 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
-                                <div className="flex items-start gap-3">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-5 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                                <div className="flex items-start gap-4">
                                     <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
+                                        <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
                                             <img
                                                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100"
                                                 alt="Olivia"
@@ -96,70 +96,13 @@ export default function Services() {
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="flex justify-between items-center mb-1">
-                                            <span className="text-[#F5F7FF] font-bold text-xs">Olivia, GreenTech Solutions</span>
-                                            <span className="text-[9px] text-zinc-500 font-mono">02:45 AM</span>
+                                            <span className="text-[#F5F7FF] font-bold text-sm">Olivia, GreenTech Solutions</span>
+                                            <span className="text-[10px] text-zinc-500 font-mono">02:45 AM</span>
                                         </div>
-                                        <p className="text-zinc-500 text-[10px] leading-snug truncate">
+                                        <p className="text-zinc-500 text-xs truncate">
                                             &ldquo;Looking for AI automation to streamline customer inquiries.&rdquo;
                                         </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Center: Animated Connecting Lines */}
-                        <div className="hidden md:block flex-1 h-full relative">
-                            <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
-                                {/* Emma Curve */}
-                                <path
-                                    d="M 0 60 C 40 60, 60 130, 100 130"
-                                    fill="none"
-                                    stroke="url(#blueFlowGradient)"
-                                    strokeWidth="2"
-                                    className="animate-pulse duration-[3s]"
-                                    strokeDasharray="5 5"
-                                />
-                                {/* Liam Curve */}
-                                <path
-                                    d="M 0 150 C 40 150, 60 140, 100 140"
-                                    fill="none"
-                                    stroke="#2C4EDC"
-                                    strokeWidth="1"
-                                    strokeOpacity="0.4"
-                                />
-                                {/* Olivia Curve */}
-                                <path
-                                    d="M 0 220 C 40 220, 60 150, 100 150"
-                                    fill="none"
-                                    stroke="#2C4EDC"
-                                    strokeWidth="1"
-                                    strokeOpacity="0.3"
-                                />
-                                <defs>
-                                    <linearGradient id="blueFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#4E7BFF" stopOpacity="0.2" />
-                                        <stop offset="100%" stopColor="#2C4EDC" stopOpacity="1" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-
-                        {/* Right: Automation Node */}
-                        <div className="flex-none md:flex-[0.5] flex justify-center">
-                            <div className="relative">
-                                {/* Orbiting rings */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-green-500/20 rounded-full animate-spin-slow-extremely" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-green-500/10 rounded-full animate-spin-reverse-slow" />
-
-                                {/* Central Node */}
-                                <div className="relative w-16 h-16 bg-[#2C4EDC] rounded-2xl shadow-[0_0_50px_rgba(44,78,220,0.4)] flex items-center justify-center overflow-hidden animate-custom-float">
-                                    <div className="w-8 h-8 bg-[#040816] rounded-lg shadow-inner flex items-center justify-center">
-                                        <div className="w-4 h-4 rounded-sm bg-[#4E7BFF]/30 animate-pulse" />
-                                    </div>
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
-
-                                    {/* Scanline effect */}
-                                    <div className="absolute inset-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent -translate-y-full animate-custom-scan" />
                                 </div>
                             </div>
                         </div>
