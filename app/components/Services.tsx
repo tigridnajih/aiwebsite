@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const AutomationMockup = () => {
@@ -53,8 +53,12 @@ const AutomationMockup = () => {
     ];
 
     const [visibleMessages, setVisibleMessages] = React.useState(messages.slice(0, 3));
+    const containerRef = React.useRef(null);
+    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
     React.useEffect(() => {
+        if (!isInView) return;
+
         const interval = setInterval(() => {
             setVisibleMessages((prev) => {
                 const currentIndex = messages.findIndex(m => m.id === prev[0].id);
@@ -68,10 +72,10 @@ const AutomationMockup = () => {
             });
         }, 3500);
         return () => clearInterval(interval);
-    }, [messages]);
+    }, [messages, isInView]);
 
     return (
-        <div className="w-full max-w-md mx-auto relative px-4 min-h-[420px] flex flex-col justify-start">
+        <div ref={containerRef} className="w-full max-w-md mx-auto relative px-4 min-h-[420px] flex flex-col justify-start">
             <AnimatePresence mode="popLayout" initial={false}>
                 {visibleMessages.map((msg, idx) => (
                     <motion.div
@@ -165,16 +169,20 @@ const AutomationMockup = () => {
 
 const SalesMarketingMockup = () => {
     const [step, setStep] = React.useState(0);
+    const containerRef = React.useRef(null);
+    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
     React.useEffect(() => {
+        if (!isInView) return;
+
         const timer = setInterval(() => {
             setStep((prev) => (prev + 1) % 4);
         }, 3000);
         return () => clearInterval(timer);
-    }, []);
+    }, [isInView]);
 
     return (
-        <div className="w-full max-w-sm mx-auto space-y-6">
+        <div ref={containerRef} className="w-full max-w-sm mx-auto space-y-6">
             <AnimatePresence mode="wait">
                 {step >= 0 && (
                     <div className="space-y-6">
@@ -240,12 +248,14 @@ const CustomProjectsMockup = () => {
         { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", color: "#3B5BFF", status: "Syncing..." },
         { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", color: "#3B5BFF", status: "Idle" }
     ];
+    const containerRef = React.useRef(null);
+    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
     return (
-        <div className="w-full max-w-sm mx-auto flex flex-col items-center">
+        <div ref={containerRef} className="w-full max-w-sm mx-auto flex flex-col items-center">
             {/* Top Controller Node */}
             <motion.div
-                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                animate={isInView ? { scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] } : {}}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center shadow-[0_0_40px_rgba(59,91,255,0.4)] relative z-20 mb-[-2px]"
             >
