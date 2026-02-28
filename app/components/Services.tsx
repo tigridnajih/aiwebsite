@@ -186,8 +186,8 @@ export default function Services() {
 
                     {/* Chart Container */}
                     <div className="relative flex-1 mt-6 flex flex-col z-10">
-                        {/* "87% +" Floating Highlight - Upgraded Size & Style */}
-                        <div className="absolute top-[10%] left-[8%] px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center shadow-[0_10px_40px_rgba(59,91,255,0.3)] z-20">
+                        {/* "87% +" Floating Highlight - Corner Position & No Glow */}
+                        <div className="absolute top-0 left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center z-20">
                             <span className="text-white text-sm md:text-base font-bold tracking-tight">87% +</span>
                         </div>
 
