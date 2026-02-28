@@ -70,29 +70,29 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="w-[350px] shrink-0 bg-[#0d0d0d] border border-white/[0.05] rounded-[24px] p-8 flex flex-col gap-6 mx-3">
+    <div className="w-[300px] shrink-0 bg-[#0d0d0d] border border-white/[0.05] rounded-[24px] p-6 flex flex-col gap-5 mx-3">
         {/* Stars */}
         <div className="flex gap-1">
             {[...Array(5)].map((_, i) => (
-                <svg key={i} viewBox="0 0 24 24" className="w-4 h-4 fill-white opacity-80">
+                <svg key={i} viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white opacity-80">
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                 </svg>
             ))}
         </div>
 
         {/* Quote */}
-        <p className="text-[#a1a1a1] text-lg font-medium leading-relaxed italic">
+        <p className="text-[#a1a1a1] text-base font-medium leading-relaxed italic">
             &quot;{testimonial.quote}&quot;
         </p>
 
         {/* Author */}
-        <div className="flex items-center gap-4 mt-auto">
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0">
+        <div className="flex items-center gap-3 mt-auto">
+            <div className="w-9 h-9 rounded-full overflow-hidden border border-white/10 shrink-0">
                 <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
             </div>
             <div className="min-w-0">
-                <h4 className="text-white font-bold text-sm truncate">{testimonial.author}</h4>
-                <p className="text-[#666] text-xs font-medium truncate">{testimonial.role}</p>
+                <h4 className="text-white font-bold text-xs truncate">{testimonial.author}</h4>
+                <p className="text-[#666] text-[10px] font-medium truncate">{testimonial.role}</p>
             </div>
         </div>
     </div>
@@ -139,10 +139,10 @@ export default function Testimonials() {
 
                 <div className="relative w-full">
                     {/* Masking Gradients */}
-                    <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-[#070707] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-[#070707] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute left-0 top-0 bottom-0 w-[20%] md:w-[30%] bg-gradient-to-r from-[#070707] via-[#070707]/80 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-[20%] md:w-[30%] bg-gradient-to-l from-[#070707] via-[#070707]/80 to-transparent z-10 pointer-events-none" />
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
                         <MarqueeRow direction="left" items={[...row1, ...row2, ...row3]} />
                         <MarqueeRow direction="right" items={[...row2, ...row3, ...row1]} />
                         <MarqueeRow direction="left" items={[...row3, ...row1, ...row2]} />
