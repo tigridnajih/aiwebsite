@@ -234,6 +234,68 @@ const SalesMarketingMockup = () => {
     );
 };
 
+const CustomProjectsMockup = () => {
+    const integrations = [
+        { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", color: "#3B5BFF", status: "Active" },
+        { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", color: "#3B5BFF", status: "Syncing..." },
+        { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", color: "#3B5BFF", status: "Idle" }
+    ];
+
+    return (
+        <div className="w-full max-w-sm mx-auto flex flex-col items-center">
+            {/* Top Controller Node */}
+            <motion.div
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center shadow-[0_0_40px_rgba(59,91,255,0.4)] relative z-20 mb-[-2px]"
+            >
+                <div className="w-4 h-4 rounded-full bg-white animate-pulse" />
+            </motion.div>
+
+            {/* Connecting Line */}
+            <div className="w-[1px] h-12 bg-gradient-to-b from-[#3B5BFF] to-white/5 relative z-10" />
+
+            {/* Integration Cards */}
+            <div className="w-full space-y-3 relative z-20">
+                {integrations.map((item, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.2 }}
+                        className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 flex items-center justify-between backdrop-blur-sm"
+                    >
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center border border-white/[0.06]">
+                                <svg viewBox="0 0 16 16" className="w-5 h-5" fill="none" stroke="#3B5BFF" strokeWidth="1.5">
+                                    <path d={item.icon} />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-sm font-bold text-white">{item.name}</h4>
+                                <p className="text-[10px] text-zinc-500 font-medium">{item.action}</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-end gap-1">
+                            {i === 0 ? (
+                                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#3B5BFF]/10 border border-[#3B5BFF]/30">
+                                    <div className="w-1 h-1 rounded-full bg-[#3B5BFF] animate-pulse" />
+                                    <span className="text-[8px] font-bold text-[#3B5BFF] uppercase tracking-wider">Running</span>
+                                </div>
+                            ) : (
+                                <span className="text-[10px] text-zinc-600 font-mono tracking-tight">{item.name === "AirTable" ? "Syncing..." : "Standby"}</span>
+                            )}
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Bottom Vertical Guide Line */}
+            <div className="w-[1px] h-8 bg-gradient-to-b from-white/10 to-transparent" />
+        </div>
+    );
+};
+
 export default function Services() {
     const features = [
         {
@@ -333,28 +395,20 @@ export default function Services() {
             tags: ["Strategy", "Custom AI", "Consulting"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
-                    <div className="relative w-full font-mono text-[10px] text-purple-400/60 break-all">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                    <div className="absolute top-8 left-8 font-mono text-[8px] text-zinc-700 max-w-[150px] opacity-40 select-none hidden md:block group-hover:opacity-60 transition-opacity">
                         {`{
-  "project": "Intelligent_Sync",
-  "status": "deploying",
-  "nodes": [
-    {"id": "ai-core", "load": 0.42},
-    {"id": "data-bridge", "latency": "12ms"},
-    {"id": "auth-layer", "secure": true}
-  ],
-  "intelligence_score": 0.98,
-  "last_check": "2024-02-21T16:25:52Z"
+  "system": "Custom_Node",
+  "status": "integrated",
+  "intelligence": "0.98",
+  "secure": true
 }`}
-                        <div className="mt-8 flex gap-4">
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center">
-                                <div className="w-8 h-8 rounded bg-purple-500/20" />
-                            </div>
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center text-[20px]">
-                                +
-                            </div>
-                        </div>
                     </div>
+
+                    <CustomProjectsMockup />
+
+                    {/* Background Glow */}
+                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#3B5BFF]/5 blur-[100px] rounded-full" />
                 </div>
             )
         }
