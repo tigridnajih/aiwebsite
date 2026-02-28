@@ -332,8 +332,8 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-8 md:p-12">
-                    <div className="relative w-full max-w-md mx-auto">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl flex items-center justify-center p-4 md:p-6">
+                    <div className="relative w-full max-w-lg mx-auto">
                         <AutomationMockup />
                     </div>
                 </div>
@@ -346,8 +346,8 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
-                    <div className="relative flex justify-between items-start z-10 w-full mb-4">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-between">
+                    <div className="relative flex justify-between items-start z-10 w-full mb-4 px-4 pt-4">
                         <div className="flex flex-col gap-2">
                             <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                             <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
@@ -355,7 +355,7 @@ export default function Services() {
                         <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                     </div>
 
-                    <div className="relative flex-1 mt-6 flex flex-col z-10">
+                    <div className="relative flex-1 mt-6 flex flex-col z-10 px-4">
                         <div className="absolute top-0 left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center z-20">
                             <span className="text-white text-sm md:text-base font-bold tracking-tight">87% +</span>
                         </div>
@@ -406,7 +406,7 @@ export default function Services() {
             tags: ["Leads", "Content", "Social post"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
                     <SalesMarketingMockup />
 
                     {/* Background Decorative Elements to match Card 1/2 */}
@@ -422,7 +422,7 @@ export default function Services() {
             tags: ["Strategy", "Custom AI", "Consulting"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
                     <CustomProjectsMockup />
                 </div>
             )
