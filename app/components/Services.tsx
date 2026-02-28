@@ -167,8 +167,8 @@ export default function Services() {
         },
         {
             badge: "AI Assistant",
-            title: "Delegate Daily Tasks",
-            description: "From managing calendars to drafting emails and summarizing meetings, our AI assistants work around the clock to keep your business running smarter and faster.",
+            title: "Data Processing & Insights",
+            description: "Turn raw data into actionable insights with AI-driven analysis and reporting.",
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
