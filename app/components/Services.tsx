@@ -243,13 +243,26 @@ const SalesMarketingMockup = () => {
 };
 
 const CustomProjectsMockup = () => {
-    const integrations = [
-        { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", color: "#3B5BFF", status: "Active" },
-        { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", color: "#3B5BFF", status: "Syncing..." },
-        { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", color: "#3B5BFF", status: "Idle" }
-    ];
+    const [items, setItems] = React.useState([
+        { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", status: "Active" },
+        { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", status: "Syncing..." },
+        { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", status: "Idle" }
+    ]);
     const containerRef = React.useRef(null);
     const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+
+    React.useEffect(() => {
+        if (!isInView) return;
+
+        const interval = setInterval(() => {
+            setItems((prev) => {
+                const newItems = [...prev];
+                [newItems[1], newItems[2]] = [newItems[2], newItems[1]];
+                return newItems;
+            });
+        }, 2000);
+        return () => clearInterval(interval);
+    }, [isInView]);
 
     return (
         <div ref={containerRef} className="w-full max-w-sm mx-auto flex flex-col items-center">
@@ -266,13 +279,17 @@ const CustomProjectsMockup = () => {
             <div className="w-[1px] h-12 bg-gradient-to-b from-[#3B5BFF] to-white/5 relative z-10" />
 
             {/* Integration Cards */}
-            <div className="w-full space-y-3 relative z-20">
-                {integrations.map((item, i) => (
+            <div className="w-full space-y-6 relative z-20">
+                {items.map((item, i) => (
                     <motion.div
-                        key={i}
+                        key={item.name}
+                        layout
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.2 }}
+                        transition={{
+                            layout: { type: "spring", stiffness: 200, damping: 20 },
+                            delay: i * 0.1
+                        }}
                         className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 flex items-center justify-between shadow-xl"
                     >
                         <div className="flex items-center gap-4">
@@ -288,12 +305,12 @@ const CustomProjectsMockup = () => {
                         </div>
                         <div className="flex flex-col items-end gap-1">
                             {i === 0 ? (
-                                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 border border-white/30">
-                                    <div className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                                    <span className="text-[8px] font-bold text-white uppercase tracking-wider">Running</span>
+                                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                    <span className="text-[10px] font-bold text-white uppercase">Running</span>
                                 </div>
                             ) : (
-                                <span className="text-[10px] text-white/40 font-mono tracking-tight">{item.name === "AirTable" ? "Syncing..." : "Standby"}</span>
+                                <span className="text-xs text-white/40 font-bold tracking-tight">{item.name === "AirTable" ? "Syncing..." : item.name === "Zoom" ? "Standby" : ""}</span>
                             )}
                         </div>
                     </motion.div>
