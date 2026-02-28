@@ -71,30 +71,36 @@ const AutomationMockup = () => {
     }, [messages]);
 
     return (
-        <div className="w-full relative">
-            <AnimatePresence mode="popLayout">
-                <div className="flex flex-col gap-4">
+        <div className="w-full relative px-4">
+            <div className="flex flex-col gap-4">
+                <AnimatePresence initial={false}>
                     {visibleMessages.map((msg, idx) => (
                         <motion.div
                             key={msg.id}
                             layout
-                            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                            initial={{ opacity: 0, y: 30, scale: 0.9 }}
                             animate={{
-                                opacity: idx === 0 ? 1 : 0.6,
+                                opacity: idx === 0 ? 1 : idx === 1 ? 0.7 : 0.4,
                                 y: 0,
                                 scale: idx === 0 ? 1.05 : 1,
-                                zIndex: 10 - idx
+                                backgroundColor: idx === 0 ? "rgba(59, 91, 255, 1)" : "rgba(255, 255, 255, 0.02)",
+                                backgroundImage: idx === 0
+                                    ? "linear-gradient(135deg, #3B5BFF 0%, #000000 100%)"
+                                    : "linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 100%)",
+                                borderColor: idx === 0 ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.04)",
+                                zIndex: 10 - idx,
+                                boxShadow: idx === 0 ? "0 20px 40px rgba(0,0,0,0.4)" : "0 0px 0px rgba(0,0,0,0)"
                             }}
-                            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                            exit={{ opacity: 0, y: -30, scale: 0.9, position: "absolute" }}
                             transition={{
-                                layout: { type: "spring", stiffness: 300, damping: 30 },
-                                opacity: { duration: 0.4 },
-                                scale: { duration: 0.4 }
+                                layout: { type: "spring", stiffness: 200, damping: 25 },
+                                opacity: { duration: 0.5 },
+                                scale: { duration: 0.5 },
+                                backgroundColor: { duration: 0.5 },
+                                borderColor: { duration: 0.5 },
+                                y: { type: "spring", stiffness: 200, damping: 25 }
                             }}
-                            className={`relative rounded-2xl p-5 shadow-xl transition-all duration-700 ${idx === 0
-                                ? "bg-gradient-to-br from-[#3B5BFF] to-[#000000] border-none"
-                                : "bg-white/[0.02] border border-white/[0.04]"
-                                }`}
+                            className="relative rounded-2xl p-5 border shadow-xl w-full"
                         >
                             <div className="flex items-start gap-4">
                                 <div className="relative shrink-0">
@@ -112,28 +118,35 @@ const AutomationMockup = () => {
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex justify-between items-center mb-1">
-                                        <span className={`font-bold text-base ${idx === 0 ? 'text-white' : 'text-[#F5F7FF]'}`}>{msg.name}, {msg.company}</span>
-                                        <span className={`text-xs font-mono opacity-60 ${idx === 0 ? 'text-blue-100' : 'text-zinc-500'}`}>{msg.time}</span>
+                                        <span className={`font-bold text-base transition-colors duration-500 ${idx === 0 ? 'text-white' : 'text-[#F5F7FF]'}`}>{msg.name}, {msg.company}</span>
+                                        <span className={`text-xs font-mono opacity-60 transition-colors duration-500 ${idx === 0 ? 'text-blue-100' : 'text-zinc-500'}`}>{msg.time}</span>
                                     </div>
-                                    <p className={`text-xs md:text-sm font-medium italic leading-relaxed ${idx === 0 ? 'text-blue-50' : 'text-zinc-500'}`}>
+                                    <p className={`text-xs md:text-sm font-medium italic leading-relaxed transition-colors duration-500 ${idx === 0 ? 'text-blue-50' : 'text-zinc-400'}`}>
                                         &ldquo;{msg.text}&rdquo;
                                     </p>
-                                    {idx === 0 && (
-                                        <div className="mt-3 flex items-center gap-2">
-                                            <span className="text-white/80 text-[10px] font-bold tracking-widest uppercase">Replying</span>
-                                            <span className="flex gap-1 items-center">
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-duration:1s]" />
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
-                                            </span>
-                                        </div>
-                                    )}
+                                    <AnimatePresence>
+                                        {idx === 0 && (
+                                            <motion.div
+                                                initial={{ opacity: 0, height: 0 }}
+                                                animate={{ opacity: 1, height: "auto" }}
+                                                exit={{ opacity: 0, height: 0 }}
+                                                className="mt-3 flex items-center gap-2 overflow-hidden"
+                                            >
+                                                <span className="text-white/80 text-[10px] font-bold tracking-widest uppercase">Replying</span>
+                                                <span className="flex gap-1 items-center">
+                                                    <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-duration:1s]" />
+                                                    <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
+                                                    <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
+                                                </span>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
-                </div>
-            </AnimatePresence>
+                </AnimatePresence>
+            </div>
         </div>
     );
 };
