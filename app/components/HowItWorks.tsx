@@ -26,30 +26,30 @@ const Card = ({ number, title, description, children, className = "" }: CardProp
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className={`relative group p-0 flex flex-col min-h-[500px] overflow-hidden ${className}`}
+        className={`relative group p-10 rounded-[40px] bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] flex flex-col min-h-[600px] overflow-hidden hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-700 shadow-2xl ${className}`}
     >
         {/* Sapphire Glows */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/10 blur-[80px] rounded-full group-hover:bg-blue-600/20 transition-colors" />
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-600/[0.07] blur-[100px] rounded-full group-hover:bg-blue-600/[0.12] transition-colors" />
 
-        {/* Visual Container (Top) */}
-        <div className="relative w-full aspect-[4/3] mb-10 overflow-hidden flex items-center justify-center">
-            {children}
-        </div>
-
-        {/* Content (Bottom) */}
-        <div className="flex flex-col gap-4 mt-auto">
-            <div className="flex items-center gap-4">
-                <span className="text-[32px] font-bold text-white/10 font-mono tracking-tighter leading-none group-hover:text-blue-500/20 transition-colors">
-                    {number.padStart(2, '0')}
-                </span>
-                <h3 className="text-[26px] md:text-[30px] font-bold text-white tracking-tight">
+        {/* Header (Top) */}
+        <div className="flex flex-col gap-4 mb-10 relative z-10">
+            <div className="flex items-center justify-between">
+                <h3 className="text-[28px] md:text-[32px] font-bold text-white tracking-tight leading-tight">
                     {title}
                 </h3>
+                <span className="text-[24px] font-bold text-white/10 font-mono tracking-tighter leading-none group-hover:text-blue-500/30 transition-colors">
+                    {number}
+                </span>
             </div>
 
-            <p className="text-zinc-500 text-base md:text-lg leading-relaxed max-w-[95%]">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-[90%]">
                 {description}
             </p>
+        </div>
+
+        {/* Visual Container (Bottom) */}
+        <div className="relative w-full aspect-[4/3] mt-auto overflow-hidden flex items-center justify-center rounded-3xl bg-black/20 border border-white/[0.05] group-hover:border-blue-500/10 transition-colors">
+            {children}
         </div>
     </motion.div>
 );
@@ -232,19 +232,46 @@ const SystemStatusCards = () => {
 
 export default function HowItWorks() {
     return (
-        <section id="works" className="py-32 bg-[#070707] overflow-hidden relative">
-            {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,82,186,0.03),transparent)] pointer-events-none" />
+        <section id="works" className="py-32 relative overflow-hidden bg-[#070707]">
+            {/* Sapphire Gradient Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(15,82,186,0.15),transparent_70%)] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0F52BA]/[0.05] to-transparent pointer-events-none" />
 
             <div className="container-custom relative z-10">
-                <SectionHeader
-                    badge="The Process"
-                    title="How it works"
-                    description="Our multi-stage approach to integrating high-performance AI into your business architecture."
-                />
+                {/* Centered Header with Capsule Badge */}
+                <div className="flex flex-col items-center text-center mb-24">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="px-4 py-1.5 rounded-full bg-white text-black text-[13px] font-bold uppercase tracking-wider mb-8 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    >
+                        How it works
+                    </motion.div>
 
-                <div className="grid lg:grid-cols-3 gap-8 mt-24">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-8"
+                    >
+                        3 Easy steps to optimize <br className="hidden md:block" /> your workflow
+                    </motion.h2>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-zinc-400 text-lg md:text-xl max-w-3xl leading-relaxed"
+                    >
+                        Refine, Adjust, Perfect: Craft your ideal business output with intuitive AI-driven automation.
+                        Achieve clarity, stability, and speed—tailored precisely to your needs.
+                    </motion.p>
+                </div>
+
+                <div className="grid lg:grid-cols-3 gap-8">
                     <Card
                         number="1"
                         title="Analyze"
