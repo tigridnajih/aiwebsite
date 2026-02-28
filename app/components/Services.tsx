@@ -11,13 +11,14 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-8">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-8 md:p-12">
 
                     <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left: Bubble Column */}
                         <div className="w-full md:flex-[1.8] flex flex-col gap-3 md:gap-4">
                             {/* Emma - Top Bubble (Replying) */}
-                            <div className="relative bg-gradient-to-br from-[#3B5BFF] to-[#000000] border border-[#3B5BFF]/30 rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
+                            <div className="relative bg-white/[0.03] backdrop-blur-md border border-[#3B5BFF]/30 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform hover:-translate-y-1 transition-transform duration-500 group/emma">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#3B5BFF]/5 to-transparent rounded-2xl pointer-events-none" />
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
                                         <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -52,7 +53,7 @@ export default function Services() {
                             </div>
 
                             {/* Liam - Middle Bubble */}
-                            <div className="bg-[#121212]/80 border border-white/[0.06] rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-4 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
                                         <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -79,7 +80,7 @@ export default function Services() {
                             </div>
 
                             {/* Olivia - Bottom Bubble */}
-                            <div className="bg-[#121212]/80 border border-white/[0.06] rounded-2xl p-4 shadow-lg opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
+                            <div className="bg-white/[0.02] border border-white/[0.04] rounded-2xl p-4 shadow-sm opacity-60 hover:opacity-100 transition-opacity">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
                                         <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
@@ -124,7 +125,7 @@ export default function Services() {
                                     fill="none"
                                     stroke="#2C4EDC"
                                     strokeWidth="1"
-                                    strokeOpacity="0.2"
+                                    strokeOpacity="0.4"
                                 />
                                 {/* Olivia Curve */}
                                 <path
@@ -132,7 +133,7 @@ export default function Services() {
                                     fill="none"
                                     stroke="#2C4EDC"
                                     strokeWidth="1"
-                                    strokeOpacity="0.1"
+                                    strokeOpacity="0.3"
                                 />
                                 <defs>
                                     <linearGradient id="blueFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
