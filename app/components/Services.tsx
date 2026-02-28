@@ -442,7 +442,7 @@ export default function Services() {
                     description="We design, develop, and implement automation tools that help you work smarter, not harder"
                 />
 
-                <div className="flex flex-col gap-32 md:gap-48">
+                <div className="flex flex-col gap-32 md:gap-48 mt-20 md:mt-32">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
