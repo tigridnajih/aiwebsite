@@ -251,7 +251,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="py-20 bg-[##070707] text-white selection:bg-purple-500/30">
+        <section id="solutions" className="py-20 bg-[#070707] text-white selection:bg-purple-500/30">
             <div className="container-custom">
                 <SectionHeader
                     badge="Our Services"

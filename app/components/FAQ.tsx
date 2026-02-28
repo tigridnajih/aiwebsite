@@ -26,7 +26,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 bg-[##070707]">
+        <section className="py-20 bg-[#070707]">
             <div className="container-custom">
                 <SectionHeader
                     badge="Support"

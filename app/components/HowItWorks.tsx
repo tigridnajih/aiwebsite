@@ -44,7 +44,7 @@ const Card = ({ number, title, description, children, className = "" }: CardProp
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="py-24 bg-[#070707] overflow-hidden relative">
+        <section id="works" className="py-24 bg-[#070707] overflow-hidden relative">
             <div className="container-custom">
                 <SectionHeader
                     badge="Process"
