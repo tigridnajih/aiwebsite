@@ -5,27 +5,18 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full overflow-hidden bg-[#050914] text-white pt-0 pb-2 border-t border-white/[0.03]">
+        <footer className="relative w-full overflow-hidden bg-black text-white pt-0 pb-2 border-t border-white/[0.03]">
             {/* 🌌 Atmospheric Background System */}
             <div className="absolute inset-0 z-0">
-                {/* 🌌 Base Layer: Very dark navy base */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050914] to-[#070C1F]" />
+                {/* 🌌 Base Layer: Pure black */}
+                <div className="absolute inset-0 bg-black" />
 
-                {/* 🌊 Primary Blue Flow: Large radial glow from the right */}
+                {/* 🌊 Primary Blue Glow: Large centered radial glow using #385BFF */}
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                        background: 'radial-gradient(circle at 80% 40%, rgba(40, 90, 255, 0.35) 0%, rgba(20, 45, 140, 0.25) 30%, transparent 65%)',
-                        filter: 'blur(40px)'
-                    }}
-                />
-
-                {/* 🌑 Secondary Depth: Subtle darker radial from bottom-left */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        background: 'radial-gradient(circle at 20% 90%, rgba(10, 20, 60, 0.5) 0%, transparent 60%)',
-                        filter: 'blur(30px)'
+                        background: 'radial-gradient(ellipse at 50% 50%, rgba(56, 91, 255, 0.4) 0%, rgba(56, 91, 255, 0.05) 50%, transparent 80%)',
+                        filter: 'blur(60px)'
                     }}
                 />
 
