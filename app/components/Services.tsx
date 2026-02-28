@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 export default function Services() {
@@ -172,17 +173,65 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
-
-                    <div className="flex flex-col items-center justify-center h-full p-10 text-center">
-                        <div className="w-20 h-20 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center mb-6 animate-pulse">
-                            <div className="w-12 h-12 rounded-full bg-purple-500/40" />
+                <div className="relative w-full h-full bg-[#0d0d0d] rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl flex flex-col p-8 md:p-10">
+                    {/* Header Area */}
+                    <div className="flex justify-between items-center mb-10">
+                        <div className="space-y-1.5">
+                            <div className="w-24 h-2 bg-white/10 rounded-full" />
+                            <div className="w-16 h-1.5 bg-white/5 rounded-full" />
                         </div>
-                        <div className="w-48 h-3 bg-white/20 rounded mb-3" />
-                        <div className="w-32 h-2 bg-white/10 rounded" />
-                        <div className="mt-8 grid grid-cols-2 gap-3 w-full">
-                            <div className="h-10 bg-white/5 rounded-lg border border-white/[0.06]" />
-                            <div className="h-10 bg-white/5 rounded-lg border border-white/[0.06]" />
+                        <div className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">
+                            <span className="text-[10px] text-blue-400 font-bold uppercase tracking-wider">Live Analysis</span>
+                        </div>
+                    </div>
+
+                    {/* Animated Bar Graph Area */}
+                    <div className="flex-1 flex items-end justify-between gap-3 md:gap-4 relative px-2">
+                        {[65, 40, 85, 55, 95, 70, 45, 80].map((height, i) => (
+                            <div key={i} className="flex-1 flex flex-col items-center gap-3 group">
+                                <div className="relative w-full">
+                                    <motion.div
+                                        initial={{ height: 0 }}
+                                        animate={{ height: `${height}%` }}
+                                        transition={{
+                                            duration: 1.5,
+                                            delay: i * 0.1,
+                                            ease: [0.33, 1, 0.68, 1],
+                                            repeat: Infinity,
+                                            repeatType: "reverse",
+                                            repeatDelay: 2
+                                        }}
+                                        className="w-full rounded-t-lg bg-gradient-to-t from-blue-600/20 via-blue-500 to-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.3)] relative overflow-hidden"
+                                    >
+                                        {/* Electric Sparkle / Scanline effect */}
+                                        <motion.div
+                                            animate={{ y: ["0%", "100%"] }}
+                                            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                                            className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"
+                                        />
+                                    </motion.div>
+                                </div>
+                                <div className="w-full h-1 bg-white/5 rounded-full" />
+                            </div>
+                        ))}
+
+                        {/* Background Grid Lines */}
+                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-[0.03]">
+                            {[...Array(5)].map((_, i) => (
+                                <div key={i} className="w-full h-px bg-white" />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Bottom Data Legend */}
+                    <div className="mt-10 flex gap-6">
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+                            <div className="w-12 h-1.5 bg-white/10 rounded-full" />
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-white/10" />
+                            <div className="w-12 h-1.5 bg-white/5 rounded-full" />
                         </div>
                     </div>
                 </div>
