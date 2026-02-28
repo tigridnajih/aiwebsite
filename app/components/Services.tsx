@@ -182,7 +182,7 @@ const SalesMarketingMockup = () => {
     }, [isInView]);
 
     return (
-        <div ref={containerRef} className="w-full max-w-sm mx-auto space-y-6">
+        <div ref={containerRef} className="w-full max-w-lg mx-auto space-y-6">
             <AnimatePresence mode="wait">
                 {step >= 0 && (
                     <div className="space-y-6">
@@ -265,7 +265,7 @@ const CustomProjectsMockup = () => {
     }, [isInView]);
 
     return (
-        <div ref={containerRef} className="w-full max-w-sm mx-auto flex flex-col items-center">
+        <div ref={containerRef} className="w-full max-w-lg mx-auto flex flex-col items-center">
             {/* Top Controller Node */}
             <motion.div
                 animate={isInView ? { scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] } : {}}
@@ -407,7 +407,9 @@ export default function Services() {
             imageSide: "left",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
-                    <SalesMarketingMockup />
+                    <div className="relative w-full max-w-xl mx-auto">
+                        <SalesMarketingMockup />
+                    </div>
 
                     {/* Background Decorative Elements to match Card 1/2 */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#3B5BFF]/5 blur-[60px] rounded-full" />
@@ -423,7 +425,9 @@ export default function Services() {
             imageSide: "right",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
-                    <CustomProjectsMockup />
+                    <div className="relative w-full max-w-xl mx-auto">
+                        <CustomProjectsMockup />
+                    </div>
                 </div>
             )
         }
