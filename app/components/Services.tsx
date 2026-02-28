@@ -181,14 +181,15 @@ export default function Services() {
                             <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                             <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
                         </div>
-                        {/* "85%+" Highlight Box */}
-                        <div className="px-4 py-2 rounded-xl bg-[#3B5BFF]/10 border border-[#3B5BFF]/20 flex items-center justify-center shadow-[0_4px_20px_rgba(59,91,255,0.1)]">
-                            <span className="text-[#3B5BFF] text-[11px] font-bold tracking-widest font-mono">85%+</span>
-                        </div>
+                        <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
                     </div>
 
                     {/* Chart Container */}
                     <div className="relative flex-1 mt-6 flex flex-col z-10">
+                        {/* "87% +" Floating Highlight from Reference */}
+                        <div className="absolute top-[20%] left-[5%] px-3.5 py-2 rounded-xl bg-zinc-900/90 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-2xl z-20">
+                            <span className="text-white text-[11px] font-bold">87% +</span>
+                        </div>
                         {/* Behind-the-bars Grid System */}
                         <div className="absolute inset-0 top-8 flex flex-col justify-between pointer-events-none opacity-[0.12]">
                             {[...Array(7)].map((_, i) => (
