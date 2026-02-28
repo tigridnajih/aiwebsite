@@ -173,7 +173,7 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full h-[320px] md:h-[380px] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
+                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
                     {/* Background Subtle Gradient */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,102,255,0.03),transparent)] pointer-events-none" />
 
@@ -250,9 +250,9 @@ export default function Services() {
             tags: ["Leads", "Content", "Social post"],
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
-                    <div className="p-8">
-                        <div className="flex items-end gap-2 h-48">
+                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                    <div className="relative w-full">
+                        <div className="flex items-end gap-2 h-40 md:h-48">
                             {[40, 70, 45, 90, 65, 80, 100].map((h, i) => (
                                 <div key={i} className="flex-1 bg-purple-500/20 border-t border-purple-500/40 rounded-t-sm" style={{ height: `${h}%` }} />
                             ))}
@@ -278,8 +278,8 @@ export default function Services() {
             tags: ["Strategy", "Custom AI", "Consulting"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-zinc-900/50 rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl">
-                    <div className="p-8 font-mono text-[10px] text-purple-400/60 break-all">
+                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-center">
+                    <div className="relative w-full font-mono text-[10px] text-purple-400/60 break-all">
                         {`{
   "project": "Intelligent_Sync",
   "status": "deploying",
