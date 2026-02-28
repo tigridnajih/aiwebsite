@@ -184,7 +184,7 @@ const SystemStatusCards = () => {
     const systems = [
         {
             title: 'Chatbot system',
-            desc: 'Efficiency will increase by 20%',
+            desc: 'Efficiency increased 20%',
             icon: MessageSquare,
             endIcon: RotateCw
         },
