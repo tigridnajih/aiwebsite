@@ -36,11 +36,8 @@ export default function HowItWorks() {
 
                 {/* 3-Card Grid - Static Enterprise Design */}
                 <div className="relative">
-                    {/* Static Backbone Path - Desktop */}
-                    <div className="hidden md:block absolute top-[52px] left-[15%] right-[15%] h-[1px] bg-white/[0.08] z-0" />
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-                        {PHASES.map((phase, index) => (
+                        {PHASES.map((phase) => (
                             <div
                                 key={phase.number}
                                 className="group relative flex flex-col items-start p-8 md:p-10 border border-white/10 bg-white/[0.02] rounded-3xl transition-all duration-300 hover:border-blue-500/30 overflow-hidden"
@@ -62,11 +59,6 @@ export default function HowItWorks() {
                                         {phase.description}
                                     </p>
                                 </div>
-
-                                {/* Mobile Static Connector */}
-                                {index < PHASES.length - 1 && (
-                                    <div className="md:hidden absolute -bottom-10 left-11 w-px h-10 bg-white/10" />
-                                )}
                             </div>
                         ))}
                     </div>
