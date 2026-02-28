@@ -22,16 +22,16 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section className="relative py-32 bg-[#070707] border-y border-white/5 overflow-hidden">
+        <section className="relative py-24 md:py-32 bg-[#070707] border-y border-white/5 overflow-hidden">
             <div className="container-custom relative z-10">
-                {/* Title Block */}
-                <div className="text-center mb-40">
+                {/* Title Block - Higher Authority & Tightened Tracking */}
+                <div className="text-center mb-24 md:mb-36">
                     <motion.h2
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-white tracking-tighter mb-4"
+                        className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase"
                     >
                         Our Engineering Process
                     </motion.h2>
@@ -40,20 +40,20 @@ export default function HowItWorks() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="text-gray-500 text-base md:text-lg font-medium max-w-xl mx-auto tracking-tight"
+                        className="text-gray-500 text-base md:text-lg font-medium max-w-xl mx-auto tracking-tight opacity-70"
                     >
                         A structured lifecycle from workflow analysis to full system ownership.
                     </motion.p>
                 </div>
 
-                {/* Structured Pipeline Container */}
+                {/* Structured Lifecycle Pipeline */}
                 <div className="relative">
-                    {/* Central Backbone Line - Desktop */}
-                    <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-white/[0.05] -translate-y-1/2 z-0">
-                        {/* Gradient Accent Overlay */}
-                        <div className="absolute inset-x-0 h-full bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0" />
+                    {/* Continuous Lifecycle Backbone - Enterprise Engineering Standard */}
+                    <div className="hidden md:block absolute top-[100px] left-0 w-full h-[1px] bg-white/[0.04] z-0">
+                        {/* Progressing Gradient Layer */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] via-blue-500/10 to-blue-400/30" />
 
-                        {/* Animated Pulse - Moving through the backbone */}
+                        {/* Procedural Signal Pulse */}
                         <motion.div
                             animate={{
                                 left: ['-5%', '105%'],
@@ -64,47 +64,53 @@ export default function HowItWorks() {
                                 repeat: Infinity,
                                 ease: "linear"
                             }}
-                            className="absolute top-1/2 -translate-y-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent z-10"
+                            className="absolute top-1/2 -translate-y-1/2 w-24 h-[1px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent z-10"
                         />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative z-10">
                         {PHASES.map((phase, index) => {
-                            // Visual Progression Logic
-                            const opacityClass = index === 0 ? "opacity-60" : index === 1 ? "opacity-80" : "opacity-100";
-                            const accentColor = index === 0 ? "bg-white/10" : index === 1 ? "bg-blue-500/20" : "bg-blue-500/40";
-                            const borderAccent = index === 0 ? "border-white/10" : index === 1 ? "border-blue-500/20" : "border-blue-500/40";
+                            // Enterprise Progression Hierarchy
+                            const accentColor = index === 0 ? "text-gray-600" : index === 1 ? "text-blue-500/80" : "text-blue-400";
+                            const dotColor = index === 0 ? "bg-gray-600" : index === 1 ? "bg-blue-500" : "bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.3)]";
 
                             return (
                                 <motion.div
                                     key={phase.number}
-                                    initial={{ opacity: 0, y: 5 }}
+                                    initial={{ opacity: 0, y: 8 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.12 }}
                                     viewport={{ once: true }}
-                                    className={`relative flex flex-col items-start px-8 md:px-12 py-10 md:py-16 transition-all duration-500 group ${opacityClass}`}
+                                    className="relative flex flex-col items-start px-8 md:px-12 group"
                                 >
-                                    {/* Phase Number - Mono & Subtle */}
-                                    <div className="font-mono text-xs font-bold text-gray-600 mb-6 tracking-widest">
+                                    {/* Phase Number - Anchored Above Backbone Line */}
+                                    <div className={`font-mono text-[11px] font-bold mb-6 tracking-widest transition-colors duration-500 ${accentColor}`}>
                                         {phase.number}
                                     </div>
 
-                                    {/* Title - Bold & Left Aligned */}
-                                    <h3 className="text-xl font-bold text-white mb-6 tracking-tight group-hover:text-blue-50 transition-colors">
+                                    {/* Desktop Backbone Node & Vertical Tick */}
+                                    <div className="hidden md:flex items-center justify-center w-full h-[1px] relative mb-12">
+                                        {/* Structural Node (The intersection point) */}
+                                        <div className={`absolute left-0 w-1.5 h-1.5 rounded-full -translate-x-1/2 transition-all duration-500 ${dotColor}`} />
+                                        {/* Vertical Tick Drop */}
+                                        <div className="absolute left-0 top-0 w-[1px] h-6 bg-white/[0.08]" />
+                                    </div>
+
+                                    {/* Title - Heavy Weight & Architectural Alignment */}
+                                    <h3 className="text-xl md:text-2xl font-black text-white tracking-tighter mb-4 transition-colors duration-500 group-hover:text-blue-50">
                                         {phase.title}
                                     </h3>
 
-                                    {/* Internal Divider Line (The Backbone intersection) */}
-                                    <div className={`w-full h-[1px] mb-6 transition-colors duration-500 ${accentColor}`} />
-
-                                    {/* Concise Explanation */}
-                                    <p className="text-gray-500 text-sm leading-relaxed max-w-[240px] group-hover:text-gray-400 transition-colors">
+                                    {/* Description - Muted & Concise */}
+                                    <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-[280px] tracking-tight transition-colors duration-500 group-hover:text-gray-400">
                                         {phase.description}
                                     </p>
 
-                                    {/* Mobile Vertical Backbone Link */}
+                                    {/* Mobile Lifecycle Connector */}
                                     {index < PHASES.length - 1 && (
-                                        <div className="md:hidden absolute bottom-0 left-12 w-[1px] h-10 bg-white/5" />
+                                        <div className="md:hidden absolute left-12 bottom-0 w-[1px] h-12 bg-white/5">
+                                            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent" />
+                                        </div>
                                     )}
                                 </motion.div>
                             );
@@ -113,7 +119,7 @@ export default function HowItWorks() {
                 </div>
             </div>
 
-            {/* Background Separation Layer */}
+            {/* Background Separation Overlay */}
             <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
         </section>
     );
