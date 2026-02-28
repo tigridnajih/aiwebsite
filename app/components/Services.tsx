@@ -173,35 +173,45 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-6 md:p-10 flex items-center justify-center">
-                    {/* Background Subtle Gradient to match feature 1 */}
+                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-8 md:p-12 flex flex-col justify-between">
+                    {/* Background Subtle Gradient */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(44,78,220,0.05),transparent)] pointer-events-none" />
 
-                    {/* Inner Card Container */}
-                    <div className="relative w-full max-w-[500px] h-[320px] bg-[#0E1116] rounded-[20px] p-[40px] flex flex-col justify-between shadow-2xl z-10"
-                        style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)" }}>
+                    {/* Top Section */}
+                    <div className="relative flex justify-between items-start z-10">
+                        <div className="flex flex-col gap-2">
+                            <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
+                            <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
+                        </div>
+                        <motion.div
+                            animate={{ boxShadow: ["0 0 0px rgba(59,163,255,0)", "0 0 10px rgba(59,163,255,0.2)", "0 0 0px rgba(59,163,255,0)"] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            className="px-3 py-1.5 rounded-full bg-[rgba(59,163,255,0.08)] border border-[rgba(59,163,255,0.2)] flex items-center justify-center"
+                        >
+                            <span className="text-[#7FDBFF] text-[10px] font-bold tracking-[0.08em] leading-none uppercase">Live Analysis</span>
+                        </motion.div>
+                    </div>
 
-                        {/* Top Action Ribbon - LIVE ANALYSIS Pill */}
-                        <div className="absolute top-[40px] right-[40px]">
-                            <motion.div
-                                animate={{ boxShadow: ["0 0 0px rgba(59,163,255,0)", "0 0 15px rgba(59,163,255,0.3)", "0 0 0px rgba(59,163,255,0)"] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="px-3 py-1.5 rounded-full bg-[rgba(59,163,255,0.12)] border border-[rgba(59,163,255,0.4)] flex items-center justify-center"
-                            >
-                                <span className="text-[#7FDBFF] text-[10px] font-bold tracking-[0.08em] leading-none uppercase">Live Analysis</span>
-                            </motion.div>
+                    {/* Chart Container with Details */}
+                    <div className="relative flex-1 mt-10 mb-2 flex flex-col z-10">
+                        {/* Subtle Grid Lines */}
+                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+                            {[...Array(4)].map((_, i) => (
+                                <div key={i} className="w-full h-[1px] border-t border-dashed border-white/20" />
+                            ))}
                         </div>
 
-                        {/* Header placeholders (minimalist structural elements) */}
-                        <div className="mt-1 flex flex-col gap-2">
-                            <div className="w-[88px] h-[4px] bg-white/[0.08] rounded-full" />
-                            <div className="w-[56px] h-[3px] bg-white/[0.04] rounded-full" />
-                        </div>
-
-                        {/* Chart Area */}
-                        <div className="flex-1 w-full mt-6 flex items-end justify-between gap-[24px]">
-                            {[72, 48, 85, 63, 91, 54].map((val, idx) => (
-                                <div key={idx} className="flex-1 h-full flex items-end justify-center group relative">
+                        {/* Bars Area */}
+                        <div className="flex-1 w-full flex items-end justify-between gap-4 md:gap-6 relative z-10">
+                            {[
+                                { val: 72, label: "Mon" },
+                                { val: 48, label: "Tue" },
+                                { val: 85, label: "Wed" },
+                                { val: 63, label: "Thu" },
+                                { val: 91, label: "Fri" },
+                                { val: 54, label: "Sat" }
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex-1 h-full flex flex-col items-center justify-end group">
                                     <motion.div
                                         initial={{ scaleY: 0 }}
                                         whileInView={{ scaleY: 1 }}
@@ -210,15 +220,13 @@ export default function Services() {
                                             duration: 1.4,
                                             delay: idx * 0.1,
                                             ease: [0.22, 1, 0.36, 1],
-                                            // Simulated overshoot effect
                                             times: [0, 0.8, 1]
                                         }}
                                         style={{
-                                            height: `${val}%`,
+                                            height: `${item.val * 0.85}%`,
                                             background: "linear-gradient(180deg, #7FDBFF 0%, #3BA3FF 50%, #0A84FF 100%)",
-                                            boxShadow: "0 0 20px rgba(59,163,255,0.35), 0 10px 40px rgba(10,132,255,0.25)"
                                         }}
-                                        className="w-full rounded-[12px] origin-bottom relative overflow-hidden"
+                                        className="w-full rounded-t-lg origin-bottom relative overflow-hidden"
                                     >
                                         {/* Shimmer Loop Effect */}
                                         <motion.div
@@ -231,19 +239,13 @@ export default function Services() {
                                             }}
                                             className="absolute inset-0 w-full h-[50%]"
                                             style={{
-                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
+                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)",
                                             }}
                                         />
                                     </motion.div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Very subtle base markers to dock the bars visually */}
-                        <div className="w-full flex justify-between gap-[24px] mt-3">
-                            {[...Array(6)].map((_, idx) => (
-                                <div key={idx} className="flex-1 flex justify-center">
-                                    <div className="w-4 h-1 rounded-full bg-white/[0.03]"></div>
+                                    <span className="mt-3 text-[10px] font-mono text-white/30 group-hover:text-white/60 transition-colors">
+                                        {item.label}
+                                    </span>
                                 </div>
                             ))}
                         </div>

@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import TrustLogos from './TrustLogos';
-
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-[#070707]">
