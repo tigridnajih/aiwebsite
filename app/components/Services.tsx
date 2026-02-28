@@ -173,10 +173,12 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[320px] bg-[#0B0F14] rounded-2xl border border-white/[0.06] overflow-hidden shadow-2xl flex items-center justify-center p-4">
+                <div className="relative w-full aspect-[4/3] bg-[#0d0d0d] rounded-[32px] border border-white/[0.06] overflow-hidden shadow-2xl p-6 md:p-10 flex items-center justify-center">
+                    {/* Background Subtle Gradient to match feature 1 */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(44,78,220,0.05),transparent)] pointer-events-none" />
 
                     {/* Inner Card Container */}
-                    <div className="relative w-full max-w-[500px] h-[320px] bg-[#0E1116] rounded-[20px] p-[40px] flex flex-col justify-between shadow-2xl"
+                    <div className="relative w-full max-w-[500px] h-[320px] bg-[#0E1116] rounded-[20px] p-[40px] flex flex-col justify-between shadow-2xl z-10"
                         style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)" }}>
 
                         {/* Top Action Ribbon - LIVE ANALYSIS Pill */}
