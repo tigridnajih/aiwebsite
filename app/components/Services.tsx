@@ -219,9 +219,9 @@ const SalesMarketingMockup = () => {
             return;
         }
 
-        const t0 = setTimeout(() => setStep(0), 150); // Customer Query Appears
-        const t1 = setTimeout(() => setStep(1), 900); // AI Starts Typing
-        const t2 = setTimeout(() => setStep(2), 2400); // AI Sends Message
+        const t0 = setTimeout(() => setStep(0), 10); // Immediate
+        const t1 = setTimeout(() => setStep(1), 800);
+        const t2 = setTimeout(() => setStep(2), 2400);
 
         return () => {
             clearTimeout(t0);
@@ -236,9 +236,10 @@ const SalesMarketingMockup = () => {
                 {step >= 0 && (
                     <motion.div
                         key="query"
-                        initial={{ opacity: 0, x: -20, y: 10 }}
-                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        initial={{ opacity: 0, x: -30, scale: 0.95 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 200, damping: 20 }}
                         className="space-y-2"
                     >
                         <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Customer Query</span>
@@ -252,9 +253,10 @@ const SalesMarketingMockup = () => {
                 {step >= 1 && (
                     <motion.div
                         key="response"
-                        initial={{ opacity: 0, x: 20, y: 10 }}
-                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        initial={{ opacity: 0, x: 30, scale: 0.95 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 200, damping: 20 }}
                         className="flex flex-col items-end space-y-2 mt-6"
                     >
                         <div className="flex items-center gap-2 mb-1 mr-1">
