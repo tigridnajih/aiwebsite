@@ -33,7 +33,7 @@ export default function Contact() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-4xl mx-auto bg-[#0A0A0A] border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl mb-20"
+                    className="max-w-4xl mx-auto bg-[#0A0A0A] border-2 border-[#385BFF] rounded-3xl p-8 md:p-12 shadow-2xl mb-20"
                 >
                     <form className="space-y-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
