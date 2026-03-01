@@ -47,9 +47,9 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
         className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12"
         style={{ top: `${80 + index * 40}px` }}
     >
-        <div className="flex flex-col md:flex-row min-h-[450px]">
+        <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Content Left */}
-            <div className="flex-1 p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex-1 p-6 md:p-10 flex flex-col justify-between">
                 <div>
                     <span className="text-zinc-500 font-mono text-sm tracking-widest block mb-6">// {c.id}</span>
                     <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">{c.title}</h3>
@@ -58,7 +58,7 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 md:mt-24">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8 md:mt-16">
                     {c.stats.map((stat, sIdx) => (
                         <div key={sIdx}>
                             <p className="text-zinc-500 text-xs md:text-sm font-medium mb-2 uppercase tracking-wider">{stat.label}</p>
@@ -74,16 +74,8 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
                     <img
                         src={c.image}
                         alt={c.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700"
                     />
-
-                    {/* Logo Placeholder like screenshot */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                        <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 flex items-center gap-3">
-                            <div className="w-8 h-8 bg-white rounded-lg" />
-                            <span className="text-white font-bold text-xl tracking-tight">Logoipsum</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
