@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MockupWindow = ({ children }: { children: React.ReactNode }) => (
-    <div className="w-full aspect-[16/11] bg-[#0f0f0f] rounded-xl border border-white/[0.05] overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
+    <div className="w-full aspect-[16/11] bg-[#0f0f0f] rounded-xl border-x border-t border-white/[0.05] overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
         <div className="h-5 md:h-6 bg-white/[0.02] flex items-center px-3 gap-1.5 border-b border-white/[0.05] shrink-0">
             <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
             <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
@@ -12,8 +12,8 @@ const MockupWindow = ({ children }: { children: React.ReactNode }) => (
         </div>
         <div className="flex-1 p-3 flex gap-3 relative overflow-hidden">
             {children}
-            {/* Smooth bottom-to-top black gradient mask */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-30" />
+            {/* Smooth bottom-to-top black gradient mask for the whole screen element */}
+            <div className="absolute inset-x-0 bottom-[-1px] h-2/3 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-30" />
         </div>
     </div>
 );
