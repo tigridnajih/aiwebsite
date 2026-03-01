@@ -113,7 +113,7 @@ export default function Contact() {
                         {/* Button and Info */}
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8">
                             <button
-                                className="bg-gradient-to-br from-[#385BFF] to-black hover:from-[#4D6CFF] hover:to-[#0A0C1A] text-white px-10 py-3.5 rounded-lg font-bold flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(56,91,255,0.3)] hover:shadow-[0_0_30px_rgba(56,91,255,0.5)]"
+                                className="px-10 py-3.5 rounded-full bg-white text-[#0A0F25] font-bold flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 hover:shadow-[0_0_30px_rgba(56,91,255,0.3)]"
                             >
                                 Submit <ArrowUpRight size={20} />
                             </button>
