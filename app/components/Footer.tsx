@@ -56,7 +56,7 @@ export default function Footer() {
                 </div>
 
                 {/* ✨ 4. Main CTA Block */}
-                <div className="container-custom flex flex-col items-center text-center pb-32">
+                <div className="container-custom flex flex-col items-center text-center pt-24 pb-32">
                     <h2 className="text-3xl md:text-5xl font-bold text-[#F2F5FF] mb-6 tracking-tight leading-tight max-w-2xl">
                         Your Business.<br />
                         Supercharged with AI.
