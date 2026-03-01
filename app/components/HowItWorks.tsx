@@ -19,7 +19,7 @@ const MockupWindow = ({ children }: { children: React.ReactNode }) => (
 const PhaseOneMockup = () => (
     <MockupWindow>
         <div className="flex-1 flex flex-col gap-2">
-            <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg border border-white/20 flex items-end justify-center gap-1.5 p-2 px-2 shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
+            <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg flex items-end justify-center gap-1.5 p-2 px-2 shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
                 {[40, 70, 45, 90, 60].map((h, i) => (
                     <motion.div
                         initial={{ height: "0%" }}
@@ -37,7 +37,7 @@ const PhaseOneMockup = () => (
                 <div className="w-5/6 h-1 bg-white rounded-full" />
             </div>
         </div>
-        <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg border border-white/20 flex items-center justify-center relative overflow-hidden">
+        <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg flex items-center justify-center relative overflow-hidden">
             <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
                 {/* Dynamic Radar Sweep */}
                 <motion.div
@@ -66,7 +66,7 @@ const PhaseOneMockup = () => (
 
 const PhaseTwoMockup = () => (
     <MockupWindow>
-        <div className="w-full h-full bg-gradient-to-br from-[#385BFF] to-black rounded-lg border border-white/20 relative overflow-hidden flex flex-col p-4 gap-3">
+        <div className="w-full h-full bg-gradient-to-br from-[#385BFF] to-black rounded-lg relative overflow-hidden flex flex-col p-4 gap-3">
             <div className="flex flex-col gap-2 relative z-10 w-full">
                 <motion.div
                     animate={{ y: [0, -100] }}
@@ -121,7 +121,7 @@ const PhaseThreeMockup = () => (
                 </div>
             ))}
         </div>
-        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg border border-white/20 p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
+        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
             <span className="text-white text-[8px] absolute top-2 left-2 uppercase tracking-wider font-bold">Status:</span>
 
             <div className="relative flex items-center justify-center w-8 h-8 mb-3 mt-2">
