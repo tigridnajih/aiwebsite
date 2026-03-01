@@ -186,16 +186,8 @@ export default function HowItWorks() {
                     className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10 pt-10"
                 >
                     {PHASES.map((phase, index) => (
-                        <motion.div
+                        <div
                             key={phase.number}
-                            initial={{ y: 50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: false, amount: 0.1 }}
-                            transition={{
-                                duration: 0.8,
-                                delay: index * 0.15,
-                                ease: [0.21, 0.45, 0.32, 0.9]
-                            }}
                             className="group relative flex flex-col items-start p-6 md:p-8 bg-black rounded-[2.5rem] border border-white/10 transition-all duration-300"
                         >
                             {/* Number Badge inside the card */}
@@ -205,9 +197,19 @@ export default function HowItWorks() {
                                 </span>
                             </div>
 
-                            <div className="relative z-10 w-full">
+                            <motion.div
+                                initial={{ y: 40, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}
+                                transition={{
+                                    duration: 0.8,
+                                    delay: index * 0.15,
+                                    ease: [0.21, 0.45, 0.32, 0.9]
+                                }}
+                                className="relative z-10 w-full"
+                            >
                                 {phase.mockup}
-                            </div>
+                            </motion.div>
 
                             <div className="relative z-10 w-full mt-6">
                                 {/* Title & Description */}
@@ -218,7 +220,7 @@ export default function HowItWorks() {
                                     {phase.description}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </motion.div>
             </div>
