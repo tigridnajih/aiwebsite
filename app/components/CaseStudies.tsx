@@ -44,7 +44,7 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 * index }}
-        className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12 hover:border-[#385BFF]/60 hover:shadow-[0_0_40px_rgba(56,91,255,0.15)] transition-all duration-500 group/card"
+        className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12 hover:border-[#385BFF]/60 transition-all duration-500 group/card"
         style={{ top: `${80 + index * 40}px` }}
     >
         <div className="flex flex-col md:flex-row min-h-[400px]">
