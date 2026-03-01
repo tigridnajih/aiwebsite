@@ -39,23 +39,26 @@ const PhaseOneMockup = () => (
         </div>
         <div className="flex-1 bg-gradient-to-br from-[#385BFF]/20 to-transparent rounded-lg border border-[#385BFF]/20 flex items-center justify-center relative overflow-hidden">
             <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                {/* Dynamic Radar Sweep */}
                 <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 rounded-full border border-white/20"
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 z-10"
+                    style={{
+                        background: "conic-gradient(from 0deg, transparent 0deg, #385BFF 360deg)",
+                        maskImage: "radial-gradient(circle, black 30%, transparent 70%)",
+                        WebkitMaskImage: "radial-gradient(circle, black 30%, transparent 70%)",
+                        opacity: 0.3
+                    }}
                 />
-                <div className="absolute inset-2 rounded-full border border-white/20" />
-                <div className="absolute inset-4 rounded-full border border-[#385BFF]" />
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full shadow-[0_0_10px_#fff]" />
-                <div className="absolute top-0 right-0 w-1/2 h-1/2 overflow-hidden">
-                    <motion.div
-                        initial={{ x: "100%", y: "-100%" }}
-                        whileInView={{ x: 0, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="w-full h-[2px] bg-gradient-to-r from-transparent to-white absolute top-1/2 left-0 -rotate-45 origin-left"
-                    />
-                </div>
+
+                {/* Fixed Circles */}
+                <div className="absolute inset-0 rounded-full border border-white/10" />
+                <div className="absolute inset-2 rounded-full border border-white/10" />
+                <div className="absolute inset-4 rounded-full border border-[#385BFF]/30" />
+
+                {/* Center Point */}
+                <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full shadow-[0_0_10px_#fff] z-20" />
             </div>
         </div>
     </MockupWindow>
@@ -63,17 +66,40 @@ const PhaseOneMockup = () => (
 
 const PhaseTwoMockup = () => (
     <MockupWindow>
-        <div className="w-full h-full bg-gradient-to-br from-[#385BFF]/10 via-transparent to-transparent rounded-lg border border-[#385BFF]/20 relative overflow-hidden flex items-center justify-center">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#385BFF]/20 blur-[30px] rounded-full translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 blur-[20px] rounded-full -translate-x-1/2 translate-y-1/2" />
+        <div className="w-full h-full bg-[#04060e] rounded-lg border border-[#385BFF]/20 relative overflow-hidden flex flex-col p-4 gap-3">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#385BFF]/10 blur-[30px] rounded-full translate-x-1/2 -translate-y-1/2" />
 
-            <div className="flex flex-col items-start gap-2 w-3/4 absolute top-4 left-4">
-                <motion.div initial={{ width: 0 }} whileInView={{ width: "60%" }} viewport={{ once: false }} transition={{ duration: 0.5 }} className="h-1.5 bg-[#385BFF] rounded-full opacity-80" />
-                <motion.div initial={{ width: 0 }} whileInView={{ width: "80%" }} viewport={{ once: false }} transition={{ duration: 0.5, delay: 0.1 }} className="h-1.5 bg-white/20 rounded-full" />
-                <motion.div initial={{ width: 0 }} whileInView={{ width: "40%" }} viewport={{ once: false }} transition={{ duration: 0.5, delay: 0.2 }} className="h-1.5 bg-white/20 rounded-full" />
-                <motion.div initial={{ width: 0 }} whileInView={{ width: "70%" }} viewport={{ once: false }} transition={{ duration: 0.5, delay: 0.3 }} className="h-1.5 bg-white/20 rounded-full mt-2" />
-                <motion.div initial={{ width: 0 }} whileInView={{ width: "50%" }} viewport={{ once: false }} transition={{ duration: 0.5, delay: 0.4 }} className="h-1.5 bg-white/20 rounded-full" />
+            <div className="flex flex-col gap-2 relative z-10 w-full">
+                <motion.div
+                    animate={{ y: [0, -100] }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="flex flex-col gap-4"
+                >
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="flex flex-col gap-2">
+                            <div className="flex gap-2">
+                                <div className="h-1.5 w-12 bg-[#385BFF] rounded-full opacity-60" />
+                                <div className="h-1.5 w-24 bg-white/10 rounded-full" />
+                            </div>
+                            <div className="flex gap-2 ml-4">
+                                <div className="h-1.5 w-32 bg-white/5 rounded-full" />
+                            </div>
+                            <div className="flex gap-2 ml-4">
+                                <div className="h-1.5 w-20 bg-white/5 rounded-full" />
+                                <div className="h-1.5 w-16 bg-[#385BFF]/20 rounded-full" />
+                            </div>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
+
+            {/* Fade Overlays */}
+            <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#04060e] to-transparent z-20" />
+            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#04060e] to-transparent z-20" />
         </div>
     </MockupWindow>
 );
