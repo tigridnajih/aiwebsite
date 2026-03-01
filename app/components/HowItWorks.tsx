@@ -162,7 +162,7 @@ export default function HowItWorks() {
                     {PHASES.map((phase) => (
                         <div
                             key={phase.number}
-                            className="group relative flex flex-col items-start p-6 md:p-8 bg-gradient-to-b from-black to-[#385BFF]/80 rounded-[2.5rem] mt-6 transition-all border border-[#385BFF]/20 shadow-[0_10px_40px_rgba(56,91,255,0.1)] duration-300"
+                            className="group relative flex flex-col items-start p-6 md:p-8 bg-gradient-to-b from-black to-[#385BFF]/80 rounded-[2.5rem] mt-6 transition-all shadow-[0_10px_40px_rgba(56,91,255,0.1)] duration-300"
                         >
                             {/* Number Badge floating at the absolute top boundary */}
                             <div className="absolute top-0 left-8 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)] z-30">
