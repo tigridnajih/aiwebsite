@@ -123,12 +123,22 @@ const PhaseThreeMockup = () => (
         <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)] overflow-hidden">
             <span className="text-white text-[8px] absolute top-2 left-2 uppercase tracking-wider font-bold">Status:</span>
 
-            <div className="flex flex-col items-center -mt-4 gap-3">
+            <div className="flex flex-col items-center -mt-4 gap-4">
                 <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-10 h-10 md:w-12 md:h-12 border border-dashed border-white/40 rounded-full"
-                />
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="w-10 h-10 md:w-12 md:h-12 relative flex items-center justify-center"
+                >
+                    {[...Array(8)].map((_, i) => (
+                        <div
+                            key={i}
+                            className="absolute w-1 h-1 bg-white/40 rounded-full"
+                            style={{
+                                transform: `rotate(${i * 45}deg) translateY(-16px)`
+                            }}
+                        />
+                    ))}
+                </motion.div>
                 <span className="text-white text-[9px] font-bold uppercase tracking-widest opacity-60">Updating:</span>
             </div>
         </div>
