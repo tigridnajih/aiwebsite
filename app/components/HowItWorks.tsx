@@ -42,7 +42,7 @@ const PhaseOneMockup = () => (
             </div>
         </div>
         <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg flex items-center justify-center relative overflow-hidden">
-            <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+            <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                 {/* Dynamic Radar Sweep */}
                 <motion.div
                     animate={{ rotate: 360 }}
@@ -56,13 +56,8 @@ const PhaseOneMockup = () => (
                     }}
                 />
 
-                {/* Fixed Circles */}
+                {/* Outer Circle only */}
                 <div className="absolute inset-0 rounded-full border border-white/30" />
-                <div className="absolute inset-2 rounded-full border border-white/30" />
-                <div className="absolute inset-4 rounded-full border border-white/50" />
-
-                {/* Center Point */}
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full z-20" />
             </div>
         </div>
     </MockupWindow>
