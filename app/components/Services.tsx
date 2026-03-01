@@ -54,10 +54,13 @@ const AutomationMockup = () => {
 
     const [visibleMessages, setVisibleMessages] = React.useState(messages.slice(0, 3));
     const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
-        if (!isInView) return;
+        if (!isInView) {
+            setVisibleMessages(messages.slice(0, 3));
+            return;
+        }
 
         const interval = setInterval(() => {
             setVisibleMessages((prev) => {
@@ -170,10 +173,13 @@ const AutomationMockup = () => {
 const SalesMarketingMockup = () => {
     const [step, setStep] = React.useState(0);
     const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
-        if (!isInView) return;
+        if (!isInView) {
+            setStep(0);
+            return;
+        }
 
         const timer = setInterval(() => {
             setStep((prev) => (prev + 1) % 4);
@@ -249,7 +255,7 @@ const CustomProjectsMockup = () => {
         { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", status: "Idle" }
     ]);
     const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
         if (!isInView) return;
