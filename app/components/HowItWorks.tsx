@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MockupWindow = ({ children }: { children: React.ReactNode }) => (
-    <div className="w-full aspect-[16/11] bg-black rounded-xl border-x border-t border-white/20 overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
+    <div className="w-full aspect-[16/11] bg-black rounded-xl border-x border-t border-[#111] overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
         <div className="h-5 md:h-7 bg-[#111111] flex items-center px-3 gap-1.5 shrink-0">
             <div className="w-2 h-2 rounded-full bg-[#FF5F56] shadow-[0_0_5px_rgba(255,95,86,0.3)]" />
             <div className="w-2 h-2 rounded-full bg-[#FFBD2E] shadow-[0_0_5px_rgba(255,189,46,0.3)]" />
