@@ -1,6 +1,6 @@
 export default function Stats() {
     return (
-        <section className="py-20 bg-accent text-white">
+        <section className="py-20 bg-black text-white">
             <div className="container-custom">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
                     <div className="px-4">
