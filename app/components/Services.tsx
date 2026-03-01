@@ -1,7 +1,37 @@
 'use client';
 import React from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useSpring, useTransform } from 'framer-motion';
 import SectionHeader from './SectionHeader';
+
+function CountUp({ value, suffix = "", once = false }: { value: number; suffix?: string; once?: boolean }) {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once, amount: 0.5 });
+
+    const springValue = useSpring(0, {
+        stiffness: 40,
+        damping: 20,
+        restDelta: 0.001
+    });
+
+    const displayValue = useTransform(springValue, (latest) =>
+        Math.floor(latest).toLocaleString()
+    );
+
+    React.useEffect(() => {
+        if (isInView) {
+            springValue.set(value);
+        } else if (!once) {
+            springValue.set(0);
+        }
+    }, [isInView, value, springValue, once]);
+
+    return (
+        <span ref={ref}>
+            <motion.span>{displayValue}</motion.span>
+            {suffix}
+        </span>
+    );
+}
 
 const AutomationMockup = () => {
     const messages = [
@@ -53,16 +83,22 @@ const AutomationMockup = () => {
     ];
 
     const [visibleMessages, setVisibleMessages] = React.useState(messages.slice(0, 3));
+    const [swapCount, setSwapCount] = React.useState(0);
     const containerRef = React.useRef(null);
     const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
         if (!isInView) {
             setVisibleMessages(messages.slice(0, 3));
+            setSwapCount(0);
             return;
         }
 
-        const interval = setInterval(() => {
+        if (swapCount >= 2) return; // Stop after exactly 2 swaps
+
+        const delay = swapCount === 0 ? 300 : 2500; // First swap is fast, second has a normal visual pause
+
+        const timer = setTimeout(() => {
             setVisibleMessages((prev) => {
                 const currentIndex = messages.findIndex(m => m.id === prev[0].id);
                 const nextStartIndex = (currentIndex + 1) % messages.length;
@@ -73,9 +109,11 @@ const AutomationMockup = () => {
                 }
                 return nextItems;
             });
-        }, 3000); // Slightly faster interval for more immediate feel
-        return () => clearInterval(interval);
-    }, [messages, isInView]);
+            setSwapCount(prev => prev + 1);
+        }, delay);
+
+        return () => clearTimeout(timer);
+    }, [messages, isInView, swapCount]);
 
     return (
         <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-center">
@@ -357,17 +395,11 @@ export default function Services() {
             imageSide: "right",
             mockup: (
                 <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-between">
-                    <div className="relative flex justify-between items-start z-10 w-full mb-4 px-4 pt-4">
-                        <div className="flex flex-col gap-2">
-                            <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
-                            <div className="w-[80px] h-[3px] bg-white/[0.05] rounded-full" />
-                        </div>
-                        <div className="w-[120px] h-[4px] bg-white/[0.1] rounded-full" />
-                    </div>
-
                     <div className="relative flex-1 mt-6 flex flex-col z-10 px-4">
-                        <div className="absolute top-0 left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center z-20">
-                            <span className="text-white text-sm md:text-base font-bold tracking-tight">87% +</span>
+                        <div className="absolute top-[-40px] left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center z-20">
+                            <span className="text-white text-sm md:text-base font-bold tracking-tight">
+                                <CountUp value={87} suffix="% +" />
+                            </span>
                         </div>
 
                         <div className="flex-1 w-full flex items-end justify-between gap-3 md:gap-5 pt-8 relative z-10">
