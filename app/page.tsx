@@ -20,9 +20,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PortfolioShowcase />
-      <Integrations />
-      <Services />
       <HowItWorks />
+      <Services />
+      <Integrations />
       <Testimonials />
       <Problem />
       <CaseStudies />
