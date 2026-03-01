@@ -4,11 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MockupWindow = ({ children }: { children: React.ReactNode }) => (
-    <div className="w-full aspect-[16/11] bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-        <div className="h-5 md:h-6 bg-white/[0.02] flex items-center px-3 gap-1.5 border-b border-white/10 shrink-0">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+    <div className="w-full aspect-[16/11] bg-black rounded-xl border-x border-t border-white/[0.05] overflow-hidden shadow-2xl flex flex-col relative z-20 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
+        <div className="h-5 md:h-6 bg-white/[0.02] flex items-center px-3 gap-1.5 border-b border-white/[0.05] shrink-0">
+            <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+            <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+            <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
         </div>
         <div className="flex-1 relative overflow-hidden">
             <div className="h-full p-3 flex gap-3">
