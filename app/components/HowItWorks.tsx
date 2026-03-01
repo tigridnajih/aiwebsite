@@ -31,7 +31,7 @@ const PhaseOneMockup = () => (
                         viewport={{ once: false, amount: 0.5 }}
                         transition={{ duration: 1, delay: i * 0.1 }}
                         key={i}
-                        className={`w-3 rounded-t-sm bg-white`}
+                        className={`w-3 rounded-t-sm bg-gradient-to-t from-black to-white`}
                     />
                 ))}
             </div>
