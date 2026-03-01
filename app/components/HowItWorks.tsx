@@ -23,7 +23,7 @@ const MockupWindow = ({ children }: { children: React.ReactNode }) => (
 const PhaseOneMockup = () => (
     <MockupWindow>
         <div className="flex-1 flex flex-col gap-2">
-            <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg flex items-end justify-center gap-1.5 p-2 px-2 shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
+            <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-[#0A0C1A] rounded-lg flex items-end justify-center gap-1.5 p-2 px-2 shadow-inner">
                 {[40, 70, 45, 90, 60].map((h, i) => (
                     <motion.div
                         initial={{ height: "0%" }}
@@ -41,7 +41,7 @@ const PhaseOneMockup = () => (
                 <div className="w-5/6 h-1 bg-white rounded-full" />
             </div>
         </div>
-        <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-black rounded-lg flex items-center justify-center relative overflow-hidden">
+        <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-[#0A0C1A] rounded-lg flex items-center justify-center relative overflow-hidden">
             <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                 {/* Dynamic Radar Sweep */}
                 <motion.div
@@ -65,7 +65,7 @@ const PhaseOneMockup = () => (
 
 const PhaseTwoMockup = () => (
     <MockupWindow>
-        <div className="w-full h-full bg-gradient-to-br from-[#385BFF] to-black rounded-lg relative overflow-hidden flex flex-col p-4 gap-3">
+        <div className="w-full h-full bg-gradient-to-br from-[#385BFF] to-[#0A0C1A] rounded-lg relative overflow-hidden flex flex-col p-4 gap-3">
             <div className="flex flex-col gap-2 relative z-10 w-full">
                 <motion.div
                     animate={{ y: [0, -100] }}
@@ -95,8 +95,9 @@ const PhaseTwoMockup = () => (
             </div>
 
             {/* Fade Overlays */}
-            <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#385BFF] to-transparent z-20" />
-            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#385BFF] to-transparent z-20" />
+            {/* Clean Fade Overlays */}
+            <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#111] to-transparent z-20 opacity-40" />
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#111] to-transparent z-20 opacity-40" />
         </div>
     </MockupWindow>
 );
@@ -120,7 +121,7 @@ const PhaseThreeMockup = () => (
                 </div>
             ))}
         </div>
-        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)] overflow-hidden">
+        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-[#0A0C1A] rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-inner overflow-hidden">
             <span className="text-white text-[8px] absolute top-2 left-2 uppercase tracking-wider font-bold">Status:</span>
 
             <div className="flex flex-col items-center -mt-4 gap-4">
