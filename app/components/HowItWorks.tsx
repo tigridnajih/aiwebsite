@@ -123,24 +123,14 @@ const PhaseThreeMockup = () => (
         <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)] overflow-hidden">
             <span className="text-white text-[8px] absolute top-2 left-2 uppercase tracking-wider font-bold">Status:</span>
 
-            <div className="relative flex items-center justify-center w-8 h-8 mb-3 mt-2">
-                <div className="absolute inset-0 border-2 border-white/20 rounded-full" />
+            <div className="flex flex-col items-center -mt-4 gap-3">
                 <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 border-2 border-transparent border-t-white rounded-full"
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="w-10 h-10 md:w-12 md:h-12 border border-dashed border-white/40 rounded-full"
                 />
+                <span className="text-white text-[9px] font-bold uppercase tracking-widest opacity-60">Updating:</span>
             </div>
-
-            <div className="w-[80%] bg-white/20 h-1 rounded-full overflow-hidden mt-1 relative">
-                <motion.div
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "100%" }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="h-full w-1/2 bg-white"
-                />
-            </div>
-            <span className="text-white text-[9px] mt-1.5 font-bold uppercase tracking-wider">Updating</span>
         </div>
     </MockupWindow>
 );
