@@ -75,7 +75,7 @@ const AutomationMockup = () => {
     }, [messages, isInView]);
 
     return (
-        <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-start">
+        <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-center">
             <AnimatePresence mode="popLayout" initial={false}>
                 {visibleMessages.map((msg, idx) => (
                     <motion.div
@@ -449,7 +449,7 @@ export default function Services() {
                             className={`flex flex-col gap-12 items-center ${feature.imageSide === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'
                                 }`}
                         >
-                            <div className="flex-1 space-y-6">
+                            <div className="flex-1 space-y-6 md:-translate-y-4">
                                 <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
                                     {feature.title}
                                 </h3>
