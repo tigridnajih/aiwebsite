@@ -302,6 +302,15 @@ const CustomProjectsMockup = () => {
             return;
         }
 
+        // Perform first swap immediately when in view
+        const firstSwap = setTimeout(() => {
+            setItems((prev) => {
+                const newItems = [...prev];
+                [newItems[1], newItems[2]] = [newItems[2], newItems[1]];
+                return newItems;
+            });
+        }, 100);
+
         const interval = setInterval(() => {
             setItems((prev) => {
                 const newItems = [...prev];
@@ -309,7 +318,10 @@ const CustomProjectsMockup = () => {
                 return newItems;
             });
         }, 2000);
-        return () => clearInterval(interval);
+        return () => {
+            clearTimeout(firstSwap);
+            clearInterval(interval);
+        };
     }, [isInView]);
 
     return (
@@ -353,10 +365,7 @@ const CustomProjectsMockup = () => {
                         </div>
                         <div className="flex flex-col items-end gap-1">
                             {i === 0 ? (
-                                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                                    <span className="text-[10px] font-bold text-white uppercase">Running</span>
-                                </div>
+                                <span className="text-sm font-bold text-white tracking-tight mr-2">Running</span>
                             ) : (
                                 <span className="text-xs text-white/40 font-bold tracking-tight">{item.name === "AirTable" ? "Syncing..." : item.name === "Zoom" ? "Standby" : ""}</span>
                             )}
