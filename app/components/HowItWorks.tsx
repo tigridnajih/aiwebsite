@@ -15,7 +15,7 @@ const MockupWindow = ({ children }: { children: React.ReactNode }) => (
                 {children}
             </div>
             {/* True linear black gradient overlay for the fade-to-black effect */}
-            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-30" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-30" />
         </div>
     </div>
 );
