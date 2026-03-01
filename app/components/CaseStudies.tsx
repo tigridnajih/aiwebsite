@@ -44,25 +44,25 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 * index }}
-        className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12"
+        className="sticky w-full bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/[0.05] shadow-2xl mb-12 hover:border-[#385BFF]/60 hover:shadow-[0_0_40px_rgba(56,91,255,0.15)] transition-all duration-500 group/card"
         style={{ top: `${80 + index * 40}px` }}
     >
         <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Content Left */}
             <div className="flex-1 p-6 md:p-10 flex flex-col justify-between">
                 <div>
-                    <span className="text-zinc-500 font-mono text-sm tracking-widest block mb-6">// {c.id}</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">{c.title}</h3>
-                    <p className="text-[#a1a1a1] text-lg md:text-xl leading-relaxed max-w-md">
+                    <span className="text-zinc-600 font-mono text-[10px] md:text-xs tracking-widest block mb-4">// {c.id}</span>
+                    <h3 className="text-2xl md:text-4xl font-bold text-white tracking-tight mb-4 group-hover/card:text-[#385BFF] transition-colors duration-500">{c.title}</h3>
+                    <p className="text-[#888888] text-base md:text-lg leading-relaxed max-w-md">
                         {c.description}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8 md:mt-16">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8 md:mt-16">
                     {c.stats.map((stat, sIdx) => (
                         <div key={sIdx}>
-                            <p className="text-zinc-500 text-xs md:text-sm font-medium mb-2 uppercase tracking-wider">{stat.label}</p>
-                            <p className="text-white text-2xl md:text-3xl font-bold">{stat.value}</p>
+                            <p className="text-zinc-500 text-[10px] md:text-xs font-medium mb-1 uppercase tracking-wider">{stat.label}</p>
+                            <p className="text-white text-xl md:text-2xl font-bold">{stat.value}</p>
                         </div>
                     ))}
                 </div>
