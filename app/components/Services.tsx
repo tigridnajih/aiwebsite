@@ -209,89 +209,83 @@ const AutomationMockup = () => {
 };
 
 const SalesMarketingMockup = () => {
-    const [step, setStep] = React.useState(0);
+    const [step, setStep] = React.useState(-1);
     const containerRef = React.useRef(null);
     const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
         if (!isInView) {
-            setStep(0);
+            setStep(-1);
             return;
         }
 
-        // Trigger the first response right after coming into view
-        const firstStep = setTimeout(() => {
-            setStep(1);
-        }, 400);
-
-        const timer = setInterval(() => {
-            setStep((prev) => {
-                // If we are at step 1 because of the firstStep, the next is 2
-                return (prev + 1) % 4;
-            });
-        }, 3000);
+        const t0 = setTimeout(() => setStep(0), 150); // Customer Query Appears
+        const t1 = setTimeout(() => setStep(1), 900); // AI Starts Typing
+        const t2 = setTimeout(() => setStep(2), 2400); // AI Sends Message
 
         return () => {
-            clearTimeout(firstStep);
-            clearInterval(timer);
+            clearTimeout(t0);
+            clearTimeout(t1);
+            clearTimeout(t2);
         };
     }, [isInView]);
 
     return (
-        <div ref={containerRef} className="w-full max-w-lg mx-auto space-y-6">
-            <AnimatePresence mode="wait">
+        <div ref={containerRef} className="w-full max-w-lg mx-auto space-y-6 min-h-[220px] flex flex-col justify-center">
+            <AnimatePresence>
                 {step >= 0 && (
-                    <div className="space-y-6">
-                        {/* Customer Query */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="space-y-2"
-                        >
-                            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Customer Query</span>
-                            <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 rounded-tl-none max-w-[85%]">
-                                <p className="text-sm text-zinc-300">"What are your business hours and do you offer enterprise pricing?"</p>
-                            </div>
-                        </motion.div>
+                    <motion.div
+                        key="query"
+                        initial={{ opacity: 0, x: -20, y: 10 }}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-2"
+                    >
+                        <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Customer Query</span>
+                        <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 rounded-tl-none max-w-[85%]">
+                            <p className="text-sm text-zinc-300">"What are your business hours and do you offer enterprise pricing?"</p>
+                        </div>
+                    </motion.div>
+                )}
 
-                        {/* AI Response Bubble */}
-                        {step >= 1 && (
+                {/* AI Response Bubble */}
+                {step >= 1 && (
+                    <motion.div
+                        key="response"
+                        initial={{ opacity: 0, x: 20, y: 10 }}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        className="flex flex-col items-end space-y-2 mt-6"
+                    >
+                        <div className="flex items-center gap-2 mb-1 mr-1">
+                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center p-1">
+                                <div className="w-full h-full rounded-full bg-white/20 animate-pulse" />
+                            </div>
+                            <span className="text-[10px] uppercase tracking-widest text-[#3B5BFF] font-bold">AI Assistant</span>
+                        </div>
+                        <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none max-w-[90%]">
+                            {step === 1 ? (
+                                <div className="flex gap-1 py-1">
+                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
+                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:0.8s]" />
+                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:0.8s]" />
+                                </div>
+                            ) : (
+                                <p className="text-sm text-white font-medium italic">
+                                    "We operate 24/7! I've attached our customized enterprise tier proposal based on your current scale."
+                                </p>
+                            )}
+                        </div>
+                        {step >= 2 && (
                             <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                className="flex flex-col items-end space-y-2"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-[10px] text-zinc-500 italic font-medium mr-1"
                             >
-                                <div className="flex items-center gap-2 mb-1 mr-1">
-                                    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center p-1">
-                                        <div className="w-full h-full rounded-full bg-white/20 animate-pulse" />
-                                    </div>
-                                    <span className="text-[10px] uppercase tracking-widest text-[#3B5BFF] font-bold">AI Assistant</span>
-                                </div>
-                                <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none max-w-[90%]">
-                                    {step === 1 ? (
-                                        <div className="flex gap-1 py-1">
-                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
-                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:0.8s]" />
-                                            <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:0.8s]" />
-                                        </div>
-                                    ) : (
-                                        <p className="text-sm text-white font-medium italic">
-                                            "We operate 24/7! I've attached our customized enterprise tier proposal based on your current scale."
-                                        </p>
-                                    )}
-                                </div>
-                                {step >= 2 && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        className="text-[10px] text-zinc-500 italic font-medium mr-1"
-                                    >
-                                        Automated Response • Sent via Email
-                                    </motion.div>
-                                )}
+                                Automated Response • Sent via Email
                             </motion.div>
                         )}
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </div>
