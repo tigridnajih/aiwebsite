@@ -73,7 +73,7 @@ const AutomationMockup = () => {
                 }
                 return nextItems;
             });
-        }, 3500);
+        }, 3000); // Slightly faster interval for more immediate feel
         return () => clearInterval(interval);
     }, [messages, isInView]);
 
@@ -249,16 +249,20 @@ const SalesMarketingMockup = () => {
 };
 
 const CustomProjectsMockup = () => {
-    const [items, setItems] = React.useState([
+    const initialItems = [
         { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", status: "Active" },
         { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", status: "Syncing..." },
         { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", status: "Idle" }
-    ]);
+    ];
+    const [items, setItems] = React.useState(initialItems);
     const containerRef = React.useRef(null);
     const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
     React.useEffect(() => {
-        if (!isInView) return;
+        if (!isInView) {
+            setItems(initialItems);
+            return;
+        }
 
         const interval = setInterval(() => {
             setItems((prev) => {
