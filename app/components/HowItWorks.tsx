@@ -113,7 +113,7 @@ const PhaseThreeMockup = () => (
                 { label: 'Speed', active: false },
                 { label: 'Accuracy', active: false }
             ].map((item, i) => (
-                <div key={item.label} className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-[10px] font-medium transition-colors ${item.active ? 'bg-[#385BFF] border border-white/30 text-white' : 'text-white/40 bg-white/5 border border-transparent'}`}>
+                <div key={item.label} className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-[10px] font-medium transition-colors ${item.active ? 'bg-[#385BFF] text-white shadow-[0_0_15px_rgba(56,91,255,0.4)]' : 'text-white/40 bg-white/5'}`}>
                     {item.active ? (
                         <div className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
                     ) : (
@@ -123,7 +123,7 @@ const PhaseThreeMockup = () => (
                 </div>
             ))}
         </div>
-        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)]">
+        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-black rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-[inset_0_0_15px_rgba(255,255,255,0.1)] overflow-hidden">
             <span className="text-white text-[8px] absolute top-2 left-2 uppercase tracking-wider font-bold">Status:</span>
 
             <div className="relative flex items-center justify-center w-8 h-8 mb-3 mt-2">
