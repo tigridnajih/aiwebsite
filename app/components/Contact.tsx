@@ -43,7 +43,7 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     placeholder="David Johnson"
-                                    className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
+                                    className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
                                 />
                             </div>
                             {/* Email */}
@@ -52,7 +52,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     placeholder="example@mail.com"
-                                    className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
+                                    className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
                                 />
                             </div>
                         </div>
@@ -63,7 +63,7 @@ export default function Contact() {
                             <input
                                 type="text"
                                 placeholder="Ex. StaticMania"
-                                className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
+                                className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 placeholder:text-gray-700 text-white"
                             />
                         </div>
 
@@ -72,7 +72,7 @@ export default function Contact() {
                             <div className="space-y-3">
                                 <label className="text-sm font-semibold text-white/90 tracking-wide block uppercase">Select Service *</label>
                                 <div className="relative">
-                                    <select className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 appearance-none text-gray-500 cursor-pointer">
+                                    <select className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 appearance-none text-gray-500 cursor-pointer">
                                         <option className="bg-[#0A0A0A]">Select Your Service</option>
                                         <option className="bg-[#0A0A0A]">Bot Implementation</option>
                                         <option className="bg-[#0A0A0A]">Automation Workflow</option>
@@ -87,7 +87,7 @@ export default function Contact() {
                             <div className="space-y-3">
                                 <label className="text-sm font-semibold text-white/90 tracking-wide block uppercase">Project Budget *</label>
                                 <div className="relative">
-                                    <select className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 appearance-none text-gray-500 cursor-pointer">
+                                    <select className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 appearance-none text-gray-500 cursor-pointer">
                                         <option className="bg-[#0A0A0A]">Select Your Range</option>
                                         <option className="bg-[#0A0A0A]">$1,000 - $5,000</option>
                                         <option className="bg-[#0A0A0A]">$5,000 - $20,000</option>
@@ -106,14 +106,14 @@ export default function Contact() {
                             <textarea
                                 placeholder="Tell us more about your project"
                                 rows={2}
-                                className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#F59E0B] outline-none transition-all duration-300 placeholder:text-gray-700 text-white resize-none"
+                                className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#385BFF] outline-none transition-all duration-300 placeholder:text-gray-700 text-white resize-none"
                             />
                         </div>
 
                         {/* Button and Info */}
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8">
                             <button
-                                className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-10 py-3.5 rounded-lg font-bold flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/10"
+                                className="bg-gradient-to-br from-[#385BFF] to-black hover:from-[#4D6CFF] hover:to-[#0A0C1A] text-white px-10 py-3.5 rounded-lg font-bold flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(56,91,255,0.3)] hover:shadow-[0_0_30px_rgba(56,91,255,0.5)]"
                             >
                                 Submit <ArrowUpRight size={20} />
                             </button>
