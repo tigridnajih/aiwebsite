@@ -219,10 +219,22 @@ const SalesMarketingMockup = () => {
             return;
         }
 
+        // Trigger the first response right after coming into view
+        const firstStep = setTimeout(() => {
+            setStep(1);
+        }, 400);
+
         const timer = setInterval(() => {
-            setStep((prev) => (prev + 1) % 4);
+            setStep((prev) => {
+                // If we are at step 1 because of the firstStep, the next is 2
+                return (prev + 1) % 4;
+            });
         }, 3000);
-        return () => clearInterval(timer);
+
+        return () => {
+            clearTimeout(firstStep);
+            clearInterval(timer);
+        };
     }, [isInView]);
 
     return (
@@ -464,7 +476,6 @@ export default function Services() {
 
                     {/* Background Decorative Elements to match Card 1/2 */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#3B5BFF]/5 blur-[60px] rounded-full" />
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 blur-[40px] rounded-full" />
                 </div>
             )
         },
