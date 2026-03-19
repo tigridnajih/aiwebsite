@@ -19,8 +19,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bima | AI Automation Agency",
-  description: "Scale your agency with intelligent automation. We build custom AI solutions to save time and increase revenue.",
+  title: "Tigrid | Premium AI Automation Agency",
+  description: "Transform your business with intelligent AI automation. We build high-performance systems that save time, reduce costs, and accelerate growth.",
 };
 
 export default function RootLayout({

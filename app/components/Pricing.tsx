@@ -34,7 +34,7 @@ export default function Pricing() {
     const [isYearly, setIsYearly] = useState(false);
 
     return (
-        <section id="pricing" className="py-24 bg-[##070707]">
+        <section id="pricing" className="py-24 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Pricing"
@@ -44,18 +44,18 @@ export default function Pricing() {
 
                 <div className="text-center mb-16">
                     {/* Toggle */}
-                    <div className="inline-flex items-center p-1 bg-gray-100 rounded-full dark:bg-zinc-800">
+                    <div className="inline-flex items-center p-1 bg-slate-100 rounded-full">
                         <button
                             onClick={() => setIsYearly(false)}
-                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${!isYearly ? 'bg-white shadow text-black dark:bg-zinc-700 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${!isYearly ? 'bg-white shadow-md text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
                         >
                             Monthly
                         </button>
                         <button
                             onClick={() => setIsYearly(true)}
-                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${isYearly ? 'bg-white shadow text-black dark:bg-zinc-700 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${isYearly ? 'bg-white shadow-md text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
                         >
-                            Yearly <span className="text-green-500 text-xs ml-1">-20%</span>
+                            Yearly <span className="text-green-600 text-xs ml-1">-20%</span>
                         </button>
                     </div>
                 </div>
@@ -64,31 +64,36 @@ export default function Pricing() {
                     {plans.map((p, idx) => (
                         <div
                             key={idx}
-                            className={`relative p-8 rounded-2xl border ${p.popular ? 'border-accent shadow-2xl scale-105 z-10 bg-white ring-2 ring-accent/20 dark:bg-[#0d0d0d] shadow-[0_20px_50px_rgba(0,0,0,0.6)]' : 'border-gray-200 bg-white hover:border-accent/50 dark:bg-[#0d0d0d] shadow-[0_20px_50px_rgba(0,0,0,0.6)] dark:border-white/[0.06]'} transition-all duration-300`}
+                            className={`relative p-8 rounded-2xl border ${p.popular ? 'border-accent shadow-2xl scale-105 z-10 bg-white ring-4 ring-accent/5' : 'border-slate-200 bg-white hover:border-accent/40 shadow-xl shadow-slate-200/50'} transition-all duration-300`}
                         >
+                            {p.popular && (
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                    Most Popular
+                                </div>
+                            )}
 
-                            <h3 className="text-xl font-bold mb-2">{p.name}</h3>
+                            <h3 className="text-xl font-bold mb-2 text-slate-900">{p.name}</h3>
                             <div className="flex items-baseline gap-1 mb-6">
-                                <span className="text-4xl font-extrabold">
+                                <span className="text-4xl font-extrabold text-slate-900">
                                     {isYearly && typeof p.priceYearly === 'number'
                                         ? `$${Math.floor(p.priceYearly / 12)}`
                                         : typeof p.priceMonthly === 'number'
                                             ? `$${p.priceMonthly}`
                                             : p.priceMonthly}
                                 </span>
-                                {typeof p.priceMonthly === 'number' && <span className="text-gray-500">/mo</span>}
+                                {typeof p.priceMonthly === 'number' && <span className="text-slate-500">/mo</span>}
                             </div>
 
                             <ul className="space-y-4 mb-8">
                                 {p.features.map((f, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                    <li key={i} className="flex items-center gap-3 text-sm text-slate-600">
                                         <Check className="w-5 h-5 text-accent flex-shrink-0" />
                                         {f}
                                     </li>
                                 ))}
                             </ul>
 
-                            <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${p.popular ? 'bg-accent text-white hover:bg-accent/90' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700'}`}>
+                            <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${p.popular ? 'bg-accent text-white hover:bg-accent/90 shadow-lg shadow-accent/20' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
                                 {p.cta}
                             </button>
                         </div>

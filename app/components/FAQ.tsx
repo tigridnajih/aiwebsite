@@ -26,7 +26,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 bg-[##070707]">
+        <section className="py-20 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Support"
@@ -34,24 +34,24 @@ export default function FAQ() {
                     description="Everything you need to know about our AI implementation process and security."
                 />
 
-                <div className="space-y-4">
+                <div className="space-y-4 max-w-4xl mx-auto">
                     {faq.map((item, idx) => (
                         <div
                             key={idx}
-                            className="bg-white rounded-xl border border-gray-100 overflow-hidden dark:bg-[#0d0d0d] dark:border-white/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+                            className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between p-6 text-left font-semibold text-lg hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
+                                className="w-full flex items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors text-slate-900"
                             >
                                 {item.question}
-                                {openIndex === idx ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+                                {openIndex === idx ? <ChevronUp className="w-5 h-5 text-accent" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
                             </button>
 
                             <div
                                 className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
                             >
-                                <p className="text-gray-600 dark:text-gray-400">{item.answer}</p>
+                                <p className="text-slate-600 leading-relaxed font-medium">{item.answer}</p>
                             </div>
                         </div>
                     ))}

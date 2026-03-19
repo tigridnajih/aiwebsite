@@ -26,7 +26,7 @@ const problems = [
 
 export default function Problem() {
     return (
-        <section id="about" className="py-20 bg-[##070707]">
+        <section id="about" className="py-20 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="The Bottleneck"
@@ -36,13 +36,13 @@ export default function Problem() {
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {problems.map((p, idx) => (
-                        <div key={idx} className="flex gap-6 p-6 rounded-xl hover:bg-gray-50 transition-colors dark:hover:bg-[#0d0d0d] border border-transparent hover:border-gray-100 dark:hover:border-white/[0.06] hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-                            <div className="w-12 h-12 flex-shrink-0 rounded-lg bg-red-50 text-red-500 flex items-center justify-center dark:bg-red-900/20">
-                                <p.icon className="w-6 h-6" />
+                        <div key={idx} className="flex gap-6 p-8 rounded-2xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl shadow-slate-200/50 transition-all duration-300 group">
+                            <div className="w-14 h-14 flex-shrink-0 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center transition-transform group-hover:scale-110">
+                                <p.icon className="w-7 h-7" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <h3 className="text-xl font-bold mb-2 text-slate-900">{p.title}</h3>
+                                <p className="text-slate-600 leading-relaxed font-medium">
                                     {p.description}
                                 </p>
                             </div>

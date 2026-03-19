@@ -38,7 +38,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="py-20 bg-[##070707]">
+        <section className="py-20 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Testimonials"
@@ -54,18 +54,20 @@ export default function Testimonials() {
                         >
                             {testimonials.map((t) => (
                                 <div key={t.id} className="w-full flex-shrink-0 px-4">
-                                    <div className="bg-white p-8 md:p-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-gray-100 dark:bg-[#0d0d0d] dark:border-white/[0.06]">
-                                        <Quote className="w-12 h-12 text-accent/20 mb-6" />
-                                        <p className="text-xl md:text-2xl font-medium mb-8 leading-relaxed">&quot;{t.quote}&quot;</p>
+                                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
+                                        <Quote className="w-12 h-12 text-accent/10 mb-6" />
+                                        <p className="text-xl md:text-2xl font-bold mb-8 leading-relaxed text-slate-900 italic">&ldquo;{t.quote}&rdquo;</p>
                                         <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 bg-gray-200 rounded-full" /> {/* Avatar Placeholder */}
+                                            <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-accent font-bold text-xl">
+                                                {t.author.charAt(0)}
+                                            </div>
                                             <div>
-                                                <h4 className="font-bold text-lg">{t.author}</h4>
-                                                <p className="text-sm text-gray-500">{t.role}</p>
+                                                <h4 className="font-bold text-lg text-slate-900">{t.author}</h4>
+                                                <p className="text-sm text-slate-500 font-medium">{t.role}</p>
                                             </div>
                                             <div className="ml-auto flex gap-1">
                                                 {[...Array(t.rating)].map((_, i) => (
-                                                    <span key={i} className="text-yellow-400">★</span>
+                                                    <span key={i} className="text-yellow-400 text-lg">★</span>
                                                 ))}
                                             </div>
                                         </div>
@@ -76,16 +78,16 @@ export default function Testimonials() {
                     </div>
 
                     {/* Controls */}
-                    <div className="flex justify-center gap-4 mt-8">
+                    <div className="flex justify-center gap-4 mt-12">
                         <button
                             onClick={() => setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                            className="p-3 rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors dark:bg-zinc-800 dark:border-zinc-700"
+                            className="p-4 rounded-full bg-white border border-slate-200 hover:bg-slate-50 transition-all hover:scale-110 active:scale-95 shadow-sm text-slate-900"
                         >
                             <ArrowLeft className="w-5 h-5" />
                         </button>
                         <button
                             onClick={() => setCurrent((prev) => (prev + 1) % testimonials.length)}
-                            className="p-3 rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors dark:bg-zinc-800 dark:border-zinc-700"
+                            className="p-4 rounded-full bg-white border border-slate-200 hover:bg-slate-50 transition-all hover:scale-110 active:scale-95 shadow-sm text-slate-900"
                         >
                             <ArrowRight className="w-5 h-5" />
                         </button>
