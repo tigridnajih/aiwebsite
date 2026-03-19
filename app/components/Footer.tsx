@@ -5,18 +5,60 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
+<<<<<<< HEAD
         <footer className="relative w-full overflow-hidden bg-white text-slate-900 pt-16 pb-12 border-t border-slate-100">
             <div className="container-custom">
                 {/* 🎭 2. Large Moving Text Section */}
                 <div
                     className="relative w-full mb-24 overflow-hidden"
+=======
+        <footer className="relative w-full overflow-hidden bg-black text-white pt-0 pb-2 border-t border-white/[0.03]">
+            {/* 🌌 Atmospheric Background System */}
+            <div className="absolute inset-0 z-0">
+                {/* 🌊 Linear Blue Gradient: #385BFF top to black bottom */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'linear-gradient(to bottom, #385BFF 0%, #000000 100%)'
+                    }}
+                />
+
+                {/* 🌠 Atmospheric Dust: Extremely low-opacity floating particles */}
+                <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+                    {[...Array(12)].map((_, i) => (
+                        <div
+                            key={i}
+                            className="absolute bg-blue-100 rounded-full animate-pulse"
+                            style={{
+                                width: Math.random() * 1.5 + 'px',
+                                height: Math.random() * 1.5 + 'px',
+                                top: Math.random() * 100 + '%',
+                                left: Math.random() * 100 + '%',
+                                animationDuration: (Math.random() * 4 + 3) + 's',
+                                opacity: Math.random() * 0.3 + 0.1
+                            }}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <div className="relative z-10">
+                {/* 🧠 2. Large Moving Text Section + 🎭 3. Edge Masking */}
+                <div
+                    className="relative w-full pt-0 overflow-hidden"
+>>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                     style={{
                         maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
                     }}
                 >
+<<<<<<< HEAD
                     <div className="flex whitespace-nowrap overflow-hidden py-4">
                         <div className="flex animate-infinite-scroll-slow-extremely">
+=======
+                    <div className="flex whitespace-nowrap overflow-hidden pt-4 pb-12">
+                        <div className="flex w-max animate-infinite-scroll-slow-extremely pause-on-hover">
+>>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                             {[1, 2].map((group) => (
                                 <h1 key={group} className="text-[65px] md:text-[110px] font-bold tracking-tighter text-slate-100 px-10 leading-none select-none">
                                     Better systems. Fewer people. Higher margins.
@@ -27,8 +69,13 @@ export default function Footer() {
                 </div>
 
                 {/* ✨ 4. Main CTA Block */}
+<<<<<<< HEAD
                 <div className="flex flex-col items-center text-center pb-32">
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight max-w-2xl">
+=======
+                <div className="container-custom flex flex-col items-center text-center pt-24 pb-32">
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#F2F5FF] mb-6 tracking-tight leading-tight max-w-2xl">
+>>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                         Your Business.<br />
                         Supercharged with AI.
                     </h2>

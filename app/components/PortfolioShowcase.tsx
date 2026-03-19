@@ -38,32 +38,36 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-12 bg-[##070707] overflow-hidden relative">
+        <section className="pt-0 pb-12 bg-[#070707] overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, ##070707 15%, ##070707 85%, transparent 100%)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)'
                 }}
             >
                 {/* Scrolling Container */}
-                <div className="flex animate-infinite-scroll-right gap-6 whitespace-nowrap py-8">
+                <div
+                    className="flex w-max animate-infinite-scroll-right py-8 [animation-duration:12s] md:[animation-duration:25s]"
+                >
                     {allProjects.map((project, idx) => (
-                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0">
-                            {/* Image with Refined Minimal Border and Depth Shadow */}
+                        <div key={idx} className="flex flex-col gap-3 flex-shrink-0 pr-6">
+                            {/* Image with Refined Animated Border and Depth Shadow */}
                             <div
-                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden bg-[#0d0d0d]"
+                                className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden"
                                 style={{
-                                    border: '1px solid rgba(255, 255, 255, 0.06)',
-                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
+                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
                                 }}
                             >
-                                <img
-                                    src={project.url}
-                                    alt={project.title}
-                                    className="h-full w-auto object-contain"
-                                />
+                                {/* Image Container */}
+                                <div className="relative h-full w-full bg-[#0d0d0d]">
+                                    <img
+                                        src={project.url}
+                                        alt={project.title}
+                                        className="h-full w-auto object-contain"
+                                    />
+                                </div>
                             </div>
 
                             {/* Caption Text Below Image - Styled to match reference */}
