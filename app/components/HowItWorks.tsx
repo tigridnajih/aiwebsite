@@ -10,121 +10,157 @@ const MockupWindow = ({ children }: { children: React.ReactNode }) => (
             <div className="w-2 h-2 rounded-full bg-[#FFBD2E] shadow-sm" />
             <div className="w-2 h-2 rounded-full bg-[#27C93F] shadow-sm" />
         </div>
-        <div className="flex-1 relative overflow-hidden bg-slate-50/30">
-            <div className="h-full p-3 flex gap-3">
+        <div className="flex-1 relative overflow-hidden bg-white">
+            <div className="h-full p-4 flex items-center justify-center">
                 {children}
             </div>
-            {/* Smooth white gradient overlay */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none z-30" />
         </div>
     </div>
 );
 
 const PhaseOneMockup = () => (
-    <MockupWindow>
-        <div className="flex-1 flex flex-col gap-2">
-            <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-[#1E3A8A] rounded-lg flex items-end justify-center gap-1.5 p-2 px-2 shadow-inner">
-                {[40, 70, 45, 90, 60].map((h, i) => (
-                    <motion.div
-                        initial={{ height: "0%" }}
-                        whileInView={{ height: `${h}%` }}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ duration: 1, delay: i * 0.1 }}
-                        key={i}
-                        className={`w-3 rounded-t-sm bg-gradient-to-t from-white/20 to-white`}
-                    />
-                ))}
+    <div className="w-full">
+        <MockupWindow>
+            <div className="w-full h-full relative flex flex-col justify-end p-2 md:p-4">
+                {/* Horizontal Grid Lines */}
+                <div className="absolute inset-0 flex flex-col justify-between py-6 px-4 md:px-8">
+                    {[500, 400, 300, 200, 100, 0].map((v) => (
+                        <div key={v} className="w-full flex items-center gap-2">
+                            <span className="text-[8px] md:text-[10px] text-slate-400 font-bold w-6">$ {v}K</span>
+                            <div className="flex-1 h-[1px] bg-slate-100" />
+                        </div>
+                    ))}
+                </div>
+                
+                <div className="relative z-10 flex items-end justify-center gap-4 md:gap-8 h-full pt-12 pb-4">
+                    {/* Bar 1 */}
+                    <div className="flex flex-col items-center flex-1 max-w-[60px]">
+                        <motion.div 
+                            initial={{ height: 0 }}
+                            whileInView={{ height: '60%' }}
+                            transition={{ duration: 1, ease: "circOut" }}
+                            className="w-full bg-gradient-to-t from-blue-50/50 via-blue-100 to-blue-200 rounded-lg shadow-inner ring-1 ring-blue-100/50"
+                        />
+                        <span className="text-[7px] md:text-[9px] text-slate-500 font-bold tracking-tighter uppercase mt-2">&lt; 1 year</span>
+                    </div>
+                    
+                    {/* Bar 2 (3D Main) */}
+                    <div className="flex flex-col items-center flex-1 max-w-[60px]">
+                        <motion.div 
+                            initial={{ height: 0 }}
+                            whileInView={{ height: '95%' }}
+                            transition={{ duration: 1, delay: 0.2, ease: "circOut" }}
+                            className="w-full bg-gradient-to-t from-[#2563EB] to-[#3B5BFF] rounded-lg shadow-[8px_-8px_25px_rgba(59,91,255,0.25)] relative overflow-hidden ring-1 ring-blue-400/20"
+                        >
+                            <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white/20 to-transparent" />
+                            <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black/10 to-transparent" />
+                        </motion.div>
+                        <span className="text-[7px] md:text-[9px] text-slate-900 font-black tracking-tighter uppercase mt-2">1-3 years</span>
+                    </div>
+                    
+                    {/* Bar 3 */}
+                    <div className="flex flex-col items-center flex-1 max-w-[60px]">
+                        <motion.div 
+                            initial={{ height: 0 }}
+                            whileInView={{ height: '40%' }}
+                            transition={{ duration: 1, delay: 0.4, ease: "circOut" }}
+                            className="w-full bg-gradient-to-t from-blue-50/50 via-blue-100 to-blue-200 rounded-lg shadow-inner ring-1 ring-blue-100/50"
+                        />
+                        <span className="text-[7px] md:text-[9px] text-slate-500 font-bold tracking-tighter uppercase mt-2">&gt; 3 years</span>
+                    </div>
+                </div>
             </div>
-            <div className="h-8 md:h-10 bg-white/20 rounded-lg border border-white/10 p-2 flex flex-col gap-1.5 justify-center">
-                <div className="w-full h-1 bg-white rounded-full" />
-                <div className="w-3/4 h-1 bg-white rounded-full" />
-            </div>
-        </div>
-        <div className="flex-1 bg-gradient-to-br from-[#385BFF] to-[#1E3A8A] rounded-lg flex items-center justify-center relative overflow-hidden">
-            <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
-                <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 z-10"
-                    style={{
-                        background: "conic-gradient(from 0deg, transparent 0deg, white 360deg)",
-                        maskImage: "radial-gradient(circle, black 30%, transparent 70%)",
-                        WebkitMaskImage: "radial-gradient(circle, black 30%, transparent 70%)",
-                        opacity: 0.3
-                    }}
-                />
-                <div className="absolute inset-0 rounded-full border border-white/30" />
-            </div>
-        </div>
-    </MockupWindow>
+        </MockupWindow>
+    </div>
 );
 
 const PhaseTwoMockup = () => (
-    <MockupWindow>
-        <div className="w-full h-full bg-gradient-to-br from-[#385BFF] to-[#1E3A8A] rounded-lg relative overflow-hidden flex flex-col p-4 gap-3">
-            <div className="flex flex-col gap-2 relative z-10 w-full">
-                <motion.div
-                    animate={{ y: [0, -100] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    className="flex flex-col gap-4"
-                >
-                    {[...Array(6)].map((_, i) => (
-                        <div key={i} className="flex flex-col gap-2">
-                            <div className="flex gap-2">
-                                <div className="h-1.5 w-12 bg-white rounded-full" />
-                                <div className="h-1.5 w-24 bg-white/40 rounded-full" />
-                            </div>
-                            <div className="flex gap-2 ml-4">
-                                <div className="h-1.5 w-32 bg-white/20 rounded-full" />
-                            </div>
-                        </div>
-                    ))}
-                </motion.div>
+    <div className="w-full">
+        <MockupWindow>
+            <div className="w-full h-full flex flex-col items-center justify-center relative pt-4">
+                <div className="relative w-40 h-20 md:w-56 md:h-28 overflow-hidden">
+                    {/* Gauge SVG for 3D accuracy */}
+                    <svg className="w-full h-full" viewBox="0 0 200 100">
+                        {/* Shadow path */}
+                        <path 
+                            d="M 20 100 A 80 80 0 0 1 180 100" 
+                            fill="none" 
+                            stroke="rgba(0,0,0,0.02)" 
+                            strokeWidth="32" 
+                            strokeLinecap="round" 
+                            style={{ transform: 'translateY(4px)' }}
+                        />
+                        {/* Background Arc */}
+                        <path 
+                            d="M 20 100 A 80 80 0 0 1 180 100" 
+                            fill="none" 
+                            stroke="#EFF6FF" 
+                            strokeWidth="28" 
+                            strokeLinecap="round" 
+                        />
+                        {/* Progress Arc */}
+                        <motion.path 
+                            d="M 20 100 A 80 80 0 0 1 180 100" 
+                            fill="none" 
+                            stroke="url(#gauge-grad)" 
+                            strokeWidth="28" 
+                            strokeLinecap="round" 
+                            initial={{ pathLength: 0 }}
+                            whileInView={{ pathLength: 0.8 }}
+                            transition={{ duration: 1.5, ease: "circOut" }}
+                        />
+                        <defs>
+                            <linearGradient id="gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#3B5BFF" />
+                                <stop offset="100%" stopColor="#2563EB" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    
+                    {/* Core Centered Text */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.8 }}
+                        className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center p-0"
+                    >
+                        <span className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter drop-shadow-sm leading-none">80%</span>
+                    </motion.div>
+                </div>
             </div>
-            <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-blue-900/40 to-transparent z-20 opacity-40" />
-            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-blue-900/40 to-transparent z-20 opacity-40" />
-        </div>
-    </MockupWindow>
+        </MockupWindow>
+    </div>
 );
 
-const PhaseThreeMockup = () => (
-    <MockupWindow>
-        <div className="w-1/2 flex flex-col justify-center gap-1.5 pr-1">
-            {[
-                { label: 'Security', active: false },
-                { label: 'Efficiency', active: true },
-                { label: 'Speed', active: false },
-                { label: 'Accuracy', active: false }
-            ].map((item, i) => (
-                <div key={item.label} className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-[10px] font-medium transition-colors ${item.active ? 'bg-white text-blue-600 shadow-lg' : 'text-slate-400 bg-slate-100'}`}>
-                    {item.active ? (
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
-                    ) : (
-                        <div className="w-1.5 h-1.5 rounded-full border border-slate-300 flex-shrink-0" />
-                    )}
-                    {item.label}
-                </div>
-            ))}
-        </div>
-        <div className="w-1/2 bg-gradient-to-br from-[#385BFF] to-[#1E3A8A] rounded-lg p-2 flex flex-col items-center justify-center relative text-center shadow-inner overflow-hidden">
-            <div className="flex flex-col items-center -mt-4 gap-4">
-                <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="w-10 h-10 md:w-12 md:h-12 relative flex items-center justify-center"
-                >
-                    {[...Array(8)].map((_, i) => (
-                        <div
+const PhaseThreeMockup = () => {
+    const bars = [40, 70, 55, 90, 65, 45, 30, 60, 80, 50, 95, 70, 40, 60];
+    return (
+        <div className="w-full">
+            <MockupWindow>
+                <div className="w-full h-full flex items-center justify-center gap-1 md:gap-2 px-2 md:px-6">
+                    {bars.map((h, i) => (
+                        <motion.div
                             key={i}
-                            className="absolute w-1 h-1 bg-white/40 rounded-full"
-                            style={{ transform: `rotate(${i * 45}deg) translateY(-16px)` }}
-                        />
+                            initial={{ height: 0 }}
+                            whileInView={{ height: `${h}%` }}
+                            transition={{ 
+                                duration: 1, 
+                                delay: i * 0.04,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                ease: "easeInOut"
+                            }}
+                            className="w-1.5 md:w-3 rounded-full bg-gradient-to-t from-blue-50/50 via-blue-400 to-[#3B5BFF] shadow-[2px_10px_15px_rgba(59,91,255,0.1)] relative overflow-hidden ring-1 ring-blue-200/20"
+                        >
+                            {/* Inner Shine for 3D depth */}
+                            <div className="absolute top-1 left-[20%] w-[30%] h-1/4 bg-white/20 rounded-full blur-[1px]" />
+                        </motion.div>
                     ))}
-                </motion.div>
-            </div>
+                </div>
+            </MockupWindow>
         </div>
-    </MockupWindow>
-);
+    );
+};
 
 const PHASES = [
     {
@@ -149,7 +185,7 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section className="relative py-24 md:py-32 bg-white border-y border-slate-50 overflow-hidden text-slate-900 selection:bg-accent/10">
+        <section id="how-it-works" className="relative py-24 md:py-32 bg-white border-y border-slate-50 overflow-hidden text-slate-900 selection:bg-accent/10">
             <div className="container-custom relative z-10">
                 <div className="text-center mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900">
@@ -164,7 +200,7 @@ export default function HowItWorks() {
                     {PHASES.map((phase, index) => (
                         <div
                             key={phase.number}
-                            className="group relative flex flex-col items-start p-8 bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/50"
+                            className="group relative flex flex-col items-start p-8 bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/50 font-sans"
                         >
                             <div className="flex items-center justify-center w-12 h-12 bg-slate-900 rounded-2xl mb-6 shadow-xl">
                                 <span className="text-white font-extrabold text-xl leading-none">
