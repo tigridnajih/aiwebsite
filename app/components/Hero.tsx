@@ -22,8 +22,8 @@ export default function Hero() {
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
-            {/* Bottom gradient mask for smooth transition */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
+            {/* Bottom gradient mask for smooth transition - Taller and smoother */}
+            <div className="absolute inset-x-0 bottom-0 h-[60vh] bg-gradient-to-t from-white via-white/40 to-transparent z-10" />
 
             {/* Main Content Area */}
             <div className="flex-1 flex items-center justify-center relative z-20 w-full py-12 md:py-20 lg:py-0">

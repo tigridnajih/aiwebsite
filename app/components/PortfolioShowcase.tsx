@@ -40,13 +40,7 @@ export default function PortfolioShowcase() {
     return (
         <section className="pt-0 pb-12 bg-white overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
-            <div
-                className="relative w-full overflow-hidden"
-                style={{
-                    maskImage: 'linear-gradient(to right, transparent 0%, white 15%, white 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, white 15%, white 85%, transparent 100%)'
-                }}
-            >
+            <div className="relative w-full overflow-hidden">
                 {/* Scrolling Container */}
                 <div
                     className="flex w-max animate-infinite-scroll-right py-8 [animation-duration:12s] md:[animation-duration:25s]"
