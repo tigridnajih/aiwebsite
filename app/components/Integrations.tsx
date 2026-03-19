@@ -22,11 +22,11 @@ const integrations = [
 ];
 
 const IntegrationIcon = ({ slug, name }: { slug: string; name: string }) => (
-    <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+    <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border border-slate-100 flex items-center justify-center p-4 hover:border-accent hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 group">
         <img
-            src={`https://v1.simpleicons.org/${slug}/ffffff`}
+            src={`https://v1.simpleicons.org/${slug}/1e293b`}
             alt={name}
-            className="w-8 h-8 md:w-10 md:h-10 opacity-70 group-hover:opacity-100 transition-opacity"
+            className="w-8 h-8 md:w-10 md:h-10 opacity-60 group-hover:opacity-100 transition-opacity"
         />
     </div>
 );
@@ -37,17 +37,17 @@ export default function Integrations() {
     const secondRow = [...[...integrations].reverse(), ...[...integrations].reverse()];
 
     return (
-        <section className="py-24 bg-black overflow-hidden relative">
+        <section className="py-24 bg-white overflow-hidden relative border-y border-slate-50">
             <div className="container-custom relative z-10 flex flex-col items-center text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
-                    <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest">Integrations</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                    Integrations
                 </div>
 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
                     Seamless integration
                 </h2>
 
-                <p className="text-zinc-500 text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
+                <p className="text-slate-500 text-lg md:text-xl max-w-2xl mb-16 leading-relaxed font-medium">
                     Connect with tools you already use. <br />
                     No code required, just plug and play.
                 </p>
@@ -55,7 +55,7 @@ export default function Integrations() {
                 {/* Infinite Scroll Rows */}
                 <div className="w-full flex flex-col gap-6 md:gap-8">
                     {/* Row 1: Right Moving */}
-                    <div className="flex overflow-hidden group">
+                    <div className="flex overflow-hidden">
                         <div className="flex gap-6 md:gap-8 animate-infinite-scroll-reverse-slow-extremely whitespace-nowrap">
                             {firstRow.map((integration, i) => (
                                 <IntegrationIcon key={`row1-${i}`} {...integration} />
@@ -64,7 +64,7 @@ export default function Integrations() {
                     </div>
 
                     {/* Row 2: Left Moving */}
-                    <div className="flex overflow-hidden group">
+                    <div className="flex overflow-hidden">
                         <div className="flex gap-6 md:gap-8 animate-infinite-scroll-slow-extremely whitespace-nowrap">
                             {secondRow.map((integration, i) => (
                                 <IntegrationIcon key={`row2-${i}`} {...integration} />
@@ -74,7 +74,7 @@ export default function Integrations() {
                 </div>
 
                 <div className="mt-20">
-                    <button className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all group">
+                    <button className="flex items-center gap-2 px-10 py-4 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all group shadow-xl">
                         Explore all tools
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
@@ -82,7 +82,7 @@ export default function Integrations() {
             </div>
 
             {/* Background Effects */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
         </section>
     );
 }

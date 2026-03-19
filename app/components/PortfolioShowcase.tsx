@@ -38,13 +38,13 @@ const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
     return (
-        <section className="pt-0 pb-12 bg-[#070707] overflow-hidden relative">
+        <section className="pt-0 pb-12 bg-white overflow-hidden relative">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div
                 className="relative w-full overflow-hidden"
                 style={{
-                    maskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #070707 15%, #070707 85%, transparent 100%)'
+                    maskImage: 'linear-gradient(to right, transparent 0%, white 15%, white 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, white 15%, white 85%, transparent 100%)'
                 }}
             >
                 {/* Scrolling Container */}
@@ -57,11 +57,11 @@ export default function PortfolioShowcase() {
                             <div
                                 className="relative h-[260px] md:h-[340px] w-auto rounded-[20px] overflow-hidden"
                                 style={{
-                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
+                                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.05)'
                                 }}
                             >
                                 {/* Image Container */}
-                                <div className="relative h-full w-full bg-[#0d0d0d]">
+                                <div className="relative h-full w-full bg-slate-50">
                                     <img
                                         src={project.url}
                                         alt={project.title}
@@ -72,8 +72,8 @@ export default function PortfolioShowcase() {
 
                             {/* Caption Text Below Image - Styled to match reference */}
                             <div className="px-1">
-                                <p className="text-[#666] font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase">
-                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-[#999]">{project.title.split(' - ')[1]}</span>
+                                <p className="text-slate-400 font-mono text-[11px] md:text-xs tracking-[0.2em] uppercase">
+                                    {project.title.split(' - ')[0]} <span className="mx-2 opacity-30">—</span> <span className="text-slate-500">{project.title.split(' - ')[1]}</span>
                                 </p>
                             </div>
                         </div>

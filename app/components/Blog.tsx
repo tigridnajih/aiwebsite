@@ -24,27 +24,28 @@ const posts = [
 
 export default function Blog() {
     return (
-        <section className="py-20 bg-[##070707]">
+        <section className="py-24 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Insights"
                     title="Latest Blog Posts"
-                    description="Stay updated with the latest trends in AI automation and business scaling."
+                    description="Stay updated with the latest trends in AI automation."
                 />
 
-                <div className="flex justify-end mb-8">
-                    <Link href="/blog" className="text-accent font-semibold hover:underline hidden md:inline-block">View All Articles →</Link>
+                <div className="flex justify-end mb-8 mt-12">
+                    <Link href="/blog" className="text-accent font-bold hover:underline hidden md:inline-block tracking-tight">View All Articles →</Link>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-12">
                     {posts.map((p, idx) => (
                         <div key={idx} className="group cursor-pointer">
-                            <div className="aspect-[16/9] rounded-xl bg-gray-200 mb-6 overflow-hidden relative dark:bg-zinc-800">
-                                <div className="w-full h-full bg-gray-300 group-hover:scale-105 transition-transform duration-500 dark:bg-zinc-700" />
+                            <div className="aspect-[16/10] rounded-3xl bg-slate-50 border border-slate-100 mb-6 overflow-hidden relative shadow-sm group-hover:shadow-xl transition-all duration-500">
+                                <div className="w-full h-full bg-slate-100 group-hover:scale-105 transition-transform duration-700" />
+                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/20 to-transparent" />
                             </div>
-                            <p className="text-xs text-gray-500 mb-2 uppercase tracking-wide font-semibold">{p.date}</p>
-                            <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors leading-tight">{p.title}</h3>
-                            <p className="text-gray-600 font-medium text-sm line-clamp-2 dark:text-gray-400">{p.snippet}</p>
+                            <p className="text-[10px] text-accent font-bold mb-3 uppercase tracking-widest leading-none">{p.date}</p>
+                            <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors leading-tight text-slate-900 tracking-tight">{p.title}</h3>
+                            <p className="text-slate-500 font-medium text-sm leading-relaxed line-clamp-2">{p.snippet}</p>
                         </div>
                     ))}
                 </div>
