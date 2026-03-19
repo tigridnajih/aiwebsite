@@ -17,12 +17,10 @@ export default function Hero() {
                 >
                     <source src="/videos/hero_video.mp4" type="video/mp4" />
                 </video>
-                {/* 🎭 Premium White Overlay to maintain White Theme consistency */}
-                <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
             </div>
 
-            {/* Background Texture/Pattern on top of video overlay */}
-            <div className="absolute inset-0 z-[1] opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+            {/* Background Texture/Pattern */}
+            <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* Bottom gradient mask for smooth transition */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
@@ -34,37 +32,39 @@ export default function Hero() {
                     <div className="flex flex-col gap-4 max-w-4xl items-center pt-4">
                         {/* Trusted Proof */}
                         <div className="animate-fade-in opacity-0 animate-delay-100 mb-2">
-                            <span className="text-sm md:text-base font-bold tracking-tight text-accent bg-accent/5 px-4 py-1.5 rounded-full border border-accent/10 backdrop-blur-sm">
+                            <span className="text-sm md:text-base font-bold tracking-tight text-accent bg-accent/5 px-4 py-1.5 rounded-full border border-accent/10">
                                 Supercharge your Business
                             </span>
                         </div>
 
                         <div className="animate-fade-in opacity-0">
-                            {/* Headline */}
-                            <h1 className="text-4xl md:text-8xl font-black font-heading tracking-tighter leading-[1.05] text-slate-950 drop-shadow-sm">
+                            {/* Headline (Reverted to original size/font) */}
+                            <h1 className="text-4xl md:text-7xl font-semibold font-heading tracking-tight leading-[1.1] text-slate-900 drop-shadow-sm">
                                 Intelligent Automation for <br />
-                                <span className="text-accent">Modern Businesses.</span>
+                                Modern Businesses.
                             </h1>
                         </div>
 
-                        <p className="text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-tight px-4 font-medium">
+                        <p className="text-sm md:text-base text-slate-600 max-w-xl leading-relaxed animate-fade-in opacity-0 animate-delay-200 tracking-wide px-4">
                             Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-8 items-center">
+                        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-300 pt-4 items-center">
+                            {/* Primary Button (Reverted to Sapphire Blue) */}
                             <Link
                                 href="#contact"
-                                className="group flex items-center gap-3 px-10 py-5 rounded-full bg-slate-900 text-white font-bold text-base transition-all hover:bg-slate-800 hover:scale-[1.05] active:scale-[0.98] shadow-2xl"
+                                className="group flex items-center gap-2 px-8 py-3 rounded-full bg-accent text-white font-semibold text-sm transition-all hover:bg-accent/90 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accent/20"
                             >
                                 Book a Strategy Call
-                                <svg className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                                 </svg>
                             </Link>
 
+                            {/* Secondary Button (Reverted to Slate Light) */}
                             <Link
                                 href="#works"
-                                className="px-10 py-5 rounded-full bg-white/10 backdrop-blur-md border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:bg-white/20"
+                                className="px-8 py-3 rounded-full bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-sm transition-all duration-300 hover:bg-slate-200"
                             >
                                 See How It Works
                             </Link>
