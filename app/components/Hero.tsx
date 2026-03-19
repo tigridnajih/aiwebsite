@@ -1,9 +1,10 @@
 'use client';
+
 import Link from 'next/link';
 import TrustLogos from './TrustLogos';
+
 export default function Hero() {
     return (
-<<<<<<< HEAD
         <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
@@ -12,23 +13,6 @@ export default function Hero() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-10" />
 
             {/* Main Content Area */}
-=======
-        <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-white bg-[#070707]">
-            {/* Background Image */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
-                style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
-            />
-
-            {/* Bottom gradient mask for smooth transition to next section */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#070707] to-transparent z-10" />
-
-            {/* Top gradient mask for Navbar readability - Softened for better background visibility */}
-            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#070707]/50 via-[#070707]/20 to-transparent z-10" />
-
-
-            {/* Main Content Area - Flexible height to prevent overlap */}
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
             <div className="flex-1 flex items-center justify-center relative z-20 w-full py-12 md:py-20 lg:py-0">
                 <div className="container-custom flex flex-col items-center justify-center text-center md:-translate-y-4">
                     {/* Content */}
@@ -63,15 +47,12 @@ export default function Hero() {
                                 </svg>
                             </Link>
 
-<<<<<<< HEAD
                             <Link
                                 href="#works"
                                 className="px-8 py-3 rounded-full bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-sm transition-all duration-300 hover:bg-slate-200"
                             >
                                 See How It Works
                             </Link>
-=======
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                         </div>
                     </div>
                 </div>

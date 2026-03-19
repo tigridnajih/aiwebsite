@@ -26,11 +26,7 @@ const problems = [
 
 export default function Problem() {
     return (
-<<<<<<< HEAD
         <section id="about" className="py-20 bg-white">
-=======
-        <section id="about" className="py-20 bg-[#070707]">
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
             <div className="container-custom">
                 <SectionHeader
                     badge="The Bottleneck"

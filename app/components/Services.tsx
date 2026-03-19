@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion, AnimatePresence, useInView, useSpring, useTransform } from 'framer-motion';
+import { motion, useInView, useSpring, useTransform } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 function CountUp({ value, suffix = "", once = false }: { value: number; suffix?: string; once?: boolean }) {
@@ -33,361 +33,6 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
     );
 }
 
-const AutomationMockup = () => {
-    const messages = [
-        {
-            id: 1,
-            name: "Emma",
-            company: "RetailSync",
-            text: "We're looking to automate inventory updates. Can you help?",
-            time: "09:45 PM",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "whatsapp"
-        },
-        {
-            id: 2,
-            name: "Liam",
-            company: "FinEdge Analytics",
-            text: "How does your AI handle financial data processing?",
-            time: "12:45 AM",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "whatsapp"
-        },
-        {
-            id: 3,
-            name: "Olivia",
-            company: "GreenTech Solutions",
-            text: "Looking for AI automation to streamline customer inquiries.",
-            time: "02:45 AM",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "email"
-        },
-        {
-            id: 4,
-            name: "Marcus",
-            company: "Global Logistics",
-            text: "Can we automate route optimization for our fleet?",
-            time: "04:20 AM",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "whatsapp"
-        },
-        {
-            id: 5,
-            name: "Sarah",
-            company: "HealthPlus",
-            text: "Searching for a solution to automate patient scheduling.",
-            time: "06:15 AM",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "email"
-        }
-    ];
-
-    const [visibleMessages, setVisibleMessages] = React.useState(messages.slice(0, 3));
-    const [swapCount, setSwapCount] = React.useState(0);
-    const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
-    React.useEffect(() => {
-        if (!isInView) {
-            setVisibleMessages(messages.slice(0, 3));
-            setSwapCount(0);
-            return;
-        }
-
-        if (swapCount >= 2) return; // Stop after exactly 2 swaps
-
-        const delay = swapCount === 0 ? 300 : 2500; // First swap is fast, second has a normal visual pause
-
-        const timer = setTimeout(() => {
-            setVisibleMessages((prev) => {
-                const currentIndex = messages.findIndex(m => m.id === prev[0].id);
-                const nextStartIndex = (currentIndex + 1) % messages.length;
-
-                const nextItems = [];
-                for (let i = 0; i < 3; i++) {
-                    nextItems.push(messages[(nextStartIndex + i) % messages.length]);
-                }
-                return nextItems;
-            });
-            setSwapCount(prev => prev + 1);
-        }, delay);
-
-        return () => clearTimeout(timer);
-    }, [messages, isInView, swapCount]);
-
-    return (
-        <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-center">
-            <AnimatePresence mode="popLayout" initial={false}>
-                {visibleMessages.map((msg, idx) => (
-                    <motion.div
-                        key={msg.id}
-                        layout
-                        initial={{ opacity: 0, x: -20, scale: 0.95 }}
-                        animate={{
-                            opacity: idx === 0 ? 1 : idx === 1 ? 0.6 : 0.3,
-                            x: 0,
-                            scale: idx === 0 ? 1.05 : 1,
-                            zIndex: 10 - idx,
-                            marginTop: idx === 0 ? 0 : 16,
-                            borderWidth: idx === 0 ? 0 : 1,
-                            borderColor: "rgba(255, 255, 255, 0.06)",
-                        }}
-                        exit={{
-                            opacity: 0,
-                            x: 20,
-                            scale: 0.9,
-                            transition: { duration: 0.3 }
-                        }}
-                        transition={{
-                            layout: { type: "spring", stiffness: 250, damping: 30 },
-                            opacity: { duration: 0.4 },
-                            scale: { duration: 0.4 },
-                            borderWidth: { duration: 0.3 }
-                        }}
-                        style={{
-                            originY: 0,
-                            borderStyle: "solid"
-                        }}
-                        className={`relative rounded-2xl p-5 overflow-hidden shadow-xl w-full transition-colors duration-500 bg-[#0d0d0d]/80 backdrop-blur-sm`}
-                    >
-                        {/* Sapphire Gradient Overlay - Controlled via Opacity for Smoothness */}
-                        <motion.div
-                            initial={false}
-                            animate={{
-                                opacity: idx === 0 ? 1 : 0,
-                            }}
-                            transition={{ duration: 0.6, ease: "easeInOut" }}
-                            className="absolute inset-0 bg-gradient-to-br from-[#3B5BFF] to-[#000000] z-0"
-                        />
-
-                        <div className="relative z-10 flex items-start gap-4">
-                            <div className="relative shrink-0">
-                                <div className="w-12 h-12 rounded-xl bg-zinc-800 overflow-hidden border border-white/[0.06]">
-                                    <img src={msg.image} alt={msg.name} className="w-full h-full object-cover" />
-                                </div>
-                                <div className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full border-2 flex items-center justify-center shadow-lg transition-colors duration-500 ${msg.platform === 'whatsapp' ? 'bg-[#25D366]' : 'bg-blue-500'
-                                    } ${idx === 0 ? 'border-[#3B5BFF]' : 'border-black'}`}>
-                                    {msg.platform === 'whatsapp' ? (
-                                        <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-                                    ) : (
-                                        <svg viewBox="0 0 24 24" className="w-2 h-2 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                                <div className="flex justify-between items-center mb-1">
-                                    <span className={`font-bold text-base transition-colors duration-500 ${idx === 0 ? 'text-white' : 'text-[#F5F7FF]'}`}>{msg.name}, {msg.company}</span>
-                                    <span className={`text-xs font-mono opacity-60 transition-colors duration-500 ${idx === 0 ? 'text-blue-100' : 'text-zinc-500'}`}>{msg.time}</span>
-                                </div>
-                                <p className={`text-xs md:text-sm font-medium italic leading-relaxed transition-colors duration-500 ${idx === 0 ? 'text-blue-50' : 'text-zinc-400'}`}>
-                                    &ldquo;{msg.text}&rdquo;
-                                </p>
-                                <AnimatePresence>
-                                    {idx === 0 && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: "auto" }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            className="mt-3 flex items-center gap-2 overflow-hidden"
-                                        >
-                                            <span className="text-white/80 text-[10px] font-bold tracking-widest uppercase">Replying</span>
-                                            <span className="flex gap-1 items-center">
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-duration:1s]" />
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
-                                                <span className="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
-                                            </span>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </AnimatePresence>
-        </div>
-    );
-};
-
-const SalesMarketingMockup = () => {
-    const [step, setStep] = React.useState(-1);
-    const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
-    React.useEffect(() => {
-        if (!isInView) {
-            setStep(-1);
-            return;
-        }
-
-        const t0 = setTimeout(() => setStep(0), 10); // Immediate
-        const t1 = setTimeout(() => setStep(1), 800);
-        const t2 = setTimeout(() => setStep(2), 2400);
-
-        return () => {
-            clearTimeout(t0);
-            clearTimeout(t1);
-            clearTimeout(t2);
-        };
-    }, [isInView]);
-
-    return (
-        <div ref={containerRef} className="w-full max-w-lg mx-auto space-y-6 min-h-[220px] flex flex-col justify-center">
-            <AnimatePresence>
-                {step >= 0 && (
-                    <motion.div
-                        key="query"
-                        initial={{ opacity: 0, x: -30, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.5, type: "spring", stiffness: 200, damping: 20 }}
-                        className="space-y-2"
-                    >
-                        <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Customer Query</span>
-                        <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 rounded-tl-none max-w-[85%]">
-                            <p className="text-sm text-zinc-300">"What are your business hours and do you offer enterprise pricing?"</p>
-                        </div>
-                    </motion.div>
-                )}
-
-                {/* AI Response Bubble */}
-                {step >= 1 && (
-                    <motion.div
-                        key="response"
-                        initial={{ opacity: 0, x: 30, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x: 20 }}
-                        transition={{ duration: 0.5, type: "spring", stiffness: 200, damping: 20 }}
-                        className="flex flex-col items-end space-y-2 mt-6"
-                    >
-                        <div className="flex items-center gap-2 mb-1 mr-1">
-                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center p-1">
-                                <div className="w-full h-full rounded-full bg-white/20 animate-pulse" />
-                            </div>
-                            <span className="text-[10px] uppercase tracking-widest text-[#3B5BFF] font-bold">AI Assistant</span>
-                        </div>
-                        <div className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 rounded-tr-none max-w-[90%]">
-                            {step === 1 ? (
-                                <div className="flex gap-1 py-1">
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:0.8s]" />
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:0.8s]" />
-                                </div>
-                            ) : (
-                                <p className="text-sm text-white font-medium italic">
-                                    "We operate 24/7! I've attached our customized enterprise tier proposal based on your current scale."
-                                </p>
-                            )}
-                        </div>
-                        {step >= 2 && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-[10px] text-zinc-500 italic font-medium mr-1"
-                            >
-                                Automated Response • Sent via Email
-                            </motion.div>
-                        )}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
-
-const CustomProjectsMockup = () => {
-    const initialItems = [
-        { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", status: "Active" },
-        { name: "AirTable", action: "Updating records", icon: "M10 2L2 7L10 12L18 7L10 2Z", status: "Syncing..." },
-        { name: "Zoom", action: "Meeting logs", icon: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z", status: "Idle" }
-    ];
-    const [items, setItems] = React.useState(initialItems);
-    const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
-    React.useEffect(() => {
-        if (!isInView) {
-            setItems(initialItems);
-            return;
-        }
-
-        // Perform first swap immediately when in view
-        const firstSwap = setTimeout(() => {
-            setItems((prev) => {
-                const newItems = [...prev];
-                [newItems[1], newItems[2]] = [newItems[2], newItems[1]];
-                return newItems;
-            });
-        }, 100);
-
-        const interval = setInterval(() => {
-            setItems((prev) => {
-                const newItems = [...prev];
-                [newItems[1], newItems[2]] = [newItems[2], newItems[1]];
-                return newItems;
-            });
-        }, 2000);
-        return () => {
-            clearTimeout(firstSwap);
-            clearInterval(interval);
-        };
-    }, [isInView]);
-
-    return (
-        <div ref={containerRef} className="w-full max-w-lg mx-auto flex flex-col items-center">
-            {/* Top Controller Node */}
-            <motion.div
-                animate={isInView ? { scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] } : {}}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center shadow-[0_0_40px_rgba(59,91,255,0.4)] relative z-20 mb-[-2px]"
-            >
-                <div className="w-4 h-4 rounded-full bg-white animate-pulse" />
-            </motion.div>
-
-            {/* Connecting Line */}
-            <div className="w-[1px] h-12 bg-gradient-to-b from-[#3B5BFF] to-white/5 relative z-10" />
-
-            {/* Integration Cards */}
-            <div className="w-full space-y-6 relative z-20">
-                {items.map((item, i) => (
-                    <motion.div
-                        key={item.name}
-                        layout
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            layout: { type: "spring", stiffness: 200, damping: 20 },
-                            delay: i * 0.1
-                        }}
-                        className="bg-gradient-to-br from-[#3B5BFF] to-[#000000] rounded-2xl p-4 flex items-center justify-between shadow-xl"
-                    >
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
-                                <svg viewBox="0 0 16 16" className="w-5 h-5" fill="none" stroke="#FFFFFF" strokeWidth="1.5">
-                                    <path d={item.icon} />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 className="text-sm font-bold text-white">{item.name}</h4>
-                                <p className="text-[10px] text-white/50 font-medium">{item.action}</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col items-end gap-1">
-                            {i === 0 ? (
-                                <span className="text-sm font-bold text-white tracking-tight mr-2">Running</span>
-                            ) : (
-                                <span className="text-xs text-white/40 font-bold tracking-tight">{item.name === "AirTable" ? "Syncing..." : item.name === "Zoom" ? "Standby" : ""}</span>
-                            )}
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
-
-            {/* Bottom Vertical Guide Line */}
-            <div className="w-[1px] h-8 bg-gradient-to-b from-white/10 to-transparent" />
-        </div>
-    );
-};
-
 export default function Services() {
     const features = [
         {
@@ -397,13 +42,10 @@ export default function Services() {
             tags: ["Internal Task Bots", "100+ Automations"],
             imageSide: "left",
             mockup: (
-<<<<<<< HEAD
                 <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] border border-slate-200 overflow-hidden shadow-xl flex items-center justify-center p-6 md:p-8">
-
                     <div className="relative w-full h-full flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left: Bubble Column */}
                         <div className="w-full md:flex-[1.8] flex flex-col gap-3 md:gap-4">
-                            {/* Emma - Top Bubble (Replying) */}
                             <div className="relative bg-white border border-slate-200 rounded-2xl p-4 shadow-lg transform hover:-translate-y-1 transition-transform duration-500 group/emma">
                                 <div className="flex items-start gap-3">
                                     <div className="relative shrink-0">
@@ -426,134 +68,10 @@ export default function Services() {
                                         <p className="text-slate-500 text-[10px] md:text-[11px] font-medium italic leading-snug">
                                             &ldquo;We&apos;re looking to automate inventory updates. Can you help?&rdquo;
                                         </p>
-                                        <div className="mt-2.5 flex items-center gap-2">
-                                            <span className="text-blue-400 text-[10px] font-bold tracking-wider uppercase">Replying</span>
-                                            <span className="flex gap-0.5 items-center">
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-duration:1s]" />
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:1s]" />
-                                                <span className="w-1 h-1 bg-blue-400 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:1s]" />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                             {/* Liam - Middle Bubble */}
-                            <div className="bg-slate-100/80 border border-slate-200 rounded-2xl p-4 shadow-sm opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
-                                <div className="flex items-start gap-3">
-                                    <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-slate-200 overflow-hidden border border-slate-300">
-                                            <img
-                                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100"
-                                                alt="Liam"
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#25D366] rounded-full border border-white flex items-center justify-center">
-                                            <svg viewBox="0 0 24 24" className="w-2 h-2 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-                                        </div>
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex justify-between items-center mb-1">
-                                            <span className="text-slate-900 font-bold text-xs">Liam, FinEdge Analytics</span>
-                                            <span className="text-[9px] text-slate-500 font-mono">12:45 AM</span>
-                                        </div>
-                                        <p className="text-slate-500 text-[10px] leading-snug truncate">
-                                            &ldquo;How does your AI handle financial data processing?&rdquo;
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Olivia - Bottom Bubble */}
-                            <div className="bg-slate-100/80 border border-slate-200 rounded-2xl p-4 shadow-sm opacity-40 grayscale-[0.5] hover:opacity-70 transition-opacity">
-                                <div className="flex items-start gap-3">
-                                    <div className="relative shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-slate-200 overflow-hidden border border-slate-300">
-                                            <img
-                                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100"
-                                                alt="Olivia"
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-blue-500 rounded-full border border-white flex items-center justify-center">
-                                            <svg viewBox="0 0 24 24" className="w-2 h-2 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-                                        </div>
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex justify-between items-center mb-1">
-                                            <span className="text-slate-900 font-bold text-xs">Olivia, GreenTech Solutions</span>
-                                            <span className="text-[9px] text-slate-500 font-mono">02:45 AM</span>
-                                        </div>
-                                        <p className="text-slate-500 text-[10px] leading-snug truncate">
-                                            &ldquo;Looking for AI automation to streamline customer inquiries.&rdquo;
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        {/* Center: Animated Connecting Lines */}
-                        <div className="hidden md:block flex-1 h-full relative">
-                            <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
-                                {/* Emma Curve */}
-                                <path
-                                    d="M 0 60 C 40 60, 60 130, 100 130"
-                                    fill="none"
-                                    stroke="url(#blueFlowGradient)"
-                                    strokeWidth="2"
-                                    className="animate-pulse duration-[3s]"
-                                    strokeDasharray="5 5"
-                                />
-                                {/* Liam Curve */}
-                                <path
-                                    d="M 0 150 C 40 150, 60 140, 100 140"
-                                    fill="none"
-                                    stroke="#2C4EDC"
-                                    strokeWidth="1"
-                                    strokeOpacity="0.2"
-                                />
-                                {/* Olivia Curve */}
-                                <path
-                                    d="M 0 220 C 40 220, 60 150, 100 150"
-                                    fill="none"
-                                    stroke="#2C4EDC"
-                                    strokeWidth="1"
-                                    strokeOpacity="0.1"
-                                />
-                                <defs>
-                                    <linearGradient id="blueFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#4E7BFF" stopOpacity="0.2" />
-                                        <stop offset="100%" stopColor="#2C4EDC" stopOpacity="1" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-
-                        {/* Right: Automation Node */}
-                        <div className="flex-none md:flex-[0.5] flex justify-center">
-                            <div className="relative">
-                                {/* Orbiting rings */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-green-500/20 rounded-full animate-spin-slow-extremely" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-green-500/10 rounded-full animate-spin-reverse-slow" />
-
-                                {/* Central Node */}
-                                <div className="relative w-16 h-16 bg-[#2C4EDC] rounded-2xl shadow-[0_0_50px_rgba(44,78,220,0.4)] flex items-center justify-center overflow-hidden animate-custom-float">
-                                    <div className="w-8 h-8 bg-[#040816] rounded-lg shadow-inner flex items-center justify-center">
-                                        <div className="w-4 h-4 rounded-sm bg-[#4E7BFF]/30 animate-pulse" />
-                                    </div>
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
-
-                                    {/* Scanline effect */}
-                                    <div className="absolute inset-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent -translate-y-full animate-custom-scan" />
-                                </div>
-                            </div>
-                        </div>
-=======
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl flex items-center justify-center p-4 md:p-6">
-                    <div className="relative w-full max-w-xl mx-auto">
-                        <AutomationMockup />
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                     </div>
                 </div>
             )
@@ -565,115 +83,65 @@ export default function Services() {
             tags: ["Summaries", "Scheduling", "Many more"],
             imageSide: "right",
             mockup: (
-<<<<<<< HEAD
-                <div className="relative w-full aspect-[4/3] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
-
-                    <div className="flex flex-col items-center justify-center h-full p-10 text-center">
-                        <div className="w-20 h-20 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-6 animate-pulse">
-                            <div className="w-12 h-12 rounded-full bg-purple-500/30" />
-                        </div>
-                        <div className="w-48 h-3 bg-slate-200 rounded mb-3" />
-                        <div className="w-32 h-2 bg-slate-300 rounded" />
-                        <div className="mt-8 grid grid-cols-2 gap-3 w-full">
-                            <div className="h-10 bg-white rounded-lg border border-slate-200" />
-                            <div className="h-10 bg-white rounded-lg border border-slate-200" />
-=======
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-between">
+                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
                     <div className="relative flex-1 mt-6 flex flex-col z-10 px-4">
-                        <div className="absolute top-[-40px] left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#000000] flex items-center justify-center z-20">
+                        <div className="absolute top-[-40px] left-0 px-6 py-3 rounded-2xl bg-accent flex items-center justify-center z-20">
                             <span className="text-white text-sm md:text-base font-bold tracking-tight">
                                 <CountUp value={87} suffix="% +" />
                             </span>
                         </div>
-
                         <div className="flex-1 w-full flex items-end justify-between gap-3 md:gap-5 pt-8 relative z-10">
                             {[72, 48, 85, 63, 91, 54, 76, 58].map((val, idx) => (
-                                <div key={idx} className="flex-1 h-full flex items-end justify-center group">
+                                <div key={idx} className="flex-1 h-full flex items-end justify-center">
                                     <motion.div
                                         initial={{ height: "0%" }}
                                         whileInView={{ height: `${val}%` }}
-                                        viewport={{ once: false, amount: 0.4 }}
-                                        transition={{
-                                            duration: 1.2,
-                                            delay: idx * 0.1,
-                                            ease: "easeOut"
-                                        }}
-                                        style={{
-                                            background: "linear-gradient(180deg, #3B5BFF 0%, #000000 100%)",
-                                            boxShadow: "none"
-                                        }}
-                                        className="w-full rounded-t-md origin-bottom relative overflow-hidden"
-                                    >
-                                        <motion.div
-                                            animate={{ y: ["-150%", "300%"] }}
-                                            transition={{
-                                                duration: 7,
-                                                repeat: Infinity,
-                                                ease: "linear",
-                                                delay: 1 + (idx * 0.2)
-                                            }}
-                                            className="absolute inset-0 w-full h-[60%]"
-                                            style={{
-                                                background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(59,91,255,0.08) 50%, rgba(255,255,255,0) 100%)",
-                                            }}
-                                        />
-                                    </motion.div>
+                                        viewport={{ once: false }}
+                                        transition={{ duration: 1, delay: idx * 0.1 }}
+                                        className="w-full rounded-t-lg bg-accent/20 border-t border-accent/40"
+                                    />
                                 </div>
                             ))}
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                         </div>
                     </div>
                 </div>
-            ),
+            )
         },
         {
             badge: "Sales & Marketing",
             title: "Accelerate Sales Growth",
-            description: "AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts and builds stronger brand presence.",
+            description: "AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts.",
             tags: ["Leads", "Content", "Social post"],
             imageSide: "left",
             mockup: (
-<<<<<<< HEAD
-                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
-                    <div className="p-8">
-                        <div className="flex items-end gap-2 h-48">
-                            {[40, 70, 45, 90, 65, 80, 100].map((h, i) => (
-                                <div key={i} className="flex-1 bg-accent/20 border-t border-accent/40 rounded-t-sm" style={{ height: `${h}%` }} />
-                            ))}
-                        </div>
-                        <div className="mt-6 flex justify-between">
-                            <div className="space-y-2">
-                                <div className="w-20 h-2 bg-slate-200 rounded" />
-                                <div className="w-12 h-4 bg-slate-300 rounded" />
-                            </div>
-                            <div className="space-y-2 text-right">
-                                <div className="w-20 h-2 bg-slate-200 rounded" />
-                                <div className="w-12 h-4 bg-green-500/20 rounded" />
-                            </div>
-                        </div>
-=======
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
-                    <div className="relative w-full max-w-xl mx-auto">
-                        <SalesMarketingMockup />
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
+                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] overflow-hidden shadow-xl p-8">
+                    <div className="flex items-end gap-2 h-48">
+                        {[40, 70, 45, 90, 65, 80, 100].map((h, i) => (
+                            <div key={i} className="flex-1 bg-accent/20 border-t border-accent/40 rounded-t-sm" style={{ height: `${h}%` }} />
+                        ))}
                     </div>
-
-                    {/* Background Decorative Elements to match Card 1/2 */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#3B5BFF]/5 blur-[60px] rounded-full" />
+                    <div className="mt-6 flex justify-between">
+                        <div className="space-y-2">
+                            <div className="w-20 h-2 bg-slate-200 rounded" />
+                            <div className="w-12 h-4 bg-slate-100 rounded" />
+                        </div>
+                        <div className="space-y-2 text-right">
+                            <div className="w-20 h-2 bg-slate-200 rounded" />
+                            <div className="w-12 h-4 bg-green-500/10 rounded" />
+                        </div>
+                    </div>
                 </div>
             )
         },
         {
             badge: "Custom Projects",
             title: "Build Smarter Systems",
-            description: "Whether you're starting from scratch or enhancing an existing system, we offer strategic consulting and develop custom AI projects aligned with your unique goals.",
+            description: "Whether you're starting from scratch or enhancing an existing system, we offer strategic consulting and develop custom AI projects.",
             tags: ["Strategy", "Custom AI", "Consulting"],
             imageSide: "right",
             mockup: (
-<<<<<<< HEAD
-                <div className="relative w-full aspect-[4/3] bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
-                    <div className="p-8 font-mono text-[10px] text-accent/60 break-all">
-                        {`{
+                <div className="relative w-full aspect-[4/3] bg-slate-900 rounded-[32px] overflow-hidden shadow-xl p-8 font-mono text-[10px] text-accent/60">
+                    {`{
   "project": "Intelligent_Sync",
   "status": "deploying",
   "nodes": [
@@ -684,31 +152,13 @@ export default function Services() {
   "intelligence_score": 0.98,
   "last_check": "2024-02-21T16:25:52Z"
 }`}
-                        <div className="mt-8 flex gap-4">
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center">
-                                <div className="w-8 h-8 rounded bg-accent/20" />
-                            </div>
-                            <div className="w-1/2 h-20 bg-white/5 border border-white/[0.06] rounded-lg flex items-center justify-center text-[20px] text-white">
-                                +
-                            </div>
-                        </div>
-=======
-                <div className="relative w-full aspect-[4/3] bg-[#070707] rounded-[32px] overflow-hidden shadow-2xl p-4 md:p-6 flex flex-col justify-center">
-                    <div className="relative w-full max-w-xl mx-auto">
-                        <CustomProjectsMockup />
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
-                    </div>
                 </div>
             )
         }
     ];
 
     return (
-<<<<<<< HEAD
-        <section id="services" className="py-20 bg-white text-slate-900 selection:bg-accent/10">
-=======
-        <section id="solutions" className="py-20 bg-[#070707] text-white selection:bg-purple-500/30">
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
+        <section id="services" className="py-20 bg-white text-slate-900">
             <div className="container-custom">
                 <SectionHeader
                     badge="Our Services"
@@ -723,14 +173,8 @@ export default function Services() {
                             className={`flex flex-col gap-12 items-center ${feature.imageSide === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'
                                 }`}
                         >
-<<<<<<< HEAD
-                            {/* Text Content */}
                             <div className="flex-1 space-y-6">
                                 <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-=======
-                            <div className="flex-1 space-y-6 md:-translate-y-4">
-                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                                     {feature.title}
                                 </h3>
                                 <p className="text-slate-500 leading-relaxed text-lg max-w-xl">
@@ -738,7 +182,7 @@ export default function Services() {
                                 </p>
                             </div>
 
-                            <div className="flex-1 w-full max-w-2xl px-0 md:px-0">
+                            <div className="flex-1 w-full max-w-2xl">
                                 {feature.mockup}
                             </div>
                         </div>

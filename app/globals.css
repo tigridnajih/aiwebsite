@@ -4,33 +4,18 @@
 
 :root {
   --background: #ffffff;
-<<<<<<< HEAD
   --foreground: #020617;
 
   --color-primary-text: #020617;
   --color-secondary-text: #475569;
-=======
-  --foreground: #070707;
-
-  --color-primary-text: #070707;
-  --color-secondary-text: #333333;
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
   --color-accent: #2563EB;
   --color-sapphire: #3B5BFF;
   --color-sapphire-soft: rgba(59, 91, 255, 0.12);
-  /* Electric Sapphire Blue */
-  /* Bright Blue */
 
-  /* Shader Background Variables */
   --font-primary: var(--font-plus-jakarta), sans-serif;
   --font-secondary: var(--font-plus-jakarta), sans-serif;
-<<<<<<< HEAD
   --color-text: #020617;
   --color-bg: #ffffff;
-=======
-  --color-text: #ffffff;
-  --color-bg: #070707;
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.25rem;
@@ -59,20 +44,6 @@
   font-display: swap;
 }
 
-<<<<<<< HEAD
-/* Ensuring consistent white theme */
-:root {
-  --background: #ffffff;
-  --foreground: #020617;
-=======
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #070707;
-    --foreground: #ededed;
-  }
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -89,7 +60,6 @@ html {
     from {
       transform: translateX(0);
     }
-
     to {
       transform: translateX(-50%);
     }
@@ -99,7 +69,6 @@ html {
     from {
       transform: translateX(-50%);
     }
-
     to {
       transform: translateX(0);
     }
@@ -176,28 +145,5 @@ html {
 
   .animate-delay-300 {
     animation-delay: 300ms;
-  }
-
-  .hero-gradient-mesh {
-    --x: calc(var(--posX, 0) * 1px);
-    --y: calc(var(--posY, 0) * 1px);
-
-    background-image:
-      linear-gradient(115deg, rgb(35 55 130), rgb(15 25 70)),
-      radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
-        rgb(80 120 255),
-        rgb(25 40 100)),
-      radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
-        rgb(100 170 255),
-        rgb(15 25 70)),
-      radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
-        rgb(60 110 230),
-        rgb(20 35 90)),
-      radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
-        rgba(255, 255, 255, 0.25),
-        rgb(70 120 240)),
-      linear-gradient(60deg, rgb(20 40 110), rgb(80 140 255));
-
-    background-blend-mode: overlay, overlay, difference, difference, difference, normal;
   }
 }

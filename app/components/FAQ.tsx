@@ -10,7 +10,7 @@ const faq = [
     },
     {
         question: "Is there a free trial or proof-of-concept available?",
-        answer: "Yes, we offer a 14-day proof-of-concept for qualified enterprises to demonstrate the tangible ROI and efficiency gains our AI solutions can provide for your specific use cases."
+        answer: "Yes, we offer a 14-day proof-of-concept for qualified enterprises to demonstrate the tangible ROI and efficiency gains our AI solutions can provide for your use cases."
     },
     {
         question: "How secure is my proprietary data with your systems?",
@@ -34,11 +34,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-<<<<<<< HEAD
-        <section className="py-20 bg-white">
-=======
-        <section className="py-24 bg-[#070707]">
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
+        <section className="py-24 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Support"
@@ -46,43 +42,22 @@ export default function FAQ() {
                     description="Everything you need to know about our AI implementation process and security."
                 />
 
-<<<<<<< HEAD
-                <div className="space-y-4 max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto border-t border-slate-100">
                     {faq.map((item, idx) => (
                         <div
                             key={idx}
-                            className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-                        >
-                            <button
-                                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors text-slate-900"
-                            >
-                                {item.question}
-                                {openIndex === idx ? <ChevronUp className="w-5 h-5 text-accent" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
-                            </button>
-
-                            <div
-                                className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
-                            >
-                                <p className="text-slate-600 leading-relaxed font-medium">{item.answer}</p>
-                            </div>
-=======
-                <div className="max-w-4xl mx-auto border-t border-white/10">
-                    {faq.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="border-b border-white/10 group"
+                            className="border-b border-slate-100 group"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                                 className="w-full flex items-center justify-between py-7 text-left transition-all duration-300 group-hover:pl-2"
                             >
-                                <span className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug pr-8">
+                                <span className="text-lg md:text-xl font-bold text-slate-900 tracking-tight leading-snug pr-8">
                                     {item.question}
                                 </span>
                                 <div className={`relative flex items-center justify-center w-6 h-6 shrink-0 transition-transform duration-500 ${openIndex === idx ? 'rotate-45' : ''}`}>
-                                    <div className="absolute w-5 h-[2px] bg-white rounded-full" />
-                                    <div className="absolute w-[2px] h-5 bg-white rounded-full" />
+                                    <div className="absolute w-5 h-[2px] bg-accent rounded-full" />
+                                    <div className="absolute w-[2px] h-5 bg-accent rounded-full" />
                                 </div>
                             </button>
 
@@ -95,13 +70,12 @@ export default function FAQ() {
                                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-8 pr-12 text-[#a1a1a1] text-base md:text-lg leading-relaxed font-medium">
+                                        <div className="pb-8 pr-12 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
                                             {item.answer}
                                         </div>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
->>>>>>> 454c6f9e9e7aa5f1dd7b3964fa48f9c3385bea78
                         </div>
                     ))}
                 </div>
