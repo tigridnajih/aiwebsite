@@ -280,7 +280,7 @@ export default function Services() {
             description: "We help you streamline internal operations by automating manual workflows like data entry, reporting, and approval chains.",
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] border border-slate-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                <div className="relative w-full aspect-[4/3] flex items-center justify-center">
                     <AutomationMockup />
                 </div>
             )
@@ -291,7 +291,7 @@ export default function Services() {
             description: "Turn raw data into actionable insights with AI-driven analysis and reporting.",
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] border border-slate-100 overflow-hidden shadow-2xl p-8 flex flex-col justify-center">
+                <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center">
                     <div className="relative flex-1 flex flex-col z-10">
                         <div className="absolute top-[-20px] left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
                             <CountUp value={87} suffix="% +" />
@@ -318,7 +318,7 @@ export default function Services() {
             description: "AI tools for lead generation, personalized outreach, and automated content creation.",
             imageSide: "left",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] border border-slate-100 overflow-hidden shadow-2xl flex items-center justify-center p-8">
+                <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8">
                     <SalesMarketingMockup />
                 </div>
             )
@@ -329,7 +329,7 @@ export default function Services() {
             description: "Whether you're starting from scratch or enhancing an existing system, we build custom AI projects aligned with your goals.",
             imageSide: "right",
             mockup: (
-                <div className="relative w-full aspect-[4/3] bg-slate-50 rounded-[32px] border border-slate-100 overflow-hidden shadow-2xl flex items-center justify-center p-8">
+                <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8">
                     <CustomProjectsMockup />
                 </div>
             )
