@@ -89,9 +89,13 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+                            className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white"
                         >
-                            <img src="/section_assets/bg_services2.avif" alt="Data Insights" className="w-full h-full object-cover" />
+                            <img 
+                                src="/section_assets/bg_services2.avif" 
+                                alt="Data Insights Dashboard" 
+                                className="w-full h-full object-contain" 
+                            />
                         </motion.div>
                     </div>
                     <div className="flex-1 space-y-6 order-1 md:order-2">
