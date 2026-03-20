@@ -51,19 +51,19 @@ export default function WhyTrustUs() {
                                 [ {feature.label} ]
                             </div>
 
-                            {/* Headline - Moved to middle/bottom as per visual flow */}
+                            {/* Headline - High Contrast & Large */}
                             <div className="relative z-10 mt-auto">
                                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-[1.1] tracking-tight group-hover:text-accent transition-colors duration-300">
                                     {feature.title}
                                 </h3>
                             </div>
 
-                            {/* 🎥 Right-Aligned & Cropped Icon */}
-                            <div className="absolute top-1/2 -right-12 -translate-y-1/2 w-56 h-56 md:w-64 md:h-64 pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-translate-x-4">
+                            {/* 🎥 Default Large, Right-Aligned & Cropped Icon */}
+                            <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-72 h-72 md:w-80 md:h-80 pointer-events-none transition-all duration-700 group-hover:scale-105 group-hover:-translate-x-4">
                                 <img
                                     src={feature.icon}
                                     alt={feature.title}
-                                    className="w-full h-full object-contain filter drop-shadow-[10px_20px_30px_rgba(59,91,255,0.15)]"
+                                    className="w-full h-full object-contain filter drop-shadow-[20px_40px_60px_rgba(59,91,255,0.2)]"
                                 />
                             </div>
 
