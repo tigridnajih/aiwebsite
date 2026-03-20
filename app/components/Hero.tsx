@@ -31,10 +31,10 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-4xl md:text-8xl lg:text-[160px] font-extrabold font-heading tracking-tighter leading-[0.85] text-slate-900 z-10 relative"
+                            className="text-4xl md:text-7xl lg:text-[80px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900 z-10 relative"
                         >
-                            Intelligent <br />
-                            Automation
+                            Intelligence that Powers <br />
+                            Your Business Operations at Scale
                         </motion.h1>
 
                         {/* 💎 3D Floating Element (CENTERED BOTTOM) */}
