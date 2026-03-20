@@ -200,7 +200,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden"
                         >
                             <img 
                                 src="/section_assets/bg_services1.avif" 
