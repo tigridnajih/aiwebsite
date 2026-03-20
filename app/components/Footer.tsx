@@ -6,7 +6,16 @@ import { Youtube, Facebook, Linkedin, Instagram } from 'lucide-react';
 export default function Footer() {
     return (
         <footer className="relative w-full overflow-hidden bg-white text-slate-900 pt-16 pb-12 border-t border-slate-100">
-            <div className="container-custom">
+            {/* 📽️ Background GIF */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-20 h-[80%]">
+                <img 
+                    src="/section_assets/footer_bg.gif" 
+                    alt="Background Grid" 
+                    className="w-full h-full object-cover"
+                />
+            </div>
+            
+            <div className="container-custom relative z-10">
                 {/* 🎭 2. Large Moving Text Section */}
                 <div
                     className="relative w-full mb-24 overflow-hidden"
