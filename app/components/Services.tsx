@@ -32,72 +32,6 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
     );
 }
 
-const SalesMarketingMockup = () => {
-    const [step, setStep] = React.useState(-1);
-    const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
-    React.useEffect(() => {
-        if (!isInView) {
-            setStep(-1);
-            return;
-        }
-        const t0 = setTimeout(() => setStep(0), 10);
-        const t1 = setTimeout(() => setStep(1), 800);
-        const t2 = setTimeout(() => setStep(2), 2400);
-        return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); };
-    }, [isInView]);
-
-    return (
-        <div ref={containerRef} className="w-full max-w-lg mx-auto space-y-6 min-h-[220px] flex flex-col justify-center">
-            <AnimatePresence>
-                {step >= 0 && (
-                    <motion.div
-                        key="query"
-                        initial={{ opacity: 0, x: -30, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        className="space-y-2"
-                    >
-                        <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold ml-1">Customer Query</span>
-                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 rounded-tl-none max-w-[85%] shadow-sm">
-                            <p className="text-sm text-slate-700">"What are your business hours and do you offer enterprise pricing?"</p>
-                        </div>
-                    </motion.div>
-                )}
-
-                {step >= 1 && (
-                    <motion.div
-                        key="response"
-                        initial={{ opacity: 0, x: 30, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        className="flex flex-col items-end space-y-2 mt-6"
-                    >
-                        <div className="flex items-center gap-2 mb-1 mr-1">
-                            <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center p-1">
-                                <div className="w-full h-full rounded-full bg-white/20 animate-pulse" />
-                            </div>
-                            <span className="text-[10px] uppercase tracking-widest text-accent font-bold">AI Assistant</span>
-                        </div>
-                        <div className="bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] rounded-2xl p-4 rounded-tr-none max-w-[90%] shadow-lg shadow-blue-500/10">
-                            {step === 1 ? (
-                                <div className="flex gap-1 py-1">
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-duration:0.8s]" />
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.2s] [animation-duration:0.8s]" />
-                                    <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:0.4s] [animation-duration:0.8s]" />
-                                </div>
-                            ) : (
-                                <p className="text-sm text-white font-medium italic">
-                                    "We operate 24/7! I've attached our customized enterprise tier proposal based on your scale."
-                                </p>
-                            )}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
-
 const CustomProjectsMockup = () => {
     const items = [
         { name: "Gmail", action: "Processing inbound", icon: "M1.5 8.67V10.33C1.5 11.25 2.25 12 3.17 12H12.83C13.75 12 14.5 11.25 14.5 10.33V8.67", status: "Active" },
@@ -149,7 +83,7 @@ export default function Services() {
     return (
         <section id="services" className="py-24 bg-white text-slate-900 overflow-hidden">
             <div className="container-custom">
-                {/* 🚀 Feature 1: AI Agent Builder (REPLACED) */}
+                {/* 🚀 Feature 1: AI Agent Builder */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
                     <div className="flex-1 space-y-10">
                         <div>
@@ -207,73 +141,102 @@ export default function Services() {
                                 alt="AI Agent Builder Interface" 
                                 className="w-full h-full object-cover"
                             />
-                            {/* Glass overlay effect similar to screenshot */}
                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
                 </div>
 
-                {/* Remaining Services Sections (Restored and Cleaned) */}
-                <div className="flex flex-col gap-32 md:gap-48 mt-20">
-                    {/* Data Processing Section */}
-                    <div className="flex flex-col md:flex-row gap-16 items-center">
-                        <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
-                            <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center bg-slate-50 rounded-3xl border border-slate-100">
-                                <div className="absolute top-[20px] left-[20px] px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
-                                    <CountUp value={87} suffix="% +" />
-                                </div>
-                                <div className="flex-1 w-full flex items-end justify-between gap-3 pt-12">
-                                    {[72, 48, 85, 63, 91, 54, 76, 58, 82, 65].map((val, idx) => (
-                                        <div key={idx} className="flex-1 h-full flex items-end">
-                                            <motion.div
-                                                initial={{ height: "0%" }}
-                                                whileInView={{ height: `${val}%` }}
-                                                className="w-full rounded-t-lg bg-gradient-to-t from-blue-100 to-[#3B5BFF]"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
+                {/* 📊 Feature 2: Data Processing & Insights */}
+                <div className="flex flex-col md:flex-row gap-16 items-center mb-32 md:mb-48">
+                    <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
+                        <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden">
+                            <div className="absolute top-[20px] left-[20px] px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
+                                <CountUp value={87} suffix="% +" />
                             </div>
-                        </div>
-                        <div className="flex-1 space-y-6 order-1 md:order-2">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
-                                AI Assistant
+                            <div className="flex-1 w-full flex items-end justify-between gap-3 pt-12">
+                                {[72, 48, 85, 63, 91, 54, 76, 58, 82, 65].map((val, idx) => (
+                                    <div key={idx} className="flex-1 h-full flex items-end">
+                                        <motion.div
+                                            initial={{ height: "0%" }}
+                                            whileInView={{ height: `${val}%` }}
+                                            className="w-full rounded-t-lg bg-gradient-to-t from-blue-100 to-[#3B5BFF]"
+                                        />
+                                    </div>
+                                ))}
                             </div>
-                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Data Processing & Insights</h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Turn raw data into actionable insights with AI-driven analysis and reporting.</p>
                         </div>
                     </div>
-
-                    {/* Sales & Marketing Section */}
-                    <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
-                        <div className="flex-1 w-full max-w-2xl">
-                            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 min-h-[400px] flex items-center justify-center">
-                                <SalesMarketingMockup />
-                            </div>
+                    <div className="flex-1 space-y-6 order-1 md:order-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                            AI Assistant
                         </div>
-                        <div className="flex-1 space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
-                                Sales & Marketing
+                        <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Data Processing & Insights</h3>
+                        <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Turn raw data into actionable insights with AI-driven analysis and reporting.</p>
+                    </div>
+                </div>
+
+                {/* 🚀 Feature 3: Ticketing System & Sales Pipeline (REPLACED) */}
+                <div className="flex flex-col md:flex-row gap-16 items-center mb-32 md:mb-48">
+                    <div className="flex-1 space-y-10">
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
+                                <div className="w-1 h-1 rounded-full bg-blue-600" />
+                                Advanced Feature
                             </div>
-                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Accelerate Sales Growth</h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">AI tools for lead generation, personalized outreach, and automated content creation.</p>
+                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                                Ticketing System & Sales Pipeline
+                            </h3>
+                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
+                                Manage every customer interaction through a clear, visual pipeline — from lead generation to after-sales support.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 mt-8">
+                            {[
+                                { label: 'Multiple Boards', icon: 'M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.11 21 21 20.1 21 19V5C21 3.9 20.11 3 19 3M19 19H5V5H19V19Z M7 10h10v2H7z M7 7h10v2H7z M7 13h10v2H7z' },
+                                { label: 'Automation Rules', icon: 'M13 3L11 3L11 7.2L9.4 5.6L8 7L12 11L16 7L14.6 5.6L13 7.2L13 3Z M16 13h-8v2h8v-2z' },
+                                { label: 'Analytics & Insights', icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z' }
+                            ].map((pill, i) => (
+                                <div key={i} className="flex items-center gap-3 px-5 py-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-shadow">
+                                    <div className="w-5 h-5 text-blue-600 flex items-center justify-center">
+                                        <svg viewBox="0 0 24 24" className="w-full h-full fill-current"><path d={pill.icon} /></svg>
+                                    </div>
+                                    <span className="text-slate-700 font-bold text-sm tracking-tight">{pill.label}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
+                    
+                    <div className="flex-1 w-full">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative w-full h-[450px] md:h-[550px] rounded-3xl overflow-hidden"
+                        >
+                            <img 
+                                src="/section_assets/bg_services4.avif" 
+                                alt="Sales Pipeline Interface" 
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.div>
+                    </div>
+                </div>
 
-                    {/* Custom Projects Section */}
-                    <div className="flex flex-col md:flex-row gap-16 items-center">
-                        <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
-                            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 min-h-[450px] flex items-center justify-center">
-                                <CustomProjectsMockup />
-                            </div>
+                {/* 🌌 Feature 4: Custom Projects */}
+                <div className="flex flex-col md:flex-row gap-16 items-center">
+                    <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
+                        <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 min-h-[450px] flex items-center justify-center overflow-hidden">
+                            <CustomProjectsMockup />
                         </div>
-                        <div className="flex-1 space-y-6 order-1 md:order-2">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
-                                Custom Projects
-                            </div>
-                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Build Smarter Systems</h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Whether you're starting from scratch or enhancing an existing system, we build custom AI projects aligned with your goals.</p>
+                    </div>
+                    <div className="flex-1 space-y-6 order-1 md:order-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                            Custom Projects
                         </div>
+                        <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Build Smarter Systems</h3>
+                        <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Whether you're starting from scratch or enhancing an existing system, we build custom AI projects aligned with your goals.</p>
                     </div>
                 </div>
             </div>
