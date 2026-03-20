@@ -66,7 +66,7 @@ export default function Services() {
                             ))}
                         </div>
                     </div>
-                    
+
                     <div className="flex-1 w-full relative">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -91,10 +91,10 @@ export default function Services() {
                             transition={{ duration: 0.8 }}
                             className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white"
                         >
-                            <img 
-                                src="/section_assets/bg_services2.avif" 
-                                alt="Data Insights Dashboard" 
-                                className="w-full h-full object-contain" 
+                            <img
+                                src="/section_assets/bg_services2.avif"
+                                alt="Data Insights Dashboard"
+                                className="w-full h-full object-contain"
                             />
                         </motion.div>
                     </div>
@@ -107,7 +107,7 @@ export default function Services() {
                     </div>
                 </div>
 
-                {/* 🚀 Feature 3: Ticketing System & Sales Pipeline */}
+                {/* 🚀 Feature 3: Accelerated Sales Growth */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
                     <div className="flex-1 space-y-10">
                         <div className="space-y-6">
@@ -116,7 +116,7 @@ export default function Services() {
                                 Advanced Feature
                             </div>
                             <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                                Ticketing System & Sales Pipeline
+                                Accelerated Sales Growth
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
                                 Manage every customer interaction through a clear, visual pipeline — from lead generation to after-sales support.
@@ -138,7 +138,7 @@ export default function Services() {
                             ))}
                         </div>
                     </div>
-                    
+
                     <div className="flex-1 w-full">
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
@@ -152,7 +152,7 @@ export default function Services() {
                     </div>
                 </div>
 
-                {/* 🚀 Feature 4: Multi-Agent Flow Builder (REPLACED) */}
+                {/* 🚀 Feature 4: Build Smarter Systems (REPLACED) */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center">
                     <div className="flex-1 w-full order-2 md:order-1">
                         <motion.div
@@ -173,7 +173,7 @@ export default function Services() {
                                 Automation Flow
                             </div>
                             <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                                Multi-Agent Flow Builder
+                                Build Smarter Systems
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
                                 Design and manage complex conversation systems effortlessly. Route customers to the right AI or human agent based on their needs.
@@ -186,8 +186,8 @@ export default function Services() {
                                 'Build conversation flows with drag & drop.',
                                 'Let AI take over after hours.'
                             ].map((item, i) => (
-                                <motion.div 
-                                    key={i} 
+                                <motion.div
+                                    key={i}
                                     initial={{ opacity: 0, x: 10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: i * 0.1 }}
