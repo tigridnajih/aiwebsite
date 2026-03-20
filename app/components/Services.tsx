@@ -73,7 +73,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden"
                         >
                             <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-contain" />
                         </motion.div>
@@ -90,7 +90,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
@@ -171,7 +171,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden"
                         >
                             <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-contain" />
                         </motion.div>
@@ -186,7 +186,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden"
                         >
                             <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-contain" />
                         </motion.div>
