@@ -6,33 +6,15 @@ import TrustLogos from './TrustLogos';
 export default function Hero() {
     return (
         <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
-            {/* 💎 3D Floating Element (RESTORED TO RIGHT) */}
-            <div className="absolute top-1/2 -right-32 lg:right-0 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
-                <motion.img
-                    src="/herosection_assets/hero_3delement.avif"
-                    alt="3D Decorative Element"
-                    className="w-full h-full object-contain"
-                    animate={{ 
-                        y: [0, -25, 0],
-                        rotate: [0, 2, 0]
-                    }}
-                    transition={{ 
-                        duration: 6, 
-                        repeat: Infinity, 
-                        ease: "easeInOut" 
-                    }}
-                />
-            </div>
-
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* Bottom gradient mask for smooth transition */}
             <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/40 to-transparent z-[15] pointer-events-none" />
 
-            {/* Main Content Area */}
+            {/* Main Content Area - UNIFIED CONTAINER DESIGN */}
             <div className="flex-1 flex items-center relative z-20 w-full lg:pt-0">
-                <div className="container-custom grid lg:grid-cols-2 gap-12 items-center">
+                <div className="container-custom grid lg:grid-cols-2 gap-8 items-center h-full">
                     {/* Left Column: Content */}
                     <div className="flex flex-col gap-6 max-w-2xl items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
                         {/* Trusted Proof */}
@@ -48,7 +30,7 @@ export default function Hero() {
                         </motion.div>
 
                         <div className="space-y-4">
-                        <motion.h1 
+                            <motion.h1 
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -90,6 +72,28 @@ export default function Hero() {
                             >
                                 See How It Works
                             </Link>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Column: 💎 3D Floating Element (INTEGRATED INTO GRID) */}
+                    <div className="relative w-full h-[400px] md:h-[600px] lg:h-[800px] flex items-center justify-center lg:justify-end">
+                        <motion.div
+                            className="w-full h-full"
+                            animate={{ 
+                                y: [0, -25, 0],
+                                rotate: [0, 2, 0]
+                            }}
+                            transition={{ 
+                                duration: 6, 
+                                repeat: Infinity, 
+                                ease: "easeInOut" 
+                            }}
+                        >
+                            <img
+                                src="/herosection_assets/hero_3delement.avif"
+                                alt="3D Decorative Element"
+                                className="w-full h-full object-contain scale-125 lg:scale-150 transform translate-x-8 md:translate-x-16 lg:translate-x-32"
+                            />
                         </motion.div>
                     </div>
                 </div>
