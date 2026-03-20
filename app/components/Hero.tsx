@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900">
             {/* 🖼️ Hero Background Image */}
             <div className="absolute inset-0 z-0">
                 <img 
