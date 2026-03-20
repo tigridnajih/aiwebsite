@@ -84,22 +84,15 @@ export default function Services() {
                 {/* 📊 Feature 2: Data Processing & Insights */}
                 <div className="flex flex-col md:flex-row gap-16 items-center mb-32 md:mb-48">
                     <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
-                        <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden">
-                            <div className="absolute top-[20px] left-[20px] px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
-                                <CountUp value={87} suffix="% +" />
-                            </div>
-                            <div className="flex-1 w-full flex items-end justify-between gap-3 pt-12">
-                                {[72, 48, 85, 63, 91, 54, 76, 58, 82, 65].map((val, idx) => (
-                                    <div key={idx} className="flex-1 h-full flex items-end">
-                                        <motion.div
-                                            initial={{ height: "0%" }}
-                                            whileInView={{ height: `${val}%` }}
-                                            className="w-full rounded-t-lg bg-gradient-to-t from-blue-100 to-[#3B5BFF]"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+                        >
+                            <img src="/section_assets/bg_services2.avif" alt="Data Insights" className="w-full h-full object-cover" />
+                        </motion.div>
                     </div>
                     <div className="flex-1 space-y-6 order-1 md:order-2">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
