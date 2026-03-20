@@ -44,38 +44,44 @@ export default function WhyTrustUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.15 }}
-                            className="group relative flex flex-col p-8 bg-slate-50/50 rounded-[2.5rem] border border-slate-100 hover:border-accent/20 transition-all duration-500 hover:shadow-xl hover:shadow-slate-200/50 overflow-hidden min-h-[420px]"
+                            className="group relative flex flex-col p-8 bg-slate-50/50 rounded-[2.5rem] border border-slate-100 hover:border-accent/20 transition-all duration-500 hover:shadow-xl hover:shadow-slate-200/50 overflow-hidden min-h-[460px] text-center"
                         >
                             {/* Card Header Label */}
                             <div className="text-[10px] md:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-12 relative z-10">
                                 [ {feature.label} ]
                             </div>
 
-                            {/* Headline - High Contrast & Large */}
+                            {/* 🎥 Centered 3D Icon Area */}
+                            <div className="flex-1 flex items-center justify-center relative z-10 mb-8">
+                                <motion.div
+                                    whileHover={{ scale: 1.1, rotate: [0, -2, 2, 0] }}
+                                    transition={{ duration: 0.5 }}
+                                    className="relative w-48 h-48 md:w-60 md:h-60"
+                                >
+                                    <img
+                                        src={feature.icon}
+                                        alt={feature.title}
+                                        className="w-full h-full object-contain filter drop-shadow-[15px_30px_50px_rgba(59,91,255,0.15)]"
+                                    />
+                                </motion.div>
+                            </div>
+
+                            {/* Headline - Centered at the bottom */}
                             <div className="relative z-10 mt-auto">
-                                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-[1.1] tracking-tight group-hover:text-accent transition-colors duration-300">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-[1.1] tracking-tight group-hover:text-accent transition-colors duration-300 mx-auto max-w-[200px]">
                                     {feature.title}
                                 </h3>
                             </div>
 
-                            {/* 🎥 Default Large, Right-Aligned & Cropped Icon */}
-                            <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-72 h-72 md:w-80 md:h-80 pointer-events-none transition-all duration-700 group-hover:scale-105 group-hover:-translate-x-4">
-                                <img
-                                    src={feature.icon}
-                                    alt={feature.title}
-                                    className="w-full h-full object-contain filter drop-shadow-[20px_40px_60px_rgba(59,91,255,0.2)]"
-                                />
-                            </div>
-
-                            {/* Subtle Hover Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                            {/* Subtle Hover Gradient Background Effect */}
+                            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                         </motion.div>
                     ))}
                 </div>
             </div>
 
             {/* Background Atmosphere */}
-            <div className="absolute top-1/2 right-0 w-1/3 h-1/2 bg-blue-500/5 blur-[120px] pointer-events-none rounded-full" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/[0.02] blur-[120px] pointer-events-none rounded-full" />
         </section>
     );
 }
