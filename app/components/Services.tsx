@@ -82,6 +82,57 @@ export default function Services() {
                 </div>
 
 
+                {/* 📊 Feature 2: Actionable Insights */}
+                <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
+                    {/* Image Column */}
+                    <div className="flex-1 w-full order-2 md:order-1">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-sm"
+                        >
+                            <img 
+                                src="/section_assets/bg_services2.avif" 
+                                alt="AI Insights Dashboard" 
+                                className="w-full h-full object-contain p-4" 
+                            />
+                        </motion.div>
+                    </div>
+
+                    {/* Content Column */}
+                    <div className="flex-1 space-y-10 order-1 md:order-2">
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
+                                <div className="w-1 h-1 rounded-full bg-blue-600" />
+                                Data Intelligence
+                            </div>
+                            <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                                Actionable insights <br />
+                                from your data.
+                            </h3>
+                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
+                                Turn complex datasets into clear, visual intelligence. Understand your customer behavior and business trends at a glance.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+                            {[
+                                { title: 'Live Dashboards', desc: 'Real-time monitoring of every critical business KPI.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+                                { title: 'Automated Reports', desc: 'Smarter business decisions with AI-driven summaries.', icon: 'M9 17v-2m3 2v-4m3 4v-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
+                            ].map((f, i) => (
+                                <div key={i} className="space-y-4">
+                                    <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-600">
+                                        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><path d={f.icon} /></svg>
+                                    </div>
+                                    <h4 className="text-xl font-bold text-slate-900">{f.title}</h4>
+                                    <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">{f.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
 
                 {/* 🚀 Feature 3: Accelerated Sales Growth */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
