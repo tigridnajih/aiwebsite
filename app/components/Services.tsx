@@ -73,10 +73,10 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
                         >
-                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent pointer-events-none" />
+                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-contain p-4 md:p-8" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
                 </div>
@@ -91,12 +91,12 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 group"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 group"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
                                 alt="AI Insights Dashboard" 
-                                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]" 
+                                className="w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 group-hover:scale-[1.02]" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
@@ -173,9 +173,10 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[450px] md:h-[550px] rounded-3xl overflow-hidden"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
                         >
-                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-cover" />
+                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-contain p-4 md:p-8" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
                 </div>
@@ -188,9 +189,10 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square md:aspect-auto md:h-[550px] rounded-3xl overflow-hidden"
+                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
                         >
-                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-cover" />
+                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-contain p-4 md:p-8" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
 
