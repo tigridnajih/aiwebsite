@@ -2,26 +2,21 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import TrustLogos from './TrustLogos';
+import PlasmaSphere from './PlasmaSphere';
 
 export default function Hero() {
     return (
         <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
-            {/* 💎 3D Floating Element (RESTORED) */}
+            {/* 🔮 3D Plasma Sphere (REPLACED STATIC IMAGE) */}
             <div className="absolute top-1/2 -right-32 lg:right-0 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
-                <motion.img
-                    src="/herosection_assets/hero_3delement.avif"
-                    alt="3D Decorative Element"
-                    className="w-full h-full object-contain"
-                    animate={{ 
-                        y: [0, -25, 0],
-                        rotate: [0, 2, 0]
-                    }}
-                    transition={{ 
-                        duration: 6, 
-                        repeat: Infinity, 
-                        ease: "easeInOut" 
-                    }}
-                />
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="w-full h-full"
+                >
+                    <PlasmaSphere />
+                </motion.div>
             </div>
 
             {/* Background Texture/Pattern */}
