@@ -76,15 +76,15 @@ export default function Hero() {
                     </div>
 
                     {/* Right Column: 💎 3D Floating Element (INTEGRATED INTO GRID) */}
-                    <div className="relative w-full h-[400px] md:h-[600px] lg:h-[800px] flex items-center justify-center lg:justify-end">
+                    <div className="relative w-full h-[400px] md:h-[600px] lg:h-[800px] flex items-center justify-center lg:justify-end -mt-12 md:-mt-24 lg:-mt-32">
                         <motion.div
                             className="w-full h-full"
                             animate={{ 
-                                y: [0, -25, 0],
+                                y: [0, -60, 0],
                                 rotate: [0, 2, 0]
                             }}
                             transition={{ 
-                                duration: 6, 
+                                duration: 8, 
                                 repeat: Infinity, 
                                 ease: "easeInOut" 
                             }}
@@ -92,7 +92,7 @@ export default function Hero() {
                             <img
                                 src="/herosection_assets/hero_3delement.avif"
                                 alt="3D Decorative Element"
-                                className="w-full h-full object-contain scale-125 lg:scale-150 transform translate-x-8 md:translate-x-16 lg:translate-x-32"
+                                className="w-full h-full object-contain scale-140 md:scale-150 lg:scale-[1.8] transform translate-x-4 md:translate-x-8 lg:translate-x-16"
                             />
                         </motion.div>
                     </div>
