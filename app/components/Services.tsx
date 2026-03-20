@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { motion, AnimatePresence, useInView, useSpring, useTransform } from 'framer-motion';
-import SectionHeader from './SectionHeader';
 
 function CountUp({ value, suffix = "", once = false }: { value: number; suffix?: string; once?: boolean }) {
     const ref = React.useRef(null);
@@ -32,132 +31,6 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
         </span>
     );
 }
-
-const AutomationMockup = () => {
-    const messages = [
-        {
-            id: 1,
-            name: "Emma",
-            company: "RetailSync",
-            text: "We're looking to automate inventory updates. Can you help?",
-            time: "09:45 PM",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "whatsapp"
-        },
-        {
-            id: 2,
-            name: "Liam",
-            company: "FinEdge Analytics",
-            text: "How does your AI handle financial data processing?",
-            time: "12:45 AM",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "whatsapp"
-        },
-        {
-            id: 3,
-            name: "Olivia",
-            company: "GreenTech Solutions",
-            text: "Looking for AI automation to streamline customer inquiries.",
-            time: "02:45 AM",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100&h=100",
-            platform: "email"
-        }
-    ];
-
-    const [visibleMessages, setVisibleMessages] = React.useState(messages.slice(0, 3));
-    const [swapCount, setSwapCount] = React.useState(0);
-    const containerRef = React.useRef(null);
-    const isInView = useInView(containerRef, { once: false, amount: 0.3 });
-
-    React.useEffect(() => {
-        if (!isInView) {
-            setVisibleMessages(messages.slice(0, 3));
-            setSwapCount(0);
-            return;
-        }
-
-        if (swapCount >= 2) return;
-
-        const delay = swapCount === 0 ? 300 : 2500;
-
-        const timer = setTimeout(() => {
-            setVisibleMessages((prev) => {
-                const currentIndex = messages.findIndex(m => m.id === prev[0].id);
-                const nextStartIndex = (currentIndex + 1) % messages.length;
-                const nextItems = [];
-                for (let i = 0; i < 3; i++) {
-                    nextItems.push(messages[(nextStartIndex + i) % messages.length]);
-                }
-                return nextItems;
-            });
-            setSwapCount(prev => prev + 1);
-        }, delay);
-
-        return () => clearTimeout(timer);
-    }, [messages, isInView, swapCount]);
-
-    return (
-        <div ref={containerRef} className="w-full max-w-full mx-auto relative px-4 min-h-[420px] flex flex-col justify-center">
-            <AnimatePresence mode="popLayout" initial={false}>
-                {visibleMessages.map((msg, idx) => (
-                    <motion.div
-                        key={msg.id}
-                        layout
-                        initial={{ opacity: 0, x: -20, scale: 0.95 }}
-                        animate={{
-                            opacity: idx === 0 ? 1 : idx === 1 ? 0.6 : 0.3,
-                            x: 0,
-                            scale: idx === 0 ? 1.05 : 1,
-                            zIndex: 10 - idx,
-                            marginTop: idx === 0 ? 0 : 16,
-                            borderWidth: idx === 0 ? 0 : 1,
-                            borderColor: "rgba(255, 255, 255, 0.1)",
-                        }}
-                        exit={{ opacity: 0, x: 20, scale: 0.9, transition: { duration: 0.3 } }}
-                        transition={{
-                            layout: { type: "spring", stiffness: 250, damping: 30 },
-                            opacity: { duration: 0.4 },
-                            scale: { duration: 0.4 }
-                        }}
-                        className={`relative rounded-2xl p-5 overflow-hidden shadow-xl w-full transition-colors duration-500 bg-white border border-slate-100`}
-                    >
-                        {/* Sapphire Gradient Overlay for active bubble */}
-                        <motion.div
-                            initial={false}
-                            animate={{ opacity: idx === 0 ? 1 : 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="absolute inset-0 bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] z-0"
-                        />
-
-                        <div className="relative z-10 flex items-start gap-4">
-                            <div className="relative shrink-0">
-                                <div className="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden border border-white/20 shadow-sm">
-                                    <img src={msg.image} alt={msg.name} className="w-full h-full object-cover" />
-                                </div>
-                                <div className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full border-2 flex items-center justify-center shadow-lg ${msg.platform === 'whatsapp' ? 'bg-[#25D366]' : 'bg-blue-500'} ${idx === 0 ? 'border-[#3B5BFF]' : 'border-white'}`}>
-                                    {msg.platform === 'whatsapp' ? (
-                                        <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-                                    ) : (
-                                        <svg viewBox="0 0 24 24" className="w-2 h-2 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                                <div className="flex justify-between items-center mb-1">
-                                    <span className={`font-bold text-base transition-colors duration-500 ${idx === 0 ? 'text-white' : 'text-slate-900'}`}>{msg.name}, {msg.company}</span>
-                                    <span className={`text-xs font-mono opacity-60 transition-colors duration-500 ${idx === 0 ? 'text-blue-100' : 'text-slate-400'}`}>{msg.time}</span>
-                                </div>
-                                <p className={`text-xs md:text-sm font-medium italic leading-relaxed transition-colors duration-500 ${idx === 0 ? 'text-blue-50' : 'text-slate-600'}`}>
-                                    &ldquo;{msg.text}&rdquo;
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </AnimatePresence>
-        </div>
-    );
-};
 
 const SalesMarketingMockup = () => {
     const [step, setStep] = React.useState(-1);
@@ -273,91 +146,135 @@ const CustomProjectsMockup = () => {
 };
 
 export default function Services() {
-    const features = [
-        {
-            badge: "Workflow Automation",
-            title: "Automate repetitive tasks",
-            description: "We help you streamline internal operations by automating manual workflows like data entry, reporting, and approval chains.",
-            imageSide: "left",
-            mockup: (
-                <div className="relative w-full aspect-[4/3] flex items-center justify-center">
-                    <AutomationMockup />
-                </div>
-            )
-        },
-        {
-            badge: "AI Assistant",
-            title: "Data Processing & Insights",
-            description: "Turn raw data into actionable insights with AI-driven analysis and reporting.",
-            imageSide: "right",
-            mockup: (
-                <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center">
-                    <div className="relative flex-1 flex flex-col z-10">
-                        <div className="absolute top-[-20px] left-0 px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
-                            <CountUp value={87} suffix="% +" />
-                        </div>
-                        <div className="flex-1 w-full flex items-end justify-between gap-4 pt-12 relative z-10">
-                            {[72, 48, 85, 63, 91, 54, 76, 58].map((val, idx) => (
-                                <div key={idx} className="flex-1 h-full flex items-end">
-                                    <motion.div
-                                        initial={{ height: "0%" }}
-                                        whileInView={{ height: `${val}%` }}
-                                        viewport={{ once: false }}
-                                        className="w-full rounded-t-lg bg-gradient-to-t from-blue-100 to-[#3B5BFF] relative overflow-hidden"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )
-        },
-        {
-            badge: "Sales & Marketing",
-            title: "Accelerate Sales Growth",
-            description: "AI tools for lead generation, personalized outreach, and automated content creation.",
-            imageSide: "left",
-            mockup: (
-                <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8">
-                    <SalesMarketingMockup />
-                </div>
-            )
-        },
-        {
-            badge: "Custom Projects",
-            title: "Build Smarter Systems",
-            description: "Whether you're starting from scratch or enhancing an existing system, we build custom AI projects aligned with your goals.",
-            imageSide: "right",
-            mockup: (
-                <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8">
-                    <CustomProjectsMockup />
-                </div>
-            )
-        }
-    ];
-
     return (
         <section id="services" className="py-24 bg-white text-slate-900 overflow-hidden">
             <div className="container-custom">
-                <SectionHeader
-                    badge="Our Services"
-                    title="What we build"
-                    description="We design, develop, and implement automation tools that help you work smarter."
-                />
-
-                <div className="flex flex-col gap-32 md:gap-40 mt-20 md:mt-32">
-                    {features.map((feature, idx) => (
-                        <div
-                            key={idx}
-                            className={`flex flex-col gap-12 items-center ${feature.imageSide === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                        >
-                            <div className="flex-1 space-y-6">
-                                <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">{feature.title}</h3>
-                                <p className="text-slate-500 leading-relaxed text-lg max-w-xl">{feature.description}</p>
+                {/* 🚀 Feature 1: AI Agent Builder (REPLACED) */}
+                <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
+                    <div className="flex-1 space-y-10">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+                                AI Agent Builder
                             </div>
-                            <div className="flex-1 w-full max-w-2xl">{feature.mockup}</div>
+                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                                Build custom AI agents in minutes
+                            </h2>
                         </div>
-                    ))}
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+                            <div className="space-y-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#3B5BFF] flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>
+                                </div>
+                                <h4 className="text-xl font-bold text-slate-900">No-Code Setup</h4>
+                                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Build fully functional agents in under 5 minutes.</p>
+                            </div>
+                            <div className="space-y-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#3B5BFF] flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5zM6.5 2H20v20H6.5" /><path d="M6.5 18H20" /></svg>
+                                </div>
+                                <h4 className="text-xl font-bold text-slate-900">Custom Knowledge</h4>
+                                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Upload SOPs or FAQs for accurate answers.</p>
+                            </div>
+                            <div className="space-y-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#3B5BFF] flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                                </div>
+                                <h4 className="text-xl font-bold text-slate-900">API Integration</h4>
+                                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Connect to apps like CRM, booking, or shipping.</p>
+                            </div>
+                            <div className="space-y-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#3B5BFF] flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><path d="m4.5 16.5-1.5 3 3 1.5 9-11-4.5-4.5zm15-15 1.5 1.5M10.5 4.5l3 3m-3 3 3 3" /></svg>
+                                </div>
+                                <h4 className="text-xl font-bold text-slate-900">Instant Deployment</h4>
+                                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Launch agents across multiple channels easily.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="flex-1 w-full relative">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+                        >
+                            <img 
+                                src="/section_assets/bg_services1.avif" 
+                                alt="AI Agent Builder Interface" 
+                                className="w-full h-full object-cover"
+                            />
+                            {/* Glass overlay effect similar to screenshot */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent pointer-events-none" />
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Remaining Services Sections (Restored and Cleaned) */}
+                <div className="flex flex-col gap-32 md:gap-48 mt-20">
+                    {/* Data Processing Section */}
+                    <div className="flex flex-col md:flex-row gap-16 items-center">
+                        <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
+                            <div className="relative w-full aspect-[4/3] p-8 flex flex-col justify-center bg-slate-50 rounded-3xl border border-slate-100">
+                                <div className="absolute top-[20px] left-[20px] px-6 py-3 rounded-2xl bg-gradient-to-br from-[#3B5BFF] to-[#2563EB] flex items-center justify-center z-20 shadow-lg shadow-blue-500/20 font-bold text-white">
+                                    <CountUp value={87} suffix="% +" />
+                                </div>
+                                <div className="flex-1 w-full flex items-end justify-between gap-3 pt-12">
+                                    {[72, 48, 85, 63, 91, 54, 76, 58, 82, 65].map((val, idx) => (
+                                        <div key={idx} className="flex-1 h-full flex items-end">
+                                            <motion.div
+                                                initial={{ height: "0%" }}
+                                                whileInView={{ height: `${val}%` }}
+                                                className="w-full rounded-t-lg bg-gradient-to-t from-blue-100 to-[#3B5BFF]"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex-1 space-y-6 order-1 md:order-2">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                                AI Assistant
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Data Processing & Insights</h3>
+                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Turn raw data into actionable insights with AI-driven analysis and reporting.</p>
+                        </div>
+                    </div>
+
+                    {/* Sales & Marketing Section */}
+                    <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
+                        <div className="flex-1 w-full max-w-2xl">
+                            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 min-h-[400px] flex items-center justify-center">
+                                <SalesMarketingMockup />
+                            </div>
+                        </div>
+                        <div className="flex-1 space-y-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                                Sales & Marketing
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Accelerate Sales Growth</h3>
+                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">AI tools for lead generation, personalized outreach, and automated content creation.</p>
+                        </div>
+                    </div>
+
+                    {/* Custom Projects Section */}
+                    <div className="flex flex-col md:flex-row gap-16 items-center">
+                        <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
+                            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 min-h-[450px] flex items-center justify-center">
+                                <CustomProjectsMockup />
+                            </div>
+                        </div>
+                        <div className="flex-1 space-y-6 order-1 md:order-2">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+                                Custom Projects
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Build Smarter Systems</h3>
+                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Whether you're starting from scratch or enhancing an existing system, we build custom AI projects aligned with your goals.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
