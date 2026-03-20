@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
       <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 md:px-8">
         <div className={`
-          flex items-center justify-between w-full max-w-[1440px] h-16 px-6 md:px-10 rounded-full border transition-all duration-500 pointer-events-auto
+          flex items-center justify-between w-full max-w-[1440px] h-11 px-2 md:px-4 rounded-full border transition-all duration-500 pointer-events-auto
           ${scrolled 
             ? 'bg-white/70 backdrop-blur-xl border-slate-200 shadow-xl shadow-black/5' 
             : 'bg-white/40 backdrop-blur-md border-white/50 shadow-lg shadow-black/5'
