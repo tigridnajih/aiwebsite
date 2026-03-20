@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="relative w-full overflow-hidden bg-white text-slate-900 pt-16 pb-12 border-t border-slate-100">
             {/* 📽️ Background GIF */}
-            <div className="absolute inset-0 z-0 pointer-events-none opacity-20 h-[80%]">
+            <div className="absolute inset-0 z-0 pointer-events-none h-full">
                 <img 
                     src="/section_assets/footer_bg.gif" 
                     alt="Background Grid" 
@@ -17,13 +17,7 @@ export default function Footer() {
             
             <div className="container-custom relative z-10">
                 {/* 🎭 2. Large Moving Text Section */}
-                <div
-                    className="relative w-full mb-24 overflow-hidden"
-                    style={{
-                        maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
-                    }}
-                >
+                <div className="relative w-full mb-24 overflow-hidden">
                     <div className="flex whitespace-nowrap overflow-hidden py-4">
                         <div className="flex w-max animate-infinite-scroll-slow-extremely pause-on-hover">
                             {[1, 2].map((group) => (
