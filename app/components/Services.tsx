@@ -73,9 +73,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
                         >
-                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-contain rounded-3xl" />
+                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-cover" />
                         </motion.div>
                     </div>
                 </div>
@@ -90,12 +90,12 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
                                 alt="AI Insights Dashboard" 
-                                className="w-full h-full object-contain rounded-3xl" 
+                                className="w-full h-full object-cover" 
                             />
                         </motion.div>
                     </div>
@@ -171,9 +171,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
                         >
-                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-contain rounded-3xl" />
+                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-cover" />
                         </motion.div>
                     </div>
                 </div>
@@ -186,9 +186,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full h-[350px] md:h-[450px]"
+                            className="relative w-full aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
                         >
-                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-contain rounded-3xl" />
+                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-cover" />
                         </motion.div>
                     </div>
 
