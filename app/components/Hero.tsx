@@ -28,7 +28,7 @@ export default function Hero() {
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain mix-blend-screen"
                     >
                         <source src="/herosection_assets/blade_hero.webm" type="video/webm" />
                     </video>
