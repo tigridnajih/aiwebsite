@@ -12,8 +12,47 @@ export default function Hero() {
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* Main Content Area - CENTERED DESIGN */}
-            <div className="flex-1 flex flex-col items-center justify-start relative z-20 w-full px-4 text-center">
-                <div className="container-custom max-w-5xl flex flex-col items-center">
+            <div className="flex-1 flex flex-col items-center justify-center relative z-20 w-full px-4 text-center lg:-mt-12">
+                <div className="relative container-custom max-w-5xl flex flex-col items-center w-full">
+                    
+                    {/* 💎 3D Element 1: Top Right */}
+                    <div className="absolute top-0 right-0 -translate-y-[35%] translate-x-[35%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
+                        <motion.img
+                            src="/herosection_assets/hero_3delement.avif"
+                            alt="3D Decorative Element"
+                            className="w-full h-full object-contain"
+                            animate={{ 
+                                y: [-15, 15, -15],
+                                rotate: [0, 4, 0]
+                            }}
+                            transition={{ 
+                                duration: 14, 
+                                repeat: Infinity, 
+                                ease: "easeInOut" 
+                            }}
+                        />
+                    </div>
+
+                    {/* 💎 3D Element 2: Bottom Left */}
+                    <div className="absolute bottom-0 left-0 translate-y-[35%] -translate-x-[35%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
+                        <motion.img
+                            src="/herosection_assets/hero_3delement.avif"
+                            alt="3D Decorative Element"
+                            className="w-full h-full object-contain"
+                            animate={{ 
+                                y: [15, -15, 15],
+                                rotate: [0, -4, 0]
+                            }}
+                            transition={{ 
+                                duration: 16, 
+                                repeat: Infinity, 
+                                ease: "easeInOut" 
+                            }}
+                        />
+                    </div>
+
+                    {/* Text Container Wrapper */}
+                    <div className="relative z-10 flex flex-col items-center w-full">
                     
                     {/* Trusted Proof */}
                     <motion.div
@@ -71,6 +110,8 @@ export default function Hero() {
                             See How It Works
                         </Link>
                     </motion.div>
+                    
+                    </div> {/* End Text Container Wrapper */}
                 </div>
             </div>
 
