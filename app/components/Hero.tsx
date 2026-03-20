@@ -48,14 +48,14 @@ export default function Hero() {
                         </motion.div>
 
                         <div className="space-y-4">
-                            <motion.h1 
+                        <motion.h1 
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="text-4xl md:text-7xl lg:text-[80px] font-bold font-heading tracking-tight leading-[1.05] text-slate-900"
+                                className="text-4xl md:text-7xl lg:text-[72px] font-bold font-heading tracking-tight leading-[1.05] text-slate-900"
                             >
-                                Intelligence that Powers <br className="hidden lg:block" />
-                                Your Business Operations at Scale.
+                                Intelligent Automation for <br className="hidden lg:block" />
+                                Modern Businesses.
                             </motion.h1>
                             
                             <motion.p 
