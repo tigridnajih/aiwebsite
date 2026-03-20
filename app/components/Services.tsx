@@ -81,31 +81,7 @@ export default function Services() {
                     </div>
                 </div>
 
-                {/* 📊 Feature 2: Data Processing & Insights */}
-                <div className="flex flex-col md:flex-row gap-16 items-center mb-32 md:mb-48">
-                    <div className="flex-1 w-full max-w-2xl order-2 md:order-1">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white"
-                        >
-                            <img
-                                src="/section_assets/bg_services2.avif"
-                                alt="Data Insights Dashboard"
-                                className="w-full h-full object-contain"
-                            />
-                        </motion.div>
-                    </div>
-                    <div className="flex-1 space-y-6 order-1 md:order-2">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
-                            AI Assistant
-                        </div>
-                        <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Data Processing & Insights</h3>
-                        <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">Turn raw data into actionable insights with AI-driven analysis and reporting.</p>
-                    </div>
-                </div>
+
 
                 {/* 🚀 Feature 3: Accelerated Sales Growth */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
