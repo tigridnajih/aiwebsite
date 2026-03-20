@@ -22,11 +22,12 @@ export default function Hero() {
                             alt="3D Decorative Element"
                             className="w-full h-full object-contain"
                             animate={{ 
-                                y: [-15, 15, -15],
-                                rotate: [0, 4, 0]
+                                y: [-35, 35, -35],
+                                rotate: [-2, 8, -2],
+                                scale: [1, 1.05, 1]
                             }}
                             transition={{ 
-                                duration: 14, 
+                                duration: 10, 
                                 repeat: Infinity, 
                                 ease: "easeInOut" 
                             }}
@@ -40,11 +41,12 @@ export default function Hero() {
                             alt="3D Decorative Element"
                             className="w-full h-full object-contain"
                             animate={{ 
-                                y: [15, -15, 15],
-                                rotate: [0, -4, 0]
+                                y: [35, -35, 35],
+                                rotate: [2, -8, 2],
+                                scale: [1, 1.05, 1]
                             }}
                             transition={{ 
-                                duration: 16, 
+                                duration: 12, 
                                 repeat: Infinity, 
                                 ease: "easeInOut" 
                             }}
