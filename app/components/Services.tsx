@@ -44,7 +44,7 @@ export default function Services() {
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                                 AI Agent Builder
                             </div>
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
                             </h2>
                         </div>
@@ -73,10 +73,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
+                            className="relative w-full h-[350px] md:h-[450px]"
                         >
-                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-contain p-4 md:p-8" />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
+                            <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-contain" />
                         </motion.div>
                     </div>
                 </div>
@@ -91,14 +90,13 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 group"
+                            className="relative w-full h-[350px] md:h-[450px]"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
                                 alt="AI Insights Dashboard" 
-                                className="w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 group-hover:scale-[1.02]" 
+                                className="w-full h-full object-contain" 
                             />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
 
@@ -109,7 +107,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Data Intelligence
                             </div>
-                            <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2]">
                                 Actionable insights <br />
                                 from your data.
                             </h3>
@@ -143,7 +141,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Advanced Feature
                             </div>
-                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2]">
                                 Accelerated Sales Growth
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
@@ -173,10 +171,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
+                            className="relative w-full h-[350px] md:h-[450px]"
                         >
-                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-contain p-4 md:p-8" />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
+                            <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-contain" />
                         </motion.div>
                     </div>
                 </div>
@@ -189,10 +186,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm"
+                            className="relative w-full h-[350px] md:h-[450px]"
                         >
-                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-contain p-4 md:p-8" />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
+                            <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-contain" />
                         </motion.div>
                     </div>
 
@@ -202,7 +198,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Automation Flow
                             </div>
-                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2]">
                                 Build Smarter Systems
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
