@@ -6,17 +6,13 @@ import TrustLogos from './TrustLogos';
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
-            {/* 🎥 Video Background */}
+            {/* 🖼️ Hero Background Image */}
             <div className="absolute inset-0 z-0">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                <img 
+                    src="/herosection_assets/hero_bg.png" 
+                    alt="Hero Background" 
                     className="w-full h-full object-cover"
-                >
-                    <source src="/videos/hero_video.mp4" type="video/mp4" />
-                </video>
+                />
             </div>
 
             {/* Background Texture/Pattern */}
