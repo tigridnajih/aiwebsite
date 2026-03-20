@@ -5,104 +5,118 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col pt-32 lg:pt-48 overflow-hidden text-slate-900 bg-white">
+            {/* 💎 3D Element Part 1: Top Right */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] z-10 pointer-events-none select-none">
+                <motion.img
+                    src="/herosection_assets/3delement_part1.avif"
+                    alt="3D Decorative Element Part 1"
+                    className="w-full h-full object-contain opacity-80"
+                    animate={{ 
+                        y: [0, -40, 0],
+                        rotate: [0, 5, 0],
+                        scale: [1, 1.05, 1]
+                    }}
+                    transition={{ 
+                        duration: 12, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                    }}
+                />
+            </div>
+
+            {/* 💎 3D Element Part 2: Bottom Left */}
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] z-10 pointer-events-none select-none">
+                <motion.img
+                    src="/herosection_assets/3delement_part2.avif"
+                    alt="3D Decorative Element Part 2"
+                    className="w-full h-full object-contain opacity-80"
+                    animate={{ 
+                        y: [0, 50, 0],
+                        rotate: [0, -8, 0],
+                        scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                        duration: 15, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                    }}
+                />
+            </div>
+
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
-            {/* Bottom gradient mask for smooth transition */}
-            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white via-white/40 to-transparent z-[15] pointer-events-none" />
+            {/* Main Content Area - CENTERED DESIGN */}
+            <div className="flex-1 flex flex-col items-center justify-start relative z-20 w-full px-4 text-center">
+                <div className="container-custom max-w-5xl flex flex-col items-center">
+                    
+                    {/* Trusted Proof */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-8"
+                    >
+                        <span className="text-xs md:text-sm font-bold tracking-widest text-accent bg-accent/5 px-6 py-2 rounded-full border border-accent/10 uppercase">
+                            Supercharge your Business
+                        </span>
+                    </motion.div>
 
-            {/* Main Content Area - UNIFIED CONTAINER DESIGN */}
-            <div className="flex-1 flex items-center relative z-20 w-full lg:pt-0">
-                <div className="container-custom grid lg:grid-cols-2 gap-8 items-center h-full">
-                    {/* Left Column: Content */}
-                    <div className="flex flex-col gap-6 max-w-2xl items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
-                        {/* Trusted Proof */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 15 }}
+                    <div className="space-y-8">
+                        <motion.h1 
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="inline-block"
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="text-4xl md:text-7xl lg:text-[72px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
                         >
-                            <span className="text-sm md:text-base font-bold tracking-tight text-accent bg-accent/5 px-4 py-1.5 rounded-full border border-accent/10">
-                                Supercharge your Business
-                            </span>
-                        </motion.div>
-
-                        <div className="space-y-4">
-                            <motion.h1 
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="text-4xl md:text-7xl lg:text-[72px] font-bold font-heading tracking-tight leading-[1.05] text-slate-900"
-                            >
-                                Intelligent Automation for <br className="hidden lg:block" />
-                                Modern Businesses.
-                            </motion.h1>
-                            
-                            <motion.p 
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="text-base md:text-lg text-slate-600 max-w-xl leading-relaxed tracking-wide"
-                            >
-                                Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
-                            </motion.p>
-                        </div>
-
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
+                            Intelligent Automation for <br />
+                            Modern Businesses.
+                        </motion.h1>
+                        
+                        <motion.p 
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row gap-4 pt-4 items-center"
+                            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                            className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
                         >
-                            <Link
-                                href="#contact"
-                                className="group flex items-center gap-2 px-10 py-4 rounded-full bg-accent text-white font-bold text-sm transition-all hover:bg-accent/90 hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-accent/30"
-                            >
-                                Book a Strategy Call
-                                <svg className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-                                </svg>
-                            </Link>
-
-                            <Link
-                                href="#works"
-                                className="px-10 py-4 rounded-full bg-slate-100 border border-slate-200 text-slate-900 font-bold text-sm transition-all duration-300 hover:bg-slate-200"
-                            >
-                                See How It Works
-                            </Link>
-                        </motion.div>
+                            Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
+                        </motion.p>
                     </div>
 
-                    {/* Right Column: 💎 3D Floating Element (INTEGRATED INTO GRID) */}
-                    <div className="relative w-full h-[400px] md:h-[600px] lg:h-[800px] flex items-center justify-center lg:justify-end -mt-12 md:-mt-24 lg:-mt-32">
-                        <motion.div
-                            className="w-full h-full"
-                            animate={{ 
-                                y: [0, -60, 0],
-                                rotate: [0, 2, 0]
-                            }}
-                            transition={{ 
-                                duration: 8, 
-                                repeat: Infinity, 
-                                ease: "easeInOut" 
-                            }}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                        className="flex flex-col sm:flex-row gap-4 pt-12 items-center"
+                    >
+                        <Link
+                            href="#contact"
+                            className="group flex items-center gap-2 px-12 py-5 rounded-full bg-accent text-white font-bold text-base transition-all hover:bg-accent/90 hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-accent/30"
                         >
-                            <img
-                                src="/herosection_assets/hero_3delement.avif"
-                                alt="3D Decorative Element"
-                                className="w-full h-full object-contain scale-140 md:scale-150 lg:scale-[1.8] transform translate-x-4 md:translate-x-8 lg:translate-x-16"
-                            />
-                        </motion.div>
-                    </div>
+                            Book a Strategy Call
+                            <svg className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
+                        </Link>
+
+                        <Link
+                            href="#works"
+                            className="px-12 py-5 rounded-full bg-slate-50 border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg"
+                        >
+                            See How It Works
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
 
-            {/* Integrated TrustLogos */}
-            <div className="relative z-30 pb-12 md:pb-8">
+            {/* Integrated TrustLogos (Kept at bottom) */}
+            <div className="relative z-30 pb-16 md:pb-12 mt-auto">
                 <TrustLogos />
             </div>
+            
+            {/* Bottom gradient mask for smooth transition */}
+            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-white/40 to-transparent z-[15] pointer-events-none" />
         </section>
     );
 }
