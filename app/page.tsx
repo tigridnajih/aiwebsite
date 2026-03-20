@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PortfolioShowcase from './components/PortfolioShowcase';
 import Integrations from './components/Integrations';
+import WhyTrustUs from './components/WhyTrustUs';
 import Testimonials from './components/Testimonials';
 import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
@@ -23,6 +24,7 @@ export default function Home() {
       <HowItWorks />
       <Services />
       <Integrations />
+      <WhyTrustUs />
       <Testimonials />
       <Problem />
       <CaseStudies />
