@@ -16,7 +16,7 @@ export default function Hero() {
             </div>
 
             {/* 📽️ 3D Video Element */}
-            <div className="absolute top-1/2 -right-40 lg:-right-60 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[1200px] lg:h-[1200px] z-10 pointer-events-none select-none mix-blend-screen isolation-isolate">
+            <div className="absolute top-1/2 -right-40 lg:-right-60 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[1200px] lg:h-[1200px] z-10 pointer-events-none select-none">
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -29,7 +29,10 @@ export default function Hero() {
                         muted
                         playsInline
                         className="w-full h-full object-contain relative"
-                        style={{ filter: 'brightness(1.1) contrast(1.1)' }}
+                        style={{ 
+                            filter: 'saturate(1.8) contrast(1.2) brightness(1.1)',
+                            mixBlendMode: 'plus-lighter'
+                        }}
                     >
                         <source src="/herosection_assets/blade_hero.webm" type="video/webm" />
                     </video>
