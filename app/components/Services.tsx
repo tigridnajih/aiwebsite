@@ -91,13 +91,14 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-sm"
+                            className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 group"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
                                 alt="AI Insights Dashboard" 
-                                className="w-full h-full object-contain p-4" 
+                                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]" 
                             />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
                         </motion.div>
                     </div>
 
