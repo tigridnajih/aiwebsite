@@ -7,15 +7,14 @@ export default function Hero() {
     return (
         <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col pt-32 lg:pt-48 overflow-hidden text-slate-900 bg-white">
             {/* 💎 3D Element Part 1: Top Right */}
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] z-10 pointer-events-none select-none">
+            <div className="absolute top-[5%] right-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] z-[5] pointer-events-none select-none">
                 <motion.img
                     src="/herosection_assets/3delement_part1.avif"
                     alt="3D Decorative Element Part 1"
-                    className="w-full h-full object-contain opacity-80"
+                    className="w-full h-full object-contain"
                     animate={{ 
                         y: [0, -40, 0],
-                        rotate: [0, 5, 0],
-                        scale: [1, 1.05, 1]
+                        rotate: [0, 5, 0]
                     }}
                     transition={{ 
                         duration: 12, 
@@ -26,15 +25,14 @@ export default function Hero() {
             </div>
 
             {/* 💎 3D Element Part 2: Bottom Left */}
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] z-10 pointer-events-none select-none">
+            <div className="absolute bottom-[5%] left-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] z-[5] pointer-events-none select-none">
                 <motion.img
                     src="/herosection_assets/3delement_part2.avif"
                     alt="3D Decorative Element Part 2"
-                    className="w-full h-full object-contain opacity-80"
+                    className="w-full h-full object-contain"
                     animate={{ 
-                        y: [0, 50, 0],
-                        rotate: [0, -8, 0],
-                        scale: [1, 1.1, 1]
+                        y: [0, 40, 0],
+                        rotate: [0, -8, 0]
                     }}
                     transition={{ 
                         duration: 15, 
