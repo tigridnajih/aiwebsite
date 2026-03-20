@@ -16,7 +16,7 @@ export default function Hero() {
             </div>
 
             {/* 💎 3D Floating Element */}
-            <div className="absolute top-1/2 -right-20 lg:-right-40 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
+            <div className="absolute top-1/2 -right-32 lg:right-0 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
                 <motion.img
                     src="/herosection_assets/hero_3delement.avif"
                     alt="3D Decorative Element"
