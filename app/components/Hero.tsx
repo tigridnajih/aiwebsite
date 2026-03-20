@@ -16,7 +16,7 @@ export default function Hero() {
                 <div className="relative container-custom max-w-5xl flex flex-col items-center w-full">
                     
                     {/* 💎 3D Element 1: Top Right */}
-                    <div className="absolute top-0 right-0 -translate-y-[60%] xl:-translate-y-[50%] translate-x-[40%] xl:translate-x-[50%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
+                    <div className="absolute top-0 right-0 -translate-y-[65%] xl:-translate-y-[60%] translate-x-[50%] xl:translate-x-[65%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
                         <motion.img
                             src="/herosection_assets/hero_3delement.avif"
                             alt="3D Decorative Element"
@@ -35,7 +35,7 @@ export default function Hero() {
                     </div>
 
                     {/* 💎 3D Element 2: Bottom Left */}
-                    <div className="absolute bottom-0 left-0 translate-y-[60%] xl:translate-y-[50%] -translate-x-[40%] xl:-translate-x-[50%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
+                    <div className="absolute bottom-0 left-0 translate-y-[65%] xl:translate-y-[60%] -translate-x-[50%] xl:-translate-x-[65%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
                         <motion.img
                             src="/herosection_assets/hero_3delement.avif"
                             alt="3D Decorative Element"
