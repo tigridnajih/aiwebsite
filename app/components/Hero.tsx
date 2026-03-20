@@ -5,7 +5,16 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col pt-16 overflow-hidden text-slate-900">
+            {/* 🖼️ Hero Background Image */}
+            <div className="absolute inset-0 z-0">
+                <img 
+                    src="/herosection_assets/hero_bluebg.avif" 
+                    alt="Hero Background" 
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
             {/* 💎 3D Floating Element (RESTORED) */}
             <div className="absolute top-1/2 -right-32 lg:right-0 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
                 <motion.img
