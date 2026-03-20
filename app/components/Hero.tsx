@@ -61,7 +61,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="text-4xl md:text-6xl lg:text-8xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900"
+                                className="text-3xl md:text-5xl lg:text-7xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900"
                             >
                                 Intelligent Automation for <br className="hidden lg:block" />
                                 Modern Businesses.
