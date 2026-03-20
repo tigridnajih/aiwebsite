@@ -15,28 +15,22 @@ export default function Hero() {
                 />
             </div>
 
-            {/* 📽️ 3D Video Element */}
-            <div className="absolute top-1/2 -right-40 lg:-right-60 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[1200px] lg:h-[1200px] z-10 pointer-events-none select-none">
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="w-full h-full relative"
-                >
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-contain relative"
-                        style={{ 
-                            filter: 'saturate(1.8) contrast(1.2) brightness(1.1)',
-                            mixBlendMode: 'plus-lighter'
-                        }}
-                    >
-                        <source src="/herosection_assets/blade_hero.webm" type="video/webm" />
-                    </video>
-                </motion.div>
+            {/* 💎 3D Floating Element (RESTORED) */}
+            <div className="absolute top-1/2 -right-32 lg:right-0 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[1000px] lg:h-[1000px] z-10 pointer-events-none select-none">
+                <motion.img
+                    src="/herosection_assets/hero_3delement.avif"
+                    alt="3D Decorative Element"
+                    className="w-full h-full object-contain"
+                    animate={{ 
+                        y: [0, -25, 0],
+                        rotate: [0, 2, 0]
+                    }}
+                    transition={{ 
+                        duration: 6, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                    }}
+                />
             </div>
 
             {/* Background Texture/Pattern */}
