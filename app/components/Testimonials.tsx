@@ -54,7 +54,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="bg-white border border-slate-50 rounded-3xl p-6 md:p-8 flex flex-col gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] mb-6 max-w-full hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transition-shadow duration-300">
+    <div className="bg-slate-100 border border-slate-200/50 rounded-3xl p-6 md:p-8 flex flex-col gap-4 mb-6 max-w-full hover:bg-slate-200/50 transition-colors duration-300">
         <div className="flex items-center gap-4 border-b border-transparent">
             <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                 <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
