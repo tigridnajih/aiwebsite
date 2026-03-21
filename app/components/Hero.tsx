@@ -90,8 +90,7 @@ export default function Hero() {
                 <TrustLogos />
             </div>
             
-            {/* Bottom gradient mask for smooth transition */}
-            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-white/80 to-transparent z-[15] pointer-events-none" />
+
         </section>
     );
 }
