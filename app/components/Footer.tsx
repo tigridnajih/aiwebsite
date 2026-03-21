@@ -4,15 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer 
-            className="relative w-full overflow-hidden"
-            style={{
-                backgroundImage: 'url(https://framerusercontent.com/images/07JIzFTR6BjFgHKiSETkTaS7Qg.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-            }}
-        >
+        <footer className="relative w-full bg-white overflow-hidden">
             
             {/* --- Top CTA Block --- */}
             <div className="relative w-full pt-16 mb-8 overflow-hidden">
