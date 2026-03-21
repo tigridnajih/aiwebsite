@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const projects = [
     { url: 'https://i.pinimg.com/1200x/d5/ac/3a/d5ac3a9cd282c1bd0aa44ce6b7f52221.jpg' },
@@ -13,53 +12,67 @@ const projects = [
     { url: 'https://i.pinimg.com/736x/ab/ab/b9/ababb9436999e8bd6531c56ca7e1efd4.jpg' }
 ];
 
-// Double it for smooth looping completely around the 3D cylinder
+// Double items for the continuous circular layout
 const allProjects = [...projects, ...projects];
 
 export default function PortfolioShowcase() {
-    return (
-        <section className="relative w-full overflow-hidden bg-[#FFFDFB] py-28 md:py-36 flex items-center justify-center min-h-[600px] md:min-h-[700px]">
-            {/* 3D Perspective Container */}
-            <div className="w-full h-full flex items-center justify-center" style={{ perspective: '1100px' }}>
-                
-                {/* Translate Z back by the exact radius so the front-most card passes perfectly at screen depth (z=0) */}
-                <div style={{ transform: `translateZ(-900px)`, transformStyle: 'preserve-3d' }}>
-                    
-                    {/* The Rotating Drum */}
-                    {/* Positive rotation produces Left to Right movement of the front face as requested */}
-                    <motion.div
-                        animate={{ rotateY: [0, 360] }} 
-                        transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
-                        className="relative flex items-center justify-center w-[240px] h-[340px] md:w-[300px] md:h-[440px] lg:w-[320px] lg:h-[480px]"
-                        style={{ transformStyle: 'preserve-3d' }}
-                    >
-                        {allProjects.map((project, idx) => {
-                            const angle = (idx * 360) / allProjects.length;
-                            return (
-                                <div
-                                    key={idx}
-                                    className="absolute inset-0 rounded-[24px] md:rounded-[32px] overflow-hidden hover:scale-105 transition-transform duration-300 shadow-[0_25px_50px_rgba(0,0,0,0.18)] bg-slate-100 border border-black/5"
-                                    style={{
-                                        transform: `rotateY(${angle}deg) translateZ(900px)`,
-                                        // Prevents rendering cards when they are on the back side of the cylinder
-                                        backfaceVisibility: 'hidden',
-                                        WebkitBackfaceVisibility: 'hidden'
-                                    }}
-                                >
-                                    <div className="w-full h-full relative">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10 pointer-events-none" />
-                                        <img
-                                            src={project.url}
-                                            alt={`Project ${idx}`}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </motion.div>
+    // Math computations based perfectly on the user's CSS formula
+    const n = allProjects.length;
+    const w = 280; // 17.5em (approx 280px)
+    const emOffset = 8; // 0.5em
+    const ba = 360 / n; // Base Angle
+    const angleRadians = (ba / 2) * (Math.PI / 180);
+    // radius = (.5 * w + .5em) / tan(.5 * ba)
+    const radius = ((0.5 * w) + emOffset) / Math.tan(angleRadians);
 
-                </div>
+    return (
+        <section className="relative w-full bg-[#FFF3ED] py-32 md:py-40 min-h-[600px] md:min-h-[750px] scene">
+            <style>{`
+                .scene {
+                    display: grid;
+                    overflow: hidden;
+                    perspective: 35em;
+                    mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+                    -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+                }
+                .a3d {
+                    place-self: center;
+                    transform-style: preserve-3d;
+                    animation: ry 32s linear infinite;
+                    display: grid;
+                }
+                @keyframes ry { 
+                    to { transform: rotateY(1turn); } 
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .a3d { animation-duration: 128s; }
+                }
+            `}</style>
+
+            <div className="a3d">
+                {allProjects.map((project, idx) => {
+                    return (
+                        <div
+                            key={idx}
+                            className="bg-slate-100 shadow-[0_15px_35px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300"
+                            style={{
+                                gridArea: '1 / 1',
+                                width: `${w}px`,
+                                aspectRatio: '7 / 10',
+                                borderRadius: '1.5em',
+                                backfaceVisibility: 'hidden',
+                                WebkitBackfaceVisibility: 'hidden',
+                                transform: `rotateY(${idx * ba}deg) translateZ(-${radius}px)`
+                            }}
+                        >
+                            <img
+                                src={project.url}
+                                alt={`Project ${idx}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );
