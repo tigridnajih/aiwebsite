@@ -36,7 +36,7 @@ export default function CityBackground() {
     const uSpeed = 0.001;
 
     // --- FOG background ---
-    const setcolor = 0xF02050; 
+    const setcolor = 0x0055ff; // Electric Blue
     
     scene.background = new THREE.Color(setcolor);
     scene.fog = new THREE.Fog(setcolor, 10, 35);
@@ -49,7 +49,7 @@ export default function CityBackground() {
     // --- CHANGE building colors ---
     let setTintNum = true;
     function setTintColor() {
-      const setColor = 0x000000; // Black buildings
+      const setColor = 0xFFFFFF; // White buildings
       setTintNum = !setTintNum;
       return setColor;
     }
@@ -63,10 +63,10 @@ export default function CityBackground() {
           side: THREE.DoubleSide
         });
         const wmaterial = new THREE.MeshLambertMaterial({
-          color: 0xFFFFFF,
+          color: 0x0055ff, // Electric Blue wireframes
           wireframe: true,
           transparent: true,
-          opacity: 0.03,
+          opacity: 0.1,
           side: THREE.DoubleSide
         });
 
@@ -94,7 +94,7 @@ export default function CityBackground() {
       }
 
       // Particulars
-      const gmaterial = new THREE.MeshToonMaterial({ color: 0xFFFF00, side: THREE.DoubleSide });
+      const gmaterial = new THREE.MeshToonMaterial({ color: 0xFFFFFF, side: THREE.DoubleSide });
       const gparticular = new THREE.CircleGeometry(0.01, 3);
       const aparticular = 5;
 
@@ -106,7 +106,7 @@ export default function CityBackground() {
       }
 
       const pmaterial = new THREE.MeshPhongMaterial({
-        color: 0x000000,
+        color: 0xFFFFFF,
         side: THREE.DoubleSide,
         opacity: 0.9,
         transparent: true
@@ -144,7 +144,7 @@ export default function CityBackground() {
     city.add(town);
 
     // --- GRID Helper ---
-    const gridHelper = new THREE.GridHelper(60, 120, 0xFF0000, 0x000000);
+    const gridHelper = new THREE.GridHelper(60, 120, 0x0055ff, 0xFFFFFF);
     city.add(gridHelper);
 
     // --- MOUSE function ---
@@ -156,7 +156,7 @@ export default function CityBackground() {
     window.addEventListener('mousemove', onMouseMove);
 
     // --- LINES / CAR world ---
-    const createCars = (cScale = 2, cPos = 20, cColor = 0xFFFF00) => {
+    const createCars = (cScale = 2, cPos = 20, cColor = 0xFFFFFF) => {
       const cMat = new THREE.MeshToonMaterial({ color: cColor, side: THREE.DoubleSide });
       const cGeo = new THREE.BoxGeometry(1, cScale / 40, cScale / 40);
       const cElem = new THREE.Mesh(cGeo, cMat);
