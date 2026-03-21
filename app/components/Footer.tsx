@@ -6,19 +6,8 @@ export default function Footer() {
     return (
         <footer className="relative w-full bg-white overflow-hidden">
             
-            {/* --- Reintroduced CTA Block with GIF --- */}
+            {/* --- Top CTA Block --- */}
             <div className="relative w-full pt-16 mb-8 overflow-hidden">
-                {/* 📽️ Background GIF */}
-                <div className="absolute inset-x-0 bottom-[-50px] z-0 pointer-events-none h-full flex items-end opacity-90">
-                    <img 
-                        src="/section_assets/footer_bg.gif" 
-                        alt="Background Grid" 
-                        className="w-full object-cover object-bottom"
-                        style={{ height: '110%' }}
-                    />
-                    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent" />
-                </div>
-                
                 <div className="container-custom relative z-10">
                     {/* 🎭 Large Moving Text Section */}
                     <div className="relative w-full mb-16 overflow-hidden">
