@@ -4,10 +4,56 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full bg-white pt-24 pb-0 overflow-hidden">
+        <footer className="relative w-full bg-white overflow-hidden">
             
-            <div className="container-custom max-w-7xl relative z-20 flex flex-col lg:flex-row gap-6 mb-16 px-4 md:px-8">
+            {/* --- Reintroduced CTA Block with GIF --- */}
+            <div className="relative w-full pt-16 mb-8 overflow-hidden">
+                {/* 📽️ Background GIF */}
+                <div className="absolute inset-x-0 bottom-[-50px] z-0 pointer-events-none h-full flex items-end opacity-90">
+                    <img 
+                        src="/section_assets/footer_bg.gif" 
+                        alt="Background Grid" 
+                        className="w-full object-cover object-bottom"
+                        style={{ height: '110%' }}
+                    />
+                    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent" />
+                </div>
                 
+                <div className="container-custom relative z-10">
+                    {/* 🎭 Large Moving Text Section */}
+                    <div className="relative w-full mb-16 overflow-hidden">
+                        <div className="flex whitespace-nowrap overflow-hidden py-4">
+                            <div className="flex w-max animate-infinite-scroll-slow-extremely pause-on-hover">
+                                {[1, 2].map((group) => (
+                                    <h1 key={group} className="text-[65px] md:text-[110px] font-bold tracking-tighter text-slate-100 px-10 leading-none select-none">
+                                        Better systems. Fewer people. Higher margins.
+                                    </h1>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ✨ Main CTA Block */}
+                    <div className="flex flex-col items-center text-center pb-20">
+                        <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#141B3B] mb-6 tracking-tight leading-[1.1] max-w-2xl">
+                            Your Business.<br />
+                            Supercharged with AI.
+                        </h2>
+                        <p className="text-slate-500 text-lg md:text-[19px] mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                            Save time, boost efficiency, and streamline your business with AI automation from Tigrid.
+                        </p>
+                        <Link
+                            href="#contact"
+                            className="px-10 py-4 rounded-full bg-[#3B5BFF] text-white font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-[#2563EB] shadow-xl shadow-[#3B5BFF]/30 active:translate-y-0"
+                        >
+                            Book a Strategy Call
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* --- Dual Card Footer Content --- */}
+            <div className="container-custom max-w-7xl relative z-20 flex flex-col lg:flex-row gap-6 mb-16 px-4 md:px-8">
                 {/* 🔵 Left Blue Card */}
                 <div className="w-full lg:w-[35%] bg-gradient-to-br from-[#0633B0] to-[#3B5BFF] rounded-[32px] p-10 md:p-12 flex flex-col justify-between text-white shadow-xl min-h-[400px] md:min-h-[500px]">
                     
