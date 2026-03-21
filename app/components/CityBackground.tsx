@@ -24,8 +24,8 @@ export default function CityBackground() {
 
     containerRef.current.appendChild(renderer.domElement);
 
-    const camera = new THREE.PerspectiveCamera(20, width / height, 1, 500);
-    camera.position.set(0, 2, 14);
+    const camera = new THREE.PerspectiveCamera(50, width / height, 1, 500);
+    camera.position.set(0, 5, 20);
 
     const scene = new THREE.Scene();
     const city = new THREE.Object3D();
@@ -36,17 +36,10 @@ export default function CityBackground() {
     const uSpeed = 0.001;
 
     // --- FOG background ---
-    // The user's color was 0xF02050 (Red). 
-    // However, if they want a clean white look for the AI site, maybe I should use a softer tone.
-    // But since they asked for it as is, I'll stick to their color or something cleaner if more appropriate.
-    // The user's CSS says background-color: black.
     const setcolor = 0xF02050; 
     
-    // Transparent background for React integration usually better, 
-    // unless they specifically want the reddish fog.
-    // I'll keep the fog but maybe make it optional or blendable.
     scene.background = new THREE.Color(setcolor);
-    scene.fog = new THREE.Fog(setcolor, 10, 16);
+    scene.fog = new THREE.Fog(setcolor, 10, 35);
 
     // --- RANDOM Function ---
     function mathRandom(num = 8) {
