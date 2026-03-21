@@ -4,136 +4,250 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="relative w-full bg-white overflow-hidden">
-            
-            {/* --- Top CTA Block --- */}
-            <div className="relative w-full pt-16 mb-8 overflow-hidden">
-                <div className="container-custom relative z-10">
-                    {/* 🎭 Large Moving Text Section */}
-                    <div className="relative w-full mb-16 overflow-hidden">
-                        <div className="flex whitespace-nowrap overflow-hidden py-4">
-                            <div className="flex w-max animate-infinite-scroll-slow-extremely pause-on-hover">
-                                {[1, 2].map((group) => (
-                                    <h1 key={group} className="text-[65px] md:text-[110px] font-bold tracking-tighter text-slate-100 px-10 leading-none select-none">
-                                        Better systems. Fewer people. Higher margins.
-                                    </h1>
-                                ))}
-                            </div>
+        <footer className="new_footer_area">
+            <style>{`
+                .new_footer_area {
+                    background: #fbfbfd;
+                    font-family: inherit;
+                }
+                .new_footer_top {
+                    padding: 100px 0px 270px;
+                    position: relative;
+                    overflow-x: hidden;
+                }
+                .new_footer_area .footer_bottom {
+                    padding-top: 5px;
+                    padding-bottom: 40px;
+                }
+                .footer_bottom {
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 20px;
+                    color: #7f88a6;
+                    padding: 27px 0px;
+                    border-top: 1px solid #e8e8f0;
+                }
+                .new_footer_top .company_widget p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 28px;
+                    color: #6a7695;
+                    margin-bottom: 20px;
+                }
+                .new_footer_top .f-title {
+                    margin-bottom: 24px;
+                    color: #263b5e;
+                    font-weight: 600;
+                    font-size: 17px;
+                }
+                .new_footer_top .f_list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                .new_footer_top .f_list li {
+                    margin-bottom: 11px;
+                }
+                .new_footer_top .f_list li a {
+                    color: #6a7695;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                    transition: color 0.2s;
+                }
+                .new_footer_top .f_list li a:hover {
+                    color: #5e2ced;
+                }
+                /* Email input */
+                .f_subscribe_two input {
+                    width: 100%;
+                    border: 1px solid #d8dce8;
+                    border-radius: 6px;
+                    padding: 10px 14px;
+                    font-size: 14px;
+                    color: #263b5e;
+                    background: #fff;
+                    outline: none;
+                    margin-bottom: 12px;
+                }
+                .f_subscribe_two input::placeholder {
+                    color: #b0b8d1;
+                }
+                .btn_get_two {
+                    background: #5e2ced;
+                    border: 1px solid #5e2ced;
+                    color: #fff;
+                    padding: 10px 24px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+                .btn_get_two:hover {
+                    background: transparent;
+                    color: #5e2ced;
+                }
+                /* Social Icons */
+                .f_social_icon {
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                    margin-top: 8px;
+                }
+                .f_social_icon a {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    border: 1px solid #e2e2eb;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #858da8;
+                    text-decoration: none;
+                    background: transparent;
+                    transition: all 0.2s;
+                }
+                .f_social_icon a:hover {
+                    background: #5e2ced;
+                    border-color: #5e2ced;
+                    color: #fff;
+                }
+                /* Footer Background Scenery */
+                .new_footer_top .footer_bg {
+                    position: absolute;
+                    bottom: 0;
+                    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat scroll center 0;
+                    width: 100%;
+                    height: 266px;
+                }
+                .new_footer_top .footer_bg .footer_bg_one {
+                    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+                    width: 330px;
+                    height: 105px;
+                    background-size: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 30%;
+                    animation: myfirst 22s linear infinite;
+                }
+                .new_footer_top .footer_bg .footer_bg_two {
+                    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+                    width: 88px;
+                    height: 100px;
+                    background-size: 100%;
+                    bottom: 0;
+                    left: 38%;
+                    position: absolute;
+                    animation: myfirst 30s linear infinite;
+                }
+                @keyframes myfirst {
+                    0%   { left: -25%; }
+                    100% { left: 100%; }
+                }
+                /* Grid layout */
+                .footer_grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 40px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                }
+                @media (max-width: 1024px) {
+                    .footer_grid { grid-template-columns: repeat(2, 1fr); }
+                }
+                @media (max-width: 640px) {
+                    .footer_grid { grid-template-columns: 1fr; }
+                }
+                .footer_bottom_inner {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                }
+            `}</style>
+
+            {/* ── Top Section ── */}
+            <div className="new_footer_top">
+                <div className="footer_grid">
+
+                    {/* Col 1 — Get in Touch */}
+                    <div>
+                        <h3 className="f-title">Get in Touch</h3>
+                        <p className="new_footer_top company_widget">Don't miss any updates of our new features and AI tools!</p>
+                        <div className="f_subscribe_two">
+                            <input type="email" placeholder="Email" />
+                            <button className="btn_get_two">Subscribe</button>
                         </div>
                     </div>
 
-                    {/* ✨ Main CTA Block */}
-                    <div className="flex flex-col items-center text-center pb-20">
-                        <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#141B3B] mb-6 tracking-tight leading-[1.1] max-w-2xl">
-                            Your Business.<br />
-                            Supercharged with AI.
-                        </h2>
-                        <p className="text-slate-500 text-lg md:text-[19px] mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                            Save time, boost efficiency, and streamline your business with AI automation from Tigrid.
-                        </p>
-                        <Link
-                            href="#contact"
-                            className="px-10 py-4 rounded-full bg-[#3B5BFF] text-white font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-[#2563EB] shadow-xl shadow-[#3B5BFF]/30 active:translate-y-0"
-                        >
-                            Book a Strategy Call
-                        </Link>
+                    {/* Col 2 — Download */}
+                    <div>
+                        <h3 className="f-title">Download</h3>
+                        <ul className="f_list">
+                            {['Company', 'Android App', 'iOS App', 'Desktop', 'Projects', 'My tasks'].map(item => (
+                                <li key={item}><Link href="#">{item}</Link></li>
+                            ))}
+                        </ul>
                     </div>
+
+                    {/* Col 3 — Help */}
+                    <div>
+                        <h3 className="f-title">Help</h3>
+                        <ul className="f_list">
+                            {['FAQ', 'Terms & Conditions', 'Reporting', 'Documentation', 'Support Policy', 'Privacy'].map(item => (
+                                <li key={item}><Link href="#">{item}</Link></li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Col 4 — Team Solutions + Social */}
+                    <div>
+                        <h3 className="f-title">Team Solutions</h3>
+                        <div className="f_social_icon">
+                            {/* Facebook */}
+                            <a href="#" aria-label="Facebook">
+                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                            {/* Twitter / X */}
+                            <a href="#" aria-label="Twitter">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            {/* LinkedIn */}
+                            <a href="#" aria-label="LinkedIn">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            {/* Pinterest */}
+                            <a href="#" aria-label="Pinterest">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* Animated Background Scenery */}
+                <div className="footer_bg">
+                    <div className="footer_bg_one" />
+                    <div className="footer_bg_two" />
                 </div>
             </div>
 
-            {/* --- Dual Card Footer Content --- */}
-            <div className="container-custom max-w-7xl relative z-20 flex flex-col lg:flex-row gap-6 mb-8 px-4 md:px-8">
-                {/* 🔵 Left Blue Card */}
-                <div className="w-full lg:w-[35%] bg-gradient-to-br from-[#0633B0] to-[#3B5BFF] rounded-[32px] p-10 md:p-12 flex flex-col justify-between text-white shadow-xl min-h-[400px] md:min-h-[500px]">
-                    
-                    {/* Brand/Logo */}
-                    <Link href="/" className="flex items-center gap-3 w-fit">
-                        <div className="relative flex h-10 w-10 items-center justify-center rounded-[10px] bg-white">
-                            <div className="h-4 w-4 rotate-45 rounded-[2px] bg-[#3B5BFF]" />
-                        </div>
-                        <span className="text-[34px] font-bold tracking-tight text-white mb-1">Tigrid</span>
-                    </Link>
-
-                    {/* Bottom Content */}
-                    <div className="mt-auto space-y-12">
-                        <h3 className="text-[26px] md:text-[34px] font-medium leading-[1.2] tracking-tight text-white">
-                            Smarter sales automation,<br />
-                            <span className="text-white/60">powered by AI.</span>
-                        </h3>
-                        
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                            <span className="font-serif italic text-2xl text-white tracking-wide">Stay in touch!</span>
-                            
-                            {/* Social Icons (Black Blocks) */}
-                            <div className="flex items-center gap-2">
-                                <a href="#" className="w-[42px] h-[42px] rounded-xl bg-[#111111] hover:bg-black flex items-center justify-center transition-colors">
-                                    <svg viewBox="0 0 24 24" className="w-[22px] h-[22px] fill-white"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-                                </a>
-                                <a href="#" className="w-[42px] h-[42px] rounded-xl bg-[#111111] hover:bg-black flex items-center justify-center transition-colors">
-                                    <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] fill-white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-                                </a>
-                                <a href="#" className="w-[42px] h-[42px] rounded-xl bg-[#111111] hover:bg-black flex items-center justify-center transition-colors">
-                                    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                </a>
-                                <a href="#" className="w-[42px] h-[42px] rounded-xl bg-[#111111] hover:bg-black flex items-center justify-center transition-colors">
-                                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* 🤍 Right Light Card */}
-                <div className="w-full lg:w-[65%] bg-[#F2F2F2] rounded-[32px] p-10 md:p-14 flex flex-col justify-between relative shadow-sm min-h-[400px] md:min-h-[500px]">
-                    
-                    {/* Navigation Columns */}
-                    <div className="flex flex-wrap gap-16 md:gap-32">
-                        <div>
-                            <h4 className="font-serif italic text-slate-500 text-xl md:text-2xl mb-6">Navigation</h4>
-                            <ul className="flex flex-col gap-5">
-                                {['How it works', 'Features', 'Pricing', 'Testimonials', 'FAQ'].map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-slate-900 font-bold text-[15px] hover:text-[#2563EB] transition-colors">{item}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-serif italic text-slate-500 text-xl md:text-2xl mb-6">Company</h4>
-                            <ul className="flex flex-col gap-5">
-                                {['Blog', 'About', 'Terms and Condition', 'Privacy Policy'].map((item) => (
-                                    <li key={item}>
-                                        <Link href="#" className="text-slate-900 font-bold text-[15px] hover:text-[#2563EB] transition-colors">{item}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Bottom Row inside Card */}
-                    <div className="flex flex-col xl:flex-row justify-between xl:items-end mt-20 xl:mt-auto gap-8">
-                        {/* Copyright */}
-                        <div className="text-slate-400 text-xs font-semibold order-2 xl:order-1">
-                            © 2025 Tigrid. All rights reserved.
-                        </div>
-
-                        {/* Newsletter */}
-                        <div className="w-full xl:w-auto order-1 xl:order-2">
-                            <h4 className="text-slate-400 text-[16px] mb-1 font-semibold">AI moves fast.</h4>
-                            <h3 className="text-slate-900 text-[20px] font-bold mb-5 tracking-tight">Stay ahead with Tigrid.</h3>
-                            
-                            <div className="flex items-center bg-white rounded-[22px] p-2 shadow-sm max-w-[360px] w-full">
-                                <input 
-                                    type="email" 
-                                    placeholder="Enter email address" 
-                                    className="bg-transparent border-none outline-none px-4 flex-1 text-[14px] text-slate-900 min-w-0" 
-                                />
-                                <button className="bg-[#111111] text-white text-[14px] font-bold px-7 py-3 rounded-2xl hover:bg-black transition-colors whitespace-nowrap">
-                                    Subscribe
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            {/* ── Bottom Bar ── */}
+            <div className="footer_bottom">
+                <div className="footer_bottom_inner">
+                    <p style={{ margin: 0, color: '#7f88a6', fontSize: 14 }}>
+                        © 2025 Tigrid, Inc. All rights reserved.
+                    </p>
+                    <p style={{ margin: 0, color: '#7f88a6', fontSize: 14 }}>
+                        Made with ❤️ by{' '}
+                        <a href="#" style={{ color: '#5e2ced', textDecoration: 'none', fontWeight: 500 }}>Tigrid</a>
+                    </p>
                 </div>
             </div>
         </footer>
