@@ -54,7 +54,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 flex flex-col gap-4 shadow-sm mb-6 max-w-full hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white border border-slate-50 rounded-3xl p-6 md:p-8 flex flex-col gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] mb-6 max-w-full hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transition-shadow duration-300">
         <div className="flex items-center gap-4 border-b border-transparent">
             <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                 <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
@@ -115,7 +115,7 @@ export default function Testimonials() {
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
                     
                     {/* Left Sticky Content */}
-                    <div className="lg:w-[45%] lg:sticky lg:top-32 space-y-12 shrink-0">
+                    <div className="lg:w-[45%] lg:sticky lg:top-12 space-y-12 shrink-0">
                         <div className="space-y-6">
                             <h4 className="text-[#3B5BFF] text-[11px] font-bold tracking-[0.2em] uppercase">
                                 TESTIMONIALS
@@ -145,12 +145,12 @@ export default function Testimonials() {
                         {/* Desktop: 2 columns overlapping */}
                         <div className="hidden md:flex flex-1 gap-6 pb-12 w-full">
                             {/* Column 1 - Moving Down */}
-                            <div className="flex-1 -mt-16"> 
+                            <div className="flex-1"> 
                                 <VerticalMarquee items={col1} direction="down" speed={45} />
                             </div>
                             
                             {/* Column 2 - Moving Up */}
-                            <div className="flex-1 mt-16"> 
+                            <div className="flex-1"> 
                                 <VerticalMarquee items={col2} direction="up" speed={40} />
                             </div>
                         </div>
