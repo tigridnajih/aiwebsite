@@ -2,14 +2,18 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import TrustLogos from './TrustLogos';
+import CityBackground from './CityBackground';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col pt-32 lg:pt-48 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col pt-32 lg:pt-48 overflow-hidden text-white bg-black">
+            
+            {/* 🌆 3D City Background */}
+            <CityBackground />
 
-
-            {/* Background Texture/Pattern */}
-            <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+            {/* Dark Overlay for better text readability */}
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 to-transparent z-[5] pointer-events-none" />
+            <div className="absolute inset-0 z-[5] bg-black/40 pointer-events-none" />
 
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="flex-1 flex flex-col items-center justify-center relative z-20 w-full px-4 text-center lg:-mt-12">
@@ -37,7 +41,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-4xl md:text-7xl lg:text-[72px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
+                            className="text-4xl md:text-7xl lg:text-[72px] font-extrabold font-heading tracking-tighter leading-[1.05] text-white"
                         >
                             Intelligent Automation for <br />
                             Modern Businesses.
@@ -47,7 +51,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
+                            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed font-medium"
                         >
                             Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
                         </motion.p>
@@ -71,7 +75,7 @@ export default function Hero() {
 
                         <Link
                             href="#works"
-                            className="px-12 py-5 rounded-full bg-slate-50 border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg"
+                            className="px-12 py-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base transition-all duration-300 hover:bg-white/20 hover:shadow-lg"
                         >
                             See How It Works
                         </Link>
@@ -87,7 +91,7 @@ export default function Hero() {
             </div>
             
             {/* Bottom gradient mask for smooth transition */}
-            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-white/40 to-transparent z-[15] pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white via-white/80 to-transparent z-[15] pointer-events-none" />
         </section>
     );
 }
