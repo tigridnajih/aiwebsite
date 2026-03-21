@@ -13,8 +13,14 @@ export default function Integrations() {
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B5BFF]/10 to-[#A855F7]/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
-            {/* Orbiting Icons */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] sm:w-[500px] md:w-[700px] lg:w-[900px] aspect-square z-10 pointer-events-none">
+            {/* Orbiting Icons - UPPER SEMI-CIRCLE ONLY */}
+            <div 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] sm:w-[500px] md:w-[700px] lg:w-[900px] aspect-square z-10 pointer-events-none"
+                style={{ 
+                    maskImage: "linear-gradient(to bottom, black 0%, black 20%, transparent 45%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 20%, transparent 45%, transparent 100%)"
+                }}
+            >
                 <motion.div 
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
