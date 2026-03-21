@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
 
             {/* --- Dual Card Footer Content --- */}
-            <div className="container-custom max-w-7xl relative z-20 flex flex-col lg:flex-row gap-6 mb-16 px-4 md:px-8">
+            <div className="container-custom max-w-7xl relative z-20 flex flex-col lg:flex-row gap-6 mb-8 px-4 md:px-8">
                 {/* 🔵 Left Blue Card */}
                 <div className="w-full lg:w-[35%] bg-gradient-to-br from-[#0633B0] to-[#3B5BFF] rounded-[32px] p-10 md:p-12 flex flex-col justify-between text-white shadow-xl min-h-[400px] md:min-h-[500px]">
                     
@@ -135,13 +135,6 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Huge Background Text at Bottom */}
-            <div className="w-full text-center pointer-events-none select-none -mt-6 md:-mt-8 lg:-mt-10 pb-0 flex items-end justify-center overflow-hidden">
-                <h1 className="text-[28vw] font-bold text-[#F2F2F2] leading-[0.75] tracking-tight whitespace-nowrap">
-                    Tigrid
-                </h1>
             </div>
         </footer>
     );
