@@ -23,34 +23,9 @@ export default function Navbar() {
 
   return (
     <>
-      <style>{`
-        .glass-nav {
-          --c-glass: #bbbbbc;
-          --c-light: #fff;
-          --c-dark: #000;
-          --glass-reflex-dark: 1;
-          --glass-reflex-light: 1;
-          --saturation: 150%;
-          
-          border: none;
-          background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
-          backdrop-filter: blur(8px) saturate(var(--saturation));
-          -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
-          box-shadow: 
-            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
-            inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
-            inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
-            inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
-            inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
-            inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-            inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-            inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
-            0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
-            0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
-        }
-      `}</style>
-      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 md:px-8">
-        <div className="glass-nav flex items-center justify-between w-full max-w-[1440px] h-[64px] pl-3 pr-2 md:pl-6 md:pr-3 rounded-full transition-all duration-500 pointer-events-auto">
+
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300 ${scrolled ? 'border-b border-slate-100 shadow-sm' : ''}`}>
+        <div className="flex items-center justify-between w-full max-w-[1440px] h-20 px-6 md:px-12">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>
