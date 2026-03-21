@@ -45,14 +45,14 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 hover:border-accent/20 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50"
+                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-500"
                         >
                             {/* Image Area - High Quality 2D Asset */}
                             <div className="w-full aspect-[4/3] relative mb-10 overflow-hidden flex items-center justify-center">
                                 <img
                                     src={phase.image}
                                     alt={phase.title}
-                                    className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(59,91,255,0.08)] transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(59,91,255,0.08)] transition-transform duration-700"
                                 />
                             </div>
 
@@ -67,7 +67,7 @@ export default function HowItWorks() {
 
                             {/* Text Content - Left Aligned */}
                             <div className="relative z-10 w-full text-left">
-                                <h3 className="text-2xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-accent transition-colors duration-300">
+                                <h3 className="text-2xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight transition-colors duration-300">
                                     {phase.title}
                                 </h3>
                                 <p className="text-slate-500 text-sm md:text-base leading-relaxed tracking-tight font-medium opacity-70">

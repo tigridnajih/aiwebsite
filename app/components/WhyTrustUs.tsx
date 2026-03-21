@@ -45,13 +45,7 @@ export default function WhyTrustUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1 }}
-                            whileHover={{ 
-                                y: -15, 
-                                rotateX: 2, 
-                                rotateY: 2,
-                                transition: { duration: 0.4, ease: "easeOut" }
-                            }}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1),0_0_0_1px_rgba(59,91,255,0.1)] transition-all duration-500 overflow-hidden min-h-[460px] text-center"
+                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden min-h-[460px] text-center"
                         >
                             {/* Card Header Label */}
                             <div className="text-[10px] md:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-12 relative z-10 opacity-70">
@@ -60,36 +54,21 @@ export default function WhyTrustUs() {
 
                             {/* 🎥 Centered 3D Icon Area with Floating Effect */}
                             <div className="flex-1 flex items-center justify-center relative z-10 mb-8">
-                                <motion.div
-                                    animate={{ 
-                                        y: [0, -8, 0],
-                                        rotate: [0, 1, 0]
-                                    }}
-                                    transition={{
-                                        duration: 6,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: i * 0.5
-                                    }}
-                                    className="relative w-48 h-48 md:w-60 md:h-60"
-                                >
+                                <div className="relative w-48 h-48 md:w-60 md:h-60">
                                     <img
                                         src={feature.icon}
                                         alt={feature.title}
-                                        className="w-full h-full object-contain filter drop-shadow-[20px_40px_60px_rgba(59,91,255,0.2)] group-hover:drop-shadow-[30px_60px_80px_rgba(59,91,255,0.25)] transition-all duration-500"
+                                        className="w-full h-full object-contain filter drop-shadow-[20px_40px_60px_rgba(59,91,255,0.2)] transition-all duration-500"
                                     />
-                                </motion.div>
+                                </div>
                             </div>
 
                             {/* Headline - Centered & Premium Typography */}
                             <div className="relative z-10 mt-auto">
-                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-[1.2] tracking-tight group-hover:text-accent transition-colors duration-300 mx-auto max-w-[200px]">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-[1.2] tracking-tight transition-colors duration-300 mx-auto max-w-[200px]">
                                     {feature.title}
                                 </h3>
                             </div>
-
-                            {/* Glassmorphism Inner Shine (3D effect) */}
-                            <div className="absolute top-0 left-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[-25deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out pointer-events-none" />
                         </motion.div>
                     ))}
                 </div>
