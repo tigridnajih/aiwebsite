@@ -53,9 +53,6 @@ export default function Navbar() {
         <div className="glass-nav flex items-center justify-between w-full max-w-[1440px] h-[64px] pl-3 pr-2 md:pl-6 md:pr-3 rounded-full transition-all duration-500 pointer-events-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 border border-accent/20 shadow-sm">
-              <div className="h-4 w-4 rotate-45 rounded-[2px] bg-accent" />
-            </div>
             <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>
           </Link>
 
@@ -91,9 +88,6 @@ export default function Navbar() {
         <div className="flex flex-col h-full p-8">
           <div className="flex items-center justify-between mb-16">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <div className="h-8 w-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <div className="h-4 w-4 rotate-45 bg-accent" />
-              </div>
               <span className="text-2xl font-bold text-slate-900">Tigrid</span>
             </Link>
             <button
