@@ -15,43 +15,7 @@ export default function Hero() {
             <div className="flex-1 flex flex-col items-center justify-center relative z-20 w-full px-4 text-center lg:-mt-12">
                 <div className="relative container-custom max-w-5xl flex flex-col items-center w-full">
                     
-                    {/* 💎 3D Element 1: Top Right */}
-                    <div className="absolute top-0 right-0 -translate-y-[65%] xl:-translate-y-[60%] translate-x-[50%] xl:translate-x-[65%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
-                        <motion.img
-                            src="/herosection_assets/hero_3delement.avif"
-                            alt="3D Decorative Element"
-                            className="w-full h-full object-contain"
-                            animate={{ 
-                                y: [-35, 35, -35],
-                                rotate: [-2, 8, -2],
-                                scale: [1, 1.05, 1]
-                            }}
-                            transition={{ 
-                                duration: 10, 
-                                repeat: Infinity, 
-                                ease: "easeInOut" 
-                            }}
-                        />
-                    </div>
 
-                    {/* 💎 3D Element 2: Bottom Left */}
-                    <div className="absolute bottom-0 left-0 translate-y-[65%] xl:translate-y-[60%] -translate-x-[50%] xl:-translate-x-[65%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] lg:w-[850px] lg:h-[850px] z-0 pointer-events-none select-none">
-                        <motion.img
-                            src="/herosection_assets/hero_3delement.avif"
-                            alt="3D Decorative Element"
-                            className="w-full h-full object-contain"
-                            animate={{ 
-                                y: [35, -35, 35],
-                                rotate: [2, -8, 2],
-                                scale: [1, 1.05, 1]
-                            }}
-                            transition={{ 
-                                duration: 12, 
-                                repeat: Infinity, 
-                                ease: "easeInOut" 
-                            }}
-                        />
-                    </div>
 
                     {/* Text Container Wrapper */}
                     <div className="relative z-10 flex flex-col items-center w-full">
