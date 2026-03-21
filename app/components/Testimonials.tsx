@@ -54,7 +54,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="bg-slate-100 border border-slate-200/50 rounded-3xl p-6 md:p-8 flex flex-col gap-4 mb-6 max-w-full hover:bg-slate-200/50 transition-colors duration-300">
+    <div className="bg-slate-100 rounded-3xl p-6 md:p-8 flex flex-col gap-4 mb-6 max-w-full hover:bg-slate-200/50 transition-colors duration-300">
         <div className="flex items-center gap-4 border-b border-transparent">
             <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                 <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
@@ -68,12 +68,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
         <p className="text-slate-600 text-[15px] leading-relaxed font-medium">
             {testimonial.quote}
         </p>
-        
-        {testimonial.tags && (
-            <p className="text-blue-500 font-semibold text-[13px] tracking-wide">
-                {testimonial.tags}
-            </p>
-        )}
     </div>
 );
 
