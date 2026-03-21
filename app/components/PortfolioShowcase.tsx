@@ -19,11 +19,11 @@ export default function PortfolioShowcase() {
     // Math computations based perfectly on the user's CSS formula
     const n = allProjects.length;
     const w = 280; // 17.5em (approx 280px)
-    const emOffset = 8; // 0.5em
-    const ba = 360 / n; // Base Angle
+    const emOffset = 8; // 0.5em gap buffer
+    const ba = 360 / n; // Base Angle per card
     const angleRadians = (ba / 2) * (Math.PI / 180);
-    // radius = (.5 * w + .5em) / tan(.5 * ba)
-    const radius = ((0.5 * w) + emOffset) / Math.tan(angleRadians);
+    // Doubled spacing: add a full card-width (w) to the numerator gap
+    const radius = ((0.5 * w) + w + emOffset) / Math.tan(angleRadians);
 
     return (
         <section className="relative w-full bg-white py-32 md:py-40 min-h-[600px] md:min-h-[750px] scene">
@@ -31,7 +31,7 @@ export default function PortfolioShowcase() {
                 .scene {
                     display: grid;
                     overflow: hidden;
-                    perspective: 35em;
+                    perspective: 65em;
                 }
                 .a3d {
                     place-self: center;
@@ -52,7 +52,7 @@ export default function PortfolioShowcase() {
                     return (
                         <div
                             key={idx}
-                            className="bg-slate-100 shadow-[0_15px_35px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300"
+                            className="bg-slate-100 overflow-hidden transition-all duration-300"
                             style={{
                                 gridArea: '1 / 1',
                                 width: `${w}px`,
@@ -60,6 +60,7 @@ export default function PortfolioShowcase() {
                                 borderRadius: '1.5em',
                                 backfaceVisibility: 'hidden',
                                 WebkitBackfaceVisibility: 'hidden',
+                                boxShadow: '0 30px 60px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.15)',
                                 transform: `rotateY(${idx * ba}deg) translateZ(-${radius}px)`
                             }}
                         >
