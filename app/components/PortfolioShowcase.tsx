@@ -26,14 +26,12 @@ export default function PortfolioShowcase() {
     const radius = ((0.5 * w) + emOffset) / Math.tan(angleRadians);
 
     return (
-        <section className="relative w-full bg-[#FFF3ED] py-32 md:py-40 min-h-[600px] md:min-h-[750px] scene">
+        <section className="relative w-full bg-white py-32 md:py-40 min-h-[600px] md:min-h-[750px] scene">
             <style>{`
                 .scene {
                     display: grid;
                     overflow: hidden;
                     perspective: 35em;
-                    mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
-                    -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
                 }
                 .a3d {
                     place-self: center;
