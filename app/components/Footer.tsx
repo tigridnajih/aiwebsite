@@ -149,8 +149,8 @@ export default function Footer() {
             </div>
 
             {/* Huge Background Text at Bottom */}
-            <div className="relative text-center pointer-events-none select-none z-0 overflow-hidden leading-[.8] flex items-end justify-center pt-10 -mb-16 md:-mb-24 lg:-mb-32">
-                <h1 className="text-[120px] sm:text-[200px] md:text-[300px] lg:text-[400px] xl:text-[450px] font-extrabold text-slate-50 tracking-tighter w-full uppercase">
+            <div className="w-full text-center pointer-events-none select-none mt-10 md:mt-20 pb-2 flex items-end justify-center overflow-hidden">
+                <h1 className="text-[22vw] font-black text-slate-100 leading-[0.72] tracking-tighter uppercase whitespace-nowrap">
                     TIGRID
                 </h1>
             </div>
