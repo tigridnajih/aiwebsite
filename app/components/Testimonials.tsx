@@ -1,117 +1,103 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionHeader from './SectionHeader';
 
 const testimonials = [
     {
         id: 1,
-        quote: "Tigrid's automation pipeline is intuitive and has streamlined our entire sales process.",
-        author: "Belinda Meyers",
-        role: "COO of Friday",
+        quote: "Simply the best. Better than all the rest. I'd recommend this product to beginners and advanced users.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "#webflow #development",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
         id: 2,
-        quote: "Real-time notifications ensure we're always on top of our sales activities. Highly recommend!",
-        author: "Melissa Reid",
-        role: "Founder of Tuesday",
+        quote: "This is a top quality product. No need to think twice before making it live on web.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
         id: 3,
-        quote: "The custom AI solutions built for us have saved over 40 hours of manual work every single week.",
-        author: "Rachel Harris",
-        role: "Director of Saturday",
+        quote: "It's quicker with the customer, the customer is more ensured of getting exactly what they ordered, and I'm all for the efficiency.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "#dev #tools",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
         id: 4,
-        quote: "The advanced insight analysis helped us identify key trends and boost our revenue by 40%.",
-        author: "Mark Thompson",
-        role: "Founder of Tuesday",
+        quote: "Finally, I've found a service that covers all bases for a bootstrap startup.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
         id: 5,
-        quote: "Tigrid has transformed how we manage our analytics. The unified dashboard is a absolute game-changer!",
-        author: "Sarah Johnson",
-        role: "Co-founder of Monday",
+        quote: "Simply the best. Better than all the rest. I'd recommend this product to beginners and advanced users.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "#webflow_development",
         image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
         id: 6,
-        quote: "Integration with our existing tools was seamless. Tigrid fits perfectly into our workflow.",
-        author: "Sarah Yanna",
-        role: "Director of Saturday",
+        quote: "This is a top quality product. No need to think twice before making it live on web.",
+        author: "Guy Hawkins",
+        handle: "@leslie",
+        tags: "",
         image: "https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&q=80&w=150&h=150"
-    },
-    {
-        id: 7,
-        quote: "With Tigrid, our reporting process is 10x faster and much more accurate. Truly impressive stuff.",
-        author: "David Miller",
-        role: "Head of Operations, Nexa",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
-    },
-    {
-        id: 8,
-        quote: "The technical support team is outstanding. They helped us set up everything in record time.",
-        author: "Elena Petrova",
-        role: "CEO of Bloom",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150"
-    },
-    {
-        id: 9,
-        quote: "Our conversion rates have never been higher. Tigrid is the ultimate tool for any growth-minded team.",
-        author: "James Wilson",
-        role: "Sales Lead at Peak",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
     }
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="w-[320px] shrink-0 bg-white border border-slate-100 rounded-[28px] p-8 flex flex-col gap-6 mx-4 shadow-sm hover:shadow-xl transition-all duration-500 group">
-        {/* Quote */}
-        <p className="text-slate-600 text-base font-medium leading-relaxed italic">
-            &quot;{testimonial.quote}&quot;
-        </p>
-
-        {/* Author */}
-        <div className="flex items-center gap-4 mt-auto">
-            <div className="w-12 h-12 rounded-2xl overflow-hidden border border-slate-100 shrink-0">
+    <div className="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 flex flex-col gap-4 shadow-sm mb-6 max-w-full hover:shadow-lg transition-shadow duration-300">
+        <div className="flex items-center gap-4 border-b border-transparent">
+            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                 <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
             </div>
-            <div className="min-w-0">
-                <h4 className="text-slate-900 font-bold text-sm tracking-tight">{testimonial.author}</h4>
-                <p className="text-slate-400 text-[11px] font-bold uppercase tracking-wider">{testimonial.role}</p>
-            </div>
-            <div className="ml-auto flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-accent text-[10px]">★</span>
-                ))}
+            <div>
+                <h4 className="text-slate-900 font-bold text-[15px]">{testimonial.author}</h4>
+                <p className="text-slate-400 text-[13px] font-semibold">{testimonial.handle}</p>
             </div>
         </div>
+        
+        <p className="text-slate-600 text-[15px] leading-relaxed font-medium">
+            {testimonial.quote}
+        </p>
+        
+        {testimonial.tags && (
+            <p className="text-blue-500 font-semibold text-[13px] tracking-wide">
+                {testimonial.tags}
+            </p>
+        )}
     </div>
 );
 
-const MarqueeRow = ({ direction = 'left', items }: { direction?: 'left' | 'right', items: typeof testimonials }) => {
-    const displayItems = [...items, ...items, ...items];
-
+const VerticalMarquee = ({ items, direction = 'down', speed = 40 }: { items: typeof testimonials, direction?: 'up' | 'down', speed?: number }) => {
+    // Triplicate items to allow smooth infinite seamless scrolling
+    const marqueeItems = [...items, ...items, ...items];
+    
     return (
-        <div className="flex overflow-hidden py-4 -mx-4 group">
+        <div className="relative h-[800px] overflow-hidden rounded-3xl [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
             <motion.div
                 animate={{
-                    x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%']
+                    y: direction === 'up' ? ['0%', '-50%'] : ['-50%', '0%']
                 }}
                 transition={{
-                    duration: 50,
+                    duration: speed,
                     repeat: Infinity,
                     ease: "linear",
                 }}
-                className="flex shrink-0 min-w-full"
+                className="flex flex-col gap-0"
             >
-                {displayItems.map((item, idx) => (
-                    <TestimonialCard key={`${item.id}-${idx}`} testimonial={item} />
+                {marqueeItems.map((item, idx) => (
+                    <div key={`${item.id}-${idx}`}>
+                        <TestimonialCard testimonial={item} />
+                    </div>
                 ))}
             </motion.div>
         </div>
@@ -119,28 +105,64 @@ const MarqueeRow = ({ direction = 'left', items }: { direction?: 'left' | 'right
 };
 
 export default function Testimonials() {
-    const row1 = testimonials.slice(0, 3);
-    const row2 = testimonials.slice(3, 6);
-    const row3 = testimonials.slice(6, 9);
+    // Split into 2 columns for the vertical layout
+    const col1 = [testimonials[0], testimonials[2], testimonials[4]]; // Webflow + dev tools + webflow
+    const col2 = [testimonials[1], testimonials[3], testimonials[5]]; // Top quality + bootstrap
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
-            <div className="container-custom">
-                <SectionHeader 
-                    badge="Testimonials"
-                    title="Engineered to make a difference"
-                    description="Real results from businesses that transformed their operations with Tigrid."
-                />
-
-                <div className="relative w-full mt-16">
-                    {/* Masking Gradients */}
-                    <div className="absolute left-0 top-0 bottom-0 w-[15%] md:w-[25%] bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-[15%] md:w-[25%] bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-                    <div className="flex flex-col gap-4">
-                        <MarqueeRow direction="left" items={[...row1, ...row2, ...row3]} />
-                        <MarqueeRow direction="right" items={[...row2, ...row3, ...row1]} />
+        <section className="py-24 md:py-32 bg-slate-50 overflow-hidden">
+            <div className="container-custom max-w-7xl">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+                    
+                    {/* Left Sticky Content */}
+                    <div className="lg:w-[45%] lg:sticky lg:top-32 space-y-12 shrink-0">
+                        <div className="space-y-6">
+                            <h4 className="text-[#3B5BFF] text-[11px] font-bold tracking-[0.2em] uppercase">
+                                TESTIMONIALS
+                            </h4>
+                            <h2 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight text-slate-900 leading-[1.05]">
+                                What our clients say
+                            </h2>
+                            <p className="text-slate-500 text-lg md:text-[20px] leading-[1.6] font-medium max-w-lg mt-4">
+                                We've worked with the best in the industry to produce millions of dollars in return on ad spend. We do away with the inefficiencies & formalities that plague most agencies.
+                            </p>
+                        </div>
+                        
+                        <div className="flex gap-16 pt-8">
+                            <div>
+                                <h3 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-3 tracking-tight">52+</h3>
+                                <p className="text-slate-400 text-[11px] font-bold tracking-[0.15em] uppercase">TESTIMONIALS</p>
+                            </div>
+                            <div>
+                                <h3 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-3 tracking-tight">2M+</h3>
+                                <p className="text-slate-400 text-[11px] font-bold tracking-[0.15em] uppercase">TESTIMONIALS</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    {/* Right Scrolling Columns */}
+                    <div className="flex-1 w-full relative">
+                        {/* Desktop: 2 columns overlapping */}
+                        <div className="hidden md:flex flex-1 gap-6 pb-12 w-full">
+                            {/* Column 1 - Moving Down */}
+                            <div className="flex-1 -mt-16"> 
+                                <VerticalMarquee items={col1} direction="down" speed={45} />
+                            </div>
+                            
+                            {/* Column 2 - Moving Up */}
+                            <div className="flex-1 mt-16"> 
+                                <VerticalMarquee items={col2} direction="up" speed={40} />
+                            </div>
+                        </div>
+
+                        {/* Mobile: 1 column moving up */}
+                        <div className="flex md:hidden flex-1 w-full gap-6">
+                            <div className="flex-1">
+                                <VerticalMarquee items={[...col1, ...col2]} direction="up" speed={50} />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
