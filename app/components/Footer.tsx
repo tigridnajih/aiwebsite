@@ -179,7 +179,7 @@ export default function Footer() {
                     {/* Col 1 — Get in Touch */}
                     <div>
                         <h3 className="f-title">Get in Touch</h3>
-                        <p className="new_footer_top company_widget">Don't miss any updates of our new features and AI tools!</p>
+                        <p style={{ fontSize: 15, fontWeight: 300, lineHeight: '28px', color: '#6a7695', marginBottom: 20 }}>Don't miss any updates of our new features and AI tools!</p>
                         <div className="f_subscribe_two">
                             <input type="email" placeholder="Email" />
                             <button className="btn_get_two">Subscribe</button>
