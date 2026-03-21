@@ -56,7 +56,7 @@ export default function HowItWorks() {
                                 />
                             </div>
 
-                            {/* COMPACT Step Blue Pill (Matching Screenshot 2) */}
+                            {/* Compact Step Blue Pill (Matching Screenshot 2) */}
                             <div className="flex mb-6">
                                 <div className="px-3.5 py-1 bg-blue-600 rounded-lg shadow-lg shadow-blue-600/20">
                                     <span className="text-white font-bold text-[11px] leading-none">
