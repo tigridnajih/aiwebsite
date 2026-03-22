@@ -16,56 +16,47 @@ const SOLUTIONS = [
     {
         title: 'CRM Automation',
         description: 'Streamline customer relationships with automated workflows.',
-        icon: <Users className="w-5 h-5 text-blue-500" />,
-        bgColor: 'bg-blue-50'
+        icon: <Users className="w-5 h-5" />,
     },
     {
         title: 'Financial Automation',
         description: 'Automate invoicing, expense tracking, and reporting.',
-        icon: <CreditCard className="w-5 h-5 text-emerald-500" />,
-        bgColor: 'bg-emerald-50'
+        icon: <CreditCard className="w-5 h-5" />,
     },
     {
         title: 'Workflow Automation',
         description: 'Connect your favorite tools and automate repetitive tasks.',
-        icon: <Zap className="w-5 h-5 text-orange-500" />,
-        bgColor: 'bg-orange-50'
+        icon: <Zap className="w-5 h-5" />,
     },
     {
         title: 'Marketing Automation',
         description: 'Drive growth with automated email and lead scoring.',
-        icon: <Target className="w-5 h-5 text-rose-500" />,
-        bgColor: 'bg-rose-50'
+        icon: <Target className="w-5 h-5" />,
     },
     {
         title: 'Chatbots',
         description: 'Provide 24/7 instant support with intelligent AI agents.',
-        icon: <MessageSquare className="w-5 h-5 text-indigo-500" />,
-        bgColor: 'bg-indigo-50'
+        icon: <MessageSquare className="w-5 h-5" />,
     },
     {
         title: 'Process Automation',
         description: 'Optimize complex operations and reduce overhead.',
-        icon: <Settings className="w-5 h-5 text-slate-500" />,
-        bgColor: 'bg-slate-50'
+        icon: <Settings className="w-5 h-5" />,
     },
     {
         title: 'HR Automation',
         description: 'Simplify recruitment and onboarding with smart flows.',
-        icon: <UserPlus className="w-5 h-5 text-purple-500" />,
-        bgColor: 'bg-purple-50'
+        icon: <UserPlus className="w-5 h-5" />,
     },
     {
         title: 'Sales Automation',
         description: 'Accelerate your sales cycle with automated prospecting.',
-        icon: <TrendingUp className="w-5 h-5 text-cyan-500" />,
-        bgColor: 'bg-cyan-50'
+        icon: <TrendingUp className="w-5 h-5" />,
     },
     {
         title: 'Document AI',
         description: 'Extract insights from unstructured data automatically.',
-        icon: <FileText className="w-5 h-5 text-amber-500" />,
-        bgColor: 'bg-amber-50'
+        icon: <FileText className="w-5 h-5" />,
     }
 ];
 
@@ -95,7 +86,7 @@ export default function ServiceGrid() {
                             className="group flex items-center gap-5 p-7 bg-white rounded-2xl border border-slate-200 transition-all duration-300"
                         >
                             {/* Icon Box */}
-                            <div className={`flex-shrink-0 w-12 h-12 ${solution.bgColor} rounded-xl flex items-center justify-center text-blue-600`}>
+                            <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-500/20 transition-transform duration-300 group-hover:scale-110">
                                 {solution.icon}
                             </div>
 
