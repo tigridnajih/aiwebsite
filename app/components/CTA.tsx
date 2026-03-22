@@ -5,29 +5,13 @@ import Link from 'next/link';
 export default function CTA() {
   return (
     <section className="relative pt-32 pb-24 bg-white overflow-hidden text-center">
-      {/* SCROLLING BACKGROUND TEXT (Right to Left) */}
-      <div className="absolute top-10 left-0 right-0 z-0 select-none pointer-events-none opacity-[0.03] overflow-hidden">
-         <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex whitespace-nowrap"
-         >
-            <h1 className="text-[120px] md:text-[180px] lg:text-[240px] font-bold text-slate-900 leading-none pr-20">
-                Better people. Higher margins. Better business. Tigrid AI.
-            </h1>
-            <h1 className="text-[120px] md:text-[180px] lg:text-[240px] font-bold text-slate-900 leading-none pr-20">
-                Better people. Higher margins. Better business. Tigrid AI.
-            </h1>
-         </motion.div>
-      </div>
-
-      <div className="container-custom relative z-10 px-4">
+      <div className="container-custom relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative max-w-6xl mx-auto rounded-[3rem] overflow-hidden bg-slate-900 shadow-2xl min-h-[500px] flex items-center justify-center"
+          className="relative w-full rounded-[1.5rem] overflow-hidden bg-slate-900 shadow-2xl min-h-[450px] flex items-center justify-center"
         >
           {/* BACKGROUND IMAGE CARD */}
           <div 
@@ -36,10 +20,10 @@ export default function CTA() {
           />
           
           {/* GLASS OVERLAY FOR LEGIBILITY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
 
           {/* CONTENT */}
-          <div className="relative z-10 p-10 md:p-20 max-w-3xl">
+          <div className="relative z-10 p-10 md:p-20 max-w-4xl">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
               Your Business.<br />Supercharged with AI.
             </h2>
@@ -49,15 +33,16 @@ export default function CTA() {
             
             <Link 
               href="#contact"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-sm shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-blue-700"
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-white text-slate-900 font-bold text-sm shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-slate-50 group"
             >
               Book a Strategy Call
+              <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
             </Link>
           </div>
         </motion.div>
       </div>
     </section>
-
-
   );
 }
