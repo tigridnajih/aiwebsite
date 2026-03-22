@@ -42,7 +42,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
+                            className="text-[32px] md:text-[48px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
                         >
                             Your Business. <br />
                             Supercharged with AI.
