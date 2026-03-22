@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import Integrations from './components/Integrations';
 import WhyTrustUs from './components/WhyTrustUs';
 import Testimonials from './components/Testimonials';
-import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
@@ -27,7 +26,6 @@ export default function Home() {
       <Integrations />
       <WhyTrustUs />
       <Testimonials />
-      <Problem />
       <CaseStudies />
       <Stats />
       <FAQ />
