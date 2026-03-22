@@ -34,7 +34,7 @@ export default function Hero() {
                     
 
 
-                    <div className="space-y-8 relative z-20">
+                    <div className="space-y-5 relative z-20">
                         <motion.h1 
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
+                            className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
                         >
                             Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
                         </motion.p>
@@ -59,7 +59,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="flex flex-col sm:flex-row gap-5 pt-8 items-center relative z-20"
+                        className="flex flex-col sm:flex-row gap-5 pt-5 items-center relative z-20"
                     >
                         <Link
                             href="#contact"
