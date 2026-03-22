@@ -5,14 +5,14 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col pt-32 lg:pt-48 overflow-hidden text-slate-900 bg-white">
+        <section className="relative flex flex-col pt-40 pb-20 lg:pt-60 lg:pb-32 overflow-hidden text-slate-900 bg-white">
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* Main Content Area - CENTERED DESIGN */}
-            <div className="flex-1 flex flex-col items-center justify-center relative z-20 w-full px-4 text-center lg:-mt-12">
-                <div className="relative container-custom max-w-5xl flex flex-col items-center w-full">
+            <div className="container-custom relative z-20 flex flex-col items-center justify-center w-full px-4 text-center">
+                <div className="relative max-w-5xl flex flex-col items-center w-full">
                     
 
 
