@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-slate-900 bg-white">
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
