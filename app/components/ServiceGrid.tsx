@@ -71,7 +71,7 @@ export default function ServiceGrid() {
     }, []);
 
     return (
-        <section className="relative py-20 lg:py-[120px] overflow-hidden">
+        <section className="relative py-8 lg:py-12 overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0 bg-white">
                 <img 
@@ -85,10 +85,10 @@ export default function ServiceGrid() {
                 <SectionHeader 
                     badge="SERVICES" 
                     title={<span className="text-white">This is what we do</span>} 
-                    className="!pt-0 !text-white"
+                    className="!pt-0 !pb-4 !text-white"
                 />
 
-                <div className="relative mt-12 mb-16">
+                <div className="relative mt-4 mb-4">
                     {/* Slider Container */}
                     <div 
                         ref={scrollContainerRef}
