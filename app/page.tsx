@@ -7,6 +7,7 @@ import Problem from './components/Problem';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
 import Services from './components/Services';
+import ServiceGrid from './components/ServiceGrid';
 import HowItWorks from './components/HowItWorks';
 import Stats from './components/Stats';
 import FAQ from './components/FAQ';
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <Services />
+      <ServiceGrid />
       <Integrations />
       <WhyTrustUs />
       <Testimonials />
