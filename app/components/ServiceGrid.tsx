@@ -41,6 +41,13 @@ export default function ServiceGrid() {
                             viewport={{ once: true }}
                             className="relative overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] rounded-2xl aspect-[4/5] bg-white/0 backdrop-blur-[4.5px] border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                         >
+                            {/* Large Background Icon */}
+                            <div className="absolute -right-8 -bottom-8 w-48 h-48 text-blue-950/20 z-0 pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                                <svg className="w-full h-full" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
+                                    {service.icon}
+                                </svg>
+                            </div>
+
                             <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between">
                                 <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white transition-transform group-hover:scale-110">
                                     <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
