@@ -45,7 +45,7 @@ export default function WhyTrustUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1 }}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden min-h-[460px] text-center"
+                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500 overflow-hidden min-h-[460px] text-center"
                         >
                             {/* Card Header Label */}
                             <div className="text-[10px] md:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-12 relative z-10 opacity-70">
