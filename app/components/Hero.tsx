@@ -59,22 +59,22 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="flex flex-col sm:flex-row gap-5 pt-5 items-center relative z-20"
+                        className="flex flex-row gap-3 pt-6 items-center relative z-20"
                     >
                         <Link
                             href="#contact"
-                            className="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-sm transition-all duration-300 hover:shadow-md active:scale-[0.98]"
+                            className="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-xs md:text-sm transition-all duration-300 hover:shadow-md active:scale-[0.98]"
                         >
                             Book A Demo
                         </Link>
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-3 px-7 py-2.5 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_12px_30px_-6px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_-8px_rgba(0,0,0,0.35)]"
+                            className="group flex items-center gap-2 px-5 py-2 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-xs md:text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_12px_30px_-6px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_-8px_rgba(0,0,0,0.35)]"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white text-blue-600 shadow-sm">
-                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} viewBox="0 0 24 24">
+                            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-blue-600 shadow-sm">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={3.5} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>
