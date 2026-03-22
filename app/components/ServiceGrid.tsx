@@ -14,7 +14,7 @@ const services = [
 
 export default function ServiceGrid() {
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="relative py-24 bg-white overflow-hidden bg-[url('/section_assets/services_bg.png')] bg-cover bg-center">
             <div className="container-custom">
                 <SectionHeader 
                     badge="SERVICES" 
