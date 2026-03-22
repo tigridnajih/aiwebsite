@@ -42,9 +42,9 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="#contact"
-              className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] bg-[#0f172a] px-6 text-white text-sm font-bold shadow-md hover:bg-black"
+              className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] bg-blue-600 px-6 text-white text-sm font-bold shadow-md shadow-blue-600/20 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30"
             >
-              Book a Strategy Call
+              Book a Call
             </Link>
           </div>
 
@@ -83,9 +83,9 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex h-16 items-center justify-center rounded-2xl bg-slate-900 text-white font-bold text-lg shadow-2xl shadow-black/20"
+              className="flex h-16 items-center justify-center rounded-2xl bg-blue-600 text-white font-bold text-lg shadow-xl shadow-blue-600/30 active:scale-[0.98] transition-all"
             >
-              Book a Strategy Call
+              Book a Call
             </Link>
           </div>
         </div>
