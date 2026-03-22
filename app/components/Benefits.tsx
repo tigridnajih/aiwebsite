@@ -36,7 +36,7 @@ export default function Benefits() {
                             className="flex flex-col items-center text-center group"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-square relative mb-8 rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100/50 [box-shadow:0_3px_6px_rgba(0,0,0,0.16),0_3px_6px_rgba(0,0,0,0.23)] transition-all duration-500 group-hover:shadow-xl group-hover:shadow-blue-500/5 group-hover:-translate-y-1">
+                            <div className="w-full aspect-square relative mb-8 rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100/50 [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500 group-hover:shadow-xl group-hover:shadow-blue-500/5 group-hover:-translate-y-1">
                                 <img
                                     src={benefit.image}
                                     alt={benefit.title}
