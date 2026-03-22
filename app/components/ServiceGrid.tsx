@@ -39,14 +39,10 @@ export default function ServiceGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="relative overflow-hidden group cursor-pointer transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.175,0.885,0.32,2.2)] hover:scale-[1.05] active:scale-[0.95] rounded-[2rem] aspect-[4/5] shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)]"
+                            className="relative overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] rounded-2xl aspect-[4/5] bg-white/0 backdrop-blur-[4.5px] border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                         >
-                            {/* Glass background layers */}
-                            <div className="absolute inset-0 z-0 backdrop-blur-[4px] saturate-[120%] brightness-[1.15] bg-white/20" />
-                            <div className="absolute inset-0 z-1 shadow-[inset_1px_1px_0_rgba(255,255,255,0.75),inset_0_0_5px_rgba(255,255,255,0.75)] pointer-events-none" />
-
                             <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between">
-                                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/30 flex items-center justify-center text-white transition-transform group-hover:scale-110">
+                                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white transition-transform group-hover:scale-110">
                                     <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                         {service.icon}
                                     </svg>
@@ -63,10 +59,9 @@ export default function ServiceGrid() {
                         <motion.div 
                             initial={{ scale: 0.9 }}
                             whileInView={{ scale: 1 }}
-                            className="relative w-20 h-20 overflow-hidden rounded-full flex items-center justify-center text-white mb-6 shadow-[0_6px_6px_rgba(0,0,0,0.1)] cursor-pointer group-hover:scale-110 transition-transform duration-300"
+                            className="relative w-20 h-20 overflow-hidden rounded-full flex items-center justify-center text-white mb-6 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] cursor-pointer group-hover:scale-110 transition-transform duration-300"
                         >
-                            <div className="absolute inset-0 z-0 backdrop-blur-[6px] saturate-[120%] brightness-[1.15] bg-white/20" />
-                            <div className="absolute inset-0 z-1 shadow-[inset_1px_1px_0_rgba(255,255,255,0.75)] pointer-events-none" />
+                            <div className="absolute inset-0 z-0 backdrop-blur-[4.5px] bg-white/0" />
                             
                             <svg className="relative z-10 w-10 h-10 rotate-[-45deg]" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
