@@ -73,11 +73,11 @@ export default function Hero() {
 
                         <Link
                             href="#get-started"
-                            className="group inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-br from-[#5b8cff] to-[#3b5bdb] text-white font-bold text-xs md:text-sm transition-all duration-[250ms] ease-[ease] hover:scale-[1.03] active:scale-[0.97] [box-shadow:0_19px_38px_rgba(0,0,0,0.30),0_15px_12px_rgba(0,0,0,0.22)]"
+                            className="group inline-flex items-center gap-4 px-[28px] py-[12px] rounded-full bg-[#4a7dff] text-white font-semibold text-[18px] transition-all duration-300 [box-shadow:0_4px_0px_#3661d9,0_10px_20px_rgba(43,73,255,0.3)] hover:-translate-y-0.5 hover:[box-shadow:0_6px_0px_#3661d9,0_15px_25px_rgba(74,125,255,0.4)] cursor-pointer"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-blue-600 shadow-sm transition-transform duration-300 group-hover:translate-x-0.5">
-                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#4a7dff] shadow-sm transition-transform duration-300 group-hover:translate-x-0.5">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>
