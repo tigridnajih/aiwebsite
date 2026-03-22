@@ -85,7 +85,8 @@ export default function Hero() {
                 </div>
             </div>
 
-
+            {/* Bottom White Gradient Fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 lg:h-48 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-[10]" />
 
         </section>
     );
