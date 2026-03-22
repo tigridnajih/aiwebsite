@@ -73,11 +73,11 @@ export default function Hero() {
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-2 px-5 py-2 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-xs md:text-sm transition-all hover:scale-[1.05] active:scale-[0.95] shadow-[0_22px_60px_-15px_rgba(0,0,0,0.45)] hover:shadow-[0_25px_70px_-12px_rgba(0,0,0,0.55)]"
+                            className="group inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-br from-[#5b8cff] to-[#3b5bdb] text-white font-bold text-xs md:text-sm transition-all duration-[250ms] ease-[ease] hover:scale-[1.03] active:scale-[0.97] [box-shadow:0_19px_38px_rgba(0,0,0,0.30),0_15px_12px_rgba(0,0,0,0.22)]"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-blue-600 shadow-sm">
-                                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={3.5} viewBox="0 0 24 24">
+                            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-blue-600 shadow-sm transition-transform duration-300 group-hover:translate-x-0.5">
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>
