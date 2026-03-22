@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function CTA() {
   return (
-    <section className="relative pt-32 pb-24 bg-white overflow-hidden text-center">
+    <section className="relative pt-32 pb-10 bg-white overflow-hidden text-center">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
