@@ -4,15 +4,6 @@ import { motion } from 'framer-motion';
 import { Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 
 export default function Footer() {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
-
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -22,19 +13,19 @@ export default function Footer() {
 
   return (
     <motion.footer 
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      variants={containerVariants}
-      className="bg-[#f9fafb] pt-24 pb-12 border-t border-slate-100/50"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-[#f9fafb] pt-24 pb-12 border-t border-slate-100"
     >
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 px-4 mt-8">
           
           {/* Column 1: Logo & Social */}
           <div className="flex flex-col">
-            <Link href="/" className="flex items-center gap-2 mb-8 group/logo w-fit">
-               <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center transform group-hover/logo:rotate-12 transition-all duration-300 shadow-lg shadow-blue-600/20">
+            <Link href="/" className="flex items-center gap-2 mb-8 group w-fit">
+               <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-lg shadow-blue-600/20">
                   <span className="text-white font-bold text-xl">T</span>
                </div>
                <span className="text-2xl font-bold text-slate-900 tracking-tight">Tigrid</span>
@@ -48,13 +39,13 @@ export default function Footer() {
                   key={idx}
                   href={social.href} 
                   aria-label={social.label}
-                  className="relative group/social w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center transition-all duration-300 hover:border-blue-600 text-slate-900 overflow-hidden"
+                  className="relative group w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center transition-all duration-300 hover:border-blue-600 text-slate-900 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-blue-600 translate-y-12 group-hover/social:translate-y-0 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-blue-600 translate-y-12 group-hover:translate-y-0 transition-transform duration-300" />
                   <social.icon 
                     size={18} 
-                    className="relative z-10 transition-colors duration-300 group-hover/social:text-white" 
-                    fill={idx !== 2 ? "currentColor" : "none"} // Instagram is usually outline
+                    className="relative z-10 transition-colors duration-300 group-hover:text-white" 
+                    fill={idx !== 2 ? "currentColor" : "none"}
                     strokeWidth={idx === 2 ? 2.5 : 2}
                   />
                 </Link>
@@ -66,10 +57,10 @@ export default function Footer() {
           <div className="mt-2">
             <h4 className="text-slate-400 font-bold mb-9 uppercase tracking-[0.2em] text-[11px]">Company</h4>
             <ul className="space-y-5">
-              {['Home', 'About us', 'Pricing', 'Blog', 'Case Studies'].map((link) => (
-                <li key={link}>
+              {['Home', 'About us', 'Pricing', 'Blog', 'Case Studies'].map((linkText) => (
+                <li key={linkText}>
                   <Link href="#" className="group relative inline-block text-slate-500 hover:text-blue-600 transition-colors text-[14px] font-medium">
-                    {link}
+                    {linkText}
                     <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </li>
@@ -81,10 +72,10 @@ export default function Footer() {
           <div className="mt-2">
             <h4 className="text-slate-400 font-bold mb-9 uppercase tracking-[0.2em] text-[11px]">Product</h4>
             <ul className="space-y-5">
-              {['Features', 'Solutions', 'How it works', 'Contact', 'FAQ'].map((link) => (
-                <li key={link}>
+              {['Features', 'Solutions', 'How it works', 'Contact', 'FAQ'].map((linkText) => (
+                <li key={linkText}>
                   <Link href="#" className="group relative inline-block text-slate-500 hover:text-blue-600 transition-colors text-[14px] font-medium">
-                    {link}
+                    {linkText}
                     <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </li>
