@@ -5,7 +5,7 @@ import mainBgHero from '../herosection_assets/main_bg_hero.png';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-8 pb-32 lg:pt-12 lg:pb-48 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900 bg-white">
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
@@ -25,7 +25,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Main Content Area - CENTERED DESIGN */}
-            <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-start mt-4 lg:mt-8 text-center">
+            <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-start mt-8 lg:mt-16 text-center">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
                     
 
