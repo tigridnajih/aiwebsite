@@ -34,7 +34,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 bg-white">
+        <section className="relative py-20 lg:py-[120px] bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Support"
@@ -50,7 +50,7 @@ export default function FAQ() {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between py-7 text-left transition-all duration-300 group-hover:pl-2"
+                                className="w-full flex items-center justify-between py-8 text-left transition-all duration-300 group-hover:pl-2"
                             >
                                 <span className="text-lg md:text-xl font-bold text-slate-900 tracking-tight leading-snug pr-8">
                                     {item.question}

@@ -52,7 +52,7 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
             <div className="flex-1 p-8 md:p-12 flex flex-col justify-between">
                 <div>
                     <span className="text-slate-400 font-mono text-[10px] md:text-xs tracking-widest block mb-4 uppercase font-bold">// {c.id}</span>
-                    <h3 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 group-hover/card:text-accent transition-colors duration-500">{c.title}</h3>
+                    <h3 className="text-[clamp(1.875rem,5vw,3rem)] font-bold text-slate-900 tracking-tight mb-4 group-hover/card:text-accent transition-colors duration-500">{c.title}</h3>
                     <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-md font-medium">
                         {c.description}
                     </p>
@@ -84,7 +84,7 @@ const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
 
 export default function CaseStudies() {
     return (
-        <section id="case-studies" className="py-24 bg-white border-y border-slate-50">
+        <section id="case-studies" className="relative py-20 lg:py-[120px] bg-white border-y border-slate-50">
             <div className="container-custom">
                 <SectionHeader
                     badge="Results"

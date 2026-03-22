@@ -150,9 +150,9 @@ export default function Footer() {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     gap: 40px;
-                    max-width: 1200px;
+                    max-width: 1280px;
                     margin: 0 auto;
-                    padding: 0 24px;
+                    padding: 0 32px;
                 }
                 @media (max-width: 1024px) {
                     .footer_grid { grid-template-columns: repeat(2, 1fr); }
@@ -161,9 +161,9 @@ export default function Footer() {
                     .footer_grid { grid-template-columns: 1fr; }
                 }
                 .footer_bottom_inner {
-                    max-width: 1200px;
+                    max-width: 1280px;
                     margin: 0 auto;
-                    padding: 0 24px;
+                    padding: 0 32px;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function CTA() {
   return (
-    <section className="py-24 px-4 overflow-hidden">
+    <section className="relative py-20 lg:py-[120px] overflow-hidden">
       <div className="container-custom max-w-6xl">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -18,7 +18,7 @@ export default function CTA() {
           <div className="absolute bottom-0 right-0 translate-x-[20%] translate-y-[20%] w-[400px] h-[400px] bg-blue-300 opacity-20 blur-[100px] rounded-full transition-transform duration-1000 group-hover:-translate-x-[10%] group-hover:-translate-y-[10%]" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-            <h2 className="text-3xl md:text-[54px] font-extrabold text-white tracking-tight leading-[1.1] mb-8">
+            <h2 className="text-[clamp(1.875rem,5.5vw,3.5rem)] font-extrabold text-white tracking-tight leading-[1.1] mb-8">
               Let AI take the busywork off <br className="hidden md:block" /> your team's plate
             </h2>
             <p className="text-white/90 text-lg md:text-xl font-medium mb-12 max-w-2xl leading-relaxed">

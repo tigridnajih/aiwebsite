@@ -26,10 +26,10 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="relative py-24 md:py-32 bg-white border-y border-slate-50 overflow-hidden text-slate-900">
+        <section id="how-it-works" className="relative py-20 lg:py-[120px] bg-white border-y border-slate-50 overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
-                <div className="text-center mb-16 md:mb-24">
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 text-slate-900">
+                <div className="text-center mb-16 lg:mb-24">
+                    <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
                         Our Engineering Process
                     </h2>
                     <p className="text-slate-500 text-base md:text-lg max-w-xl mx-auto tracking-tight font-medium">
@@ -37,7 +37,7 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 relative z-10 pt-10 px-4 md:px-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 pt-8">
                     {PHASES.map((phase, index) => (
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ export default function HowItWorks() {
                             className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-500"
                         >
                             {/* Image Area - High Quality 2D Asset */}
-                            <div className="w-full aspect-[4/3] relative mb-10 overflow-hidden flex items-center justify-center">
+                            <div className="w-full aspect-[4/3] relative mb-8 overflow-hidden flex items-center justify-center">
                                 <img
                                     src={phase.image}
                                     alt={phase.title}
@@ -57,7 +57,7 @@ export default function HowItWorks() {
                             </div>
 
                             {/* Compact Step Blue Pill (Matching Screenshot 2) */}
-                            <div className="flex mb-6">
+                            <div className="flex mb-4">
                                 <div className="px-3.5 py-1 bg-blue-600 rounded-lg shadow-lg shadow-blue-600/20">
                                     <span className="text-white font-bold text-[11px] leading-none">
                                         {phase.step}
@@ -67,7 +67,7 @@ export default function HowItWorks() {
 
                             {/* Text Content - Left Aligned */}
                             <div className="relative z-10 w-full text-left">
-                                <h3 className="text-2xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight transition-colors duration-300">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight transition-colors duration-300">
                                     {phase.title}
                                 </h3>
                                 <p className="text-slate-500 text-sm md:text-base leading-relaxed tracking-tight font-medium opacity-70">

@@ -28,11 +28,11 @@ const features = [
 
 export default function WhyTrustUs() {
     return (
-        <section className="py-24 bg-white text-slate-900 overflow-hidden relative">
+        <section className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
             {/* Perspective wrapper for 3D effect */}
             <div className="container-custom relative z-10" style={{ perspective: '2000px' }}>
-                <div className="text-center mb-16 md:mb-24">
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 text-slate-900">
+                <div className="text-center mb-16 lg:mb-24">
+                    <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
                         Why top brands trust us
                     </h2>
                 </div>

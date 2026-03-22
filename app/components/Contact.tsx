@@ -4,15 +4,15 @@ import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-32 bg-white text-slate-900 relative overflow-hidden">
-            <div className="container-custom relative z-10 px-4">
+        <section id="contact" className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
+            <div className="container-custom relative z-10">
                 {/* Header Section */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 lg:mb-24">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter text-slate-900"
+                        className="text-[clamp(2.5rem,7vw,4.5rem)] font-bold mb-6 tracking-tighter text-slate-900 leading-tight"
                     >
                         We're Here To Help
                     </motion.h2>
@@ -20,7 +20,7 @@ export default function Contact() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-slate-500 text-lg md:text-xl font-medium"
+                        className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto"
                     >
                         Our team is ready to support you with expert advice & solutions.
                     </motion.p>

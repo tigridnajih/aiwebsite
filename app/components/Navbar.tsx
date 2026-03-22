@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
 
       <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300 ${scrolled ? 'border-b border-slate-100 shadow-sm' : ''}`}>
-        <div className="flex items-center justify-between w-full max-w-[1440px] h-16 px-6 md:px-12">
+        <div className="container-custom flex items-center justify-between w-full h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>

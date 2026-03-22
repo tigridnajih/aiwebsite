@@ -104,7 +104,7 @@ export default function Testimonials() {
     const col2 = [testimonials[1], testimonials[3], testimonials[5]]; // Top quality + bootstrap
 
     return (
-        <section className="py-24 md:py-32 bg-slate-50 overflow-hidden">
+        <section className="relative py-20 lg:py-[120px] bg-slate-50 overflow-hidden">
             <div className="container-custom max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
                     
@@ -114,7 +114,7 @@ export default function Testimonials() {
                             <h4 className="text-[#3B5BFF] text-[11px] font-bold tracking-[0.2em] uppercase">
                                 TESTIMONIALS
                             </h4>
-                            <h2 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight text-slate-900 leading-[1.05]">
+                            <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold tracking-tight text-slate-900 leading-[1.05]">
                                 What our clients say
                             </h2>
                             <p className="text-slate-500 text-lg md:text-[20px] leading-[1.6] font-medium max-w-lg mt-4">
