@@ -12,6 +12,7 @@ import Stats from './components/Stats';
 import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <FAQ />
       <Blog />
       <Contact />
+      <CTA />
       <Footer />
     </main>
   );
