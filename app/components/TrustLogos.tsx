@@ -39,7 +39,7 @@ export default function TrustLogos() {
     const allLogos = [...Array(10)].map((_, i) => LOGOS[i % LOGOS.length]);
 
     return (
-        <section className="relative z-50 py-2 bg-transparent overflow-hidden select-none">
+        <section className="relative z-50 py-12 md:py-16 bg-white overflow-hidden select-none border-t border-slate-50">
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
             <div className="container-custom">
                 <div

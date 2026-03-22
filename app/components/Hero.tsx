@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import TrustLogos from './TrustLogos';
 import mainBgHero from '../herosection_assets/main_bg_hero.png';
 
 export default function Hero() {
@@ -86,11 +85,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Integrated TrustLogos (Kept at bottom) */}
-            <div className="relative z-30 pb-16 md:pb-12 mt-auto">
-                <TrustLogos />
-            </div>
-            
+
 
         </section>
     );
