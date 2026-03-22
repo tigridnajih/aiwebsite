@@ -39,15 +39,15 @@ export default function FAQ() {
                     className="!pb-16"
                 />
 
-                <div className="max-w-4xl mx-auto flex flex-col gap-5">
+                <div className="max-w-4xl mx-auto flex flex-col gap-4">
                     {faq.map((item, idx) => (
                         <div
                             key={idx}
-                            className={`relative overflow-hidden transition-all duration-500 rounded-[2.5rem] bg-white border ${openIndex === idx ? 'border-blue-100 shadow-xl shadow-blue-500/5' : 'border-slate-100 shadow-sm hover:shadow-md'}`}
+                            className={`relative overflow-hidden transition-all duration-500 rounded-[1.5rem] bg-white border ${openIndex === idx ? 'border-blue-100 shadow-xl shadow-blue-500/5' : 'border-slate-100 shadow-sm hover:shadow-md'}`}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between px-8 py-7 md:px-10 md:py-8 text-left transition-all"
+                                className="w-full flex items-center justify-between px-8 py-4 md:px-10 md:py-5 text-left transition-all"
                             >
                                 <span className={`text-lg md:text-xl font-bold tracking-tight leading-snug pr-8 transition-colors ${openIndex === idx ? 'text-blue-600' : 'text-slate-900'}`}>
                                     {item.question}
