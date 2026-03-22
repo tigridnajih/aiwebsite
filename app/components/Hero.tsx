@@ -60,19 +60,21 @@ export default function Hero() {
                     >
                         <Link
                             href="#contact"
-                            className="group flex items-center gap-2 px-12 py-5 rounded-full bg-accent text-white font-bold text-base transition-all hover:bg-accent/90 hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-accent/30"
+                            className="px-8 py-3.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-sm md:text-base transition-all duration-300 hover:bg-slate-50 hover:shadow-md active:scale-[0.98]"
                         >
-                            Book a Strategy Call
-                            <svg className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
-                            </svg>
+                            Book A Demo
                         </Link>
 
                         <Link
-                            href="#works"
-                            className="px-12 py-5 rounded-full bg-slate-50 border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg"
+                            href="#get-started"
+                            className="group flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-bold text-sm md:text-base transition-all hover:brightness-110 hover:scale-[1.05] active:scale-[0.98] shadow-xl shadow-accent/25"
                         >
-                            See How It Works
+                            Get Started
+                            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white text-accent group-hover:translate-x-1 transition-transform duration-300">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </div>
                         </Link>
                     </motion.div>
                     
