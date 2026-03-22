@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import mainBgHero from '../herosection_assets/main_bg_hero.png';
+import heroBg from '../herosection_assets/hero_bg.png';
 
 export default function Hero() {
     return (
@@ -18,9 +18,9 @@ export default function Hero() {
                 className="absolute inset-0 z-[2] pointer-events-none select-none flex justify-center items-center lg:items-end overflow-hidden"
             >
                 <img 
-                    src={mainBgHero.src} 
+                    src={heroBg.src} 
                     alt="Hero Background Illustration" 
-                    className="w-full min-w-[1024px] h-full object-cover mix-blend-multiply opacity-80 mt-20 lg:mt-32"
+                    className="w-full min-w-[1024px] h-full object-cover opacity-90"
                 />
             </motion.div>
 
