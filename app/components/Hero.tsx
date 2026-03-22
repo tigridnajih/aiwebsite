@@ -6,7 +6,7 @@ import mainBgHero from '../herosection_assets/main_bg_hero.png';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-24 pb-32 lg:pt-32 lg:pb-48 overflow-hidden text-slate-900 bg-white">
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
@@ -33,17 +33,7 @@ export default function Hero() {
                     {/* Text Container Wrapper */}
                     <div className="relative z-10 flex flex-col items-center w-full">
                     
-                    {/* Trusted Proof */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6 }}
-                        className="mb-8"
-                    >
-                        <span className="text-xs md:text-sm font-bold tracking-widest text-accent bg-accent/5 px-6 py-2 rounded-full border border-accent/10 uppercase">
-                            Supercharge your Business
-                        </span>
-                    </motion.div>
+
 
                     <div className="space-y-8 relative z-20">
                         <motion.h1 
