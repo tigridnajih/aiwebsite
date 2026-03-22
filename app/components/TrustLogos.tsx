@@ -40,47 +40,45 @@ export default function TrustLogos() {
 
     return (
         <section className="relative z-50 py-2 bg-transparent overflow-hidden select-none">
-            <p className="text-center text-[12px] md:text-sm font-semibold text-slate-400 mb-6 tracking-widest uppercase">
-                Trusted by Leading Companies
-            </p>
-
             {/* Infinite Scroll Wrapper with CSS Mask for transparent Fading */}
-            <div
-                className="relative w-full flex items-center overflow-hidden"
-                style={{
-                    maskImage: 'linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%)',
-                    WebkitMaskImage: 'linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%)'
-                }}
-            >
-                {/* Logos Container */}
-                <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-slate-900">
-                    {allLogos.map((logo, i) => (
-                        <div
-                            key={i}
-                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                        >
-                            <div className="flex-shrink-0 scale-90">
-                                {logo.icon}
+            <div className="container-custom">
+                <div
+                    className="relative w-full flex items-center overflow-hidden"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
+                    }}
+                >
+                    {/* Logos Container */}
+                    <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-slate-900">
+                        {allLogos.map((logo, i) => (
+                            <div
+                                key={i}
+                                className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            >
+                                <div className="flex-shrink-0 scale-90">
+                                    {logo.icon}
+                                </div>
+                                <span className="text-lg md:text-xl font-bold tracking-tighter">
+                                    logoipsum
+                                </span>
                             </div>
-                            <span className="text-lg md:text-xl font-bold tracking-tighter">
-                                logoipsum
-                            </span>
-                        </div>
-                    ))}
-                    {/* Duplicate for seamless loop */}
-                    {allLogos.map((logo, i) => (
-                        <div
-                            key={`dup-${i}`}
-                            className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                        >
-                            <div className="flex-shrink-0 scale-90">
-                                {logo.icon}
+                        ))}
+                        {/* Duplicate for seamless loop */}
+                        {allLogos.map((logo, i) => (
+                            <div
+                                key={`dup-${i}`}
+                                className="flex items-center gap-2 md:gap-3 mx-4 md:mx-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            >
+                                <div className="flex-shrink-0 scale-90">
+                                    {logo.icon}
+                                </div>
+                                <span className="text-lg md:text-xl font-bold tracking-tighter">
+                                    logoipsum
+                                </span>
                             </div>
-                            <span className="text-lg md:text-xl font-bold tracking-tighter">
-                                logoipsum
-                            </span>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
