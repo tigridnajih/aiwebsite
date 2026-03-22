@@ -62,7 +62,7 @@ const SOLUTIONS = [
 
 export default function ServiceGrid() {
     return (
-        <section className="relative py-24 bg-white overflow-hidden text-slate-900 border-b border-slate-50">
+        <section className="relative py-24 bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom">
                 {/* Reference Header */}
                 <div className="text-center mb-20">

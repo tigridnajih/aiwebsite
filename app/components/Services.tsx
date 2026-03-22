@@ -34,7 +34,7 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
 
 export default function Services() {
     return (
-        <section id="services" className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
+        <section id="services" className="relative py-20 lg:py-[120px] bg-[#f4f9ff] text-slate-900 overflow-hidden">
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center mb-24 md:mb-32">
@@ -85,7 +85,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
+                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-white rounded-3xl overflow-hidden shadow-sm shadow-blue-500/5"
                         >
                             <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-cover" />
                         </motion.div>
@@ -102,7 +102,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
+                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-white rounded-3xl overflow-hidden shadow-sm shadow-blue-500/5"
                         >
                             <img 
                                 src="/section_assets/bg_services2.avif" 
@@ -183,7 +183,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
+                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-white rounded-3xl overflow-hidden shadow-sm shadow-blue-500/5"
                         >
                             <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-cover" />
                         </motion.div>
@@ -198,7 +198,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-slate-50 rounded-3xl overflow-hidden shadow-sm"
+                            className="relative w-full max-w-[580px] mx-auto aspect-square bg-white rounded-3xl overflow-hidden shadow-sm shadow-blue-500/5"
                         >
                             <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-cover" />
                         </motion.div>
