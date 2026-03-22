@@ -80,11 +80,11 @@ export default function ServiceGrid() {
                     className="w-full h-full object-cover opacity-100"
                 />
                 
-                {/* Noticeable Inner Shadow - Top */}
-                <div className="absolute top-0 left-0 right-0 h-48 z-10 bg-gradient-to-b from-black/25 to-transparent pointer-events-none" />
+                {/* Noticeable Inner Shadow - Top (3x Intensity) */}
+                <div className="absolute top-0 left-0 right-0 h-48 z-10 bg-gradient-to-b from-black/75 to-transparent pointer-events-none" />
                 
-                {/* Noticeable Inner Shadow - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-48 z-10 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
+                {/* Noticeable Inner Shadow - Bottom (3x Intensity) */}
+                <div className="absolute bottom-0 left-0 right-0 h-48 z-10 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
             </div>
 
             <div className="container-custom relative z-10">
