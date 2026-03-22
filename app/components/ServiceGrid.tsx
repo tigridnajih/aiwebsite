@@ -107,7 +107,7 @@ export default function ServiceGrid() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
-                                className="relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[300px] snap-start overflow-hidden group transition-all duration-300 rounded-[2.5rem] aspect-[3/4] bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:shadow-blue-500/5 group-hover:-translate-y-1"
+                                className="relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[300px] snap-start overflow-hidden group transition-all duration-300 rounded-[2.5rem] aspect-[3/4] bg-white border border-slate-100 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)] group-hover:-translate-y-1"
                             >
                                 {/* Large Background Icon */}
                                 <div className="absolute -right-6 -bottom-6 w-32 h-32 text-blue-50/50 z-0 pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12">
@@ -117,8 +117,8 @@ export default function ServiceGrid() {
                                 </div>
 
                                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col">
-                                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-transform group-hover:scale-110">
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                    <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg shadow-blue-600/20">
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                             {service.icon}
                                         </svg>
                                     </div>
