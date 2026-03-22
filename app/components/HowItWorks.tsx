@@ -45,7 +45,7 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-8 bg-white rounded-[16px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                            className="group relative flex flex-col p-8 bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Area - High Quality 2D Asset */}
                             <div className="w-full aspect-[4/3] relative mb-8 overflow-hidden flex items-center justify-center">
