@@ -19,11 +19,11 @@ export default function Footer() {
             <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-[280px]">
               AI-powered automation solutions designed to help businesses scale, optimize workflows, and launch stunning experiences effortlessly and fast.
             </p>
-            <div className="flex items-center gap-5 text-slate-400">
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Facebook size={18} /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Linkedin size={18} /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Instagram size={18} /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Send size={18} /></Link>
+            <div className="flex items-center gap-5 text-slate-900">
+              <Link href="#" className="hover:text-blue-600 transition-colors"><Facebook size={20} fill="currentColor" /></Link>
+              <Link href="#" className="hover:text-blue-600 transition-colors"><Linkedin size={20} fill="currentColor" /></Link>
+              <Link href="#" className="hover:text-blue-600 transition-colors"><Instagram size={20} strokeWidth={2.5} /></Link>
+              <Link href="#" className="hover:text-blue-600 transition-colors"><Send size={20} fill="currentColor" /></Link>
             </div>
           </div>
 
