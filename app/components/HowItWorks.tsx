@@ -30,7 +30,7 @@ export default function HowItWorks() {
             <div className="container-custom relative z-10">
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
-                        Our Engineering Process
+                        How We Turn Your Workflow Into a System
                     </h2>
                     <p className="text-slate-500 text-base md:text-lg max-w-xl mx-auto tracking-tight font-medium">
                         A structured lifecycle from workflow analysis to full system ownership.

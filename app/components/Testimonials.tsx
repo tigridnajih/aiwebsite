@@ -64,7 +64,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
                 <p className="text-slate-400 text-[12px] font-medium leading-tight mt-0.5">{testimonial.handle}</p>
             </div>
         </div>
-        
+
         <p className="text-slate-600 text-[14px] leading-relaxed font-medium">
             {testimonial.quote}
         </p>
@@ -78,7 +78,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
 const VerticalMarquee = ({ items, direction = 'up', speed = 40 }: { items: typeof testimonials, direction?: 'up' | 'down', speed?: number }) => {
     // Duplicate items for infinite scroll
     const marqueeItems = [...items, ...items, ...items];
-    
+
     return (
         <div className="relative h-[650px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]">
             <motion.div
@@ -111,28 +111,28 @@ export default function Testimonials() {
     return (
         <section id="testimonials" className="relative py-24 bg-white overflow-hidden">
             <div className="container-custom max-w-6xl">
-                
+
                 {/* Centered Heading */}
                 <div className="text-center space-y-4 mb-20">
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-[0.2em] leading-none mb-4">
                         Pricing
                     </div>
                     <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                        Review's from our users
+                        Built for Businesses That Can’t Afford Inefficiency
                     </h2>
                     <p className="text-slate-400 text-sm md:text-base font-medium max-w-xl mx-auto">
                         Testimonials from our users around globe
                     </p>
                 </div>
-                
+
                 {/* 3 Columns Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 relative">
                     {/* Column 1 - Moving Up */}
                     <VerticalMarquee items={[...col1, ...col2]} direction="up" speed={30} />
-                    
+
                     {/* Column 2 - Moving Down */}
                     <VerticalMarquee items={[...col2, ...col3]} direction="down" speed={35} />
-                    
+
                     {/* Column 3 - Moving Up */}
                     <VerticalMarquee items={[...col3, ...col1]} direction="up" speed={28} />
                 </div>

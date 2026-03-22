@@ -42,10 +42,10 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
+                            className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
                         >
-                            Intelligent Automation for <br />
-                            Modern Businesses.
+                            Your Business. <br />
+                            Supercharged with AI.
                         </motion.h1>
                         
                         <motion.p 
@@ -73,7 +73,7 @@ export default function Hero() {
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-2 px-5 py-2 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-xs md:text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_12px_30px_-6px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_-8px_rgba(0,0,0,0.35)]"
+                            className="group flex items-center gap-2 px-5 py-2 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-xs md:text-sm transition-all hover:scale-[1.05] active:scale-[0.95] shadow-[0_22px_60px_-15px_rgba(0,0,0,0.45)] hover:shadow-[0_25px_70px_-12px_rgba(0,0,0,0.55)]"
                         >
                             Get Started
                             <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-blue-600 shadow-sm">

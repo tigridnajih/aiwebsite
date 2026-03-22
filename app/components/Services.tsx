@@ -36,6 +36,18 @@ export default function Services() {
     return (
         <section id="services" className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
             <div className="container-custom">
+                {/* Section Header */}
+                <div className="text-center mb-24 md:mb-32">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
+                        <div className="w-1 h-1 rounded-full bg-blue-600" />
+                        Features
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                        Built to Run <br className="hidden md:block" />
+                        Your Business Smarter
+                    </h2>
+                </div>
+
                 {/* 🚀 Feature 1: AI Agent Builder */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
                     <div className="flex-1 space-y-10">

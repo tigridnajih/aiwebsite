@@ -1,12 +1,12 @@
 'use client';
 import { motion } from 'framer-motion';
-import { 
-    Users, 
-    CreditCard, 
-    Zap, 
-    Target, 
-    MessageSquare, 
-    Settings, 
+import {
+    Users,
+    CreditCard,
+    Zap,
+    Target,
+    MessageSquare,
+    Settings,
     UserPlus,
     TrendingUp,
     FileText
@@ -76,7 +76,7 @@ export default function ServiceGrid() {
                 {/* Reference Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-serif text-slate-900 mb-4 tracking-tight">
-                        Our Solutions
+                        AI Solutions Designed for Your Business
                     </h2>
                     <p className="text-slate-400 text-sm md:text-base font-medium">
                         See what we can help you with!
