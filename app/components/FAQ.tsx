@@ -5,59 +5,57 @@ import SectionHeader from './SectionHeader';
 
 const faq = [
     {
-        question: "What is the implementation process, and how does it work?",
-        answer: "Our implementation process begins with a discovery phase to identify key automation opportunities. We then develop a custom strategy, build the AI solution, and integrate it seamlessly with your existing tech stack within 2-4 weeks."
+        question: "Do I need to know coding or complex setup?",
+        answer: "Not at all! Our platform is designed to be user-friendly and intuitive. You can build and deploy complex AI agents without writing a single line of code our team handles the heavy lifting while you focus on business growth."
     },
     {
-        question: "Is there a free trial or proof-of-concept available?",
-        answer: "Yes, we offer a 14-day proof-of-concept for qualified enterprises to demonstrate the tangible ROI and efficiency gains our AI solutions can provide for your use cases."
+        question: "Can Agently work with WhatsApp, Instagram, or website chat?",
+        answer: "Yes, Agently integrates seamlessly with popular messaging platforms including WhatsApp, Instagram, Facebook Messenger, and of course, your own live website chat — all manageable from one central dashboard."
     },
     {
-        question: "How secure is my proprietary data with your systems?",
-        answer: "Security is our top priority. We use enterprise-grade encryption and isolated data environments. Your data is never used to train public models and stays strictly within your organization's private cloud."
+        question: "How accurate is the AI in replying to customers?",
+        answer: "Our state-of-the-art AI is highly accurate and constantly learning from every interaction. It provides human-like responses while maintaining your brand voice and strictly following your company's policy and documentation."
     },
     {
-        question: "Can I customize the automation dashboard?",
-        answer: "Absolutely. We build fully white-labeled dashboards tailored to your specific reporting needs, allowing you to track KPIs, automation accuracy, and saved hours in real-time."
+        question: "Is my customer data safe?",
+        answer: "Security is our top priority. We use enterprise-grade encryption and comply with global data protection standards to ensure your customer data remains private and secure. Your proprietary data is never used to train public models."
     },
     {
-        question: "What integrations are available with your AI tools?",
-        answer: "We support 500+ native integrations including HubSpot, Salesforce, Slack, Gmail, and Microsoft 365. We also provide custom API development for proprietary legacy systems."
-    },
-    {
-        question: "What kind of ongoing support do you offer?",
-        answer: "We provide 24/7 technical monitoring, dedicated account management, and monthly optimization reviews to ensure your AI systems evolve as your business grows."
+        question: "How fast can I see results?",
+        answer: "Most teams start seeing significant improvements in support efficiency and lead response times within the first 24-48 hours of deployment, with detectable ROI appearing in the first month."
     }
 ];
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="relative py-20 lg:py-[120px] bg-white">
+        <section className="relative py-20 lg:py-[120px] bg-white overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
-                    badge="Support"
-                    title="Frequently Asked Questions"
-                    description="Everything you need to know about our AI implementation process and security."
+                    badge="• FAQs"
+                    title={<span className="text-slate-900">Everything You Need to Know</span>}
+                    description="We’ve answered the most common questions teams ask before making the leap to smarter workflows."
+                    className="!pb-16"
                 />
 
-                <div className="max-w-4xl mx-auto border-t border-slate-100">
+                <div className="max-w-4xl mx-auto flex flex-col gap-5">
                     {faq.map((item, idx) => (
                         <div
                             key={idx}
-                            className="border-b border-slate-100 group"
+                            className={`relative overflow-hidden transition-all duration-500 rounded-[2.5rem] bg-white border ${openIndex === idx ? 'border-blue-100 shadow-xl shadow-blue-500/5' : 'border-slate-100 shadow-sm hover:shadow-md'}`}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between py-8 text-left transition-all duration-300 group-hover:pl-2"
+                                className="w-full flex items-center justify-between px-8 py-7 md:px-10 md:py-8 text-left transition-all"
                             >
-                                <span className="text-lg md:text-xl font-bold text-slate-900 tracking-tight leading-snug pr-8">
+                                <span className={`text-lg md:text-xl font-bold tracking-tight leading-snug pr-8 transition-colors ${openIndex === idx ? 'text-blue-600' : 'text-slate-900'}`}>
                                     {item.question}
                                 </span>
-                                <div className={`relative flex items-center justify-center w-6 h-6 shrink-0 transition-transform duration-500 ${openIndex === idx ? 'rotate-45' : ''}`}>
-                                    <div className="absolute w-5 h-[2px] bg-accent rounded-full" />
-                                    <div className="absolute w-[2px] h-5 bg-accent rounded-full" />
+                                
+                                <div className={`relative flex items-center justify-center w-8 h-8 rounded-full shrink-0 transition-all duration-500 ${openIndex === idx ? 'bg-blue-600 rotate-45' : 'bg-blue-600 hover:scale-110'}`}>
+                                    <div className="absolute w-3.5 h-[2px] bg-white rounded-full" />
+                                    <div className="absolute w-[2px] h-3.5 bg-white rounded-full" />
                                 </div>
                             </button>
 
@@ -68,9 +66,8 @@ export default function FAQ() {
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                                        className="overflow-hidden"
                                     >
-                                        <div className="pb-8 pr-12 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                                        <div className="px-8 pb-8 md:px-10 md:pb-10 text-slate-500 text-sm md:text-base leading-relaxed font-medium max-w-3xl">
                                             {item.answer}
                                         </div>
                                     </motion.div>
