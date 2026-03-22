@@ -56,21 +56,21 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="flex flex-col sm:flex-row gap-4 pt-12 items-center"
+                        className="flex flex-col sm:flex-row gap-5 pt-12 items-center"
                     >
                         <Link
                             href="#contact"
-                            className="px-8 py-3.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-sm md:text-base transition-all duration-300 hover:bg-slate-50 hover:shadow-md active:scale-[0.98]"
+                            className="px-10 py-4 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:shadow-md active:scale-[0.98]"
                         >
                             Book A Demo
                         </Link>
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-bold text-sm md:text-base transition-all hover:brightness-110 hover:scale-[1.05] active:scale-[0.98] shadow-xl shadow-accent/25"
+                            className="group flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_-10px_rgba(59,130,246,0.5)]"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white text-accent group-hover:translate-x-1 transition-transform duration-300">
+                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-blue-600 shadow-sm">
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
