@@ -11,7 +11,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative w-full rounded-[1.5rem] overflow-hidden bg-blue-50 min-h-[400px] flex items-center justify-center border border-blue-100"
+          className="relative w-full rounded-[1.5rem] overflow-hidden bg-blue-50 min-h-[400px] flex items-center justify-center"
         >
           {/* CONTENT */}
           <div className="relative z-10 p-10 md:p-20 max-w-4xl">
@@ -24,9 +24,9 @@ export default function CTA() {
             
             <Link 
               href="#contact"
-              className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-sm shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-blue-700 group"
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-sm shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] shadow-blue-600/20 transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-blue-700 group"
             >
-              Book a Strategy Call
+              Book a Call
               <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
