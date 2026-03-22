@@ -56,7 +56,7 @@ export default function CaseStudies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 * idx }}
-                            className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                            className="group flex flex-col bg-white rounded-[2rem] border border-slate-200 shadow-sm transition-all duration-500 overflow-hidden"
                         >
                             {/* Image Container - FLUSH WITH BORDERS */}
                             <div className="relative aspect-[16/9] overflow-hidden">
