@@ -7,6 +7,9 @@ export default function Hero() {
     return (
         <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900 bg-white">
 
+            {/* Top Gradient Fade from White */}
+            <div className="absolute top-0 left-0 right-0 h-64 z-[10] bg-gradient-to-b from-white via-white/40 to-transparent pointer-events-none" />
+
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
