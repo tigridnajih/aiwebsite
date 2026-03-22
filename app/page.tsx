@@ -13,6 +13,7 @@ import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import CTA from './components/CTA';
+import Benefits from './components/Benefits';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustLogos />
+      <Benefits />
       <HowItWorks />
       <Services />
       <ServiceGrid />
