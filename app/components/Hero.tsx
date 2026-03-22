@@ -11,6 +11,20 @@ export default function Hero() {
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
+            {/* Custom Image Background */}
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className="absolute inset-0 z-[2] pointer-events-none select-none flex justify-center items-center lg:items-end overflow-hidden"
+            >
+                <img 
+                    src={mainBgHero.src} 
+                    alt="Hero Background Illustration" 
+                    className="w-full min-w-[1024px] h-full object-cover mix-blend-multiply opacity-80 mt-20 lg:mt-32"
+                />
+            </motion.div>
+
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
@@ -78,20 +92,6 @@ export default function Hero() {
                         </Link>
                     </motion.div>
 
-                    {/* Main Background Hero Image */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
-                        className="w-full max-w-[1200px] mt-4 md:mt-[-2rem] relative z-0 pointer-events-none select-none flex justify-center"
-                    >
-                        <img 
-                            src={mainBgHero.src} 
-                            alt="Hero Background Illustration" 
-                            className="w-full h-auto object-contain mix-blend-multiply opacity-90"
-                        />
-                    </motion.div>
-                    
                     </div> {/* End Text Container Wrapper */}
                 </div>
             </div>
