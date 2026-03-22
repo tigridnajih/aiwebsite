@@ -72,13 +72,19 @@ export default function ServiceGrid() {
 
     return (
         <section className="relative py-8 lg:py-12 overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0 bg-white">
+            {/* Background Image with Intense Inner Shadow */}
+            <div className="absolute inset-0 z-0 bg-white overflow-hidden">
                 <img 
                     src="/section_assets/services_bg.png" 
                     alt="Background" 
                     className="w-full h-full object-cover opacity-100"
                 />
+                
+                {/* Noticeable Inner Shadow - Top */}
+                <div className="absolute top-0 left-0 right-0 h-48 z-10 bg-gradient-to-b from-black/25 to-transparent pointer-events-none" />
+                
+                {/* Noticeable Inner Shadow - Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-48 z-10 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
             </div>
 
             <div className="container-custom relative z-10">
