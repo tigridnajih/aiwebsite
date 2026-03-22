@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import heroBg from '../herosection_assets/hero_bg.png';
+import heroBg from '../herosection_assets/herobg.png';
 
 export default function Hero() {
     return (
