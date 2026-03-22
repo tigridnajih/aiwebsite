@@ -18,7 +18,7 @@ export default function CTA() {
           <div className="absolute bottom-0 right-0 translate-x-[20%] translate-y-[20%] w-[400px] h-[400px] bg-blue-300 opacity-20 blur-[100px] rounded-full transition-transform duration-1000 group-hover:-translate-x-[10%] group-hover:-translate-y-[10%]" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-            <h2 className="text-[clamp(1.875rem,5.5vw,3.5rem)] font-extrabold text-white tracking-tight leading-[1.1] mb-8">
+            <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-extrabold text-white tracking-tight leading-[1.1] mb-8">
               Let AI take the busywork off <br className="hidden md:block" /> your team's plate
             </h2>
             <p className="text-white/90 text-lg md:text-xl font-medium mb-12 max-w-2xl leading-relaxed">
@@ -27,7 +27,7 @@ export default function CTA() {
             
             <Link 
               href="#contact"
-              className="group flex items-center justify-center gap-2 px-10 py-4.5 rounded-full bg-white text-blue-600 font-bold text-base transition-all hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-blue-900/10"
+              className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-blue-600 font-bold text-sm transition-all hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-blue-900/10"
             >
               Build My Site
               <svg 

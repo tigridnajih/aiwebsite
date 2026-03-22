@@ -114,7 +114,7 @@ export default function Testimonials() {
                             <h4 className="text-[#3B5BFF] text-[11px] font-bold tracking-[0.2em] uppercase">
                                 TESTIMONIALS
                             </h4>
-                            <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold tracking-tight text-slate-900 leading-[1.05]">
+                            <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold tracking-tight text-slate-900 leading-[1.05]">
                                 What our clients say
                             </h2>
                             <p className="text-slate-500 text-lg md:text-[20px] leading-[1.6] font-medium max-w-lg mt-4">

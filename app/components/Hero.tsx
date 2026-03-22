@@ -36,7 +36,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-[clamp(2.25rem,6vw,4.5rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
+                            className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
                         >
                             Intelligent Automation for <br />
                             Modern Businesses.
@@ -46,7 +46,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
+                            className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
                         >
                             Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
                         </motion.p>
@@ -60,18 +60,18 @@ export default function Hero() {
                     >
                         <Link
                             href="#contact"
-                            className="px-10 py-4 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-base transition-all duration-300 hover:shadow-md active:scale-[0.98]"
+                            className="px-8 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-sm transition-all duration-300 hover:shadow-md active:scale-[0.98]"
                         >
                             Book A Demo
                         </Link>
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_-10px_rgba(59,130,246,0.5)]"
+                            className="group flex items-center gap-3 px-7 py-2.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_20px_-10px_rgba(59,130,246,0.4)]"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-blue-600 shadow-sm">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white text-blue-600 shadow-sm">
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>

@@ -43,7 +43,7 @@ export default function Integrations() {
                     INTEGRATIONS
                 </div>
 
-                <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-extrabold text-[#141B3B] mb-8 tracking-tight leading-[1.1]">
+                <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold text-[#141B3B] mb-8 tracking-tight leading-[1.1]">
                     Seamless integration
                 </h2>
 
