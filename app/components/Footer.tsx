@@ -1,71 +1,112 @@
 'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 
 export default function Footer() {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Send, href: "#", label: "Telegram" }
+  ];
+
   return (
-    <footer className="bg-[#f9fafb] pt-20 pb-10 border-t border-slate-100">
+    <motion.footer 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants}
+      className="bg-[#f9fafb] pt-24 pb-12 border-t border-slate-100/50"
+    >
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 px-4 mt-8">
           
           {/* Column 1: Logo & Social */}
           <div className="flex flex-col">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+            <Link href="/" className="flex items-center gap-2 mb-8 group/logo w-fit">
+               <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center transform group-hover/logo:rotate-12 transition-all duration-300 shadow-lg shadow-blue-600/20">
                   <span className="text-white font-bold text-xl">T</span>
                </div>
-               <span className="text-xl font-bold text-slate-900 tracking-tight">Tigrid</span>
+               <span className="text-2xl font-bold text-slate-900 tracking-tight">Tigrid</span>
             </Link>
-            <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-[280px]">
+            <p className="text-slate-500 text-[15px] leading-loose mb-10 max-w-[300px] font-medium opacity-80">
               AI-powered automation solutions designed to help businesses scale, optimize workflows, and launch stunning experiences effortlessly and fast.
             </p>
-            <div className="flex items-center gap-5 text-slate-900">
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Facebook size={20} fill="currentColor" /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Linkedin size={20} fill="currentColor" /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Instagram size={20} strokeWidth={2.5} /></Link>
-              <Link href="#" className="hover:text-blue-600 transition-colors"><Send size={20} fill="currentColor" /></Link>
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social, idx) => (
+                <Link 
+                  key={idx}
+                  href={social.href} 
+                  aria-label={social.label}
+                  className="relative group/social w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center transition-all duration-300 hover:border-blue-600 text-slate-900 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-blue-600 translate-y-12 group-hover/social:translate-y-0 transition-transform duration-300" />
+                  <social.icon 
+                    size={18} 
+                    className="relative z-10 transition-colors duration-300 group-hover/social:text-white" 
+                    fill={idx !== 2 ? "currentColor" : "none"} // Instagram is usually outline
+                    strokeWidth={idx === 2 ? 2.5 : 2}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* Column 2: Company */}
-          <div>
-            <h4 className="text-slate-900 font-bold mb-7 uppercase tracking-wider text-xs">Company</h4>
-            <ul className="space-y-4">
-              <li><Link href="/" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Home</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">About us</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Pricing</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Blog</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Case Studies</Link></li>
+          <div className="mt-2">
+            <h4 className="text-slate-400 font-bold mb-9 uppercase tracking-[0.2em] text-[11px]">Company</h4>
+            <ul className="space-y-5">
+              {['Home', 'About us', 'Pricing', 'Blog', 'Case Studies'].map((link) => (
+                <li key={link}>
+                  <Link href="#" className="group relative inline-block text-slate-500 hover:text-blue-600 transition-colors text-[14px] font-medium">
+                    {link}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 3: Product */}
-          <div>
-            <h4 className="text-slate-900 font-bold mb-7 uppercase tracking-wider text-xs">Product</h4>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Features</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Solutions</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">How it works</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">Contact</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-blue-600 transition-colors text-[14px]">FAQ</Link></li>
+          <div className="mt-2">
+            <h4 className="text-slate-400 font-bold mb-9 uppercase tracking-[0.2em] text-[11px]">Product</h4>
+            <ul className="space-y-5">
+              {['Features', 'Solutions', 'How it works', 'Contact', 'FAQ'].map((link) => (
+                <li key={link}>
+                  <Link href="#" className="group relative inline-block text-slate-500 hover:text-blue-600 transition-colors text-[14px] font-medium">
+                    {link}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 4: Newsletter */}
-          <div>
-            <h4 className="text-slate-900 font-bold mb-7 uppercase tracking-wider text-xs">Newsletter</h4>
-            <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+          <div className="mt-2">
+            <h4 className="text-slate-400 font-bold mb-9 uppercase tracking-[0.2em] text-[11px]">Newsletter</h4>
+            <p className="text-slate-500 text-[15px] mb-8 leading-relaxed font-medium opacity-80">
               Get tips, product updates, and insights on working smarter with AI.
             </p>
             <div className="relative group/input">
               <input 
                 type="email" 
                 placeholder="Email address"
-                className="w-full h-14 pl-6 pr-32 rounded-full border border-slate-200 bg-white focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 transition-all outline-none text-sm"
+                className="w-full h-14 pl-6 pr-36 rounded-full border border-slate-200 bg-white focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 transition-all outline-none text-[14px] shadow-sm"
               />
-              <button className="absolute right-1.5 top-1.5 bottom-1.5 px-6 rounded-full bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center gap-2">
-                Subscribe
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+              <button className="absolute right-1.5 top-1.5 bottom-1.5 px-6 rounded-full bg-blue-600 text-white font-bold text-[13px] hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center gap-2 group/btn">
+                Get Updates
+                <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </button>
@@ -74,17 +115,26 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-xs font-medium">
+        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-slate-400 text-[13px] font-medium">
             © 2025 Tigrid Automation Inc. All rights reserved.
           </p>
-          <div className="flex items-center gap-8">
-            <Link href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Terms of Service</Link>
-            <Link href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Cookies</Link>
+          <div className="flex items-center gap-10">
+            <Link href="#" className="group relative text-slate-400 hover:text-slate-900 text-[13px] transition-colors font-medium">
+                Privacy Policy
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-slate-900 transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link href="#" className="group relative text-slate-400 hover:text-slate-900 text-[13px] transition-colors font-medium">
+                Terms of Service
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-slate-900 transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link href="#" className="group relative text-slate-400 hover:text-slate-900 text-[13px] transition-colors font-medium">
+                Cookies
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-slate-900 transition-all duration-300 group-hover:w-full" />
+            </Link>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
