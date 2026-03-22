@@ -101,25 +101,25 @@ export default function ServiceGrid() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
-                                className="relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[300px] snap-start overflow-hidden group transition-all duration-300 rounded-[2.5rem] aspect-[3/4] bg-white/0 backdrop-blur-[4.5px] border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                                className="relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[300px] snap-start overflow-hidden group transition-all duration-300 rounded-[2.5rem] aspect-[3/4] bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:shadow-blue-500/5 group-hover:-translate-y-1"
                             >
                                 {/* Large Background Icon */}
-                                <div className="absolute -right-6 -bottom-6 w-32 h-32 text-blue-950/20 z-0 pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                                <div className="absolute -right-6 -bottom-6 w-32 h-32 text-blue-50/50 z-0 pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12">
                                     <svg className="w-full h-full" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
                                         {service.icon}
                                     </svg>
                                 </div>
 
                                 <div className="relative z-10 p-6 md:p-8 h-full flex flex-col">
-                                    <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white mb-6 transition-transform group-hover:scale-110">
+                                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 transition-transform group-hover:scale-110">
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                             {service.icon}
                                         </svg>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight tracking-tight mb-4">
+                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight tracking-tight mb-4 group-hover:text-blue-600 transition-colors">
                                         {service.title}
                                     </h3>
-                                    <p className="text-white/60 text-sm md:text-[15px] leading-relaxed font-medium line-clamp-2 pr-2">
+                                    <p className="text-slate-500 text-sm md:text-[15px] leading-relaxed font-medium line-clamp-3 pr-2 opacity-80">
                                         {service.description}
                                     </p>
                                 </div>
@@ -131,28 +131,27 @@ export default function ServiceGrid() {
                             <motion.div 
                                 initial={{ scale: 0.9 }}
                                 whileInView={{ scale: 1 }}
-                                className="relative w-16 h-16 overflow-hidden rounded-full flex items-center justify-center text-white mb-6 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] cursor-pointer group-hover:scale-110 transition-transform duration-300"
+                                className="relative w-16 h-16 overflow-hidden rounded-full flex items-center justify-center text-blue-600 mb-6 border border-slate-100 shadow-sm bg-white cursor-pointer group-hover:scale-110 transition-transform duration-300"
                             >
-                                <div className="absolute inset-0 z-0 backdrop-blur-[4.5px] bg-white text-blue-600" />
                                 <ArrowRight className="relative z-10 w-6 h-6 rotate-[-45deg]" strokeWidth={3} />
                             </motion.div>
-                            <span className="text-white font-bold text-sm tracking-tight cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity">
+                            <span className="text-slate-900 font-bold text-sm tracking-tight cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity">
                                 View all features
                             </span>
                         </div>
                     </div>
 
                     {/* Navigation Buttons - Bottom Right Side inside circle */}
-                    <div className="absolute bottom-0 right-0 flex gap-4 pointer-events-none z-20">
+                    <div className="absolute bottom-0 right-0 flex gap-4 pointer-events-auto z-20">
                         <button 
                             onClick={() => scroll('left')}
-                            className="pointer-events-auto w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center text-white transition-all hover:bg-white hover:text-blue-900 shadow-xl group"
+                            className="w-12 h-12 rounded-full border border-slate-100 bg-white flex items-center justify-center text-slate-900 transition-all hover:bg-blue-600 hover:text-white shadow-lg shadow-black/5 group"
                         >
                             <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
                         </button>
                         <button 
                             onClick={() => scroll('right')}
-                            className="pointer-events-auto w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center text-white transition-all hover:bg-white hover:text-blue-900 shadow-xl group"
+                            className="w-12 h-12 rounded-full border border-slate-100 bg-white flex items-center justify-center text-slate-900 transition-all hover:bg-blue-600 hover:text-white shadow-lg shadow-black/5 group"
                         >
                             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </button>
