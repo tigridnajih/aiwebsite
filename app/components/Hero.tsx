@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import TrustLogos from './TrustLogos';
+import mainBgHero from '../herosection_assets/main_bg_hero.png';
 
 export default function Hero() {
     return (
@@ -14,7 +15,6 @@ export default function Hero() {
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
                     
-
 
                     {/* Text Container Wrapper */}
                     <div className="relative z-10 flex flex-col items-center w-full">
@@ -31,7 +31,7 @@ export default function Hero() {
                         </span>
                     </motion.div>
 
-                    <div className="space-y-8">
+                    <div className="space-y-8 relative z-20">
                         <motion.h1 
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="flex flex-col sm:flex-row gap-5 pt-12 items-center"
+                        className="flex flex-col sm:flex-row gap-5 pt-12 items-center relative z-20"
                     >
                         <Link
                             href="#contact"
@@ -76,6 +76,20 @@ export default function Hero() {
                                 </svg>
                             </div>
                         </Link>
+                    </motion.div>
+
+                    {/* Main Background Hero Image */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+                        className="w-full max-w-[1200px] mt-4 md:mt-[-2rem] relative z-0 pointer-events-none select-none flex justify-center"
+                    >
+                        <img 
+                            src={mainBgHero.src} 
+                            alt="Hero Background Illustration" 
+                            className="w-full h-auto object-contain mix-blend-multiply opacity-90"
+                        />
                     </motion.div>
                     
                     </div> {/* End Text Container Wrapper */}
