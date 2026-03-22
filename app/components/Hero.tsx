@@ -70,7 +70,7 @@ export default function Hero() {
 
                         <Link
                             href="#get-started"
-                            className="group flex items-center gap-3 px-7 py-2.5 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_8px_20px_-6px_rgba(59,130,246,0.6)] hover:shadow-[0_12px_25px_-8px_rgba(59,130,246,0.7)]"
+                            className="group flex items-center gap-3 px-7 py-2.5 rounded-full bg-blue-600 bg-gradient-to-t from-white/25 to-transparent text-white font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_12px_30px_-6px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_-8px_rgba(0,0,0,0.35)]"
                         >
                             Get Started
                             <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white text-blue-600 shadow-sm">
