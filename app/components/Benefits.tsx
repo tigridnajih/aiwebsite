@@ -23,7 +23,7 @@ const BENEFITS = [
 
 export default function Benefits() {
     return (
-        <section className="relative py-20 lg:py-[100px] bg-white overflow-hidden text-slate-900">
+        <section className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
                     {BENEFITS.map((benefit, index) => (
@@ -33,10 +33,10 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="flex flex-col items-center text-center group"
+                            className="flex flex-col items-center text-center group p-10 bg-white rounded-[16px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-square relative mb-8 rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100/50 [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500 group-hover:shadow-xl group-hover:shadow-blue-500/5 group-hover:-translate-y-1">
+                            <div className="w-full aspect-square relative mb-8 rounded-[12px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.03]">
                                 <img
                                     src={benefit.image}
                                     alt={benefit.title}
