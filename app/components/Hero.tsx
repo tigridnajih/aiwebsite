@@ -20,7 +20,7 @@ export default function Hero() {
                 <img 
                     src={heroBg.src} 
                     alt="Hero Background Illustration" 
-                    className="w-full min-w-[1024px] h-full object-cover opacity-90"
+                    className="w-full min-w-[700px] lg:min-w-[1024px] h-full object-cover opacity-90 mt-20 lg:mt-0"
                 />
             </motion.div>
 
