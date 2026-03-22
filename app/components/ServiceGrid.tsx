@@ -27,8 +27,8 @@ export default function ServiceGrid() {
             <div className="container-custom relative z-10">
                 <SectionHeader 
                     badge="SERVICES" 
-                    title="This is what we do" 
-                    className="!pt-0"
+                    title={<span className="text-white">This is what we do</span>} 
+                    className="!pt-0 !text-white"
                 />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-0 mt-8">
@@ -39,14 +39,14 @@ export default function ServiceGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-[#D9FF66] p-8 md:p-10 rounded-[40px] aspect-[4/5] flex flex-col justify-between group cursor-pointer hover:shadow-2xl hover:shadow-lime-200 transition-all duration-300"
+                            className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 rounded-[40px] aspect-[4/5] flex flex-col justify-between group cursor-pointer hover:bg-white/20 transition-all duration-300"
                         >
-                            <div className="w-14 h-14 rounded-full bg-[#064E3B] flex items-center justify-center text-[#D9FF66] transition-transform group-hover:scale-110">
+                            <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white transition-transform group-hover:scale-110">
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                     {service.icon}
                                 </svg>
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-extrabold text-[#064E3B] leading-tight tracking-tight">
+                            <h3 className="text-2xl md:text-3xl font-extrabold text-white leading-tight tracking-tight">
                                 {service.title}
                             </h3>
                         </motion.div>
@@ -57,13 +57,13 @@ export default function ServiceGrid() {
                         <motion.div 
                             initial={{ scale: 0.9 }}
                             whileInView={{ scale: 1 }}
-                            className="w-20 h-20 rounded-full bg-[#D9FF66] flex items-center justify-center text-[#064E3B] mb-6 shadow-xl shadow-lime-500/10 cursor-pointer group-hover:scale-110 transition-transform duration-300"
+                            className="w-20 h-20 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white mb-6 shadow-xl shadow-black/10 cursor-pointer group-hover:scale-110 transition-transform duration-300"
                         >
                             <svg className="w-10 h-10 rotate-[-45deg]" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
                         </motion.div>
-                        <span className="text-slate-900 font-bold text-base tracking-tight cursor-pointer group-hover:text-blue-600 transition-colors">
+                        <span className="text-white font-bold text-base tracking-tight cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity">
                             View all features
                         </span>
                     </div>
