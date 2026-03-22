@@ -38,63 +38,55 @@ const cases = [
     }
 ];
 
-const CaseCard = ({ c, index }: { c: typeof cases[0], index: number }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 * index }}
-        className="sticky w-full bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-2xl mb-12 hover:border-accent transition-all duration-500 group/card"
-        style={{ top: `${80 + index * 40}px` }}
-    >
-        <div className="flex flex-col md:flex-row min-h-[400px]">
-            {/* Content Left */}
-            <div className="flex-1 p-8 md:p-12 flex flex-col justify-between">
-                <div>
-                    <span className="text-slate-400 font-mono text-[10px] md:text-xs tracking-widest block mb-4 uppercase font-bold">// {c.id}</span>
-                    <h3 className="text-[clamp(1.875rem,5vw,3rem)] font-bold text-slate-900 tracking-tight mb-4 group-hover/card:text-accent transition-colors duration-500">{c.title}</h3>
-                    <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-md font-medium">
-                        {c.description}
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
-                    {c.stats.map((stat, sIdx) => (
-                        <div key={sIdx}>
-                            <p className="text-slate-400 text-[10px] md:text-xs font-bold mb-1 uppercase tracking-wider">{stat.label}</p>
-                            <p className="text-slate-900 text-xl md:text-3xl font-bold tracking-tight">{stat.value}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Image Right */}
-            <div className="flex-1 flex items-center justify-center p-4">
-                <div className="relative w-full h-full min-h-[300px] rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
-                    <img
-                        src={c.image}
-                        alt={c.title}
-                        className="w-full h-full object-cover grayscale-[0.2] group-hover/card:grayscale-0 transition-all duration-700"
-                    />
-                </div>
-            </div>
-        </div>
-    </motion.div>
-);
-
 export default function CaseStudies() {
     return (
         <section id="case-studies" className="relative py-20 lg:py-[120px] bg-white border-y border-slate-50">
             <div className="container-custom">
                 <SectionHeader
                     badge="Results"
-                    title="Propelling businesses forward"
+                    title={<span className="text-slate-900">Propelling businesses forward</span>}
                     description="We don't just build AI; we build competitive advantages through measurable outcomes."
                 />
 
-                <div className="relative mt-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24">
                     {cases.map((c, idx) => (
-                        <CaseCard key={c.id} c={c} index={idx} />
+                        <motion.div
+                            key={c.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 * idx }}
+                            className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                        >
+                            {/* Image Container */}
+                            <div className="relative aspect-[16/10] overflow-hidden m-2 rounded-[1.5rem]">
+                                <img
+                                    src={c.image}
+                                    alt={c.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </div>
+
+                            {/* Text Content */}
+                            <div className="p-8 pt-4 flex flex-col flex-1">
+                                <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight group-hover:text-blue-600 transition-colors">
+                                    {c.title} Case Study
+                                </h3>
+                                <p className="text-slate-500 text-sm leading-relaxed font-medium mb-8 grow">
+                                    {c.description}
+                                </p>
+
+                                <div className="flex items-center gap-2 text-slate-900 font-bold text-xs uppercase tracking-widest group/link">
+                                    <span>View Case</span>
+                                    <div className="relative flex items-center justify-center w-5 h-5 rounded-full border border-slate-200 transition-all duration-300 group-hover/link:bg-slate-900 group-hover/link:border-slate-900 group-hover/link:text-white">
+                                        <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
