@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+export default function CTA() {
+  return (
     <section className="relative pt-32 pb-16 bg-white overflow-hidden text-center">
       {/* SCROLLING BACKGROUND TEXT (Right to Left) */}
       <div className="absolute top-10 left-0 right-0 z-0 select-none pointer-events-none opacity-[0.03] overflow-hidden">
