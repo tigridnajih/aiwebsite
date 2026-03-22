@@ -32,34 +32,31 @@ const IntegrationIcon = ({ slug, name }: { slug: string; name: string }) => (
 );
 
 export default function Integrations() {
-    // Split integrations into two sets for the two rows
-    const firstRow = [...integrations, ...integrations]; // Duplicate for seamless scroll
+    const firstRow = [...integrations, ...integrations]; 
     const secondRow = [...[...integrations].reverse(), ...[...integrations].reverse()];
 
     return (
-        <section className="py-24 md:py-32 bg-white overflow-hidden relative border-t border-slate-50">
+        <section className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden border-t border-slate-50">
             <div className="container-custom relative z-10 flex flex-col items-center text-center">
                 
-                <div className="px-5 py-1.5 rounded-full bg-slate-50 border border-slate-100/80 mb-8 font-bold text-slate-400 text-[11px] uppercase tracking-widest shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-8 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
                     INTEGRATIONS
                 </div>
 
-                <h2 className="text-[40px] md:text-[56px] lg:text-[68px] font-extrabold text-[#141B3B] mb-6 tracking-tight leading-[1.1]">
+                <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-extrabold text-[#141B3B] mb-8 tracking-tight leading-[1.1]">
                     Seamless integration
                 </h2>
 
-                <p className="text-[#64748b] text-lg md:text-[20px] font-medium leading-[1.6] max-w-xl mb-20 tracking-wide">
+                <p className="text-slate-500 text-lg md:text-xl font-medium leading-[1.6] max-w-xl mb-16 tracking-wide">
                     Connect with tools you already use. <br />
                     No code required, just plug and play.
                 </p>
 
                 {/* Infinite Scroll Rows */}
-                <div className="w-full flex flex-col gap-6 md:gap-10 max-w-[1400px] mx-auto relative px-4">
-                    {/* Fade Edge Masks */}
+                <div className="w-full flex flex-col gap-10 lg:gap-16 max-w-full relative">
                     <div className="absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-                    {/* Row 1: Right Moving */}
                     <div className="flex overflow-hidden relative">
                         <div className="flex gap-6 md:gap-10 animate-infinite-scroll-reverse-slow-extremely whitespace-nowrap pl-6 md:pl-10">
                             {firstRow.map((integration, i) => (
@@ -68,7 +65,6 @@ export default function Integrations() {
                         </div>
                     </div>
 
-                    {/* Row 2: Left Moving */}
                     <div className="flex overflow-hidden relative w-[95%] mx-auto">
                         <div className="flex gap-6 md:gap-10 animate-infinite-scroll-slow-extremely whitespace-nowrap pl-6 md:pl-10">
                             {secondRow.map((integration, i) => (
@@ -78,16 +74,15 @@ export default function Integrations() {
                     </div>
                 </div>
 
-                <div className="mt-24">
-                    <button className="flex items-center gap-2.5 px-8 flex-row py-4 rounded-full bg-[#141B3B] text-white font-bold text-[15px] hover:bg-black transition-all group shadow-xl">
+                <div className="mt-16">
+                    <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#141B3B] text-white font-bold text-base hover:bg-black transition-all group shadow-xl">
                         Explore all tools
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
             </div>
 
-            {/* Background Effects */}
-            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-slate-100/50 blur-[100px] rounded-[100%] pointer-events-none" />
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-slate-50 blur-[120px] rounded-full pointer-events-none opacity-50" />
         </section>
     );
 }

@@ -34,7 +34,7 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 bg-white text-slate-900 overflow-hidden">
+        <section id="services" className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
             <div className="container-custom">
                 {/* 🚀 Feature 1: AI Agent Builder */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
@@ -44,7 +44,7 @@ export default function Services() {
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                                 AI Agent Builder
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.2]">
+                            <h2 className="text-[clamp(1.875rem,5vw,3rem)] font-bold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
                             </h2>
                         </div>

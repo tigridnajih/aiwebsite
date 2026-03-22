@@ -5,13 +5,13 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative flex flex-col pt-40 pb-20 lg:pt-60 lg:pb-32 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-screen flex flex-col pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden text-slate-900 bg-white">
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* Main Content Area - CENTERED DESIGN */}
-            <div className="container-custom relative z-20 flex flex-col items-center justify-center w-full px-4 text-center">
+            <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
                     
 
@@ -36,7 +36,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-4xl md:text-7xl lg:text-[72px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
+                            className="text-[clamp(2.25rem,6vw,4.5rem)] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
                         >
                             Intelligent Automation for <br />
                             Modern Businesses.

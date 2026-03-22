@@ -14,7 +14,7 @@ const services = [
 
 export default function ServiceGrid() {
     return (
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-20 lg:py-[120px] overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0 bg-white">
                 <img 

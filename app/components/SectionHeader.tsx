@@ -11,7 +11,7 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({ badge, title, description, className = "" }: SectionHeaderProps) {
     return (
-        <div className={`relative flex flex-col items-center text-center pt-24 pb-12 px-4 overflow-hidden ${className}`}>
+        <div className={`relative flex flex-col items-center text-center pt-20 pb-12 overflow-hidden ${className}`}>
 
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center max-w-4xl">
@@ -22,7 +22,7 @@ export default function SectionHeader({ badge, title, description, className = "
                         </span>
                     </div>
                 )}
-                <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 text-slate-900 leading-tight">
+                <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold tracking-tight mb-8 text-slate-900 leading-tight">
                     {title}
                 </h2>
 
