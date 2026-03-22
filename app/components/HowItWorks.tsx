@@ -45,7 +45,7 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-200 transition-all duration-500"
+                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border-[1.5px] border-slate-200 transition-all duration-500"
                         >
                             {/* Image Area - High Quality 2D Asset */}
                             <div className="w-full aspect-[4/3] relative mb-8 overflow-hidden flex items-center justify-center">
