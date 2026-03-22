@@ -26,7 +26,7 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="relative py-20 lg:py-[120px] bg-white border-y border-slate-50 overflow-hidden text-slate-900">
+        <section id="how-it-works" className="relative py-20 lg:py-[120px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
                 <div className="text-center mb-16 lg:mb-24">
                     <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
@@ -45,7 +45,7 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500"
+                            className="group relative flex flex-col p-8 bg-white rounded-[16px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Area - High Quality 2D Asset */}
                             <div className="w-full aspect-[4/3] relative mb-8 overflow-hidden flex items-center justify-center">
