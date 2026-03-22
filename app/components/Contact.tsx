@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -112,31 +112,6 @@ export default function Contact() {
                         </div>
                     </form>
                 </motion.div>
-
-                {/* Info Boxes */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-slate-50 pt-24 mt-24">
-                    <div className="flex flex-col items-center text-center space-y-4">
-                        <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-accent ring-1 ring-slate-100 shadow-sm">
-                            <MapPin size={28} />
-                        </div>
-                        <h4 className="text-2xl font-bold tracking-tight">Head Office</h4>
-                        <p className="text-slate-500 font-medium leading-relaxed max-w-[200px]">5899 Alexys Highway Suite 678, Nevada, USA</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center space-y-4 md:border-x border-slate-100">
-                        <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-accent ring-1 ring-slate-100 shadow-sm">
-                            <Phone size={28} />
-                        </div>
-                        <h4 className="text-2xl font-bold tracking-tight">Phone</h4>
-                        <p className="text-slate-500 font-medium italic">+1 234 567 890 <br /> +1 234 567 890</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center space-y-4">
-                        <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-accent ring-1 ring-slate-100 shadow-sm">
-                            <Mail size={28} />
-                        </div>
-                        <h4 className="text-2xl font-bold tracking-tight">Email</h4>
-                        <p className="text-slate-500 font-medium italic">customer@automx.com <br /> client@automx.com</p>
-                    </div>
-                </div>
             </div>
         </section>
     );
