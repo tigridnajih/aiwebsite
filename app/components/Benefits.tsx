@@ -33,10 +33,10 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="flex flex-col items-center text-center group p-10 bg-white rounded-[16px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                            className="flex flex-col items-center text-center group p-[5px] bg-white rounded-[20px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-square relative mb-8 rounded-[12px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.03]">
+                            <div className="w-full aspect-square relative mb-6 rounded-[15px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.02]">
                                 <img
                                     src={benefit.image}
                                     alt={benefit.title}
@@ -44,13 +44,15 @@ export default function Benefits() {
                                 />
                             </div>
 
-                            {/* Text Content */}
-                            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight">
-                                {benefit.title}
-                            </h3>
-                            <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-[280px] font-medium opacity-80">
-                                {benefit.description}
-                            </p>
+                            {/* Text Content Area */}
+                            <div className="px-6 pb-10 pt-2">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight">
+                                    {benefit.title}
+                                </h3>
+                                <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-[280px] font-medium opacity-80 mx-auto">
+                                    {benefit.description}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
