@@ -49,19 +49,19 @@ export default function Services() {
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+                        <div className="flex flex-col gap-y-8">
                             {[
                                 { title: 'No-Code Setup', desc: 'Build fully functional agents in under 5 minutes.', icon: 'M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83' },
-                                { title: 'Custom Knowledge', desc: 'Upload SOPs or FAQs for accurate answers.', icon: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5zM6.5 2H20v20H6.5' },
-                                { title: 'API Integration', desc: 'Connect to apps like CRM, booking, or shipping.', icon: 'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z' },
-                                { title: 'Instant Deployment', desc: 'Launch agents across multiple channels easily.', icon: 'm4.5 16.5-1.5 3 3 1.5 9-11-4.5-4.5zm15-15 1.5 1.5M10.5 4.5l3 3m-3 3 3 3' }
+                                { title: 'API Integration', desc: 'Connect to apps like CRM, booking, or shipping.', icon: 'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z' }
                             ].map((f, i) => (
-                                <div key={i} className="space-y-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#3B5BFF] flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                                <div key={i} className="flex gap-6 items-start">
+                                    <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 shrink-0">
                                         <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-current" strokeWidth="2"><path d={f.icon} /></svg>
                                     </div>
-                                    <h4 className="text-xl font-bold text-slate-900">{f.title}</h4>
-                                    <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">{f.desc}</p>
+                                    <div className="space-y-1.5">
+                                        <h4 className="text-xl font-bold text-slate-900 leading-none">{f.title}</h4>
+                                        <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium">{f.desc}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
