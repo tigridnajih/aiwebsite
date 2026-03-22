@@ -4,45 +4,70 @@ import Link from 'next/link';
 
 export default function CTA() {
   return (
-    <section className="relative py-20 lg:py-[120px] overflow-hidden">
-      <div className="container-custom max-w-6xl">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+    <section className="relative pt-24 pb-0 bg-white overflow-hidden text-center">
+      {/* BACKGROUND DECORATIVE TEXT */}
+      <div className="absolute top-10 left-0 right-0 z-0 select-none pointer-events-none opacity-[0.03]">
+         <h1 className="text-[120px] md:text-[180px] lg:text-[240px] font-bold text-slate-900 leading-none whitespace-nowrap -translate-x-10 scale-110">
+            r people. Higher margins. Be
+         </h1>
+      </div>
+
+      <div className="container-custom relative z-10 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-white via-blue-500 to-indigo-700 px-8 py-20 text-center md:px-16 md:py-28 shadow-[0_24px_50px_-12px_rgba(37,99,235,0.15)] group"
+          className="max-w-3xl mx-auto"
         >
-          {/* Dynamic Light Background Orbs */}
-          <div className="absolute top-0 left-0 -translate-x-[20%] -translate-y-[20%] w-[500px] h-[500px] bg-white opacity-20 blur-[120px] rounded-full transition-transform duration-1000 group-hover:translate-x-[10%] group-hover:translate-y-[10%]" />
-          <div className="absolute bottom-0 right-0 translate-x-[20%] translate-y-[20%] w-[400px] h-[400px] bg-blue-300 opacity-20 blur-[100px] rounded-full transition-transform duration-1000 group-hover:-translate-x-[10%] group-hover:-translate-y-[10%]" />
-
-          <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-            <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-extrabold text-white tracking-tight leading-[1.1] mb-8">
-              Let AI take the busywork off <br className="hidden md:block" /> your team's plate
-            </h2>
-            <p className="text-white/90 text-lg md:text-xl font-medium mb-12 max-w-2xl leading-relaxed">
-              From dispatching and documents to messages and reports automate the tasks your team shouldn't be doing manually.
-            </p>
-            
-            <Link 
-              href="#contact"
-              className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-blue-600 font-bold text-sm transition-all hover:scale-[1.05] active:scale-[0.98] shadow-2xl shadow-blue-900/10"
-            >
-              Build My Site
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth={3} 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+            Your Business.<br />Supercharged with AI.
+          </h2>
+          <p className="text-slate-500 text-base md:text-lg font-medium mb-12 max-w-2xl mx-auto leading-relaxed opacity-80">
+            Save time, boost efficiency, and streamline your business with AI automation from Tigrid.
+          </p>
+          
+          <Link 
+            href="#contact"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-sm shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-blue-700"
+          >
+            Book a Strategy Call
+          </Link>
         </motion.div>
       </div>
+
+      {/* FOOTER WAVE DECORATION */}
+      <div className="relative w-full h-32 md:h-48 overflow-hidden mt-12">
+        <svg 
+          className="absolute bottom-0 left-0 w-[200%] h-full text-blue-500" 
+          viewBox="0 0 1000 100" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            className="animate-wave-slow fill-[url(#wave-gradient)]" 
+            d="M0 80 C 150 100, 350 0, 500 80 C 650 100, 850 0, 1000 80 L 1000 100 L 0 100 Z" 
+          />
+          <defs>
+            <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#8a2be2', stopOpacity: 1 }} />
+              <stop offset="25%" style={{ stopColor: '#4169e1', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#00ced1', stopOpacity: 1 }} />
+              <stop offset="75%" style={{ stopColor: '#4169e1', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#8a2be2', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <style jsx>{`
+        @keyframes wave {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-wave-slow {
+          animation: wave 15s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
