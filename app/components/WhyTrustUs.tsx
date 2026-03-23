@@ -45,16 +45,16 @@ export default function WhyTrustUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1 }}
-                            className="group relative flex flex-col p-8 bg-white rounded-[2.5rem] border border-slate-100 [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500 overflow-hidden min-h-[460px] text-center"
+                            className="group relative flex flex-col p-6 bg-white rounded-[2.5rem] border border-slate-100 [box-shadow:0_10px_20px_-8px_#c5d6d6] transition-all duration-500 overflow-hidden min-h-[340px] text-center"
                         >
                             {/* Card Header Label */}
-                            <div className="text-[10px] md:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-12 relative z-10 opacity-70">
+                            <div className="text-[10px] md:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-6 relative z-10 opacity-70">
                                 [ {feature.label} ]
                             </div>
 
                             {/* 🎥 Centered 3D Icon Area with Floating Effect */}
-                            <div className="flex-1 flex items-center justify-center relative z-10 mb-8">
-                                <div className="relative w-48 h-48 md:w-60 md:h-60">
+                            <div className="flex-1 flex items-center justify-center relative z-10 mb-4">
+                                <div className="relative w-32 h-32 md:w-40 md:h-40">
                                     <img
                                         src={feature.icon}
                                         alt={feature.title}
@@ -64,7 +64,7 @@ export default function WhyTrustUs() {
                             </div>
 
                             {/* Headline - Centered & Premium Typography */}
-                            <div className="relative z-10 mt-auto">
+                            <div className="relative z-10">
                                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-[1.2] tracking-tight transition-colors duration-300 mx-auto max-w-[200px]">
                                     {feature.title}
                                 </h3>
