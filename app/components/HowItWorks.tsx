@@ -45,10 +45,7 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] transition-all duration-300 hover:-translate-y-1"
-                            style={{ 
-                                boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' 
-                            }}
+                            className="group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Area - Match Benefits aspect-square */}
                             <div className="w-full aspect-square relative mb-6 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
