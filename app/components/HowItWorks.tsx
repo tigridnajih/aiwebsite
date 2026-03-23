@@ -54,18 +54,14 @@ export default function HowItWorks() {
                                     alt={phase.title}
                                     className="w-full h-full object-contain filter transition-transform duration-700"
                                 />
-                                {/* Circular Step Badge - Absolutely positioned to save space and match height with Benefits */}
-                                <div className="absolute top-3 left-3">
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center text-white shadow-lg shadow-blue-600/20 transition-transform duration-500 group-hover:scale-110">
-                                        <span className="text-sm font-black leading-none">
-                                            {index + 1}
-                                        </span>
-                                    </div>
-                                </div>
                             </div>
 
                             {/* Text Content */}
                             <div className="px-6 pb-4 pt-0 flex-1 flex flex-col items-center">
+                                {/* Compact Numbering near the text */}
+                                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-[10px] font-bold mb-2 shadow-sm">
+                                    {index + 1}
+                                </div>
                                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight">
                                     {phase.title}
                                 </h3>
