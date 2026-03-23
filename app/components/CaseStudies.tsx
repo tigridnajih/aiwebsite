@@ -40,7 +40,7 @@ const cases = [
 
 export default function CaseStudies() {
     return (
-        <section id="case-studies" className="relative py-20 lg:py-[120px] bg-white border-y border-slate-50">
+        <section id="case-studies" className="relative py-20 lg:py-[120px] bg-[#f4f9ff] overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
                     badge="Results"
@@ -56,7 +56,7 @@ export default function CaseStudies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 * idx }}
-                            className="group flex flex-col bg-white rounded-[2rem] border border-slate-200 shadow-sm transition-all duration-500 overflow-hidden"
+                            className="group flex flex-col bg-white rounded-[28px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                         >
                             {/* Image Container - FLUSH WITH BORDERS */}
                             <div className="relative aspect-[16/9] overflow-hidden">
@@ -92,7 +92,7 @@ export default function CaseStudies() {
 
                 {/* View More Button - Bottom Right */}
                 <div className="flex justify-end mt-12">
-                    <button className="group flex items-center gap-3 px-8 py-3.5 rounded-full border border-slate-200 bg-white text-slate-900 font-bold text-sm transition-all hover:bg-slate-50 hover:border-slate-300 shadow-sm">
+                    <button className="group flex items-center gap-3 px-8 py-3.5 rounded-full border border-[rgba(0,102,255,0.05)] bg-white text-slate-900 font-bold text-sm transition-all hover:bg-slate-50 hover:border-slate-300 shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)]">
                         View more Cases
                         <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
