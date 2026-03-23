@@ -12,19 +12,7 @@ export default function Hero() {
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
-            {/* Custom Image Background */}
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="absolute inset-0 z-[2] pointer-events-none select-none flex justify-center items-center lg:items-end overflow-hidden"
-            >
-                <img 
-                    src={heroBg.src} 
-                    alt="Hero Background Illustration" 
-                    className="w-full min-w-[700px] lg:min-w-[1024px] h-full object-cover opacity-90 mt-20 lg:mt-0"
-                />
-            </motion.div>
+
 
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-start mt-8 lg:mt-16 text-center">
