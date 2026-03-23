@@ -7,17 +7,17 @@ const BENEFITS = [
     {
         title: 'Unified Analytics',
         description: 'Get every metric in one dashboard — no more spreadsheets or missed signals.',
-        image: '/section_assets/benefits_1.avif'
+        image: '/section_assets/benefits1.avif'
     },
     {
         title: 'Seamless Collaboration',
         description: 'Real-time updates keep your whole team on the same page, across every project.',
-        image: '/section_assets/benefits_2.avif'
+        image: '/section_assets/benefits2.avif'
     },
     {
         title: 'Automated Processes',
         description: 'Cut manual work with built-in alerts, reporting, and task automation.',
-        image: '/section_assets/benefits_3.avif'
+        image: '/section_assets/benefits3.avif'
     }
 ];
 
