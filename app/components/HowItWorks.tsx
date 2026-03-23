@@ -56,11 +56,12 @@ export default function HowItWorks() {
                                 />
                             </div>
 
-                            {/* Compact Step Blue Pill (Matching Screenshot 2) */}
-                            <div className="flex mb-4">
-                                <div className="px-3.5 py-1 bg-blue-600 rounded-lg shadow-lg shadow-blue-600/20">
-                                    <span className="text-white font-bold text-[11px] leading-none">
-                                        {phase.step}
+                            {/* Circular Step Badge */}
+                            <div className="flex mb-6">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex flex-col items-center justify-center text-white shadow-xl shadow-blue-600/20 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[10deg]">
+                                    <span className="text-[8px] uppercase font-bold tracking-widest opacity-80 leading-none mb-1">Step</span>
+                                    <span className="text-base font-black leading-none">
+                                        {index + 1}
                                     </span>
                                 </div>
                             </div>
