@@ -7,8 +7,7 @@ export default function Hero() {
     return (
         <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900 bg-white">
 
-            {/* Top Gradient Fade from White */}
-            <div className="absolute top-0 left-0 right-0 h-64 z-[10] bg-gradient-to-b from-white via-white/40 to-transparent pointer-events-none" />
+
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
@@ -66,17 +65,17 @@ export default function Hero() {
                     >
                         <Link
                             href="#contact"
-                            className="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-xs md:text-sm transition-all duration-300 hover:shadow-md active:scale-[0.98]"
+                            className="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-xs md:text-sm transition-all duration-300 active:scale-[0.98]"
                         >
                             Book A Demo
                         </Link>
 
                         <Link
                             href="#get-started"
-                            className="group inline-flex items-center gap-4 px-[28px] py-[12px] rounded-full bg-[#4a7dff] text-white font-semibold text-[18px] transition-all duration-300 [box-shadow:0_4px_0px_#3661d9,0_10px_20px_rgba(43,73,255,0.3)] hover:-translate-y-0.5 hover:[box-shadow:0_6px_0px_#3661d9,0_15px_25px_rgba(74,125,255,0.4)] cursor-pointer"
+                            className="group inline-flex items-center gap-4 px-[28px] py-[12px] rounded-full bg-[#4a7dff] text-white font-semibold text-[18px] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
                         >
                             Get Started
-                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#4a7dff] shadow-sm transition-transform duration-300 group-hover:translate-x-0.5">
+                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#4a7dff] transition-transform duration-300 group-hover:translate-x-0.5">
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
