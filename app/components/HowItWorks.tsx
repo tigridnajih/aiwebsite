@@ -45,32 +45,35 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-8 bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                            className="group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] transition-all duration-300 hover:-translate-y-1"
+                            style={{ 
+                                boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' 
+                            }}
                         >
-                            {/* Image Area - High Quality 2D Asset */}
-                            <div className="w-full aspect-[4/3] relative mb-8 overflow-hidden flex items-center justify-center">
+                            {/* Image Area - Match Benefits aspect-square */}
+                            <div className="w-full aspect-square relative mb-6 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
                                 <img
                                     src={phase.image}
                                     alt={phase.title}
-                                    className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(59,91,255,0.08)] transition-transform duration-700"
+                                    className="w-full h-full object-contain filter transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
 
-                            {/* Circular Step Badge */}
-                            <div className="flex mb-6">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center text-white shadow-xl shadow-blue-600/20 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[10deg]">
-                                    <span className="text-xl font-black leading-none">
-                                        {index + 1}
-                                    </span>
+                            {/* Circular Step Badge - Placed inside text area for better sizing */}
+                            <div className="px-6 flex flex-col items-start pb-8">
+                                <div className="flex mb-4">
+                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center text-white shadow-lg shadow-blue-600/20 transition-transform duration-500 group-hover:scale-110">
+                                        <span className="text-lg font-black leading-none">
+                                            {index + 1}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Text Content - Left Aligned */}
-                            <div className="relative z-10 w-full text-left">
-                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight transition-colors duration-300">
+                                {/* Text Content */}
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight">
                                     {phase.title}
                                 </h3>
-                                <p className="text-slate-500 text-sm md:text-base leading-relaxed tracking-tight font-medium opacity-70">
+                                <p className="text-[#64748b] text-[13px] md:text-sm leading-relaxed font-medium opacity-90">
                                     {phase.description}
                                 </p>
                             </div>
