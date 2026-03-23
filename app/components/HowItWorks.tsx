@@ -45,14 +45,14 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                            className="group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300"
                         >
                             {/* Image Area - Match Benefits aspect-square */}
-                            <div className="w-full aspect-square relative mb-6 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
+                            <div className="w-full aspect-square relative mb-6 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px] p-6 lg:p-8">
                                 <img
                                     src={phase.image}
                                     alt={phase.title}
-                                    className="w-full h-full object-cover filter transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-contain filter transition-transform duration-700"
                                 />
                             </div>
 
