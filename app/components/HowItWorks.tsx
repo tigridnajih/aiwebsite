@@ -45,7 +45,7 @@ export default function HowItWorks() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             key={phase.step}
-                            className="group relative flex flex-col h-full p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                            className="group relative flex flex-col h-full items-center text-center p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
                         >
                             {/* Image Area - Match Benefits aspect-square */}
                             <div className="w-full aspect-square relative mb-6 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
@@ -57,19 +57,11 @@ export default function HowItWorks() {
                             </div>
 
                             {/* Text Content */}
-                            <div className="px-6 flex flex-col items-start pb-6 pt-0 flex-1">
-                                <div className="flex mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center text-white shadow-lg shadow-blue-600/20 transition-transform duration-500 group-hover:scale-110">
-                                        <span className="text-lg font-black leading-none">
-                                            {index + 1}
-                                        </span>
-                                    </div>
-                                </div>
-
+                            <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center">
                                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight">
                                     {phase.title}
                                 </h3>
-                                <p className="text-[#64748b] text-[13px] md:text-sm leading-relaxed max-w-[280px] font-medium opacity-90">
+                                <p className="text-[#64748b] text-[13px] md:text-sm leading-relaxed max-w-[280px] font-medium opacity-90 mx-auto">
                                     {phase.description}
                                 </p>
                             </div>
