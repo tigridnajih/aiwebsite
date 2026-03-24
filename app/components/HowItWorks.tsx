@@ -35,9 +35,12 @@ export default function HowItWorks() {
         <section id="how-it-works" className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
                 <div className="text-center mb-12 lg:mb-16">
-                    <span className="inline-block text-[12px] font-bold text-[#3B82F6] uppercase tracking-[1px] mb-2">
-                        How It Works
-                    </span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
+                        <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                        <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
+                            How It Works
+                        </span>
+                    </div>
                     <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         How We Turn Your Workflow Into a System
                     </h2>
