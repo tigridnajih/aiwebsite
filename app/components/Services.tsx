@@ -44,8 +44,8 @@ export default function Services() {
                             Features
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
-                        Built to Run Your Business Smarter
+                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
+                        Experience the <span className="text-blue-600">Future</span> of Automation
                     </h2>
                     <p className="text-[#4B5563] text-[15px] md:text-[16px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         Scale your operations with intelligent automation that handles the heavy lifting while you focus on growth.
