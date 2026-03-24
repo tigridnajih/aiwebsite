@@ -37,17 +37,17 @@ export default function Services() {
         <section id="services" className="relative py-24 bg-white text-slate-900 overflow-hidden">
             <div className="container-custom">
                 {/* Section Header */}
-                <div className="text-center mb-16 md:mb-24 font-inter">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+                <div className="text-center mb-12 lg:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-md">
                         <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
-                        <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
+                        <span className="text-[9px] font-bold text-black uppercase tracking-[1px]">
                             Features
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
+                    <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
                         Experience the <span className="text-blue-600">Future</span> of Automation
                     </h2>
-                    <p className="text-[#4B5563] text-[15px] md:text-[16px] max-w-2xl mx-auto font-normal leading-[1.6]">
+                    <p className="text-[#4B5563] text-[15px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         Scale your operations with intelligent automation that handles the heavy lifting while you focus on growth.
                     </p>
                 </div>

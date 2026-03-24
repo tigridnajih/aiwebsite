@@ -14,12 +14,20 @@ export default function CTA() {
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
           {/* CONTENT */}
-          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-            Your Business.<br />Supercharged with AI.
-          </h2>
-          <p className="text-slate-600 text-base md:text-lg font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-            Save time, boost efficiency, and streamline your business with AI automation.
-          </p>
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-md">
+                <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                <span className="text-[9px] font-bold text-black uppercase tracking-[1px]">
+                    Get Started
+                </span>
+            </div>
+            <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
+              Your Business.<br />Supercharged with AI.
+            </h2>
+            <p className="text-[#4B5563] text-[15px] max-w-2xl mx-auto font-normal leading-[1.6]">
+              Save time, boost efficiency, and streamline your business with AI automation.
+            </p>
+          </div>
 
           <Link
             href="#contact"

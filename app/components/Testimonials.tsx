@@ -113,14 +113,17 @@ export default function Testimonials() {
             <div className="container-custom max-w-6xl">
 
                 {/* Centered Heading */}
-                <div className="text-center space-y-4 mb-20">
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-[0.2em] leading-none mb-4">
-                        Pricing
+                <div className="text-center mb-12 lg:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-md">
+                        <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                        <span className="text-[9px] font-bold text-black uppercase tracking-[1px]">
+                            Testimonials
+                        </span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                    <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         What Our Client Says
                     </h2>
-                    <p className="text-slate-400 text-sm md:text-base font-medium max-w-xl mx-auto">
+                    <p className="text-[#4B5563] text-[15px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         Testimonials from our users around globe
                     </p>
                 </div>

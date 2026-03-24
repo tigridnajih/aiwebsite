@@ -39,14 +39,17 @@ export default function Integrations() {
         <section className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden border-t border-slate-50">
             <div className="container-custom relative z-10 flex flex-col items-center text-center">
                 
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-8 shadow-[0_2px_8px_rgba(0,0,0,0.04)] font-bold text-black text-[10px] uppercase tracking-widest">
-                    <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
-                    INTEGRATIONS
+                <div className="text-center mb-12 lg:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-md">
+                        <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                        <span className="text-[9px] font-bold text-black uppercase tracking-[1px]">
+                            Integrations
+                        </span>
+                    </div>
+                    <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
+                        Seamless Integration
+                    </h2>
                 </div>
-
-                <h2 className="text-[clamp(2.5rem,6vw,3.5rem)] font-sans font-bold text-[#111827] mb-8 tracking-tight leading-[1.1]">
-                    Seamless Integration
-                </h2>
 
                 <p className="text-[#4B5563] text-[16px] md:text-[18px] font-normal leading-[1.6] max-w-xl mb-16 font-inter">
                     Connect with tools you already use. <br />
