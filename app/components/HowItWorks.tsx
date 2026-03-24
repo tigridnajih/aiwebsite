@@ -18,7 +18,7 @@ const PHASES = [
     },
     {
         step: 'Step 3',
-        title: 'Track and improve',
+        title: 'Track & Improve',
         description: 'Monitor performance a & optmize it',
         image: '/section_assets/track_and_improve.avif'
     },
