@@ -27,6 +27,9 @@ const config: Config = {
             fontFamily: {
                 sans: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
                 inter: ["var(--font-inter)", "sans-serif"],
+                instrument: ["var(--font-instrument-serif)", "serif"],
+                manrope: ["var(--font-manrope)", "sans-serif"],
+                cabin: ["var(--font-cabin)", "sans-serif"],
             },
             backgroundImage: {
                 'grid-pattern': "linear-gradient(to right, rgba(30, 79, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(30, 79, 255, 0.1) 1px, transparent 1px)",

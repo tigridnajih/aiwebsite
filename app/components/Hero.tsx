@@ -24,52 +24,54 @@ export default function Hero() {
                     
 
 
-                    <div className="space-y-5 relative z-20">
-                        <motion.h1 
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                            className="text-[32px] md:text-[48px] font-extrabold font-heading tracking-tighter leading-[1.05] text-slate-900"
-                        >
-                            Your Business. <br />
-                            Supercharged with AI.
-                        </motion.h1>
+                        <div className="flex flex-col gap-[10px] items-center text-center">
+                            <motion.h1 
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, ease: "easeOut" }}
+                                className="font-inter font-medium text-[48px] md:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.15]"
+                            >
+                                Automate repetitive.
+                            </motion.h1>
+                            <motion.h2 
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
+                                className="font-instrument italic text-[48px] md:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.15]"
+                            >
+                                Focus on growth.
+                            </motion.h2>
+                        </div>
                         
                         <motion.p 
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
+                            className="font-manrope font-normal text-[16px] md:text-[18px] leading-[24px] md:leading-[26px] text-[#6B7280] max-w-[613px] mx-auto mt-8 lg:mt-10"
                         >
-                            Bringing AI automation to your fingertips & streamlining operational tasks for accelerated business growth.
+                            The next-generation AI agent platform that handles lead generation, customer support, and data entry while you build.
                         </motion.p>
-                    </div>
 
-                    <motion.div 
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="flex flex-row gap-3 pt-6 items-center relative z-20"
-                    >
-                        <Link
-                            href="#contact"
-                            className="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-slate-900 font-bold text-xs md:text-sm transition-all duration-300 active:scale-[0.98]"
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[22px] items-center justify-center mt-10 lg:mt-12"
                         >
-                            Book A Demo
-                        </Link>
+                            <Link
+                                href="#contact"
+                                className="bg-[#7b39fc] px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px] leading-[1.7] text-white shadow-lg shadow-purple-500/10 hover:brightness-110 transition-all active:scale-[0.98]"
+                            >
+                                Get Started Free
+                            </Link>
 
-                        <Link
-                            href="#get-started"
-                            className="group inline-flex items-center gap-4 px-[28px] py-[12px] rounded-full bg-[#4a7dff] text-white font-semibold text-[18px] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-                        >
-                            Get Started
-                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#4a7dff] transition-transform duration-300 group-hover:translate-x-0.5">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                </svg>
-                            </div>
-                        </Link>
-                    </motion.div>
+                            <Link
+                                href="#demo"
+                                className="bg-[#2b2344] px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px] leading-[1.7] text-[#f6f7f9] shadow-lg shadow-black/10 hover:brightness-125 transition-all active:scale-[0.98]"
+                            >
+                                Watch 2min Demo
+                            </Link>
+                        </motion.div>
 
                     </div> {/* End Text Container Wrapper */}
                 </div>

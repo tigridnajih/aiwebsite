@@ -1,10 +1,28 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter, Instrument_Serif, Manrope, Cabin } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"]
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const cabin = Cabin({
+  variable: "--font-cabin",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistSans = Geist({
@@ -23,6 +41,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Tigrid | Premium AI Automation Agency",
   description: "Transform your business with intelligent AI automation. We build high-performance systems that save time, reduce costs, and accelerate growth.",
@@ -36,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${inter.variable} ${instrumentSerif.variable} ${manrope.variable} ${cabin.variable} antialiased`}
       >
         {children}
       </body>
