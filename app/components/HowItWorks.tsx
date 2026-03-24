@@ -22,6 +22,12 @@ const PHASES = [
         description: 'Monitor performance in real-time and optimize your workflow with clear, actionable insights.',
         image: '/section_assets/track_and_improve.avif'
     },
+    {
+        step: 'Step 4',
+        title: 'Deploy & Scale',
+        description: 'Deploy the automated process and visualise the growth of your business',
+        image: '/section_assets/deploy and scale.png'
+    },
 ];
 
 export default function HowItWorks() {
@@ -37,7 +43,7 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative z-10 pt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 relative z-10 pt-8">
                     {PHASES.map((phase, index) => (
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
