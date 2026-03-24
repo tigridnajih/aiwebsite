@@ -6,16 +6,19 @@ import TrustLogos from './TrustLogos';
 export default function Hero() {
     return (
         <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-20 pb-10 lg:pt-24 lg:pb-16 overflow-hidden text-slate-900">
-            {/* Hero Background Image */}
-            <img
-                src="/herosection_assets/herobg.png"
-                alt=""
-                aria-hidden="true"
+            {/* Hero Background Video */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-            />
+            >
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4" type="video/mp4" />
+            </video>
 
-            {/* Background Texture/Pattern */}
-            <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+            {/* Subtle Overlay to ensure text readability if needed */}
+            <div className="absolute inset-0 z-[1] bg-white/10 pointer-events-none" />
 
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center w-full px-4 sm:px-6">

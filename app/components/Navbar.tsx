@@ -24,8 +24,8 @@ export default function Navbar() {
   return (
     <>
 
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center bg-white transition-all duration-300 ${scrolled ? 'border-b border-slate-100 shadow-sm' : ''}`}>
-        <div className="container-custom flex items-center justify-between w-full h-16">
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? 'bg-white border-b border-slate-100 shadow-sm' : 'bg-transparent'}`}>
+        <div className="container-custom flex items-center justify-between w-full h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>
