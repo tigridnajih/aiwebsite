@@ -22,7 +22,7 @@ export default function SectionHeader({ badge, title, description, className = "
                         </span>
                     </div>
                 )}
-                <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold tracking-tight mb-8 text-slate-900 leading-tight">
+                <h2 className="text-[clamp(2rem,6vw,4rem)] font-sans font-bold tracking-tight mb-8 text-slate-900 leading-tight">
                     {title}
                 </h2>
 

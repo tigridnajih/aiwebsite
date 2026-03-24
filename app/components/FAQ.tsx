@@ -49,7 +49,7 @@ export default function FAQ() {
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                                 className="w-full flex items-center justify-between px-8 py-4 md:px-10 md:py-5 text-left transition-all"
                             >
-                                <span className={`text-base md:text-[18px] font-semibold tracking-tight leading-snug pr-8 transition-colors ${openIndex === idx ? 'text-blue-600' : 'text-slate-900'}`}>
+                                <span className={`text-base md:text-[18px] font-sans font-semibold tracking-tight leading-snug pr-8 transition-colors ${openIndex === idx ? 'text-blue-600' : 'text-slate-900'}`}>
                                     {item.question}
                                 </span>
                                 
