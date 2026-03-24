@@ -56,9 +56,13 @@ export default function Services() {
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
                     <div className="flex-1 space-y-10 font-inter">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                                AI Agent Builder
+                            <div className="inline-flex items-center gap-3 pr-4 pl-1 py-1 rounded-full bg-slate-50/80 border border-slate-200/60 mb-4 md:mb-6">
+                                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium text-[15px]">
+                                    1
+                                </div>
+                                <span className="text-[14px] md:text-[15px] font-medium text-slate-500">
+                                    AI Agent Builder
+                                </span>
                             </div>
                             <h2 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
@@ -119,9 +123,13 @@ export default function Services() {
                     {/* Content Column */}
                     <div className="flex-1 space-y-10 order-1 md:order-2 font-inter">
                         <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
-                                <div className="w-1 h-1 rounded-full bg-blue-600" />
-                                Data Intelligence
+                            <div className="inline-flex items-center gap-3 pr-4 pl-1 py-1 rounded-full bg-slate-50/80 border border-slate-200/60 mb-2">
+                                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium text-[15px]">
+                                    2
+                                </div>
+                                <span className="text-[14px] md:text-[15px] font-medium text-slate-500">
+                                    Data Intelligence
+                                </span>
                             </div>
                             <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Actionable insights <br />
@@ -153,9 +161,13 @@ export default function Services() {
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
                     <div className="flex-1 space-y-10 font-inter">
                         <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
-                                <div className="w-1 h-1 rounded-full bg-blue-600" />
-                                Advanced Feature
+                            <div className="inline-flex items-center gap-3 pr-4 pl-1 py-1 rounded-full bg-slate-50/80 border border-slate-200/60 mb-2">
+                                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium text-[15px]">
+                                    3
+                                </div>
+                                <span className="text-[14px] md:text-[15px] font-medium text-slate-500">
+                                    Advanced Feature
+                                </span>
                             </div>
                             <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Accelerated Sales Growth
@@ -210,9 +222,13 @@ export default function Services() {
 
                     <div className="flex-1 space-y-8 order-1 md:order-2 font-inter">
                         <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
-                                <div className="w-1 h-1 rounded-full bg-blue-600" />
-                                Automation Flow
+                            <div className="inline-flex items-center gap-3 pr-4 pl-1 py-1 rounded-full bg-slate-50/80 border border-slate-200/60 mb-2">
+                                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium text-[15px]">
+                                    4
+                                </div>
+                                <span className="text-[14px] md:text-[15px] font-medium text-slate-500">
+                                    Automation Flow
+                                </span>
                             </div>
                             <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build Smarter Systems
