@@ -45,7 +45,7 @@ export default function Benefits() {
                             </div>
 
                             {/* Text Content Area */}
-                            <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center">
+                            <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center font-inter">
                                 <h3 className="text-[24px] font-bold text-[#0F172A] leading-[1.2] tracking-normal mb-2">
                                     {benefit.title}
                                 </h3>
