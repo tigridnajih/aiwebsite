@@ -74,12 +74,6 @@ export default function Integrations() {
                     </div>
                 </div>
 
-                <div className="mt-16">
-                    <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#141B3B] text-white font-bold text-base hover:bg-black transition-all group shadow-xl">
-                        Explore all tools
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                </div>
             </div>
 
             <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-slate-50 blur-[120px] rounded-full pointer-events-none opacity-50" />
