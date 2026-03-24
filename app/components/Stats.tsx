@@ -35,7 +35,7 @@ function CountUp({ value, suffix = "", decimals = 0 }: { value: number; suffix?:
 
 export default function Stats() {
     return (
-        <section className="relative py-20 bg-white border-y border-slate-100">
+        <section className="relative py-24 bg-white border-y border-slate-100">
             <div className="container-custom">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center items-center">
                     <div className="px-4">

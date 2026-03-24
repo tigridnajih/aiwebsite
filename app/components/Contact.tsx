@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden">
+        <section id="contact" className="relative py-24 bg-white text-slate-900 overflow-hidden">
             <div className="container-custom relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-16 lg:mb-24">

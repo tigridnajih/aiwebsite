@@ -24,7 +24,7 @@ const posts = [
 
 export default function Blog() {
     return (
-        <section className="relative py-20 lg:py-[120px] bg-white">
+        <section className="relative py-24 bg-white">
             <div className="container-custom">
                 <SectionHeader
                     badge="Insights"

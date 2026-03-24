@@ -34,7 +34,7 @@ function CountUp({ value, suffix = "", once = false }: { value: number; suffix?:
 
 export default function Services() {
     return (
-        <section id="services" className="relative py-20 lg:py-[120px] bg-[#f4f9ff] text-slate-900 overflow-hidden">
+        <section id="services" className="relative py-24 bg-[#f4f9ff] text-slate-900 overflow-hidden">
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center mb-16 md:mb-24 font-inter">
