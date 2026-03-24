@@ -20,13 +20,16 @@ export default function Hero() {
             {/* Subtle Overlay to ensure text readability if needed */}
             <div className="absolute inset-0 z-[1] bg-white/10 pointer-events-none" />
 
+            {/* Bottom Gradient for section blending */}
+            <div className="absolute inset-x-0 bottom-0 h-32 sm:h-48 z-[2] bg-gradient-to-t from-[#f4f9ff] to-transparent pointer-events-none" />
+
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center w-full px-4 sm:px-6">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
                     
                     {/* Text Container Wrapper */}
                     <div className="relative z-10 flex flex-col items-center w-full">
-                        <div className="flex flex-col gap-2 sm:gap-[10px] items-center text-center w-full">
+                        <div className="flex flex-col gap-1 sm:gap-2 items-center text-center w-full">
                             <motion.h1 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -49,7 +52,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="font-manrope font-normal text-[15px] sm:text-[16px] md:text-[18px] leading-[22px] sm:leading-[24px] md:leading-[26px] text-[#6B7280] max-w-[613px] mx-auto mt-6 sm:mt-8 lg:mt-10"
+                            className="font-manrope font-normal text-[15px] sm:text-[16px] md:text-[18px] leading-[22px] sm:leading-[24px] md:leading-[26px] text-[#6B7280] max-w-[613px] mx-auto mt-4 sm:mt-6 lg:mt-8"
                         >
                             The next-generation AI agent platform that handles lead generation, customer support, and data entry while you build.
                         </motion.p>
@@ -58,7 +61,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[20px] items-center justify-center mt-8 sm:mt-10 lg:mt-12 w-full sm:w-auto"
+                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[20px] items-center justify-center mt-6 sm:mt-8 lg:mt-10 w-full sm:w-auto"
                         >
                             <Link
                                 href="#contact"
