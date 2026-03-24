@@ -75,7 +75,7 @@ export default function Services() {
                                 { title: 'API Integration', desc: 'Connect to apps like CRM, booking, or shipping.', icon: 'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z' }
                             ].map((f, i) => (
                                 <div key={i} className="flex gap-4 items-start">
-                                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 shrink-0">
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner border border-white/20 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 shrink-0">
                                         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current" strokeWidth="2.5"><path d={f.icon} /></svg>
                                     </div>
                                     <div className="space-y-1">
@@ -152,7 +152,7 @@ export default function Services() {
                                 { title: 'Automated Reports', desc: 'Smarter business decisions with AI-driven summaries.', icon: 'M9 17v-2m3 2v-4m3 4v-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
                             ].map((f, i) => (
                                 <div key={i} className="space-y-3">
-                                    <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-600">
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner border border-white/20 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 shrink-0">
                                         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current" strokeWidth="2.5"><path d={f.icon} /></svg>
                                     </div>
                                     <h4 className="text-base font-sans font-bold text-slate-900 leading-none">{f.title}</h4>
@@ -190,8 +190,8 @@ export default function Services() {
                                 { label: 'Analytics & Insights', icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z' }
                             ].map((pill, i) => (
                                 <div key={i} className="flex items-center gap-3 px-5 py-3 bg-white border border-slate-100 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-5 h-5 text-blue-600 flex items-center justify-center">
-                                        <svg viewBox="0 0 24 24" className="w-full h-full fill-current"><path d={pill.icon} /></svg>
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner border border-white/20 flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
+                                        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d={pill.icon} /></svg>
                                     </div>
                                     <span className="text-slate-700 font-bold text-sm tracking-tight">{pill.label}</span>
                                 </div>
@@ -263,8 +263,8 @@ export default function Services() {
                                     transition={{ delay: i * 0.1 }}
                                     className="flex items-center gap-3 group"
                                 >
-                                    <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
-                                        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-white" strokeWidth="3"><path d="M5 13l4 4L19 7" /></svg>
+                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner border border-white/20 flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
+                                        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="3"><path d="M5 13l4 4L19 7" /></svg>
                                     </div>
                                     <span className="text-slate-700 font-bold text-base md:text-lg tracking-tight">{item}</span>
                                 </motion.div>

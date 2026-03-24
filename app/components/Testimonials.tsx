@@ -118,7 +118,7 @@ export default function Testimonials() {
                         Pricing
                     </div>
                     <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                        Built for Businesses That Can’t Afford Inefficiency
+                        What Our Client Says
                     </h2>
                     <p className="text-slate-400 text-sm md:text-base font-medium max-w-xl mx-auto">
                         Testimonials from our users around globe

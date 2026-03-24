@@ -34,7 +34,7 @@ export default function FAQ() {
             <div className="container-custom">
                 <SectionHeader
                     badge="• FAQs"
-                    title={<span className="text-slate-900">Everything You Need to Know</span>}
+                    title={<span className="text-slate-900">Frequently Asked Questions</span>}
                     description="We’ve answered the most common questions teams ask before making the leap to smarter workflows."
                     className="!pb-16"
                 />
@@ -52,7 +52,7 @@ export default function FAQ() {
                                 <span className={`text-base md:text-[18px] font-sans font-semibold tracking-tight leading-snug pr-8 transition-colors ${openIndex === idx ? 'text-blue-600' : 'text-slate-900'}`}>
                                     {item.question}
                                 </span>
-                                
+
                                 <div className={`relative flex items-center justify-center w-8 h-8 rounded-full shrink-0 transition-all duration-500 ${openIndex === idx ? 'bg-blue-600 rotate-45' : 'bg-blue-600 hover:scale-110'}`}>
                                     <div className="absolute w-3.5 h-[2px] bg-white rounded-full" />
                                     <div className="absolute w-[2px] h-3.5 bg-white rounded-full" />

@@ -7,25 +7,25 @@ const PHASES = [
     {
         step: 'Step 1',
         title: 'Connect your data',
-        description: 'Integrate your favorite tools and import data in minutes — no coding or heavy setup needed.',
+        description: 'IConnect with your tools and data',
         image: '/section_assets/connect_your_data.avif'
     },
     {
         step: 'Step 2',
         title: 'Automate',
-        description: 'Set up smart triggers and recurring tasks so your team can focus on what matters most.',
+        description: 'Automate your workflows and process',
         image: '/section_assets/automate_the_workflow.avif'
     },
     {
         step: 'Step 3',
         title: 'Track and improve',
-        description: 'Monitor performance in real-time and optimize your workflow with clear, actionable insights.',
+        description: 'Monitor performance a & optmize it',
         image: '/section_assets/track_and_improve.avif'
     },
     {
         step: 'Step 4',
         title: 'Deploy & Scale',
-        description: 'Deploy the automated process and visualise the growth of your business',
+        description: 'Deploy & visualise the growth',
         image: '/section_assets/deploy and scale.png'
     },
 ];
