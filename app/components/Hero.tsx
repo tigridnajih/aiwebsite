@@ -5,9 +5,17 @@ import heroBg from '../herosection_assets/herobg.png';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900 bg-white">
+        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900">
 
 
+
+            {/* Hero Background Image */}
+            <img
+                src="/herosection_assets/herobg.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+            />
 
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />

@@ -21,7 +21,6 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-accent/10">
       <Navbar />
       <Hero />
-      <TrustLogos />
       <Benefits />
       <HowItWorks />
       <Services />
