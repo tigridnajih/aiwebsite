@@ -29,7 +29,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: "easeOut" }}
-                                className="font-inter font-medium text-[48px] md:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.15]"
+                                className="font-sans font-medium text-[48px] md:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.15]"
                             >
                                 Automate repetitive.
                             </motion.h1>
