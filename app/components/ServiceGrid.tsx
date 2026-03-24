@@ -65,11 +65,17 @@ export default function ServiceGrid() {
         <section className="relative py-24 bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom">
                 {/* Reference Header */}
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-serif text-slate-900 mb-4 tracking-tight">
+                <div className="text-center mb-16 md:mb-20 font-inter">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
+                        <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                        <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
+                            Solutions
+                        </span>
+                    </div>
+                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] mb-4 tracking-[-0.02em] leading-tight">
                         AI Solutions Designed for Your Business
                     </h2>
-                    <p className="text-slate-400 text-sm md:text-base font-medium">
+                    <p className="text-[#4B5563] text-[16px] md:text-[18px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         See what we can help you with!
                     </p>
                 </div>
