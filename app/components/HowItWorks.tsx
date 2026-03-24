@@ -79,20 +79,23 @@ export default function HowItWorks() {
                                     transition={{ duration: 0.8, delay: index * 0.2 }}
                                     className="group relative flex flex-col p-[4px] bg-white rounded-[20px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)] max-w-[200px] mx-auto"
                                 >
-                                    {/* Image Area - Match Benefits aspect-square */}
-                                    <div className="w-full aspect-square relative mb-1 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
+                                    {/* Image Area - 4:3 Aspect Ratio */}
+                                    <div className="w-full aspect-[4/3] relative mb-1 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
                                         <img
                                             src={phase.image}
                                             alt={phase.title}
-                                            className="w-full h-full object-contain p-4 filter transition-transform duration-700"
+                                            className="w-full h-full object-contain p-3 filter transition-transform duration-700"
                                         />
                                     </div>
 
                                     {/* Text Content */}
-                                    <div className="px-3 pb-4 pt-2 flex flex-col items-center text-center">
-                                        <h3 className="text-sm md:text-base font-bold text-slate-900 tracking-tight leading-tight">
+                                    <div className="px-4 pb-5 pt-2 flex flex-col items-center text-center">
+                                        <h3 className="text-[14px] md:text-[15px] font-bold text-slate-900 tracking-tight leading-tight mb-2">
                                             {phase.title}
                                         </h3>
+                                        <p className="text-[11px] md:text-[12px] text-slate-500 font-medium leading-relaxed max-w-[160px]">
+                                            {phase.description}
+                                        </p>
                                     </div>
                                 </motion.div>
                             </div>
