@@ -72,7 +72,7 @@ export default function ServiceGrid() {
                             Solutions
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] mb-4 tracking-[-0.02em] leading-tight">
+                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] mb-4 tracking-[-0.02em] leading-tight">
                         AI Solutions Designed for Your Business
                     </h2>
                     <p className="text-[#4B5563] text-[16px] md:text-[18px] max-w-2xl mx-auto font-normal leading-[1.6]">
@@ -98,7 +98,7 @@ export default function ServiceGrid() {
 
                             {/* Text Content */}
                             <div className="flex flex-col">
-                                <h3 className="text-[17px] font-bold text-slate-900 mb-1 tracking-tight">
+                                <h3 className="text-[17px] font-sans font-bold text-slate-900 mb-1 tracking-tight">
                                     {solution.title}
                                 </h3>
                                 <p className="text-slate-400 text-[13px] md:text-sm font-medium leading-tight opacity-70">

@@ -44,7 +44,7 @@ export default function Services() {
                             Features
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
+                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         Built to Run Your Business Smarter
                     </h2>
                     <p className="text-[#4B5563] text-[15px] md:text-[16px] max-w-2xl mx-auto font-normal leading-[1.6]">
@@ -60,7 +60,7 @@ export default function Services() {
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                                 AI Agent Builder
                             </div>
-                            <h2 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h2 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
                             </h2>
                         </div>
@@ -75,7 +75,7 @@ export default function Services() {
                                         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current" strokeWidth="2.5"><path d={f.icon} /></svg>
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="text-base font-bold text-slate-900 leading-none">{f.title}</h4>
+                                        <h4 className="text-base font-sans font-bold text-slate-900 leading-none">{f.title}</h4>
                                         <p className="text-slate-500 text-[13px] leading-relaxed font-medium">{f.desc}</p>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Data Intelligence
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Actionable insights <br />
                                 from your data.
                             </h3>
@@ -141,7 +141,7 @@ export default function Services() {
                                     <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-600">
                                         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current" strokeWidth="2.5"><path d={f.icon} /></svg>
                                     </div>
-                                    <h4 className="text-base font-bold text-slate-900 leading-none">{f.title}</h4>
+                                    <h4 className="text-base font-sans font-bold text-slate-900 leading-none">{f.title}</h4>
                                     <p className="text-slate-500 text-[13px] leading-relaxed font-medium">{f.desc}</p>
                                 </div>
                             ))}
@@ -157,7 +157,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Advanced Feature
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Accelerated Sales Growth
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
@@ -214,7 +214,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Automation Flow
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build Smarter Systems
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">

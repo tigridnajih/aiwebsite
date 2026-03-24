@@ -41,7 +41,7 @@ export default function HowItWorks() {
                             How It Works
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
+                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         How We Turn Your Workflow Into a System
                     </h2>
                     <p className="text-[#4B5563] text-[15px] md:text-[16px] max-w-2xl mx-auto font-normal leading-[1.6]">
@@ -71,7 +71,7 @@ export default function HowItWorks() {
 
                                 {/* Text Content - Right Side */}
                                 <div className="ml-4 flex-1 flex flex-col items-start text-left">
-                                    <h3 className="text-[13px] md:text-[14px] font-bold text-slate-900 tracking-tight leading-tight mb-1">
+                                    <h3 className="text-[13px] md:text-[14px] font-sans font-bold text-slate-900 tracking-tight leading-tight mb-1">
                                         {phase.title}
                                     </h3>
                                     <p className="text-[10px] md:text-[11px] text-slate-500 font-medium leading-snug">
