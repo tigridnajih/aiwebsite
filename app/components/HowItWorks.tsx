@@ -65,7 +65,7 @@ export default function HowItWorks() {
                                     <img
                                         src={phase.image}
                                         alt={phase.title}
-                                        className="w-full h-full object-contain p-2 filter transition-transform duration-700"
+                                        className="w-full h-full object-contain p-[2px] filter transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
 
