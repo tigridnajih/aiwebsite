@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Integrations from './components/Integrations';
-import WhyTrustUs from './components/WhyTrustUs';
+
 import Testimonials from './components/Testimonials';
 import CaseStudies from './components/CaseStudies';
 import TrustLogos from './components/TrustLogos';
@@ -27,7 +27,7 @@ export default function Home() {
       <Services />
       <ServiceGrid />
       <Integrations />
-      <WhyTrustUs />
+
       <Testimonials />
       <CaseStudies />
       <Stats />
