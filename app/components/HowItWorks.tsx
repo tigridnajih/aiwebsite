@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 const PHASES = [
     {
         step: 'Step 1',
-        title: 'Connect your data',
-        description: 'IConnect with your tools and data',
+        title: 'Connect',
+        description: 'Connect with your tools and data',
         image: '/section_assets/connect_your_data.avif'
     },
     {
