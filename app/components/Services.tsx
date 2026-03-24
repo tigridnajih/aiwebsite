@@ -37,15 +37,19 @@ export default function Services() {
         <section id="services" className="relative py-20 lg:py-[120px] bg-[#f4f9ff] text-slate-900 overflow-hidden">
             <div className="container-custom">
                 {/* Section Header */}
-                <div className="text-center mb-24 md:mb-32">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
-                        <div className="w-1 h-1 rounded-full bg-blue-600" />
-                        Features
+                <div className="text-center mb-16 md:mb-24 font-inter">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
+                        <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
+                        <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
+                            Features
+                        </span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-                        Built to Run <br className="hidden md:block" />
-                        Your Business Smarter
+                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
+                        Built to Run Your Business Smarter
                     </h2>
+                    <p className="text-[#4B5563] text-[15px] md:text-[16px] max-w-2xl mx-auto font-normal leading-[1.6]">
+                        Scale your operations with intelligent automation that handles the heavy lifting while you focus on growth.
+                    </p>
                 </div>
 
                 {/* 🚀 Feature 1: AI Agent Builder */}
