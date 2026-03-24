@@ -34,11 +34,14 @@ export default function HowItWorks() {
     return (
         <section id="how-it-works" className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
-                <div className="text-center mb-10 lg:mb-12">
-                    <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
+                <div className="text-center mb-12 lg:mb-16">
+                    <span className="inline-block text-[12px] font-bold text-[#3B82F6] uppercase tracking-[1px] mb-2">
+                        How It Works
+                    </span>
+                    <h2 className="text-[28px] md:text-[36px] font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         How We Turn Your Workflow Into a System
                     </h2>
-                    <p className="text-slate-500 text-base md:text-lg max-w-xl mx-auto tracking-tight font-medium">
+                    <p className="text-[#4B5563] text-[16px] md:text-[18px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         A structured lifecycle from workflow analysis to full system ownership.
                     </p>
                 </div>
