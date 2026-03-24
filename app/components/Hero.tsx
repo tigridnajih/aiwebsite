@@ -1,11 +1,11 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import heroBg from '../herosection_assets/herobg.png';
+import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-32 lg:pt-24 lg:pb-48 overflow-hidden text-slate-900">
+        <section className="relative min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-10 lg:pt-24 lg:pb-16 overflow-hidden text-slate-900">
 
 
 
@@ -85,11 +85,19 @@ export default function Hero() {
                         </motion.div>
 
                     </div> {/* End Text Container Wrapper */}
+
+                    {/* Trust Logos - inline after CTA */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+                        className="w-full mt-14 lg:mt-20"
+                    >
+                        <TrustLogos />
+                    </motion.div>
+
                 </div>
             </div>
-
-            {/* Bottom White Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 lg:h-48 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-[10]" />
 
         </section>
     );
