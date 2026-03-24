@@ -32,7 +32,7 @@ export default function Benefits() {
                             Benefits
                         </span>
                     </div>
-                    <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
+                    <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4">
                         Unlock New Levels of <span className="text-blue-600">Efficiency</span>
                     </h2>
                     <p className="text-[#4B5563] text-[15px] max-w-2xl mx-auto font-normal leading-[1.6]">
