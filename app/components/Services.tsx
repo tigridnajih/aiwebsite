@@ -60,7 +60,7 @@ export default function Services() {
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                                 AI Agent Builder
                             </div>
-                            <h2 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h2 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
                             </h2>
                         </div>
@@ -123,7 +123,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Data Intelligence
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Actionable insights <br />
                                 from your data.
                             </h3>
@@ -157,7 +157,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Advanced Feature
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Accelerated Sales Growth
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
@@ -214,7 +214,7 @@ export default function Services() {
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Automation Flow
                             </div>
-                            <h3 className="text-[24px] md:text-[32px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[20px] md:text-[26px] font-sans font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build Smarter Systems
                             </h3>
                             <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
