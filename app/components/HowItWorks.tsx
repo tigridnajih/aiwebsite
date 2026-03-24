@@ -43,33 +43,56 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 relative z-10 pt-8">
-                    {PHASES.map((phase, index) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: index * 0.2 }}
-                            key={phase.step}
-                            className="group relative flex flex-col h-full p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)]"
+                <div className="relative pt-12 lg:pt-24 min-h-[500px]">
+                    {/* Thick Connecting Line - Desktop Only */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none hidden lg:block z-0">
+                        <svg 
+                            className="w-full h-full" 
+                            viewBox="0 0 1000 400" 
+                            fill="none" 
+                            preserveAspectRatio="none"
                         >
-                            {/* Image Area - Reduced height */}
-                            <div className="w-full aspect-[16/10] relative mb-1 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
-                                <img
-                                    src={phase.image}
-                                    alt={phase.title}
-                                    className="w-full h-full object-contain filter transition-transform duration-700"
-                                />
-                            </div>
+                            <path 
+                                d="M -50 100 C 50 100, 75 100, 125 100 C 250 100, 250 300, 375 300 C 500 300, 500 100, 625 100 C 750 100, 750 300, 875 300 C 925 300, 950 300, 1050 300" 
+                                stroke="#3b82f6" 
+                                strokeWidth="6" 
+                                strokeOpacity="0.15" 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round" 
+                            />
+                        </svg>
+                    </div>
 
-                            {/* Text Content */}
-                            <div className="px-6 pb-6 pt-2 flex flex-col items-center text-center">
-                                <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">
-                                    {phase.title}
-                                </h3>
-                            </div>
-                        </motion.div>
-                    ))}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-0 relative z-10">
+                        {PHASES.map((phase, index) => (
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: index * 0.2 }}
+                                key={phase.step}
+                                className={`group relative flex flex-col p-[5px] bg-white rounded-[23px] border border-[rgba(0,102,255,0.05)] shadow-[0_20px_40px_-10px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-12px_rgba(15,23,42,0.12)] max-w-[240px] mx-auto
+                                    ${index % 2 !== 0 ? 'lg:translate-y-32' : ''}
+                                `}
+                            >
+                                {/* Image Area - Match Benefits aspect-square */}
+                                <div className="w-full aspect-square relative mb-1 overflow-hidden flex items-center justify-center bg-slate-50 rounded-[18px]">
+                                    <img
+                                        src={phase.image}
+                                        alt={phase.title}
+                                        className="w-full h-full object-contain p-4 filter transition-transform duration-700"
+                                    />
+                                </div>
+
+                                {/* Text Content */}
+                                <div className="px-4 pb-4 pt-2 flex flex-col items-center text-center">
+                                    <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight leading-tight">
+                                        {phase.title}
+                                    </h3>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
