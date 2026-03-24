@@ -53,10 +53,10 @@ export default function HowItWorks() {
                             preserveAspectRatio="none"
                         >
                             <path 
-                                d="M 0 100 L 125 100 Q 250 100 250 200 L 250 250 Q 250 350 375 350 L 500 350 Q 500 350 500 250 L 500 200 Q 500 100 625 100 L 750 100 Q 750 100 750 200 L 750 250 Q 750 350 875 350 L 1000 350" 
-                                stroke="#3b82f6" 
-                                strokeWidth="12" 
-                                strokeOpacity="0.1" 
+                                d="M 125 100 L 200 100 Q 250 100 250 150 L 250 300 Q 250 350 300 350 L 375 350 L 450 350 Q 500 350 500 300 L 500 150 Q 500 100 550 100 L 625 100 L 700 100 Q 750 100 750 150 L 750 300 Q 750 350 800 350 L 875 350" 
+                                stroke="#2563EB" 
+                                strokeWidth="6" 
+                                strokeOpacity="0.2" 
                                 strokeLinecap="round" 
                                 strokeLinejoin="round" 
                             />
