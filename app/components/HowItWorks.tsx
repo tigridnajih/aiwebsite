@@ -63,11 +63,14 @@ export default function HowItWorks() {
                         </svg>
                     </div>
 
+                    {/* Vertical Connecting Line - Mobile/Tablet Only */}
+                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-3 bg-blue-600/10 pointer-events-none lg:hidden z-0 rounded-full" />
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-0 relative z-10 pt-10">
                         {PHASES.map((phase, index) => (
                             <div 
                                 key={phase.step}
-                                className={`${index % 2 !== 0 ? 'lg:pt-48' : ''}`}
+                                className={`relative z-10 ${index % 2 !== 0 ? 'lg:pt-48' : ''}`}
                             >
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
