@@ -44,27 +44,28 @@ export default function HowItWorks() {
                 </div>
 
                 <div className="relative pt-0 lg:pt-4 min-h-[500px]">
-                    {/* Thick Connecting Line - Desktop Only */}
+                    {/* Thick Connecting Line - Desktop (4 cols) */}
                     <div className="absolute top-0 left-0 w-full h-full pointer-events-none hidden lg:block z-0">
-                        <svg 
-                            className="w-full h-full" 
-                            viewBox="0 0 1000 400" 
-                            fill="none" 
-                            preserveAspectRatio="none"
-                        >
+                        <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none" preserveAspectRatio="none">
                             <path 
                                 d="M 125 100 L 200 100 Q 250 100 250 150 L 250 300 Q 250 350 300 350 L 375 350 L 450 350 Q 500 350 500 300 L 500 150 Q 500 100 550 100 L 625 100 L 700 100 Q 750 100 750 150 L 750 300 Q 750 350 800 350 L 875 350" 
-                                stroke="#2563EB" 
-                                strokeWidth="6" 
-                                strokeOpacity="0.2" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round" 
+                                stroke="#2563EB" strokeWidth="6" strokeOpacity="0.2" strokeLinecap="round" strokeLinejoin="round" 
                             />
                         </svg>
                     </div>
 
-                    {/* Vertical Connecting Line - Mobile/Tablet Only */}
-                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-3 bg-blue-600/10 pointer-events-none lg:hidden z-0 rounded-full" />
+                    {/* Z-Pattern Connecting Line - Tablet (2 cols) */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none hidden sm:block lg:hidden z-0">
+                        <svg className="w-full h-full" viewBox="0 0 1000 800" fill="none" preserveAspectRatio="none">
+                            <path 
+                                d="M 250 150 L 750 150 C 950 150, 950 350, 500 350 C 50 350, 50 550, 250 550 L 750 550" 
+                                stroke="#2563EB" strokeWidth="10" strokeOpacity="0.1" strokeLinecap="round" strokeLinejoin="round" 
+                            />
+                        </svg>
+                    </div>
+
+                    {/* Vertical Connecting Line - Mobile (1 col) */}
+                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-2 bg-blue-600/10 pointer-events-none sm:hidden z-0 rounded-full" />
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-0 relative z-10 pt-2">
                         {PHASES.map((phase, index) => (
