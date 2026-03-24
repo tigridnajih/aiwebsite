@@ -56,20 +56,23 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[22px] items-center justify-center mt-10 lg:mt-12"
+                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[20px] items-center justify-center mt-10 lg:mt-12"
                         >
                             <Link
                                 href="#contact"
-                                className="bg-[#7b39fc] px-[24px] py-[14px] rounded-full font-cabin font-medium text-[16px] leading-[1.7] text-white shadow-lg shadow-purple-500/10 hover:brightness-110 transition-all active:scale-[0.98]"
+                                className="group bg-gradient-to-b from-blue-600 to-blue-800 px-[24px] py-[12px] rounded-full font-cabin font-medium text-[16px] flex items-center gap-3 text-white shadow-lg shadow-blue-500/20 hover:brightness-110 transition-all active:scale-[0.98]"
                             >
                                 Get Started Free
+                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
+                                    <svg viewBox="0 0 24 24" className="w-4 h-4 text-blue-800 fill-none stroke-current" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                                </div>
                             </Link>
 
                             <Link
                                 href="#demo"
-                                className="bg-slate-100 px-[24px] py-[14px] rounded-full font-cabin font-medium text-[16px] leading-[1.7] text-slate-900 hover:bg-slate-200 transition-all active:scale-[0.98]"
+                                className="bg-white/40 backdrop-blur-md border border-slate-200/50 px-[24px] py-[12px] rounded-full font-cabin font-medium text-[16px] text-slate-900 shadow-sm hover:bg-white/60 transition-all active:scale-[0.98]"
                             >
-                                Watch 2min Demo
+                                Know More
                             </Link>
                         </motion.div>
 
