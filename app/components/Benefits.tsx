@@ -45,11 +45,11 @@ export default function Benefits() {
                             </div>
 
                             {/* Text Content Area */}
-                            <div className="px-6 pb-4 pt-0 flex-1 flex flex-col items-center">
-                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight">
+                            <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center">
+                                <h3 className="text-[24px] font-bold text-[#0F172A] leading-[1.2] tracking-normal mb-2">
                                     {benefit.title}
                                 </h3>
-                                <p className="text-[#64748b] text-[13px] md:text-sm leading-relaxed max-w-[280px] font-medium opacity-90 mx-auto">
+                                <p className="text-[#64748B] text-[15px] font-normal leading-[1.5] max-w-[280px] mx-auto">
                                     {benefit.description}
                                 </p>
                             </div>
