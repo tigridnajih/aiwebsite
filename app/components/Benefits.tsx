@@ -26,7 +26,7 @@ export default function Benefits() {
         <section className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900 font-inter">
             <div className="container-custom relative z-10">
                 <div className="text-center mb-12 lg:mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                         <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
                         <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
                             Benefits

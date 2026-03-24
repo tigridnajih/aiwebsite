@@ -66,7 +66,7 @@ export default function ServiceGrid() {
             <div className="container-custom">
                 {/* Reference Header */}
                 <div className="text-center mb-16 md:mb-20 font-inter">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                         <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
                         <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
                             Solutions
