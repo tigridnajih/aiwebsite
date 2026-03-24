@@ -26,11 +26,11 @@ export default function Hero() {
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center w-full px-4 sm:px-6">
                 <div className="relative max-w-5xl flex flex-col items-center w-full">
-                    
+
                     {/* Text Container Wrapper */}
                     <div className="relative z-10 flex flex-col items-center w-full">
                         <div className="flex flex-col gap-1 sm:gap-2 items-center text-center w-full">
-                            <motion.h1 
+                            <motion.h1
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: "easeOut" }}
@@ -38,7 +38,7 @@ export default function Hero() {
                             >
                                 Automate repetitive.
                             </motion.h1>
-                            <motion.h2 
+                            <motion.h2
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
@@ -47,8 +47,8 @@ export default function Hero() {
                                 Focus on growth.
                             </motion.h2>
                         </div>
-                        
-                        <motion.p 
+
+                        <motion.p
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -57,7 +57,7 @@ export default function Hero() {
                             The next-generation AI agent platform that handles lead generation, customer support, and data entry while you build.
                         </motion.p>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
@@ -67,7 +67,7 @@ export default function Hero() {
                                 href="#contact"
                                 className="group bg-gradient-to-b from-blue-600 to-blue-800 px-[24px] py-[12px] rounded-full font-cabin font-medium text-[16px] flex items-center justify-center gap-3 text-white shadow-lg shadow-blue-500/20 hover:brightness-110 transition-all active:scale-[0.98] w-full sm:w-auto min-w-[180px]"
                             >
-                                Get Started Free
+                                Get Started
                                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
                                     <svg viewBox="0 0 24 24" className="w-4 h-4 text-blue-800 fill-none stroke-current" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                                 </div>
