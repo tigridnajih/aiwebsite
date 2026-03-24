@@ -12,7 +12,7 @@ const PHASES = [
     },
     {
         step: 'Step 2',
-        title: 'Automate the workflow',
+        title: 'Automate',
         description: 'Set up smart triggers and recurring tasks so your team can focus on what matters most.',
         image: '/section_assets/automate_the_workflow.avif'
     },
