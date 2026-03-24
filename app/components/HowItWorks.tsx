@@ -44,7 +44,7 @@ export default function HowItWorks() {
                 </div>
 
                 <div className="relative pt-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 relative z-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-[7px] relative z-10">
                         {PHASES.map((phase, index) => (
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
