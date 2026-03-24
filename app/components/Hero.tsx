@@ -60,14 +60,14 @@ export default function Hero() {
                         >
                             <Link
                                 href="#contact"
-                                className="bg-[#7b39fc] px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px] leading-[1.7] text-white shadow-lg shadow-purple-500/10 hover:brightness-110 transition-all active:scale-[0.98]"
+                                className="bg-[#7b39fc] px-[24px] py-[14px] rounded-full font-cabin font-medium text-[16px] leading-[1.7] text-white shadow-lg shadow-purple-500/10 hover:brightness-110 transition-all active:scale-[0.98]"
                             >
                                 Get Started Free
                             </Link>
 
                             <Link
                                 href="#demo"
-                                className="bg-[#2b2344] px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px] leading-[1.7] text-[#f6f7f9] shadow-lg shadow-black/10 hover:brightness-125 transition-all active:scale-[0.98]"
+                                className="bg-slate-100 px-[24px] py-[14px] rounded-full font-cabin font-medium text-[16px] leading-[1.7] text-slate-900 hover:bg-slate-200 transition-all active:scale-[0.98]"
                             >
                                 Watch 2min Demo
                             </Link>
