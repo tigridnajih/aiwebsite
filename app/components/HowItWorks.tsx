@@ -34,7 +34,7 @@ export default function HowItWorks() {
     return (
         <section id="how-it-works" className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
-                <div className="text-center mb-16 lg:mb-24">
+                <div className="text-center mb-10 lg:mb-12">
                     <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight mb-6 text-slate-900 leading-tight">
                         How We Turn Your Workflow Into a System
                     </h2>
@@ -43,7 +43,7 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="relative pt-12 lg:pt-24 min-h-[500px]">
+                <div className="relative pt-0 lg:pt-4 min-h-[500px]">
                     {/* Thick Connecting Line - Desktop Only */}
                     <div className="absolute top-0 left-0 w-full h-full pointer-events-none hidden lg:block z-0">
                         <svg 
@@ -66,7 +66,7 @@ export default function HowItWorks() {
                     {/* Vertical Connecting Line - Mobile/Tablet Only */}
                     <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-3 bg-blue-600/10 pointer-events-none lg:hidden z-0 rounded-full" />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-0 relative z-10 pt-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-0 relative z-10 pt-2">
                         {PHASES.map((phase, index) => (
                             <div 
                                 key={phase.step}
