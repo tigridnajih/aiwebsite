@@ -50,13 +50,13 @@ export default function Services() {
 
                 {/* 🚀 Feature 1: AI Agent Builder */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
-                    <div className="flex-1 space-y-10">
+                    <div className="flex-1 space-y-10 font-inter">
                         <div>
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-6 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                                 AI Agent Builder
                             </div>
-                            <h2 className="text-[28px] md:text-[38px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h2 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build custom AI agents in minutes
                             </h2>
                         </div>
@@ -113,17 +113,17 @@ export default function Services() {
                     </div>
 
                     {/* Content Column */}
-                    <div className="flex-1 space-y-10 order-1 md:order-2">
+                    <div className="flex-1 space-y-10 order-1 md:order-2 font-inter">
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Data Intelligence
                             </div>
-                            <h3 className="text-[28px] md:text-[38px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Actionable insights <br />
                                 from your data.
                             </h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
+                            <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
                                 Turn complex datasets into clear, visual intelligence. Understand your customer behavior and business trends at a glance.
                             </p>
                         </div>
@@ -147,16 +147,16 @@ export default function Services() {
 
                 {/* 🚀 Feature 3: Accelerated Sales Growth */}
                 <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-center mb-32 md:mb-48">
-                    <div className="flex-1 space-y-10">
+                    <div className="flex-1 space-y-10 font-inter">
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Advanced Feature
                             </div>
-                            <h3 className="text-[28px] md:text-[38px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Accelerated Sales Growth
                             </h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
+                            <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
                                 Manage every customer interaction through a clear, visual pipeline — from lead generation to after-sales support.
                             </p>
                         </div>
@@ -204,16 +204,16 @@ export default function Services() {
                         </motion.div>
                     </div>
 
-                    <div className="flex-1 space-y-8 order-1 md:order-2">
+                    <div className="flex-1 space-y-8 order-1 md:order-2 font-inter">
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest leading-none">
                                 <div className="w-1 h-1 rounded-full bg-blue-600" />
                                 Automation Flow
                             </div>
-                            <h3 className="text-[28px] md:text-[38px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
+                            <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-slate-900 leading-[1.2]">
                                 Build Smarter Systems
                             </h3>
-                            <p className="text-slate-500 leading-relaxed text-lg max-w-xl font-medium">
+                            <p className="text-slate-500 leading-relaxed text-base max-w-xl font-medium">
                                 Design and manage complex conversation systems effortlessly. Route customers to the right AI or human agent based on their needs.
                             </p>
                         </div>
