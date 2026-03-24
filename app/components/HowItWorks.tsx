@@ -71,10 +71,10 @@ export default function HowItWorks() {
 
                                 {/* Text Content - Right Side */}
                                 <div className="ml-4 flex-1 flex flex-col items-start text-left">
-                                    <h3 className="text-[13px] md:text-[14px] font-sans font-bold text-slate-900 tracking-tight leading-tight mb-1">
+                                    <h3 className="text-[15px] md:text-[16px] font-sans font-bold text-slate-900 tracking-tight leading-tight mb-1">
                                         {phase.title}
                                     </h3>
-                                    <p className="text-[10px] md:text-[11px] text-slate-500 font-medium leading-snug">
+                                    <p className="text-[12px] md:text-[13px] text-slate-500 font-medium leading-[1.6]">
                                         {phase.description}
                                     </p>
                                 </div>
