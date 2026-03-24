@@ -28,7 +28,7 @@ export default function Benefits() {
                 <div className="text-center mb-12 lg:mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-md">
                         <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
-                        <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
+                        <span className="text-[9px] font-bold text-black uppercase tracking-[1px]">
                             Benefits
                         </span>
                     </div>
