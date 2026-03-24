@@ -34,7 +34,7 @@ export default function HowItWorks() {
     return (
         <section id="how-it-works" className="relative py-20 lg:py-[100px] bg-[#f4f9ff] overflow-hidden text-slate-900">
             <div className="container-custom relative z-10">
-                <div className="text-center mb-12 lg:mb-16">
+                <div className="text-center mb-12 lg:mb-16 font-inter">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2 shadow-sm">
                         <div className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full" />
                         <span className="text-[10px] font-bold text-black uppercase tracking-[1px]">
@@ -70,7 +70,7 @@ export default function HowItWorks() {
                                 </div>
 
                                 {/* Text Content - Right Side */}
-                                <div className="ml-4 flex-1 flex flex-col items-start text-left">
+                                <div className="ml-4 flex-1 flex flex-col items-start text-left font-inter">
                                     <h3 className="text-[13px] md:text-[14px] font-bold text-slate-900 tracking-tight leading-tight mb-1">
                                         {phase.title}
                                     </h3>
