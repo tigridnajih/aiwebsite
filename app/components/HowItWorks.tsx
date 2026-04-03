@@ -58,7 +58,7 @@ export default function HowItWorks() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
                                 key={phase.step}
-                                className="group relative flex flex-row items-center p-3 sm:p-4 bg-white rounded-[18px] border border-[rgba(0,102,255,0.05)] shadow-[0_15px_30px_-5px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-8px_rgba(15,23,42,0.12)] w-full"
+                                className="group relative flex flex-row items-center p-3 sm:p-4 bg-white rounded-[18px] border border-[rgba(0,102,255,0.05)] transition-all duration-300 w-full"
                             >
                                 {/* Image Area - 1:1 Aspect Ratio (Square) */}
                                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 relative overflow-hidden flex items-center justify-center bg-slate-50 rounded-[14px]">
