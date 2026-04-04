@@ -89,7 +89,7 @@ export default function ServiceGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.05 }}
-                            className="group flex items-center gap-5 p-7 bg-white rounded-[16px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1"
+                            className="group flex items-center gap-5 p-7 bg-white rounded-[16px] border-[3px] border-[#DBEAFE] transition-all duration-300 hover:-translate-y-1"
                         >
                             {/* Icon Box */}
                             <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 via-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-500/20 transition-transform duration-300 group-hover:scale-110">
