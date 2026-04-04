@@ -9,7 +9,7 @@ const PHASES = [
         title: 'Connect',
         description: 'Connect with your tools and data',
         icon: (
-            <svg viewBox="0 0 24 24" className="w-14 h-14" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
             </svg>
@@ -20,7 +20,7 @@ const PHASES = [
         title: 'Automate',
         description: 'Automate your workflows and process',
         icon: (
-            <svg viewBox="0 0 24 24" className="w-14 h-14" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
                 <circle cx="12" cy="12" r="3" />
             </svg>
@@ -31,7 +31,7 @@ const PHASES = [
         title: 'Track & Improve',
         description: 'Monitor performance a & optmize it',
         icon: (
-            <svg viewBox="0 0 24 24" className="w-14 h-14" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 3v18h18" />
                 <path d="M18 9l-5 5-2-2-4 4" />
             </svg>
@@ -42,7 +42,7 @@ const PHASES = [
         title: 'Deploy & Scale',
         description: 'Deploy & visualise the growth',
         icon: (
-            <svg viewBox="0 0 24 24" className="w-14 h-14" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="url(#blue-white-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
             </svg>
         )
@@ -51,7 +51,7 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="relative py-24 bg-[#f4f9ff] overflow-hidden text-slate-900 font-inter">
+        <section id="how-it-works" className="relative py-24 bg-white overflow-hidden text-slate-900 font-inter">
             {/* Global Gradient Definition */}
             <svg width="0" height="0" className="absolute">
                 <defs>
@@ -88,11 +88,11 @@ export default function HowItWorks() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
                                 key={phase.step}
-                                className="group flex flex-col bg-white rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-300/50 overflow-hidden"
+                                className="group flex flex-col bg-white rounded-[20px] border border-slate-100 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl overflow-hidden"
                             >
                                 {/* Top Half - Light Grey Background with Icon */}
                                 <div className="bg-slate-50/80 p-6 pb-8 flex items-start">
-                                    <div className="w-16 h-16 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(59,130,246,0.25)]">
+                                    <div className="w-12 h-12 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(59,130,246,0.25)]">
                                         {phase.icon}
                                     </div>
                                 </div>
