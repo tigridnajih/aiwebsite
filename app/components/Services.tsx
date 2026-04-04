@@ -93,11 +93,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full max-w-[440px] ml-auto mr-0 aspect-square rounded-3xl overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.15)] p-[1px] bg-slate-100/50"
+                            className="relative w-full max-w-[440px] ml-auto mr-0 aspect-square rounded-3xl overflow-hidden shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] bg-white border border-slate-100"
                         >
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite]" />
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite] blur-md opacity-50" />
-                            <div className="relative w-full h-full rounded-[23px] overflow-hidden bg-white">
+                            <div className="relative w-full h-full overflow-hidden">
                                 <img src="/section_assets/bg_services1.avif" alt="AI Agent Builder" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
@@ -114,11 +112,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[440px] ml-0 mr-auto aspect-square rounded-3xl overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.15)] p-[1px] bg-slate-100/50"
+                            className="relative w-full max-w-[440px] ml-0 mr-auto aspect-square rounded-3xl overflow-hidden shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] bg-white border border-slate-100"
                         >
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite]" />
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite] blur-md opacity-50" />
-                            <div className="relative w-full h-full rounded-[23px] overflow-hidden bg-white">
+                            <div className="relative w-full h-full overflow-hidden">
                                 <img 
                                     src="/section_assets/bg_services2.avif" 
                                     alt="AI Insights Dashboard" 
@@ -207,11 +203,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[440px] ml-auto mr-0 aspect-square rounded-3xl overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.15)] p-[1px] bg-slate-100/50"
+                            className="relative w-full max-w-[440px] ml-auto mr-0 aspect-square rounded-3xl overflow-hidden shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] bg-white border border-slate-100"
                         >
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite]" />
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite] blur-md opacity-50" />
-                            <div className="relative w-full h-full rounded-[23px] overflow-hidden bg-white">
+                            <div className="relative w-full h-full overflow-hidden">
                                 <img src="/section_assets/bg_services4.avif" alt="Pipeline Management" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
@@ -226,11 +220,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[440px] ml-0 mr-auto aspect-square rounded-3xl overflow-hidden shadow-[0_0_25px_rgba(59,130,246,0.15)] p-[1px] bg-slate-100/50"
+                            className="relative w-full max-w-[440px] ml-0 mr-auto aspect-square rounded-3xl overflow-hidden shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] bg-white border border-slate-100"
                         >
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite]" />
-                            <div className="absolute inset-[-50%] bg-[conic-gradient(transparent_0_270deg,#3b82f6_360deg)] animate-[spin_3s_linear_infinite] blur-md opacity-50" />
-                            <div className="relative w-full h-full rounded-[23px] overflow-hidden bg-white">
+                            <div className="relative w-full h-full overflow-hidden">
                                 <img src="/section_assets/bg_services3.avif" alt="Flow Builder" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
