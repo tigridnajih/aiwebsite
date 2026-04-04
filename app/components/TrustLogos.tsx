@@ -50,7 +50,7 @@ export default function TrustLogos() {
                     }}
                 >
                     {/* Logos Container */}
-                    <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-[#60A5FA]">
+                    <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-white">
                         {allLogos.map((logo, i) => (
                             <div
                                 key={i}
