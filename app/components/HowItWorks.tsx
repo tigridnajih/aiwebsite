@@ -80,33 +80,33 @@ export default function HowItWorks() {
                 </div>
  
                 <div className="relative pt-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
-                        {PHASES.map((phase, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                        {[
+                            { id: '01', title: 'Connect', desc: 'Connect with your tools and data' },
+                            { id: '02', title: 'Automate', desc: 'Automate your workflows and process' },
+                            { id: '03', title: 'Track & Improve', desc: 'Monitor performance a & optmize it' },
+                            { id: '04', title: 'Deploy & Scale', desc: 'Deploy & visualise the growth' }
+                        ].map((phase, index) => (
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                                key={phase.step}
-                                className="group flex flex-col bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_70px_-15px_rgba(59,130,246,0.15)] overflow-hidden"
+                                key={phase.id}
+                                className="group flex flex-col bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_70px_-15px_rgba(59,130,246,0.15)] overflow-hidden p-6"
                             >
-                                {/* Top Half - Light Grey Background with Icon */}
-                                <div className="bg-slate-50/60 p-6 pb-8 flex items-start">
-                                    <div className="w-12 h-12 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_8px_16px_rgba(37,99,235,0.25)]">
-                                        {phase.icon}
-                                    </div>
+                                <div className="mb-6">
+                                    <span className="text-[32px] font-sans font-extrabold text-[#3B82F6]/20 group-hover:text-[#3B82F6] transition-colors duration-500">
+                                        {phase.id}
+                                    </span>
                                 </div>
  
-                                {/* Blue Separator Line */}
-                                <div className="h-[2px] bg-[#3B82F6]/70 w-full" />
- 
-                                {/* Bottom Half - White Background with Content */}
-                                <div className="p-7 pt-6 bg-white flex flex-col items-start text-left flex-1">
+                                <div className="flex flex-col items-start text-left">
                                     <h3 className="text-[17px] md:text-[18px] font-sans font-bold text-[#111827] tracking-tight leading-tight mb-2">
                                         {phase.title}
                                     </h3>
                                     <p className="text-[13px] text-slate-500 font-medium leading-relaxed opacity-90">
-                                        {phase.description}
+                                        {phase.desc}
                                     </p>
                                 </div>
                             </motion.div>
