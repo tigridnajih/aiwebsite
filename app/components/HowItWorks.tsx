@@ -80,7 +80,7 @@ export default function HowItWorks() {
                 </div>
  
                 <div className="relative pt-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
                         {PHASES.map((phase, index) => (
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ export default function HowItWorks() {
                                 className="group flex flex-col bg-white rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-300/50 overflow-hidden"
                             >
                                 {/* Top Half - Light Grey Background with Icon */}
-                                <div className="bg-slate-50/80 p-8 pb-10 flex items-start">
+                                <div className="bg-slate-50/80 p-6 pb-8 flex items-start">
                                     <div className="w-16 h-16 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(59,130,246,0.25)]">
                                         {phase.icon}
                                     </div>
@@ -101,11 +101,11 @@ export default function HowItWorks() {
                                 <div className="h-[2px] bg-[#3B82F6] w-full" />
  
                                 {/* Bottom Half - White Background with Content */}
-                                <div className="p-8 pt-7 bg-white flex flex-col items-start text-left flex-1">
-                                    <h3 className="text-[20px] md:text-[22px] font-sans font-bold text-[#111827] tracking-tight leading-tight mb-3">
+                                <div className="p-6 pt-5 bg-white flex flex-col items-start text-left flex-1">
+                                    <h3 className="text-[17px] md:text-[18px] font-sans font-bold text-[#111827] tracking-tight leading-tight mb-2">
                                         {phase.title}
                                     </h3>
-                                    <p className="text-[14px] text-slate-500 font-medium leading-relaxed">
+                                    <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
                                         {phase.description}
                                     </p>
                                 </div>
