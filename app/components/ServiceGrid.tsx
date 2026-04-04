@@ -73,7 +73,7 @@ export default function ServiceGrid() {
                         </span>
                     </div>
                     <h2 className="text-[28px] md:text-[36px] font-sans font-semibold text-[#111827] mb-4 tracking-[-0.02em] leading-tight">
-                        AI Solutions <span className="text-[#3B82F6]">Designed</span> for Your Business
+                        AI Solutions <span className="text-[#2563EB]">Designed</span> for Your Business
                     </h2>
                     <p className="text-[#4B5563] text-[16px] md:text-[18px] max-w-2xl mx-auto font-normal leading-[1.6]">
                         See what we can help you with!

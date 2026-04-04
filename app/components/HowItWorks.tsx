@@ -96,7 +96,7 @@ export default function HowItWorks() {
                                 className="group flex flex-col bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_70px_-15px_rgba(59,130,246,0.15)] overflow-hidden p-6"
                             >
                                 <div className="mb-6">
-                                    <span className="text-[32px] font-sans font-extrabold text-[#3B82F6]/20 group-hover:text-[#3B82F6] transition-colors duration-500">
+                                    <span className="text-[32px] font-sans font-extrabold text-[#2563EB]/20 group-hover:text-[#2563EB] transition-colors duration-500">
                                         {phase.id}
                                     </span>
                                 </div>
