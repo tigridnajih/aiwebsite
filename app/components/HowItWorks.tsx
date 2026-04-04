@@ -61,12 +61,12 @@ export default function HowItWorks() {
                                 className="group flex flex-col bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                             >
                                 {/* Top Half - Light Grey Background with Icon */}
-                                <div className="bg-[#F8FAFC] p-6 pb-8 flex items-start">
-                                    <div className="w-12 h-12 relative flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-xl border border-slate-100/50 shadow-sm">
+                                <div className="bg-[#F1F5F9] p-6 pb-8 flex items-start">
+                                    <div className="w-20 h-20 relative flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-2xl border border-slate-100/50 shadow-sm">
                                         <img
                                             src={phase.image}
                                             alt={phase.title}
-                                            className="w-7 h-7 object-contain"
+                                            className="w-14 h-14 object-contain"
                                         />
                                     </div>
                                 </div>
