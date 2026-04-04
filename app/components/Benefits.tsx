@@ -47,7 +47,7 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="flex flex-col h-full items-start text-left group p-[5px] bg-white rounded-[23px] border border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1"
+                            className="flex flex-col h-full items-start text-left group p-[5px] bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1"
                         >
                             {/* Image Container */}
                             <div className="w-full aspect-[4/3] relative mb-3 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.02]">
