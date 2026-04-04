@@ -50,7 +50,7 @@ export default function HowItWorks() {
                 </div>
 
                 <div className="relative pt-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-[7px] relative z-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
                         {PHASES.map((phase, index) => (
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -58,23 +58,28 @@ export default function HowItWorks() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
                                 key={phase.step}
-                                className="group relative flex flex-row items-center p-3 sm:p-4 bg-white rounded-[18px] border border-[rgba(0,102,255,0.05)] shadow-[0_15px_30px_-5px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-8px_rgba(15,23,42,0.12)] w-full"
+                                className="group flex flex-col bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                             >
-                                {/* Image Area - 1:1 Aspect Ratio (Square) */}
-                                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 relative overflow-hidden flex items-center justify-center bg-slate-50 rounded-[14px]">
-                                    <img
-                                        src={phase.image}
-                                        alt={phase.title}
-                                        className="w-full h-full object-contain p-[2px] filter transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                {/* Top Half - Light Grey Background with Icon */}
+                                <div className="bg-[#F8FAFC] p-6 pb-8 flex items-start">
+                                    <div className="w-12 h-12 relative flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-xl border border-slate-100/50 shadow-sm">
+                                        <img
+                                            src={phase.image}
+                                            alt={phase.title}
+                                            className="w-7 h-7 object-contain"
+                                        />
+                                    </div>
                                 </div>
 
-                                {/* Text Content - Right Side */}
-                                <div className="ml-4 flex-1 flex flex-col items-start text-left">
-                                    <h3 className="text-[15px] md:text-[16px] font-sans font-bold text-slate-900 tracking-tight leading-tight mb-1">
+                                {/* Blue Separator Line */}
+                                <div className="h-[2px] bg-[#3B82F6] w-full" />
+
+                                {/* Bottom Half - White Background with Content */}
+                                <div className="p-6 pt-5 bg-white flex flex-col items-start text-left flex-1">
+                                    <h3 className="text-[16px] md:text-[18px] font-sans font-bold text-slate-900 leading-tight mb-2">
                                         {phase.title}
                                     </h3>
-                                    <p className="text-[12px] md:text-[13px] text-slate-500 font-medium leading-[1.6]">
+                                    <p className="text-[13px] text-slate-500 font-medium leading-relaxed">
                                         {phase.description}
                                     </p>
                                 </div>
