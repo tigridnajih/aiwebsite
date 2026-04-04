@@ -39,7 +39,7 @@ export default function Benefits() {
                         Discover how our AI-driven systems transform your daily operations and accelerate growth.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {BENEFITS.map((benefit, index) => (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="flex flex-col h-full bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1 p-[5px]"
+                            className="group flex flex-col h-full bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_50px_-20px_rgba(59,130,246,0.12),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(59,130,246,0.18)] p-2"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-[4/3] relative mb-3 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.02]">
+                            <div className="w-full aspect-[4/3] relative mb-5 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-700 group-hover:scale-[1.03]">
                                 <img
                                     src={benefit.image}
                                     alt={benefit.title}
@@ -60,10 +60,10 @@ export default function Benefits() {
  
                             {/* Text Content Area */}
                             <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center text-center">
-                                <h3 className="text-[20px] font-semibold text-[#0F172A] leading-[1.2] tracking-normal mb-2">
+                                <h3 className="text-[19px] md:text-[21px] font-bold text-[#0F172A] leading-[1.2] tracking-tight mb-3">
                                     {benefit.title}
                                 </h3>
-                                <p className="text-[#64748B] text-[13px] font-normal leading-[1.5] max-w-[280px] mx-auto">
+                                <p className="text-[#64748B] text-[14px] font-medium leading-[1.6] max-w-[280px] mx-auto opacity-90">
                                     {benefit.description}
                                 </p>
                             </div>
