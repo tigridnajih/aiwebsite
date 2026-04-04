@@ -47,23 +47,28 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="flex flex-col h-full items-start text-left group p-[5px] bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1"
+                            className="flex flex-col h-full bg-white rounded-[26px] border-[3px] border-[#F1F5F9] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                         >
-                            {/* Image Container */}
-                            <div className="w-full aspect-[4/3] relative mb-3 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-500 group-hover:scale-[1.02]">
-                                <img
-                                    src={benefit.image}
-                                    alt={benefit.title}
-                                    className="w-full h-full object-cover"
-                                />
+                            {/* Top Half - Light Grey Background with Icon */}
+                            <div className="bg-[#F8FAFC] p-8 pb-10 flex items-start">
+                                <div className="w-12 h-12 relative grayscale-0 opacity-100 flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-xl border border-slate-100/50 shadow-sm">
+                                    <img
+                                        src={benefit.image}
+                                        alt={benefit.title}
+                                        className="w-7 h-7 object-contain"
+                                    />
+                                </div>
                             </div>
-
-                            {/* Text Content Area */}
-                            <div className="px-6 pb-6 pt-0 flex-1 flex flex-col items-center text-center">
-                                <h3 className="text-[20px] font-semibold text-[#0F172A] leading-[1.2] tracking-normal mb-2">
+ 
+                            {/* Blue Separator Line */}
+                            <div className="h-[2px] bg-[#3B82F6] w-full" />
+ 
+                            {/* Bottom Half - White Background with Content */}
+                            <div className="p-8 pt-6 bg-white flex flex-col items-start text-left flex-1">
+                                <h3 className="text-[18px] md:text-[20px] font-semibold text-[#0F172A] leading-tight mb-3">
                                     {benefit.title}
                                 </h3>
-                                <p className="text-[#64748B] text-[13px] font-normal leading-[1.5] max-w-[280px] mx-auto">
+                                <p className="text-[#64748B] text-[14px] font-normal leading-[1.6]">
                                     {benefit.description}
                                 </p>
                             </div>
