@@ -5,7 +5,7 @@ import TrustLogos from './TrustLogos';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-20 pb-10 lg:pt-24 lg:pb-16 overflow-hidden text-slate-900">
+        <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-10 lg:pt-20 lg:pb-16 overflow-hidden text-slate-900">
             {/* Hero Background Video */}
             <video
                 autoPlay
