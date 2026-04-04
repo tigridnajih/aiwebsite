@@ -9,12 +9,11 @@ export default function Hero() {
             {/* Hero Background Video */}
             <video
                 autoPlay
-                loop
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
             >
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4" type="video/mp4" />
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4" type="video/mp4" />
             </video>
 
             {/* Subtle Overlay to ensure text readability if needed */}
