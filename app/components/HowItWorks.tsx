@@ -56,8 +56,9 @@ export default function HowItWorks() {
             <svg width="0" height="0" className="absolute">
                 <defs>
                     <linearGradient id="blue-white-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#3B82F6" />
-                        <stop offset="100%" stopColor="#ffffff" />
+                        <stop offset="0%" stopColor="#1E40AF" />
+                        <stop offset="60%" stopColor="#3B82F6" />
+                        <stop offset="100%" stopColor="#93C5FD" />
                     </linearGradient>
                 </defs>
             </svg>
@@ -91,7 +92,7 @@ export default function HowItWorks() {
                             >
                                 {/* Top Half - Light Grey Background with Icon */}
                                 <div className="bg-[#F1F5F9] p-6 pb-8 flex items-start">
-                                    <div className="w-20 h-20 relative flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-2xl border border-slate-100/50 shadow-sm transition-transform duration-300 group-hover:scale-110">
+                                    <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110 drop-shadow-sm">
                                         {phase.icon}
                                     </div>
                                 </div>
