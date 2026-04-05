@@ -31,8 +31,12 @@ const IntegrationIcon = ({ name, path }: { name: string; path: string }) => (
 );
 
 export default function Integrations() {
-    const firstRow = [...integrations, ...integrations]; 
-    const secondRow = [...[...integrations].reverse(), ...[...integrations].reverse()];
+    // Split 14 icons into 7 and 7
+    const row1 = integrations.slice(0, 7);
+    const row2 = integrations.slice(7, 14);
+
+    const firstRow = [...row1, ...row1]; 
+    const secondRow = [...row2, ...row2];
 
     return (
         <section className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden border-t border-slate-50">
