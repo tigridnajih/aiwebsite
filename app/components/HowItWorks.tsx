@@ -93,7 +93,7 @@ export default function HowItWorks() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
                                 key={phase.id}
-                                className="group flex flex-col bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(59,130,246,0.1),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_70px_-15px_rgba(59,130,246,0.15)] overflow-hidden p-6"
+                                className="group flex flex-col bg-white rounded-[24px] border border-slate-200/60 overflow-hidden p-6"
                             >
                                 <div className="mb-6">
                                     <span className="text-[32px] font-sans font-extrabold text-[#2563EB] transition-colors duration-500">
