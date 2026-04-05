@@ -4,27 +4,26 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const integrations = [
-    { name: 'Notion', slug: 'notion' },
-    { name: 'Slack', slug: 'slack' },
-    { name: 'GitHub', slug: 'github' },
-    { name: 'Zapier', slug: 'zapier' },
-    { name: 'Discord', slug: 'discord' },
-    { name: 'Figma', slug: 'figma' },
-    { name: 'n8n', slug: 'n8n' },
-    { name: 'Airtable', slug: 'airtable' },
-    { name: 'Hubspot', slug: 'hubspot' },
-    { name: 'Shopify', slug: 'shopify' },
-    { name: 'Linear', slug: 'linear' },
-    { name: 'Stripe', slug: 'stripe' },
-    { name: 'GitLab', slug: 'gitlab' },
-    { name: 'Trello', slug: 'trello' },
-    { name: 'Intercom', slug: 'intercom' },
+    { name: 'Excel', path: '/Icons/Integration_icons/icons8-excel-96.png' },
+    { name: 'GitHub', path: '/Icons/Integration_icons/icons8-github-96.png' },
+    { name: 'Google Drive', path: '/Icons/Integration_icons/icons8-google-drive-96.png' },
+    { name: 'Gmail', path: '/Icons/Integration_icons/icons8-google-mail-96.png' },
+    { name: 'Instagram', path: '/Icons/Integration_icons/icons8-instagram-96.png' },
+    { name: 'LinkedIn', path: '/Icons/Integration_icons/icons8-linkedin-96.png' },
+    { name: 'Notion', path: '/Icons/Integration_icons/icons8-notion-96.png' },
+    { name: 'OneDrive', path: '/Icons/Integration_icons/icons8-onedrive-96.png' },
+    { name: 'Outlook', path: '/Icons/Integration_icons/icons8-outlook-96.png' },
+    { name: 'PDF', path: '/Icons/Integration_icons/icons8-pdf-96.png' },
+    { name: 'Shopify', path: '/Icons/Integration_icons/icons8-shopify-96.png' },
+    { name: 'Telegram', path: '/Icons/Integration_icons/icons8-telegram-app-96.png' },
+    { name: 'WhatsApp', path: '/Icons/Integration_icons/icons8-whatsapp-96.png' },
+    { name: 'YouTube', path: '/Icons/Integration_icons/icons8-youtube-96.png' },
 ];
 
-const IntegrationIcon = ({ slug, name }: { slug: string; name: string }) => (
+const IntegrationIcon = ({ name, path }: { name: string; path: string }) => (
     <div className="flex-shrink-0 w-[85px] h-[85px] md:w-[110px] md:h-[110px] rounded-[24px] bg-white border border-slate-50 shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex items-center justify-center p-4 hover:border-slate-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group">
         <img
-            src={`https://v1.simpleicons.org/${slug}/8a94a6`}
+            src={path}
             alt={name}
             className="w-10 h-10 md:w-12 md:h-12 opacity-50 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
         />
