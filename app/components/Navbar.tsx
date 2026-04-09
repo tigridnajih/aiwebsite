@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <>
 
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? 'bg-white border-b border-slate-100 shadow-sm' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ${scrolled ? 'bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)]' : 'bg-transparent'}`}>
         <div className="container-custom flex items-center justify-between w-full h-11 sm:h-13">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-[60] bg-white transition-all duration-500 md:hidden ${mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+      <div className={`fixed inset-0 z-[60] bg-white/90 backdrop-blur-2xl transition-all duration-500 md:hidden ${mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
         <div className="flex flex-col h-full p-8">
           <div className="flex items-center justify-between mb-16">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
