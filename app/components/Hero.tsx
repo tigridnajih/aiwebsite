@@ -6,15 +6,12 @@ import TrustLogos from './TrustLogos';
 export default function Hero() {
     return (
         <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-10 lg:pt-20 lg:pb-16 overflow-hidden text-slate-900">
-            {/* Hero Background Video */}
-            <video
-                autoPlay
-                muted
-                playsInline
+            {/* Hero Background Image */}
+            <img
+                src="/herosection_assets/Blueandwhitebghero.png"
+                alt="Background"
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-            >
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4" type="video/mp4" />
-            </video>
+            />
 
             {/* Subtle Overlay to ensure text readability if needed */}
             <div className="absolute inset-0 z-[1] bg-white/10 pointer-events-none" />
