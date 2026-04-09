@@ -26,31 +26,28 @@ export default function Contact() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                             {/* Name */}
                             <div className="space-y-3">
-                                <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Name *</label>
+                                <label className="text-xs font-bold text-black block">Name *</label>
                                 <input
                                     type="text"
-                                    placeholder="Name"
-                                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
+                                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                 />
                             </div>
                             {/* Email */}
                             <div className="space-y-3">
-                                <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Email *</label>
+                                <label className="text-xs font-bold text-black block">Email *</label>
                                 <input
                                     type="email"
-                                    placeholder="Email address"
-                                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
+                                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                 />
                             </div>
                         </div>
 
                         {/* Company Name */}
                         <div className="space-y-3">
-                            <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Company Name *</label>
+                            <label className="text-xs font-bold text-black block">Company Name *</label>
                             <input
                                 type="text"
-                                placeholder="Company name"
-                                className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
+                                className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                             />
                         </div>
 
