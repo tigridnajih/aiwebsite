@@ -50,11 +50,11 @@ export default function TrustLogos() {
                     }}
                 >
                     {/* Logos Container */}
-                    <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-accent">
+                    <div className="flex animate-infinite-scroll-slow whitespace-nowrap items-center py-2 text-black">
                         {allLogos.map((logo, i) => (
                             <div
                                 key={i}
-                            className="flex items-center gap-2 md:gap-2 mx-4 md:mx-6 opacity-60 hover:opacity-100 transition-all duration-300"
+                            className="flex items-center gap-2 md:gap-2 mx-4 md:mx-6 opacity-80 hover:opacity-100 transition-all duration-300"
                             >
                                 <div className="flex-shrink-0 scale-90">
                                     {logo.icon}
@@ -68,7 +68,7 @@ export default function TrustLogos() {
                         {allLogos.map((logo, i) => (
                             <div
                                 key={`dup-${i}`}
-                            className="flex items-center gap-2 md:gap-2 mx-4 md:mx-6 opacity-60 hover:opacity-100 transition-all duration-300"
+                            className="flex items-center gap-2 md:gap-2 mx-4 md:mx-6 opacity-80 hover:opacity-100 transition-all duration-300"
                             >
                                 <div className="flex-shrink-0 scale-90">
                                     {logo.icon}
