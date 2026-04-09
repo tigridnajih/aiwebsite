@@ -50,28 +50,28 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                                     {/* Name */}
                                     <div className="space-y-3">
-                                        <label className="text-xs font-bold text-black block">Name *</label>
+                                        <label className="text-[15px] font-medium text-black block">Name *</label>
                                         <input
                                             type="text"
-                                            className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                            className="w-full bg-transparent border-b border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                         />
                                     </div>
                                     {/* Email */}
                                     <div className="space-y-3">
-                                        <label className="text-xs font-bold text-black block">Email *</label>
+                                        <label className="text-[15px] font-medium text-black block">Email *</label>
                                         <input
                                             type="email"
-                                            className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                            className="w-full bg-transparent border-b border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Company Name */}
                                 <div className="space-y-3">
-                                    <label className="text-xs font-bold text-black block">Company Name *</label>
+                                    <label className="text-[15px] font-medium text-black block">Company Name *</label>
                                     <input
                                         type="text"
-                                        className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                        className="w-full bg-transparent border-b border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                     />
                                 </div>
 
@@ -79,11 +79,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pt-8">
                                     <button
                                         type="button"
-                                        className="px-12 py-4 rounded-full bg-black text-white font-bold flex items-center gap-3 transition-all transform hover:scale-105 active:scale-95 hover:shadow-2xl"
+                                        className="px-9 py-3.5 rounded-full bg-black text-white text-sm font-bold flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 hover:shadow-xl"
                                     >
-                                        Submit <ArrowUpRight size={22} strokeWidth={3} />
+                                        Submit <ArrowUpRight size={18} strokeWidth={3} />
                                     </button>
-                                    <p className="text-slate-400 text-xs font-bold italic tracking-tight">
+                                    <p className="text-slate-400 text-[11px] font-bold italic tracking-tight uppercase">
                                         We will contact you within 24 business hours.
                                     </p>
                                 </div>
