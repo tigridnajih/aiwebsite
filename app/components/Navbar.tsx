@@ -76,10 +76,10 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="flex flex-col gap-10">
-            <Link href="#solutions" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="#case-studies" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link href="#about" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <div className="flex flex-col gap-8">
+            <Link href="#solutions" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="#case-studies" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+            <Link href="#about" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
           </div>
 
           <div className="mt-auto">
