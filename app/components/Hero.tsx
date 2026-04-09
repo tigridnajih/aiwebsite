@@ -38,7 +38,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
-                                className="font-instrument italic font-bold text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.1] md:leading-[1.15] w-full break-words relative inline-block"
+                                className="font-instrument italic font-medium text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.1] md:leading-[1.15] w-full break-words relative inline-block"
                             >
                                 <span className="relative">
                                     Focus on{" "}
