@@ -53,42 +53,39 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-black hover:bg-white/50 rounded-lg transition-colors"
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-[70]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <motion.span
+              animate={mobileMenuOpen ? { rotate: 45, y: 4.5 } : { rotate: 0, y: 0 }}
+              className="w-6 h-[2px] bg-black block transition-transform origin-center"
+            />
+            <motion.span
+              animate={mobileMenuOpen ? { rotate: -45, y: -4.5 } : { rotate: 0, y: 0 }}
+              className="w-6 h-[2px] bg-black block transition-transform origin-center"
+            />
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-[60] bg-white/90 backdrop-blur-2xl transition-all duration-500 md:hidden ${mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
-        <div className="flex flex-col h-full p-8">
-          <div className="flex items-center justify-between mb-16">
-            <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <span className="text-2xl font-bold text-black">Tigrid</span>
-            </Link>
-            <button
-              className="p-2 text-black bg-slate-100 rounded-full"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <X className="w-6 h-6" />
-            </button>
+      <div 
+        className={`fixed left-0 right-0 z-[40] bg-white/95 backdrop-blur-2xl transition-all duration-500 md:hidden border-b border-slate-100 overflow-hidden ${mobileMenuOpen ? 'top-[44px] sm:top-[52px] h-[320px] opacity-100' : 'top-[44px] sm:top-[52px] h-0 opacity-0'}`}
+      >
+        <div className="flex flex-col p-8 gap-8">
+          <div className="flex flex-col gap-6">
+            <Link href="#solutions" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="#case-studies" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+            <Link href="#about" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
           </div>
 
-          <div className="flex flex-col gap-8">
-            <Link href="#solutions" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="#case-studies" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link href="#about" className="text-2xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
-          </div>
-
-          <div className="mt-auto">
+          <div className="pt-4 border-t border-slate-50">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 setShowContactModal(true);
               }}
-              className="w-full flex h-16 items-center justify-center rounded-2xl bg-blue-600 text-white font-bold text-lg shadow-xl shadow-blue-600/30 active:scale-[0.98] transition-all"
+              className="w-full flex h-14 items-center justify-center rounded-xl bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-600/20 active:scale-[0.98] transition-all"
             >
               Book a Call
             </button>
