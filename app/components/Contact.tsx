@@ -51,38 +51,6 @@ export default function Contact() {
                             />
                         </div>
 
-                        {/* Select Service & Budget */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                            <div className="space-y-3">
-                                <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Select Service *</label>
-                                <div className="relative">
-                                    <select className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
-                                        <option value="">Select Your Service</option>
-                                        <option>Bot Implementation</option>
-                                        <option>Automation Workflow</option>
-                                        <option>AI Training</option>
-                                    </select>
-                                    <div className="absolute right-0 bottom-4 pointer-events-none text-slate-300">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="space-y-3">
-                                <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Project Budget *</label>
-                                <div className="relative">
-                                    <select className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
-                                        <option value="">Select Your Range</option>
-                                        <option>$1,000 - $5,000</option>
-                                        <option>$5,000 - $20,000</option>
-                                        <option>$20,000+</option>
-                                    </select>
-                                    <div className="absolute right-0 bottom-4 pointer-events-none text-slate-300">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         {/* Button and Info */}
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pt-8">
                             <button
