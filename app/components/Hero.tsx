@@ -64,7 +64,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="font-manrope font-normal text-[15px] sm:text-[16px] md:text-[18px] leading-[22px] sm:leading-[24px] md:leading-[26px] text-black max-w-[613px] mx-auto mt-4 sm:mt-6 lg:mt-8"
+                            className="font-manrope font-normal text-[13px] sm:text-[15px] md:text-[16px] leading-[20px] sm:leading-[22px] md:leading-[24px] text-black max-w-[580px] mx-auto mt-4 sm:mt-6 lg:mt-8"
                         >
                             The next-generation AI agent platform that handles lead generation, customer support, and data entry while you build.
                         </motion.p>
