@@ -8,7 +8,7 @@ export default function Hero() {
         <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-10 lg:pt-20 lg:pb-16 overflow-hidden text-slate-900">
             {/* Hero Background Image */}
             <img
-                src="/herosection_assets/Blueandwhitebghero.png"
+                src="/herosection_assets/hero_bg.png"
                 alt="Background"
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
             />
@@ -46,17 +46,17 @@ export default function Hero() {
                                         initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
                                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                         transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
-                                        className="absolute -top-2 sm:-top-4 -right-6 sm:-right-10 lg:-right-14 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center"
+                                        className="absolute -top-1 sm:-top-2 -right-4 sm:-right-8 lg:-right-10 w-6 h-6 sm:w-10 sm:h-10 flex items-center justify-center"
                                     >
-                                        <div className="relative w-full h-full bg-white/40 backdrop-blur-md rounded-xl border border-white/50 shadow-lg shadow-blue-500/10 flex items-center justify-center overflow-hidden group">
+                                        <div className="relative w-full h-full bg-white/40 backdrop-blur-md rounded-lg border border-white/50 shadow-lg shadow-blue-500/10 flex items-center justify-center overflow-hidden group">
                                             {/* Chip Pins */}
                                             <div className="absolute inset-0 opacity-20">
-                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-1.5 bg-blue-600" />
-                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[2px] h-1.5 bg-blue-600" />
-                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-[2px] bg-blue-600" />
-                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-[2px] bg-blue-600" />
+                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1.5px] h-1 bg-blue-600" />
+                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1.5px] h-1 bg-blue-600" />
+                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-[1.5px] bg-blue-600" />
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-[1.5px] bg-blue-600" />
                                             </div>
-                                            <span className="text-[10px] sm:text-[14px] font-bold text-blue-600 tracking-tighter">AI</span>
+                                            <span className="text-[8px] sm:text-[12px] font-bold text-blue-600 tracking-tighter">AI</span>
                                             {/* Glow */}
                                             <div className="absolute inset-0 bg-blue-400/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                                         </div>
