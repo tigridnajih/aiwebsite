@@ -86,7 +86,7 @@ export default function Navbar() {
                 setMobileMenuOpen(false);
                 setShowContactModal(true);
               }}
-              className="w-full flex h-14 items-center justify-center rounded-xl bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-600/20 active:scale-[0.98] transition-all"
+              className="w-full flex h-14 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-600/20 active:scale-[0.98] transition-all"
             >
               Book a Call
             </button>
