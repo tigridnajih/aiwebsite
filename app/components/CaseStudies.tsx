@@ -44,7 +44,7 @@ export default function CaseStudies() {
             <div className="container-custom">
                 <SectionHeader
                     badge="Results"
-                    title={<span className="text-slate-900 font-sans font-bold">Propelling businesses forward</span>}
+                    title="Propelling businesses forward"
                     description="We don't just build AI; we build competitive advantages through measurable outcomes."
                 />
  
