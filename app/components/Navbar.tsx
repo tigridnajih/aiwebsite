@@ -33,9 +33,9 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-12">
-            <Link href="#solutions" className="text-sm font-bold text-slate-700 hover:text-accent transition-colors">Services</Link>
-            <Link href="#case-studies" className="text-sm font-bold text-slate-700 hover:text-accent transition-colors">Case Studies</Link>
-            <Link href="#about" className="text-sm font-bold text-slate-700 hover:text-accent transition-colors">About</Link>
+            <Link href="#solutions" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">Services</Link>
+            <Link href="#case-studies" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">Case Studies</Link>
+            <Link href="#about" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">About</Link>
           </div>
 
           {/* CTA */}
