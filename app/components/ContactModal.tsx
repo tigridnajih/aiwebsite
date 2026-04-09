@@ -53,7 +53,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Name *</label>
                                         <input
                                             type="text"
-                                            className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                            placeholder="Name"
+                                            className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
                                         />
                                     </div>
                                     {/* Email */}
@@ -61,7 +62,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Email *</label>
                                         <input
                                             type="email"
-                                            className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                            placeholder="Email address"
+                                            className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
                                         />
                                     </div>
                                 </div>
@@ -71,7 +73,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Company Name *</label>
                                     <input
                                         type="text"
-                                        className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
+                                        placeholder="Company name"
+                                        className="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:border-blue-600 outline-none transition-all duration-300 placeholder:text-slate-300 text-slate-900 font-bold text-lg"
                                     />
                                 </div>
 
