@@ -29,8 +29,7 @@ export default function Contact() {
                                 <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Name *</label>
                                 <input
                                     type="text"
-                                    placeholder="—"
-                                    className="w-full bg-transparent border-b-2 border-slate-100 py-3 focus:border-accent outline-none transition-all duration-300 placeholder:text-blue-600 text-slate-900 font-bold text-lg"
+                                    className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                 />
                             </div>
                             {/* Email */}
@@ -38,8 +37,7 @@ export default function Contact() {
                                 <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Email *</label>
                                 <input
                                     type="email"
-                                    placeholder="—"
-                                    className="w-full bg-transparent border-b-2 border-slate-100 py-3 focus:border-accent outline-none transition-all duration-300 placeholder:text-blue-600 text-slate-900 font-bold text-lg"
+                                    className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                                 />
                             </div>
                         </div>
@@ -49,8 +47,7 @@ export default function Contact() {
                             <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Company Name *</label>
                             <input
                                 type="text"
-                                placeholder="—"
-                                className="w-full bg-transparent border-b-2 border-slate-100 py-3 focus:border-accent outline-none transition-all duration-300 placeholder:text-blue-600 text-slate-900 font-bold text-lg"
+                                className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 text-slate-900 font-bold text-lg"
                             />
                         </div>
 
@@ -59,8 +56,8 @@ export default function Contact() {
                             <div className="space-y-3">
                                 <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Select Service *</label>
                                 <div className="relative">
-                                    <select className="w-full bg-transparent border-b-2 border-slate-100 py-3 focus:border-accent outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
-                                        <option>— Select Your Service —</option>
+                                    <select className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
+                                        <option value="">Select Your Service</option>
                                         <option>Bot Implementation</option>
                                         <option>Automation Workflow</option>
                                         <option>AI Training</option>
@@ -73,8 +70,8 @@ export default function Contact() {
                             <div className="space-y-3">
                                 <label className="text-xs font-bold text-black tracking-[0.2em] block uppercase">Project Budget *</label>
                                 <div className="relative">
-                                    <select className="w-full bg-transparent border-b-2 border-slate-100 py-3 focus:border-accent outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
-                                        <option>— Select Your Range —</option>
+                                    <select className="w-full bg-transparent border-b-2 border-blue-600 py-3 focus:border-blue-800 outline-none transition-all duration-300 appearance-none text-slate-400 cursor-pointer font-bold text-lg">
+                                        <option value="">Select Your Range</option>
                                         <option>$1,000 - $5,000</option>
                                         <option>$5,000 - $20,000</option>
                                         <option>$20,000+</option>
