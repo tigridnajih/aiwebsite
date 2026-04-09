@@ -28,14 +28,14 @@ export default function Navbar() {
         <div className="container-custom flex items-center justify-between w-full h-11 sm:h-13">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>
+            <span className="text-lg font-extrabold tracking-tighter text-black">Tigrid</span>
           </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-12">
-            <Link href="#solutions" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">Services</Link>
-            <Link href="#case-studies" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">Case Studies</Link>
-            <Link href="#about" className="text-sm font-medium text-slate-700 hover:text-accent transition-colors">About</Link>
+            <Link href="#solutions" className="text-[13px] font-medium text-black hover:text-accent transition-colors">Services</Link>
+            <Link href="#case-studies" className="text-[13px] font-medium text-black hover:text-accent transition-colors">Case Studies</Link>
+            <Link href="#about" className="text-[13px] font-medium text-black hover:text-accent transition-colors">About</Link>
           </div>
 
           {/* CTA */}
@@ -50,7 +50,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-slate-900 hover:bg-white/50 rounded-lg transition-colors"
+            className="md:hidden p-2 text-black hover:bg-white/50 rounded-lg transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -63,10 +63,10 @@ export default function Navbar() {
         <div className="flex flex-col h-full p-8">
           <div className="flex items-center justify-between mb-16">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <span className="text-2xl font-bold text-slate-900">Tigrid</span>
+              <span className="text-2xl font-bold text-black">Tigrid</span>
             </Link>
             <button
-              className="p-2 text-slate-900 bg-slate-100 rounded-full"
+              className="p-2 text-black bg-slate-100 rounded-full"
               onClick={() => setMobileMenuOpen(false)}
             >
               <X className="w-6 h-6" />
@@ -74,9 +74,9 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col gap-10">
-            <Link href="#solutions" className="text-4xl font-bold text-slate-900 tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="#case-studies" className="text-4xl font-bold text-slate-900 tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link href="#about" className="text-4xl font-bold text-slate-900 tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="#solutions" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="#case-studies" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+            <Link href="#about" className="text-4xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
           </div>
 
           <div className="mt-auto">
