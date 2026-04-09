@@ -74,10 +74,10 @@ export default function Navbar() {
         className={`fixed left-0 right-0 z-[40] bg-white/95 backdrop-blur-2xl transition-all duration-500 md:hidden border-b border-slate-100 overflow-hidden ${mobileMenuOpen ? 'top-[44px] sm:top-[52px] h-[320px] opacity-100' : 'top-[44px] sm:top-[52px] h-0 opacity-0'}`}
       >
         <div className="flex flex-col p-8 gap-8">
-          <div className="flex flex-col gap-6">
-            <Link href="#solutions" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="#case-studies" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link href="#about" className="text-xl font-bold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <div className="flex flex-col gap-5">
+            <Link href="#solutions" className="text-lg font-semibold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="#case-studies" className="text-lg font-semibold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+            <Link href="#about" className="text-lg font-semibold text-black tracking-tight" onClick={() => setMobileMenuOpen(false)}>About</Link>
           </div>
 
           <div className="pt-4 border-t border-slate-50">
