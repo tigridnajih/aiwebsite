@@ -34,7 +34,7 @@ export default function FAQ() {
             <div className="container-custom">
                 <SectionHeader
                     badge="• FAQs"
-                    title={<span className="text-slate-900">Frequently Asked Questions</span>}
+                    title={<>Frequently <span className="text-blue-600">Asked</span> Questions</>}
                     description="We’ve answered the most common questions teams ask before making the leap to smarter workflows."
                     className="!pb-16"
                 />

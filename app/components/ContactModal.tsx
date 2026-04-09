@@ -41,7 +41,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         <div className="flex-1 overflow-y-auto p-8 md:p-16 custom-scrollbar">
                             <SectionHeader
                                 badge="Book a call"
-                                title="Let's build something great"
+                                title={<>Let's build something <span className="text-blue-600">great</span></>}
                                 description="Our team is ready to support you with expert advice & solutions."
                                 className="!pb-12"
                             />
