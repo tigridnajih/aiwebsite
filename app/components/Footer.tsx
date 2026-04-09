@@ -11,6 +11,9 @@ export default function Footer() {
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       />
 
+      {/* Top Gradient for section blending */}
+      <div className="absolute inset-x-0 top-0 h-32 sm:h-56 z-[1] bg-gradient-to-b from-white to-transparent pointer-events-none" />
+
       <div className="container-custom relative z-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           

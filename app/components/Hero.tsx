@@ -17,7 +17,7 @@ export default function Hero() {
             <div className="absolute inset-0 z-[1] bg-white/10 pointer-events-none" />
 
             {/* Bottom Gradient for section blending */}
-            <div className="absolute inset-x-0 bottom-0 h-32 sm:h-48 z-[2] bg-gradient-to-t from-[#f4f9ff] to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-32 sm:h-56 z-[2] bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
             {/* Main Content Area - CENTERED DESIGN */}
             <div className="container-custom relative z-20 flex-1 flex flex-col items-center justify-center text-center w-full px-4 sm:px-6">
