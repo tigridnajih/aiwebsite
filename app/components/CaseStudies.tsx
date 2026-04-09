@@ -7,7 +7,7 @@ const cases = [
         id: "001",
         title: "Aureon Digital",
         description: "How we deployed an AI chatbot that qualified inbound traffic and routed high-intent visitors directly to the sales team.",
-        image: "https://images.unsplash.com/photo-1558981403-c5f91cbba527?auto=format&fit=crop&q=80&w=1200",
+        image: "https://docupile.com/wp-content/uploads/2025/02/Future-AI-Driven-Document-AUTOMATION-800x452.png",
         stats: [
             { label: "Work Reduction", value: "3x" },
             { label: "Leads Growth", value: "62%" },
@@ -18,7 +18,7 @@ const cases = [
         id: "002",
         title: "Nexa Logistics",
         description: "Implementing an AI-driven route optimization engine that reduced fuel costs and improved delivery times across global regions.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+        image: "https://www.lboro.ac.uk/media/wwwlboroacuk/external/content/mediacentre/pressreleases/2022/02/aidata.jpg",
         stats: [
             { label: "Efficiency Boost", value: "45%" },
             { label: "Fuel Savings", value: "$2.4M" },
