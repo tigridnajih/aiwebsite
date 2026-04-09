@@ -50,7 +50,7 @@ export default function Integrations() {
                         </span>
                     </div>
                     <h2 className="text-[28px] md:text-[40px] font-sans font-semibold text-[#111827] tracking-[-0.02em] leading-tight mb-4 text-center">
-                        Seamless Integration
+                        <span className="text-[#3B82F6]">Seamless</span> Integration
                     </h2>
                 </div>
 

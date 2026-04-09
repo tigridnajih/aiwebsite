@@ -69,22 +69,15 @@ export default function CaseStudies() {
                             </div>
  
                             {/* Text Content */}
-                            <div className="p-6 md:p-8 pt-6 flex flex-col flex-1">
+                            <div className="p-6 md:p-6 flex flex-col">
                                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight group-hover:text-blue-600 transition-colors font-sans">
                                     {c.title} Case Study
                                 </h3>
-                                <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium mb-6 grow">
+                                <p className="text-slate-500 text-[13px] md:text-sm leading-relaxed font-medium">
                                     {c.description}
                                 </p>
  
-                                <div className="flex items-center gap-2 text-slate-900 font-bold text-[9px] uppercase tracking-widest group/link">
-                                    <span>View Case</span>
-                                    <div className="relative flex items-center justify-center w-5 h-5 rounded-full border border-slate-200 transition-all duration-300 group-hover/link:bg-slate-900 group-hover/link:border-slate-900 group-hover/link:text-white">
-                                        <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                        </svg>
-                                    </div>
-                                </div>
+
                             </div>
                         </motion.div>
                     ))}
