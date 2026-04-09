@@ -57,21 +57,21 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                            className="flex flex-col sm:flex-row gap-[16px] sm:gap-[20px] items-center justify-center mt-6 sm:mt-8 lg:mt-10 w-full sm:w-auto"
+                            className="flex flex-row gap-3 sm:gap-5 items-center justify-center mt-6 sm:mt-8 lg:mt-10 w-full"
                         >
                             <Link
                                 href="#contact"
-                                className="group bg-gradient-to-b from-blue-600 to-blue-800 px-[24px] py-[12px] rounded-full font-cabin font-medium text-[16px] flex items-center justify-center gap-3 text-white shadow-lg shadow-blue-500/20 hover:brightness-110 transition-all active:scale-[0.98] w-full sm:w-auto min-w-[180px]"
+                                className="group bg-gradient-to-b from-blue-600 to-blue-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-cabin font-medium text-[14px] sm:text-[16px] flex items-center justify-center gap-2 sm:gap-3 text-white shadow-lg shadow-blue-500/20 hover:brightness-110 transition-all active:scale-[0.98] min-w-[130px] sm:min-w-[180px]"
                             >
                                 Get Started
-                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
-                                    <svg viewBox="0 0 24 24" className="w-4 h-4 text-blue-800 fill-none stroke-current" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
+                                    <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-4 sm:h-4 text-blue-800 fill-none stroke-current" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                                 </div>
                             </Link>
 
                             <Link
                                 href="#demo"
-                                className="bg-white/40 backdrop-blur-md border border-slate-200/50 px-[24px] py-[12px] rounded-full font-cabin font-medium text-[16px] text-slate-900 shadow-sm hover:bg-white/60 transition-all active:scale-[0.98] w-full sm:w-auto text-center"
+                                className="bg-white/40 backdrop-blur-md border border-slate-200/50 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-cabin font-medium text-[14px] sm:text-[16px] text-slate-900 shadow-sm hover:bg-white/60 transition-all active:scale-[0.98] min-w-[110px] sm:min-w-[150px] text-center"
                             >
                                 Know More
                             </Link>
