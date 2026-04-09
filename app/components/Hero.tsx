@@ -8,7 +8,7 @@ export default function Hero() {
         <section className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] flex flex-col pt-16 pb-10 lg:pt-20 lg:pb-16 overflow-hidden text-slate-900">
             {/* Hero Background Image */}
             <img
-                src="/herosection_assets/hero_bg.png"
+                src="/herosection_assets/Blueandwhitebghero.png"
                 alt="Background"
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
             />
