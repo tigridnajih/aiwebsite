@@ -56,21 +56,20 @@ export default function CaseStudies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 * idx }}
-                            className="group flex flex-col bg-white rounded-[28px] border border-[#eaeaea] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                            className="group flex flex-col bg-white rounded-[28px] border border-[#eaeaea] transition-all duration-500 overflow-hidden"
                         >
                             {/* Image Container - FLUSH WITH BORDERS */}
                             <div className="relative aspect-[16/9] overflow-hidden">
                                 <img
                                     src={c.image}
                                     alt={c.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-700"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </div>
  
                             {/* Text Content */}
                             <div className="p-6 md:p-6 flex flex-col">
-                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight group-hover:text-blue-600 transition-colors font-sans">
+                                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 tracking-tight transition-colors font-sans">
                                     {c.title} Case Study
                                 </h3>
                                 <p className="text-slate-500 text-[13px] md:text-sm leading-relaxed font-medium">

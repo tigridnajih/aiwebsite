@@ -47,10 +47,10 @@ export default function Benefits() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             key={benefit.title}
-                            className="group flex flex-col h-full bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_50px_-20px_rgba(59,130,246,0.12),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(59,130,246,0.18)] p-2"
+                            className="group flex flex-col h-full bg-white rounded-[24px] border border-slate-200/60 shadow-[0_20px_50px_-20px_rgba(59,130,246,0.12),inset_0_1px_1px_rgba(255,255,255,1)] transition-all duration-500 p-2"
                         >
                             {/* Image Container */}
-                            <div className="w-full aspect-[4/3] relative mb-5 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-700 group-hover:scale-[1.03]">
+                            <div className="w-full aspect-[4/3] relative mb-5 rounded-[18px] overflow-hidden bg-slate-50 transition-transform duration-700">
                                 <img
                                     src={benefit.image}
                                     alt={benefit.title}
