@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
 
       <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? 'bg-white border-b border-slate-100 shadow-sm' : 'bg-transparent'}`}>
-        <div className="container-custom flex items-center justify-between w-full h-14 sm:h-16">
+        <div className="container-custom flex items-center justify-between w-full h-11 sm:h-13">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-extrabold tracking-tighter text-slate-900">Tigrid</span>
@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="#contact"
-              className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] bg-blue-600 px-6 text-white text-sm font-bold shadow-md shadow-blue-600/20 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30"
+              className="group relative inline-flex h-9 items-center justify-center overflow-hidden rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] bg-blue-600 px-5 text-white text-[13px] font-bold shadow-md shadow-blue-600/20 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30"
             >
               Book a Call
             </Link>
