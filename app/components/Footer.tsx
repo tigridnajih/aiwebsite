@@ -3,8 +3,15 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-white pt-24 pb-12 border-t border-slate-100">
-      <div className="container-custom px-4">
+    <footer className="relative pt-24 pb-12 border-t border-slate-100 overflow-hidden">
+      {/* Background Image */}
+      <img
+        src="/herosection_assets/Blueandwhitebgfooter.png"
+        alt="Footer Background"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      />
+
+      <div className="container-custom relative z-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
           {/* Brand Column */}
@@ -67,7 +74,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-12 border-t border-slate-200/50 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-400 text-[13px] font-medium order-2 md:order-1">
             © 2025 Tigrid. All rights reserved.
           </p>
