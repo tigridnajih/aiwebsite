@@ -38,9 +38,30 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
-                                className="font-instrument italic text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.1] md:leading-[1.15] w-full break-words"
+                                className="font-instrument italic text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.1] md:leading-[1.15] w-full break-words relative inline-block"
                             >
-                                Focus on growth.
+                                <span className="relative">
+                                    Focus on growth.
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+                                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
+                                        className="absolute -top-2 sm:-top-4 -right-6 sm:-right-10 lg:-right-14 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center"
+                                    >
+                                        <div className="relative w-full h-full bg-white/40 backdrop-blur-md rounded-xl border border-white/50 shadow-lg shadow-blue-500/10 flex items-center justify-center overflow-hidden group">
+                                            {/* Chip Pins */}
+                                            <div className="absolute inset-0 opacity-20">
+                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-1.5 bg-blue-600" />
+                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[2px] h-1.5 bg-blue-600" />
+                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-[2px] bg-blue-600" />
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-[2px] bg-blue-600" />
+                                            </div>
+                                            <span className="text-[10px] sm:text-[14px] font-bold text-blue-600 tracking-tighter">AI</span>
+                                            {/* Glow */}
+                                            <div className="absolute inset-0 bg-blue-400/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </div>
+                                    </motion.div>
+                                </span>
                             </motion.h2>
                         </div>
 
