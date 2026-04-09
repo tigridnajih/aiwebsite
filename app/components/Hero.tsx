@@ -41,17 +41,21 @@ export default function Hero() {
                                 className="font-instrument italic text-[32px] sm:text-[48px] md:text-[64px] lg:text-[76px] text-black tracking-[-1px] md:tracking-[-2px] leading-[1.1] md:leading-[1.15] w-full break-words relative inline-block"
                             >
                                 <span className="relative">
-                                    Focus on growth.
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-                                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
-                                        className="absolute -top-1 sm:-top-3 -right-6 sm:-right-10 lg:-right-14"
-                                    >
-                                        <span className="text-[14px] sm:text-[22px] lg:text-[28px] font-bold text-blue-600 tracking-tighter drop-shadow-[0_0_8px_rgba(37,99,235,0.6)]">
-                                            AI
-                                        </span>
-                                    </motion.div>
+                                    Focus on{" "}
+                                    <span className="relative">
+                                        growth
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+                                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
+                                            className="absolute -top-1 sm:-top-3 -right-5 sm:-right-8 lg:-right-10"
+                                        >
+                                            <span className="text-[14px] sm:text-[22px] lg:text-[28px] font-bold text-blue-600 tracking-tighter drop-shadow-[0_0_8px_rgba(37,99,235,0.6)]">
+                                                AI
+                                            </span>
+                                        </motion.div>
+                                    </span>
+                                    .
                                 </span>
                             </motion.h2>
                         </div>
