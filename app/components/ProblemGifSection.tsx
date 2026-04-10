@@ -11,8 +11,8 @@ export default function ProblemGifSection() {
                     
                     {/* Left Side: Text */}
                     <motion.div 
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="w-full md:w-[45%] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
                     >
@@ -32,8 +32,8 @@ export default function ProblemGifSection() {
 
                     {/* Right Side: GIF */}
                     <motion.div 
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                         className="w-full md:w-[55%] relative order-1 md:order-2"
                     >
