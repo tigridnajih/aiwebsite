@@ -15,7 +15,6 @@ import Contact from './components/Contact';
 import CTA from './components/CTA';
 import Benefits from './components/Benefits';
 import ProblemGifSection from './components/ProblemGifSection';
-import ProblemScrollSection from './components/ProblemScrollSection';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-accent/10">
       <Navbar />
       <Hero />
-      <ProblemScrollSection />
       <ProblemGifSection />
       <Benefits />
       <HowItWorks />
