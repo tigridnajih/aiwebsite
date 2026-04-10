@@ -14,19 +14,23 @@ export default function ProblemGifSection() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full md:w-1/2 relative lg:pr-12"
+                        className="w-full md:w-[55%] relative"
                     >
-                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-600/10 border border-slate-100">
+                        <div className="relative overflow-hidden">
                             <Image 
                                 src="/section_assets/ANIM.gif" 
                                 alt="Automation Process" 
-                                width={800} 
-                                height={600}
-                                className="w-full h-auto object-cover"
-                                unoptimized // Essential for GIFs to animate
+                                width={1000} 
+                                height={800}
+                                className="w-full h-auto object-contain"
+                                unoptimized
                             />
-                            {/* Subtle Glass Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 to-transparent pointer-events-none" />
+                            
+                            {/* Blending Gradients */}
+                            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+                            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+                            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
+                            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
                         </div>
                     </motion.div>
 
