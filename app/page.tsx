@@ -14,7 +14,6 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import CTA from './components/CTA';
 import Benefits from './components/Benefits';
-import ProblemSection from './components/ProblemSection';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-accent/10">
       <Navbar />
       <Hero />
-      <ProblemSection />
       <Benefits />
       <HowItWorks />
       <Services />
