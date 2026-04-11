@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function ProblemGifSection() {
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="pb-24 bg-white overflow-hidden">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24">
                     
@@ -16,10 +16,7 @@ export default function ProblemGifSection() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="w-full md:w-[45%] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full mb-6">
-                            <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse" />
-                            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Analysis</span>
-                        </div>
+
                         
                         <h2 className="text-5xl lg:text-7xl font-sans font-extrabold tracking-tighter leading-[1.1] text-black mb-8">
                             IS THIS <span className="text-blue-600">YOU?</span>
