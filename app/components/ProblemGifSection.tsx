@@ -35,24 +35,31 @@ export default function ProblemGifSection() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="w-full md:w-[45%] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
                     >
-                        <h2 className="text-5xl lg:text-7xl font-sans font-bold tracking-tighter leading-[1.1] text-black mb-8">
-                            IS THIS <span className="text-blue-600">YOU?</span>
-                        </h2>
-                        
-                        <div className="h-[60px] md:h-[80px] flex items-center">
+                        <div className="h-[120px] md:h-[180px] flex items-center mb-8">
                             <AnimatePresence mode="wait">
-                                <motion.p
+                                <motion.h2
                                     key={index}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.5 }}
-                                    className="text-slate-500 text-lg md:text-xl font-medium max-w-lg leading-relaxed"
+                                    className="text-4xl lg:text-5xl font-sans font-bold tracking-tighter leading-[1.1] text-black"
                                 >
-                                    {QUESTIONS[index]}
-                                </motion.p>
+                                    {QUESTIONS[index].toUpperCase() === "READY FOR A SMARTER WAY TO WORK?" ? (
+                                        <>READY FOR A <span className="text-blue-600">SMARTER</span> WAY?</>
+                                    ) : (
+                                        <>
+                                            {QUESTIONS[index].split(' ').slice(0, -1).join(' ').toUpperCase()}{' '}
+                                            <span className="text-blue-600">{QUESTIONS[index].split(' ').pop()?.toUpperCase()}</span>
+                                        </>
+                                    )}
+                                </motion.h2>
                             </AnimatePresence>
                         </div>
+                        
+                        <p className="text-slate-500 text-lg md:text-xl font-medium max-w-lg leading-relaxed">
+                            Stop wasting hours on manual data entry and repetitive workflows. Tigrid automates the chaos so you can focus on scaling.
+                        </p>
                     </motion.div>
 
                     {/* Right Side: GIF */}
