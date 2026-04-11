@@ -35,7 +35,7 @@ export default function ProblemGifSection() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="w-full md:w-[45%] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
                     >
-                        <div className="h-[120px] md:h-[180px] flex items-center mb-8">
+                        <div className="h-[100px] md:h-[140px] flex items-center mb-6">
                             <AnimatePresence mode="wait">
                                 <motion.h2
                                     key={index}
@@ -43,14 +43,14 @@ export default function ProblemGifSection() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.5 }}
-                                    className="text-4xl lg:text-5xl font-sans font-bold tracking-tighter leading-[1.1] text-black"
+                                    className="text-2xl md:text-3xl lg:text-4xl font-sans font-bold tracking-tight leading-[1.2] text-black"
                                 >
-                                    {QUESTIONS[index].toUpperCase() === "READY FOR A SMARTER WAY TO WORK?" ? (
-                                        <>READY FOR A <span className="text-blue-600">SMARTER</span> WAY?</>
+                                    {QUESTIONS[index].includes("smarter") ? (
+                                        <>Ready for a <span className="text-blue-600">smarter</span> way?</>
                                     ) : (
                                         <>
-                                            {QUESTIONS[index].split(' ').slice(0, -1).join(' ').toUpperCase()}{' '}
-                                            <span className="text-blue-600">{QUESTIONS[index].split(' ').pop()?.toUpperCase()}</span>
+                                            {QUESTIONS[index].split(' ').slice(0, -1).join(' ')}{' '}
+                                            <span className="text-blue-600">{QUESTIONS[index].split(' ').pop()}</span>
                                         </>
                                     )}
                                 </motion.h2>
