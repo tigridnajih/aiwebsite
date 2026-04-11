@@ -23,7 +23,7 @@ const BENEFITS = [
 
 export default function Benefits() {
     return (
-        <section className="relative pt-4 pb-24 bg-white overflow-hidden text-slate-900 font-sans">
+        <section className="relative py-20 md:py-32 bg-white overflow-hidden text-slate-900 font-sans">
             <div className="container-custom relative z-10">
                 <div className="text-center mb-12 lg:mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full mb-2">

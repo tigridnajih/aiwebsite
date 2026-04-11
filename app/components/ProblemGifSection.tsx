@@ -24,7 +24,7 @@ export default function ProblemGifSection() {
     }, []);
 
     return (
-        <section className="pb-24 bg-white overflow-hidden">
+        <section className="pt-0 pb-20 md:pb-32 bg-white overflow-hidden">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24">
                     

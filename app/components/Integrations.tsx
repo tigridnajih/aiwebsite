@@ -39,7 +39,7 @@ export default function Integrations() {
     const secondRow = [...row2, ...row2];
 
     return (
-        <section className="relative py-20 lg:py-[120px] bg-white text-slate-900 overflow-hidden border-t border-slate-50">
+        <section className="relative py-20 md:py-32 bg-white text-slate-900 overflow-hidden border-t border-slate-50">
             <div className="container-custom relative z-10 flex flex-col items-center text-center">
                 
                 <div className="text-center mb-12 lg:mb-16">

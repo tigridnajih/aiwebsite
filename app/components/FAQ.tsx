@@ -30,7 +30,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="relative py-24 bg-white overflow-hidden">
+        <section className="relative py-20 md:py-32 bg-white overflow-hidden">
             <div className="container-custom">
                 <SectionHeader
                     badge="• FAQs"

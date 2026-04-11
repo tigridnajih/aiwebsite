@@ -51,7 +51,7 @@ const PHASES = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="relative py-24 bg-white overflow-hidden text-slate-900 font-inter">
+        <section id="how-it-works" className="relative py-20 md:py-32 bg-white overflow-hidden text-slate-900 font-inter">
             {/* Global Gradient Definition */}
             <svg width="0" height="0" className="absolute">
                 <defs>
