@@ -46,11 +46,14 @@ export default function ProblemGifSection() {
                                     className="text-2xl md:text-3xl lg:text-4xl font-sans font-bold tracking-tight leading-[1.2] text-black"
                                 >
                                     {QUESTIONS[index].includes("smarter") ? (
-                                        <>Ready for a <span className="text-blue-600">smarter</span> way?</>
+                                        <>Ready for a <span className="text-blue-600">smarter</span> way<span className="text-black">?</span></>
                                     ) : (
                                         <>
                                             {QUESTIONS[index].split(' ').slice(0, -1).join(' ')}{' '}
-                                            <span className="text-blue-600">{QUESTIONS[index].split(' ').pop()}</span>
+                                            <span className="text-blue-600">
+                                                {QUESTIONS[index].split(' ').pop()?.replace('?', '')}
+                                            </span>
+                                            <span className="text-black">?</span>
                                         </>
                                     )}
                                 </motion.h2>
