@@ -35,7 +35,7 @@ export default function ProblemGifSection() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="w-full md:w-[45%] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
                     >
-                        <h2 className="text-5xl lg:text-7xl font-sans font-extrabold tracking-tighter leading-[1.1] text-black mb-8">
+                        <h2 className="text-5xl lg:text-7xl font-sans font-bold tracking-tighter leading-[1.1] text-black mb-8">
                             IS THIS <span className="text-blue-600">YOU?</span>
                         </h2>
                         
